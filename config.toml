@@ -8,7 +8,7 @@ summaryLength = 70
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 # googleAnalytics = "U-12345678-0"
-
+publishDir = "docs"
 [Author]
   Name = "MamoruMachida"
 
