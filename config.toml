@@ -1,0 +1,27 @@
+BaseURL = "http://mamorumachida.github.io/"
+LanguageCode = "ja-JP"
+HasCJKLanguage = true
+title = "Mity"
+theme = "primer"
+summaryLength = 70
+# Code pen
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+# googleAnalytics = "U-12345678-0"
+
+[Author]
+  Name = "MamoruMachida"
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "feed"
+
+[params]
+  Subtitle = ""
+  Twitter = "d_machi0701"
+  GitHub = "MamoruMachida"
+  DateFormat = "2006年01月02日"
+  MonthFormat = "2006年01月"
+  shareTo = ["Twitter", "Hatena", "Facebook"]
+  creditHugoPrimer = true
