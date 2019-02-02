@@ -24,4 +24,4 @@ Anime, Manga, Movie
 ### Links
 
 [GitHub](https://github.com/MamoruMachida)
-| [Twitter](https://twitter.com/d_machi)
+| [Twitter](https://twitter.com/d_machi0701)
