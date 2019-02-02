@@ -1,4 +1,4 @@
-BaseURL = "http://mithy.fun/"
+BaseURL = "https://mithy.fun/"
 LanguageCode = "ja-JP"
 HasCJKLanguage = true
 title = "Mity"
