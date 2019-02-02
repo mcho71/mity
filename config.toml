@@ -7,7 +7,7 @@ summaryLength = 70
 # Code pen
 pygmentsCodeFences = true
 pygmentsUseClasses = true
- googleAnalytics = "UA-133713641-1"
+googleAnalytics = "UA-133713641-1"
 publishDir = "docs"
 
 [Author]
