@@ -9,7 +9,6 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 googleAnalytics = "UA-133713641-1"
 publishDir = "docs"
-
 [Author]
   Name = "MamoruMachida"
 
@@ -26,3 +25,5 @@ publishDir = "docs"
   MonthFormat = "2006年01月"
   shareTo = ["Twitter", "Hatena", "Facebook"]
   creditHugoPrimer = true
+  useIcon = true
+  UseTwitterCard = true
