@@ -7,8 +7,9 @@ summaryLength = 70
 # Code pen
 pygmentsCodeFences = true
 pygmentsUseClasses = true
-# googleAnalytics = "U-12345678-0"
+ googleAnalytics = "UA-133713641-1"
 publishDir = "docs"
+
 [Author]
   Name = "MamoruMachida"
 

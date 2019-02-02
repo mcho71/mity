@@ -16,7 +16,7 @@ body {
   grid-template-areas:
     "header header"
     "main side"
-    "footer footer";
+    "footer side";
 }
 #header {
   grid-area: header;
@@ -95,10 +95,6 @@ aside {
     max-width: 1012px;
   }
   #side {
-    width: unset;
-    padding-left: 20px;
-  }
-  #side #toc {
     display: none;
   }
 }
