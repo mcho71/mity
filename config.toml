@@ -9,6 +9,8 @@ pygmentsCodeFences = true
 pygmentsUseClasses = true
 googleAnalytics = "UA-133713641-1"
 publishDir = "docs"
+
+copyright = "&copy;d_machi 2019"
 [Author]
   Name = "MamoruMachida"
 
