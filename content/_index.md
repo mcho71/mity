@@ -7,19 +7,22 @@ weight: 1
 
 ---
 
+<small>RSSフィードを取得するには、URLの最後に`/feed.xml`を付け足してください。</small>
+
 ## About me
 
 ### Name
 
-Mamoru Machida / 町田 葵 
+Mamoru Machida / 町田 葵  
 
 ### Interest
 
-Web, Android, P2P, Blockchain
+Web, Android, Blockchainなど  
+電子工作、システムプログラミング、機械学習にも手を出したい
 
 ### Hobby
 
-Anime, Manga, Movie
+アニメ、漫画、ゲームなど、最近は子供と散歩している
 
 ### Links
 
