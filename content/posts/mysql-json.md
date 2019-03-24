@@ -9,12 +9,14 @@ keywords:
 - MySQL
 ---
 
-MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。
+MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。  
+このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。
 
 ## tl;dr
 
 - `JSON_TABLE`関数を使用するために、MySQLのバージョンを8以上にする。
 - 集計対象のJSON型のデータ構造を、集計に適した形にする。
+  - 込み入った集計を必要とする場合は、このページの[配列型](#配列型)のようなデータ構造のほうが良さそう。
 - `JSON_TABLE`が使用できない場合は、取得したあとに集計処理をするほうが簡潔。
   - ただ、リソースがきつい
 
@@ -28,11 +30,11 @@ CREATE TABLE `target_table` (
 ) ENGINE=InnoDB;
 ```
 
-ここからは、`target_table.info`のデータ構造と、集計クエリについて書いていく
+次に、`target_table.info`のデータ構造別に集計処理のための前処理的なクエリを作成してみる。
 
 ## オブジェクト型
 
-```キーバリュー.json
+```オブジェクト型.json
 {
   "1": {"0": {"foo": 100}},
   "2": {"0": {"foo": 200}},
@@ -48,13 +50,13 @@ key1|key2|foo
 1|0|100
 2|0|200
 
-クエリはこんな感じかな？
+クエリはこんな感じになった
 
-```sql
+```オブジェクト型集計.sql
 SELECT
   key1table.key1,
   key2list.key2,
-  JSON_EXTRACT(key1table.key1value, CONCAT('$."', key2list.key2, '".foo'))
+  JSON_EXTRACT(key1table.key1value, CONCAT('$."', key2list.key2, '".foo')) AS foo
 FROM
   (
     SELECT
@@ -64,21 +66,21 @@ FROM
       target_table,
       JSON_TABLE (
         JSON_KEYS(info),
-        '$[*]' COLUMNS (key1 VARCHAR(100) PATH '$')
+        '$[*]' COLUMNS (key1 INT PATH '$')
       ) AS key1list
   ) AS key1table,
   JSON_TABLE(
     JSON_KEYS(key1table.key1value),
-    '$[*]' COLUMNS (key2 VARCHAR(100) PATH '$')
+    '$[*]' COLUMNS (key2 INT PATH '$')
   ) AS key2list
 ;
 ```
 
-今の僕のSQL力だとこんな感じになってしまう、サブクエリじゃないにしてもテーブルを結合する必要が有ると思う。
+SQL力の低さも相まってか、大げさなクエリになった。サブクエリじゃないにしてもテーブルを結合する必要が有りそう。
 
 以下、テストデータ作成用
 
-```データ挿入.sql
+```オブジェクト型データ挿入.sql
 DROP PROCEDURE IF EXISTS loop_insert_record;
 DELIMITER //
 CREATE PROCEDURE loop_insert_record(IN x INT)
@@ -108,7 +110,82 @@ call lop_insert_record(100);
 
 ## 配列型
 
-追記する。
+```配列型.json
+[
+  {
+    "key1": 1,
+    "objectList1": [{"key2": 0, "objectList2": [{"foo": 100}]}]
+  },
+  {
+    "key1": 2,
+    "objectList1": [{"key2": 0, "objectList2": [{"foo": 200}]}, {"key2": 1, "objectList2": [{"foo": 200}]}]
+  }
+]
+```
+
+`JSON_TABLE`で集計しやすい形だと思ってる。
+前項と同様に、集計を行う際には↓ようなデータを取得したい。
+
+key1|key2|foo
+---|---|---
+1|0|100
+2|0|200
+
+```配列型集計.sql
+SELECT
+  it.*
+FROM
+  target_table tt,
+  JSON_TABLE (
+    tt.info,
+    '$[*]' COLUMNS (
+      key1 INT PATH '$."key1"',
+      NESTED PATH '$."objectList1"[*]' COLUMNS (
+        key2 INT PATH '$."key2"',
+        NESTED PATH '$."objectList2"[*]' COLUMNS (
+          foo INT PATH '$."foo"'
+        )
+      )
+    )
+  ) AS it;
+```
+
+簡潔に書けた。
+
+以下、テストデータ作成用
+
+```配列型データ挿入.sql
+DROP PROCEDURE IF EXISTS loop_insert_record;
+DELIMITER //
+CREATE PROCEDURE loop_insert_record(IN x INT)
+BEGIN
+  DECLARE i INT;
+  DECLARE info CHAR;
+  SET i = 0;
+  WHILE i < x DO
+    SET i = i + 1;
+    INSERT INTO `target_table` (info) VALUE (
+        REPLACE(
+          REPLACE(
+            '[{"key1": 1, "objectList1": [{"key2": "0", "objectList2": [{"foo": %d1}]}]}, {"key1": "2", "objectList1": [{"key2": "0", "objectList2": [{"foo": %d2}]}, {"key2": "1", "objectList2": [{"foo": %d1}]}]}]', 
+            '%d1',
+            CONVERT(ROUND(RAND() * 100), CHAR)
+          ),
+          '%d2',
+          CONVERT(ROUND(RAND() * 100), CHAR)
+        )
+      );
+  END WHILE;
+END
+//
+delimiter ;
+call loop_insert_record(100);
+```
+
+## おわりに
+
+`JSON_TABLE`に最適化していくのが吉だと思ったので、積極的に配列型のような形にしていきたい。
+オブジェクト型は、中身のデータ構造を気にせずに、キーの有無が大事になる場合が使いどころかな。
 
 ## 参考
 
