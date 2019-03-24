@@ -1,7 +1,6 @@
 ---
 title: "MySQL JSON型の集計"
 date: 2019-03-12T14:09:17+09:00
-draft: true
 categories: 
 - Database
 tags: 
