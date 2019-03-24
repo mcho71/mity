@@ -7,6 +7,9 @@ tags:
 - MySQL
 keywords: 
 - MySQL
+- JSON
+- 集計
+- JSON_TABLE
 ---
 
 MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。  
