@@ -1,3 +1,5 @@
+.PHONY: check serve deploy post
+
 check:
 ifeq (,$(shell which hugo))
 $(error "No hugo in PATH, requires hugo(https://github.com/gohugoio/hugo)")
