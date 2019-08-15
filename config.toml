@@ -10,7 +10,7 @@ pygmentsUseClasses = true
 googleAnalytics = "UA-133713641-1"
 publishDir = "docs"
 enableGitInfo = true
-copyright = "&copy;d_machi 2019"
+copyright = "&copy;machos 2019"
 
 [Author]
   Name = "MamoruMachida"
@@ -22,7 +22,7 @@ copyright = "&copy;d_machi 2019"
 
 [params]
   Subtitle = ""
-  Twitter = "d_machi0701"
+  Twitter = "machos71"
   GitHub = "MamoruMachida"
   DateFormat = "2006年01月02日"
   MonthFormat = "2006年01月"
