@@ -2,15 +2,10 @@
 title: EOSIOのGettingStartedをやった
 date: 2019-04-12T22:07:40+09:00
 categories: 
-- Blockchain
+- Memo
 tags: 
 - Blockchain
 - EOSIO
-keywords: 
-- EOSIO
-- EOS
-- Blockchain
-- C++
 ---
 
 [EOSIO Developer Portal - EOSIO Development Documentation](https://developers.eos.io/)の[GETTING STARTED](https://developers.eos.io/eosio-home/docs)をやったので、振り返りなどを

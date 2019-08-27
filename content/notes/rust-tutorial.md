@@ -1,10 +1,12 @@
 ---
-title: "Rust Tutorial"
+title: "Rust WASM Tutorial"
 date: 2019-03-26T21:53:06+09:00
 draft: true
 categories: 
-tags: 
-keywords: 
+- Memo
+tags:
+- Rust
+- WebAssembly 
 ---
 
 なんとなくRustを書きたくなったので、色々読みつつ、メモ書きを
@@ -22,6 +24,3 @@ keywords:
 - [Introduction - Rust and WebAssembly](https://rustwasm.github.io/docs/book/introduction.html)
 
 ライフゲームを作成や、npmパッケージとしての配布方法を学んだ。
-
-
-
