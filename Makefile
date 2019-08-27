@@ -7,13 +7,16 @@ endif
 
 serve:
 	@make check > /dev/null
-	hugo server -D -w
+	hugo server -D -w --cleanDestinationDir --gc --forceSyncStatic
+
+build:
+	@make check > /dev/null
+	hugo --cleanDestinationDir --gc --forceSyncStatic
 
 deploy:
 	@make check > /dev/null
 	./deploy.sh
 
-t := draft
 post:
 	@make check > /dev/null
-	hugo new posts/${t}.md
+	hugo new notes/${TITLE}.md
