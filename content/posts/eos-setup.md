@@ -2,7 +2,7 @@
 title: EOSIOのGettingStartedをやった
 date: 2019-04-12T22:07:40+09:00
 categories: 
-- メモ
+- Memo
 tags: 
 - Blockchain
 - EOSIO

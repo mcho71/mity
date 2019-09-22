@@ -3,7 +3,7 @@ title: "Rust WASM Tutorial"
 date: 2019-03-26T21:53:06+09:00
 draft: true
 categories: 
-- メモ
+- Memo
 tags:
 - Rust
 - WebAssembly 
