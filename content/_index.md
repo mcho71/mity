@@ -18,5 +18,5 @@ Web/Android/Blockchain/MachineLearning
 **Hobby**  
 アニメ/漫画/ゲーム/子育て  
 **Links**  
-[GitHub](https://github.com/MamoruMachida)/[Twitter](https://twitter.com/machos71)/[はてブ](https://b.hatena.ne.jp/machida-city7110/)/[ブクログ](https://booklog.jp/users/machi0701)
+[GitHub](https://github.com/MamoruMachida)/[Twitter](https://twitter.com/mcho71)/[はてブ](https://b.hatena.ne.jp/machida-city7110/)/[ブクログ](https://booklog.jp/users/machi0701)
 ****
