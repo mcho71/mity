@@ -10,22 +10,27 @@ pygmentsUseClasses = true
 googleAnalytics = "UA-133713641-1"
 publishDir = "docs"
 enableGitInfo = true
-copyright = "&copy;machos 2019"
+copyright = "&copy;Mamoru Machida 2019"
 
 [Author]
-  Name = "MamoruMachida"
+  Name = "Mamoru Machida"
 
 [outputFormats]
   [outputFormats.RSS]
     mediatype = "application/rss"
     baseName = "feed"
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  archive = "archives"
+
 [params]
   Subtitle = ""
   Twitter = "mcho71"
-  GitHub = "MamoruMachida"
-  DateFormat = "2006年01月02日"
-  MonthFormat = "2006年01月"
+  GitHub = "Mamoru Machida"
+  DateFormat = "2006-01-02"
+  MonthFormat = "2006-01"
   shareTo = ["Twitter", "Hatena", "Facebook"]
   creditHugoPrimer = true
   useIcon = true
