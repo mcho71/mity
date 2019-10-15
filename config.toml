@@ -45,7 +45,4 @@ copyright = "&copy;Mamoru Machida 2019"
   weight = 80
 [[related.indices]]
   name = "categories"
-  weight = 50
-[[related.indices]]
-  name = "date"
-  weight = 50
+  weight = 80
