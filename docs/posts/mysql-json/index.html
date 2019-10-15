@@ -13,10 +13,7 @@
   <span class=nt>&#34;2&#34;</span><span class=p>:</span> <span class=p>{</span><span class=nt>&#34;0&#34;</span><span class=p>:</span> <span class=p>{</span><span class=nt>&#34;foo&#34;</span><span class=p>:</span> <span class=mi>200</span><span class=p>}},</span>
   <span class=err>...</span>
 <span class=p>}</span></code></pre></div><p>こんな感じのデータ構造、厄介な形だとおもう。
-こみいった集計をするには↓のようなデータを取得したくなる</p><p>| | key1 | key2 | foo | |
-| | &mdash;- - | &mdash;- - | &mdash; | |
-| | 1 | 0 | 100 | |
-| | 2 | 0 | 200 | |</p><p>クエリはこんな感じになった</p><div class=highlight><pre class=chroma><code class=language-オブジェクト型集計.sql data-lang=オブジェクト型集計.sql><span class=k>SELECT</span>
+こみいった集計をするには↓のようなデータを取得したくなる</p><table><thead><tr><th>key1</th><th>key2</th><th>foo</th></tr></thead><tbody><tr><td>1</td><td>0</td><td>100</td></tr><tr><td>2</td><td>0</td><td>200</td></tr></tbody></table><p>クエリはこんな感じになった</p><div class=highlight><pre class=chroma><code class=language-オブジェクト型集計.sql data-lang=オブジェクト型集計.sql><span class=k>SELECT</span>
   <span class=n>key1table</span><span class=p>.</span><span class=n>key1</span><span class=p>,</span>
   <span class=n>key2list</span><span class=p>.</span><span class=n>key2</span><span class=p>,</span>
   <span class=nf>JSON_EXTRACT</span><span class=p>(</span><span class=n>key1table</span><span class=p>.</span><span class=n>key1value</span><span class=p>,</span> <span class=nf>CONCAT</span><span class=p>(</span><span class=s1>&#39;$.&#34;&#39;</span><span class=p>,</span> <span class=n>key2list</span><span class=p>.</span><span class=n>key2</span><span class=p>,</span> <span class=s1>&#39;&#34;.foo&#39;</span><span class=p>))</span> <span class=k>AS</span> <span class=n>foo</span>
