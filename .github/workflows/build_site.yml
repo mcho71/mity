@@ -1,0 +1,43 @@
+name: Build site
+on:
+  push:
+      paths-ignore: 'docs/**'
+      branches: master
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    env: 
+      GOPATH: /home/runner/go
+    steps:
+
+    - name: Set up Go 1.12
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.12
+      id: go
+
+    - name: Check out code
+      uses: actions/checkout@v1
+
+    - name: Get hugo
+      run: go get github.com/gohugoio/hugo
+    
+    - name: Git configuration
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+      run: |
+        # Hard-code user configuration
+        git config user.email "machida.city7110@gmail.com"
+        git config user.name "MamoruMachida"
+        # Update origin with token
+        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        # Checkout the branch so we can push back to it
+        git checkout master
+        git submodule update --init --recursive
+
+    - name: Run deploy script
+      run: |
+        export PATH=$PATH:$GOPATH/bin
+        make deploy
