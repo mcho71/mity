@@ -20,6 +20,12 @@
             "type": "shell",
             "command": "make deploy",
             "problemMatcher": []
-        }
+        },
+        {
+            "label": "new diary",
+            "type": "shell",
+            "command": "make diary",
+            "problemMatcher": []
+        },
     ]
 }

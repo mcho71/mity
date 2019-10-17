@@ -19,4 +19,8 @@ deploy:
 
 post:
 	@make check > /dev/null
-	hugo new notes/${TITLE}.md
+	hugo new posts/${TITLE}.md
+
+diary:
+	@make check > /dev/null
+	hugo new -k diary diaries/`date "+%Y-%m-%d"`.md
