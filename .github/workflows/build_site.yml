@@ -1,43 +1,32 @@
 name: Build site
+
 on:
   push:
       paths-ignore: 'docs/**'
       branches: master
+
 jobs:
-
-  build:
-    name: Build
+  build-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
-    env: 
-      GOPATH: /home/runner/go
     steps:
-
-    - name: Set up Go 1.12
-      uses: actions/setup-go@v1
-      with:
-        go-version: 1.12
-      id: go
-
-    - name: Check out code
-      uses: actions/checkout@v1
+    - name: Checkout master
+      uses: actions/checkout@master
 
     - name: Get hugo
-      run: go get github.com/gohugoio/hugo
-    
-    - name: Git configuration
-      env:
-        GITHUB_TOKEN: ${{ secrets.github_token }}
-      run: |
-        # Hard-code user configuration
-        git config user.email "machida.city7110@gmail.com"
-        git config user.name "MamoruMachida"
-        # Update origin with token
-        git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        # Checkout the branch so we can push back to it
-        git checkout master
-        git submodule update --init --recursive
+      uses: peaceiris/actions-hugo@v2.2.0
+      with:
+        hugo-version: '0.58.3'
 
-    - name: Run deploy script
-      run: |
-        export PATH=$PATH:$GOPATH/bin
-        make deploy
+    - name: Update submodule
+      run: git submodule update --init --recursive
+
+    - name: Build
+      run: make build
+
+    - name: Update Github Page
+      uses: peaceiris/actions-gh-pages@v2.4.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./docs

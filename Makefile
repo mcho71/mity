@@ -13,10 +13,6 @@ build:
 	@make check > /dev/null
 	hugo --cleanDestinationDir --gc --forceSyncStatic
 
-deploy:
-	@make check > /dev/null
-	./deploy.sh
-
 post:
 	@make check > /dev/null
 	hugo new posts/${TITLE}.md
