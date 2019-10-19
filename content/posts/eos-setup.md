@@ -5,6 +5,7 @@ categories:
 - Blockchain
 tags: 
 - EOSIO
+archives: 2019-04
 ---
 
 [EOSIO Developer Portal - EOSIO Development Documentation](https://developers.eos.io/)の[GETTING STARTED](https://developers.eos.io/eosio-home/docs)をやったので、振り返りなどを

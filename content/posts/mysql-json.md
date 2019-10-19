@@ -10,6 +10,7 @@ keywords:
 - JSON
 - 集計
 - JSON_TABLE
+archives: 2019-03
 ---
 
 MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。  

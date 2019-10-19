@@ -7,6 +7,7 @@ categories:
 tags:
 - Rust
 - WebAssembly 
+archives: 2019-03
 ---
 
 なんとなくRustを書きたくなったので、色々読みつつ、メモ書きを

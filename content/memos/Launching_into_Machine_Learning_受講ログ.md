@@ -7,6 +7,7 @@ tags:
 - MachineLearning
 - Coursera
 - ML Study Jam Vol.3
+archives: 2019-08
 ---
 
 # Launching into Machine Learning
