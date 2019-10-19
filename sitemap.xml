@@ -34,16 +34,21 @@
   
   <url>
     <loc>https://mithy.fun/archives/2019-10/</loc>
-    <lastmod>2019-10-18T23:17:36+09:00</lastmod>
+    <lastmod>2019-10-19T23:10:48+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mithy.fun/diaries/2019-10-18/</loc>
-    <lastmod>2019-10-18T23:17:36+09:00</lastmod>
+    <loc>https://mithy.fun/diaries/2019-10-19/</loc>
+    <lastmod>2019-10-19T23:10:48+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archives/</loc>
+    <lastmod>2019-10-19T23:10:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/diaries/2019-10-18/</loc>
     <lastmod>2019-10-18T23:17:36+09:00</lastmod>
   </url>
   
@@ -73,12 +78,12 @@
   </url>
   
   <url>
-    <loc>https://mithy.fun/tags/machinelearning/</loc>
+    <loc>https://mithy.fun/categories/machinelearning/</loc>
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mithy.fun/categories/machinelearning/</loc>
+    <loc>https://mithy.fun/tags/machinelearning/</loc>
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url>
   
