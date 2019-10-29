@@ -1,7 +1,7 @@
 ---
 title: Macのセットアップでやること
 date: 2019-10-25T17:44:59+09:00
-categories: Mac
+categories:
 tags:
 archives: 2019-10
 ---
