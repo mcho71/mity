@@ -20,3 +20,11 @@ post:
 diary:
 	@make check > /dev/null
 	hugo new -k diary diaries/`date "+%Y-%m-%d"`.md
+
+memo:
+	@make check > /dev/null
+	hugo new memos/${TITLE}.md
+
+note:
+	@make check > /dev/null
+	hugo new notes/${TITLE}.md
