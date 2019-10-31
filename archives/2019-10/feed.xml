@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
-    <lastBuildDate>Wed, 30 Oct 2019 22:24:09 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 22:30:39 +0900</lastBuildDate>
     
 	<atom:link href="https://mithy.fun/archives/2019-10/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2019-10-31</title>
+      <link>https://mithy.fun/diaries/2019-10-31/</link>
+      <pubDate>Thu, 31 Oct 2019 22:30:39 +0900</pubDate>
+      
+      <guid>https://mithy.fun/diaries/2019-10-31/</guid>
+      <description>車が来た 面白いやり取りを発見した 運動を再開した</description>
+    </item>
     
     <item>
       <title>2019-10-30</title>
@@ -31,6 +40,15 @@
     </item>
     
     <item>
+      <title>Macのセットアップでやること</title>
+      <link>https://mithy.fun/memos/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
+      <pubDate>Tue, 29 Oct 2019 17:44:59 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
+      <description>これはなに 新しいMacを手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnetをインストール すべ</description>
+    </item>
+    
+    <item>
       <title>2019-10-28</title>
       <link>https://mithy.fun/diaries/2019-10-28/</link>
       <pubDate>Mon, 28 Oct 2019 22:13:00 +0900</pubDate>
@@ -46,15 +64,6 @@
       
       <guid>https://mithy.fun/diaries/2019-10-25/</guid>
       <description>目覚めると娘が横にいた チームの人とテキストコミュニケーションを取った 最新のMacbookProが届いた</description>
-    </item>
-    
-    <item>
-      <title>Macのセットアップでやること</title>
-      <link>https://mithy.fun/memos/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
-      <pubDate>Fri, 25 Oct 2019 17:44:59 +0900</pubDate>
-      
-      <guid>https://mithy.fun/memos/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
-      <description>これはなに 新しいMacを手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnetをインストール すべ</description>
     </item>
     
     <item>
