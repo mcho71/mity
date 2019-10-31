@@ -1,5 +1,10 @@
 .PHONY: check serve deploy post
 
+setup:
+	git submodule init
+	git submodule update
+	@make check
+
 check:
 ifeq (,$(shell which hugo))
 $(error "No hugo in PATH, requires hugo(https://github.com/gohugoio/hugo)")
