@@ -33,6 +33,21 @@
   </url>
   
   <url>
+    <loc>https://mithy.fun/archives/2019-11/</loc>
+    <lastmod>2019-11-01T22:47:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/diaries/2019-11-01/</loc>
+    <lastmod>2019-11-01T22:47:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/archives/</loc>
+    <lastmod>2019-11-01T22:47:37+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mithy.fun/archives/2019-10/</loc>
     <lastmod>2019-10-31T22:49:52+09:00</lastmod>
   </url>
@@ -43,8 +58,18 @@
   </url>
   
   <url>
-    <loc>https://mithy.fun/archives/</loc>
-    <lastmod>2019-10-31T22:49:52+09:00</lastmod>
+    <loc>https://mithy.fun/categories/</loc>
+    <lastmod>2019-10-31T13:07:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/categories/salesforce/</loc>
+    <lastmod>2019-10-31T13:07:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/memos/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</loc>
+    <lastmod>2019-10-31T13:07:17+09:00</lastmod>
   </url>
   
   <url>
@@ -55,11 +80,6 @@
   <url>
     <loc>https://mithy.fun/diaries/2019-10-29/</loc>
     <lastmod>2019-10-30T00:10:14+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithy.fun/categories/</loc>
-    <lastmod>2019-10-29T17:44:59+09:00</lastmod>
   </url>
   
   <url>
@@ -143,12 +163,12 @@
   </url>
   
   <url>
-    <loc>https://mithy.fun/tags/machinelearning/</loc>
+    <loc>https://mithy.fun/categories/machinelearning/</loc>
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://mithy.fun/categories/machinelearning/</loc>
+    <loc>https://mithy.fun/tags/machinelearning/</loc>
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url>
   
