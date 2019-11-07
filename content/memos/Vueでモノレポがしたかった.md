@@ -1,5 +1,5 @@
 ---
-title: "TypeScriptなVueプロジェクトをページ分けするときにやったこと"
+title: "Vueでモノレポがしたかった"
 date: 2019-11-05T15:31:32+09:00
 categories:
 - Development  
@@ -7,6 +7,8 @@ tags:
 - Vue
 - Webpack
 keywords: 
+- monorepo
+- モノレポ
 - multi projects
 - マルチプロジェクト
 - vue
@@ -46,6 +48,8 @@ Vueのプロジェクトに管理画面用アプリケーションを追加し�
 ## やりたいこと
 
 - 出力をdist/app, dist/adminのように複数ディレクトリに分ける。
+- ビルド、ビルド設定を分ける
+- lint設定は共有する
 
 ## 変更後のディレクトリ構成とビルドコンフィグ
 
