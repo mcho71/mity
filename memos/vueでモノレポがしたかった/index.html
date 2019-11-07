@@ -19,11 +19,11 @@ if (!doNotTrack) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  TypeScriptなVueプロジェクトをページ分けするときにやったこと &ndash; Mity
+  Vueでモノレポがしたかった &ndash; Mity
 
     </title>
     
-    <meta content="multi projects, マルチプロジェクト, vue, vue-cli-service, vue.config.js, multi page app, マルチページ" name="keywords">
+    <meta content="monorepo, モノレポ, multi projects, マルチプロジェクト, vue, vue-cli-service, vue.config.js, multi page app, マルチページ" name="keywords">
     
     
     <meta name="description" property="og:description" content="これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあ|">
@@ -45,7 +45,7 @@ if (!doNotTrack) {
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
-    <meta name="twitter:title" content="TypeScriptなVueプロジェクトをページ分けするときにやったこと | Mity">
+    <meta name="twitter:title" content="Vueでモノレポがしたかった | Mity">
     <meta name="twitter:description" content="これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあ|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
@@ -129,7 +129,7 @@ if (!doNotTrack) {
 
 <div class="Subhead">
   <div class="Subhead-heading">
-    <div class="h1 mt-3 mb-1">TypeScriptなVueプロジェクトをページ分けするときにやったこと</div>
+    <div class="h1 mt-3 mb-1">Vueでモノレポがしたかった</div>
   </div>
   <div class="Subhead-description">
     
@@ -195,6 +195,8 @@ if (!doNotTrack) {
 
 <ul>
 <li>出力をdist/app, dist/adminのように複数ディレクトリに分ける。</li>
+<li>ビルド、ビルド設定を分ける</li>
+<li>lint設定は共有する</li>
 </ul>
 
 <h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
@@ -270,7 +272,7 @@ if (!doNotTrack) {
           
   
     <div id="toc" class="Box Box--blue mb-3">
-      <b>TypeScriptなVueプロジェクトをページ分けするときにやったこと</b>
+      <b>Vueでモノレポがしたかった</b>
       <nav id="TableOfContents">
 <ul>
 <li>
