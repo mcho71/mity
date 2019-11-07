@@ -71,8 +71,8 @@ Vueのプロジェクトに管理画面用アプリケーションを追加し�
 └── package.json
 ```
 
-`projects/app`には以前から存在していたアプリケーションのコードとそれら周辺のファイルを、`projects/admin`には`vue create admin`したものが入っている。 
-上記には書いていないが`tsconfig.json`や`.eslintrc`はルートと各プロジェクトに配置してあり、ルートのものを各プロジェクトが extends している。
+`projects/app`には以前から存在していたアプリケーションのコードとそれら周辺のファイルを、`projects/admin`には`vue create admin`したものが入っている。  
+上記には書いていないが`tsconfig.json`や`.eslintrc`はルートと各プロジェクトに配置してあり、ルートのものを各プロジェクトが extends している。  
 あとは`vue.config.js`に`outputDir`を追加して、出力フォルダを揃えたくらいで、ほぼ初期設定。
 
 ## こうなった理由
