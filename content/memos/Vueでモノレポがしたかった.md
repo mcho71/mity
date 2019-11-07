@@ -71,7 +71,8 @@ Vueのプロジェクトに管理画面用アプリケーションを追加し�
 └── package.json
 ```
 
-`tsconfig.json`や`.eslintrc`はルートのものを、各プロジェクトが extends するようにした。
+`projects/app`には以前から存在していたアプリケーションのコードとそれら周辺のファイルを、`projects/admin`には`vue create admin`したものが入っている。 
+上記には書いていないが`tsconfig.json`や`.eslintrc`はルートと各プロジェクトに配置してあり、ルートのものを各プロジェクトが extends している。
 あとは`vue.config.js`に`outputDir`を追加して、出力フォルダを揃えたくらいで、ほぼ初期設定。
 
 ## こうなった理由
@@ -90,7 +91,7 @@ Vueのプロジェクトに管理画面用アプリケーションを追加し�
 
 - package.jsonめっちゃある。
 - node_modulesもめっちゃある、中身重複しまくりそう。
-- vueのモノレポ環境はまだ成長段階な感じがする。VueLanguageServerも複数プロジェクトには対応していなかった。
+- vueのモノレポ環境はまだ成長段階な感じがする。`VueLanguageServer`も複数プロジェクトには対応していなかった。
 
 ## これからどうするか
 
