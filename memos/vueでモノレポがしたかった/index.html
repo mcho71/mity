@@ -215,7 +215,8 @@ if (!doNotTrack) {
 │        ├── package.json
 │        └── vue.config.js
 └── package.json</code></pre></div>
-<p><code>tsconfig.json</code>や<code>.eslintrc</code>はルートのものを、各プロジェクトが extends するようにした。
+<p><code>projects/app</code>には以前から存在していたアプリケーションのコードとそれら周辺のファイルを、<code>projects/admin</code>には<code>vue create admin</code>したものが入っている。
+上記には書いていないが<code>tsconfig.json</code>や<code>.eslintrc</code>はルートと各プロジェクトに配置してあり、ルートのものを各プロジェクトが extends している。
 あとは<code>vue.config.js</code>に<code>outputDir</code>を追加して、出力フォルダを揃えたくらいで、ほぼ初期設定。</p>
 
 <h2 id="こうなった理由">こうなった理由</h2>
@@ -243,7 +244,7 @@ if (!doNotTrack) {
 <ul>
 <li>package.jsonめっちゃある。</li>
 <li>node_modulesもめっちゃある、中身重複しまくりそう。</li>
-<li>vueのモノレポ環境はまだ成長段階な感じがする。VueLanguageServerも複数プロジェクトには対応していなかった。</li>
+<li>vueのモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
 </ul>
 
 <h2 id="これからどうするか">これからどうするか</h2>
