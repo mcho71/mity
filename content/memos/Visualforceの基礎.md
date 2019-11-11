@@ -5,7 +5,6 @@ categories: Salesforce
 tags: 
 - Visualforce
 - Trailhead
-keywords: 
 archives: 2019-11
 ---
 
@@ -51,4 +50,16 @@ archives: 2019-11
 
 ## レコード、項目、テーブルの表示
 
-- 
+- `<apex:detail />`等の一括出力コンポーネントがある
+- `<apex:outputField value="{! Account.Name }"/>`のようなUIコンポーネントもある
+- `<apex:pageBlockTable>`はテーブルUI
+- `<apex:relatedList list="Contacts">`はリスト
+
+## フォームを使用したデータの入力
+
+- `<apex:form>`のデータは`<apex:page>`で指定されたコントローラーを元にする
+- プラットフォームのスタイルを使用する要素としない要素がある
+    - する
+        - `<apex:form>`を使用している場合
+        - `<apex:pageBlock>`及び`<apex;pageBlockSection>`内で入力要素を使用する場合
+- `<apex:commandButton />`でボタンが作成できる。要素を足すことで色々指定する。`action="{! save }"`,`value="Save"`等々
