@@ -1,7 +1,8 @@
 ---
 title: "Visualforceの基礎"
 date: 2019-11-11T15:50:31+09:00
-categories: Salesforce
+categories: 
+- Salesforce
 tags: 
 - Visualforce
 - Trailhead
