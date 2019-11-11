@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
-    <lastBuildDate>Tue, 05 Nov 2019 15:31:32 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2019 15:50:31 +0900</lastBuildDate>
     
 	<atom:link href="https://mithy.fun/tags/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Trailhead</title>
+      <link>https://mithy.fun/tags/trailhead/</link>
+      <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
+      
+      <guid>https://mithy.fun/tags/trailhead/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualforce</title>
+      <link>https://mithy.fun/tags/visualforce/</link>
+      <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
+      
+      <guid>https://mithy.fun/tags/visualforce/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Vue</title>

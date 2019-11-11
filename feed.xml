@@ -22,6 +22,24 @@
     </item>
     
     <item>
+      <title>2019-11-11</title>
+      <link>https://mithy.fun/diaries/2019-11-11/</link>
+      <pubDate>Mon, 11 Nov 2019 21:37:34 +0900</pubDate>
+      
+      <guid>https://mithy.fun/diaries/2019-11-11/</guid>
+      <description>日本サッカーのニュースターが初ゴールを決めた 学友と久しぶりに連絡を取った ご飯が美味しい</description>
+    </item>
+    
+    <item>
+      <title>Visualforceの基礎</title>
+      <link>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</link>
+      <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
+      <description>Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforce</description>
+    </item>
+    
+    <item>
       <title>2019-11-10</title>
       <link>https://mithy.fun/diaries/2019-11-10/</link>
       <pubDate>Sun, 10 Nov 2019 15:50:28 +0900</pubDate>
@@ -266,10 +284,10 @@
     
     <item>
       <title>EOSIOのGettingStartedをやった</title>
-      <link>https://mithy.fun/posts/eos-setup/</link>
+      <link>https://mithy.fun/memos/eos-setup/</link>
       <pubDate>Fri, 12 Apr 2019 22:07:40 +0900</pubDate>
       
-      <guid>https://mithy.fun/posts/eos-setup/</guid>
+      <guid>https://mithy.fun/memos/eos-setup/</guid>
       <description>EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを</description>
     </item>
     

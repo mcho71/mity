@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Visualforceの基礎</title>
+      <link>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</link>
+      <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
+      <description>Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforce</description>
+    </item>
+    
+    <item>
       <title>Vueでモノレポがしたかった</title>
       <link>https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
@@ -45,6 +54,15 @@
       
       <guid>https://mithy.fun/memos/launching_into_machine_learning_%E5%8F%97%E8%AC%9B%E3%83%AD%E3%82%B0/</guid>
       <description>Launching into Machine Learning MLの開始について このコースは、機械学習の用語や、普及の歴史、モデル作成のためのコードや知識を身につけます コースには最適化モジュール</description>
+    </item>
+    
+    <item>
+      <title>EOSIOのGettingStartedをやった</title>
+      <link>https://mithy.fun/memos/eos-setup/</link>
+      <pubDate>Fri, 12 Apr 2019 22:07:40 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/eos-setup/</guid>
+      <description>EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを</description>
     </item>
     
   </channel>

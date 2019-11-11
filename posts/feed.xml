@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>EOSIOのGettingStartedをやった</title>
-      <link>https://mithy.fun/posts/eos-setup/</link>
-      <pubDate>Fri, 12 Apr 2019 22:07:40 +0900</pubDate>
-      
-      <guid>https://mithy.fun/posts/eos-setup/</guid>
-      <description>EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを</description>
-    </item>
-    
-    <item>
       <title>MySQL JSON型の集計</title>
       <link>https://mithy.fun/posts/mysql-json/</link>
       <pubDate>Tue, 12 Mar 2019 14:09:17 +0900</pubDate>

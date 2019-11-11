@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Salesforce on Mity</title>
-    <link>https://mithy.fun/categories/salesforce/</link>
-    <description>Recent content in Salesforce on Mity</description>
+    <title>Visualforce on Mity</title>
+    <link>https://mithy.fun/tags/visualforce/</link>
+    <description>Recent content in Visualforce on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Mon, 11 Nov 2019 15:50:31 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/categories/salesforce/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mithy.fun/tags/visualforce/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
       <description>Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforce</description>
-    </item>
-    
-    <item>
-      <title>TRAILHEADに入門した</title>
-      <link>https://mithy.fun/memos/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</link>
-      <pubDate>Thu, 31 Oct 2019 13:07:17 +0900</pubDate>
-      
-      <guid>https://mithy.fun/memos/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
-      <description>TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者</description>
     </item>
     
   </channel>
