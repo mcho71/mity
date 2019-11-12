@@ -53,7 +53,7 @@ archives: 2019-11
 
 - `<apex:detail />`等の一括出力コンポーネントがある
 - `<apex:outputField value="{! Account.Name }"/>`のようなUIコンポーネントもある
-- `<apex:pageBlockTable>`はテーブルUI
+- `<!-->`はテーブルUI
 - `<apex:relatedList list="Contacts">`はリスト
 
 ## フォームを使用したデータの入力
@@ -64,3 +64,31 @@ archives: 2019-11
         - `<apex:form>`を使用している場合
         - `<apex:pageBlock>`及び`<apex;pageBlockSection>`内で入力要素を使用する場合
 - `<apex:commandButton />`でボタンが作成できる。要素を足すことで色々指定する。`action="{! save }"`,`value="Save"`等々
+
+## 標準リストコントローラの使用
+
+- クエリ可能
+- コレクション変数でレコードの使用、絞り込み、ページネーションなども用意されている
+- 一度に多数のレコードを操作することを目的としている
+
+```xml
+<!-- recordSetVarで作業するオブジェクトを設定 -->
+<apex:page standardController="Contact" recordSetVar="contacts">
+    <apex:pageBlock title="Contacts List">
+        <!-- Contacts List -->
+        <!-- テーブルのvalueにrecordSetVarで設定されたオブジェクトを渡す -->
+        <apex:pageBlockTable value="{! contacts }" var="ct">
+            <apex:column value="{! ct.FirstName }"/>
+            <apex:column value="{! ct.LastName }"/>
+            <apex:column value="{! ct.Email }"/>
+            <apex:column value="{! ct.Account.Name }"/>
+        </!-->
+    </apex:pageBlock>
+</apex:page>
+```
+
+- `<apex:datalist>`, `<apex:repeat>`等でリストを作れる
+
+## リンク
+
+- [標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm)
