@@ -27,6 +27,11 @@
             "command": "make memo TITLE=\"${input:Title}\""
         },
         {
+            "label": "new review",
+            "type": "shell",
+            "command": "make review TITLE=\"${input:Title}\""
+        },
+        {
             "label": "new note",
             "type": "shell",
             "command": "make note TITLE=\"${input:Title}\""

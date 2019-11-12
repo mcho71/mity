@@ -33,3 +33,7 @@ memo:
 note:
 	@make check > /dev/null
 	hugo new notes/${TITLE}.md
+
+review:
+	@make check > /dev/null
+	hugo new reviews/${TITLE}.md
