@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://mithy.fun/</loc>
-    <lastmod>2019-10-18T00:05:26+09:00</lastmod>
+    <lastmod>2019-11-12T15:29:54+09:00</lastmod>
   </url>
   
   <url>
@@ -34,7 +34,52 @@
   
   <url>
     <loc>https://mithy.fun/archives/2019-11/</loc>
-    <lastmod>2019-11-11T21:50:04+09:00</lastmod>
+    <lastmod>2019-11-12T23:11:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/diaries/2019-11-12/</loc>
+    <lastmod>2019-11-12T23:11:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/archives/</loc>
+    <lastmod>2019-11-12T23:11:18+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/reviews/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</loc>
+    <lastmod>2019-11-12T15:27:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/categories/</loc>
+    <lastmod>2019-11-12T15:23:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/categories/development/</loc>
+    <lastmod>2019-11-12T15:23:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/tags/opengl/</loc>
+    <lastmod>2019-11-12T15:23:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/tags/rust/</loc>
+    <lastmod>2019-11-12T15:23:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/memos/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</loc>
+    <lastmod>2019-11-12T15:23:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/tags/</loc>
+    <lastmod>2019-11-12T15:23:06+09:00</lastmod>
   </url>
   
   <url>
@@ -43,23 +88,8 @@
   </url>
   
   <url>
-    <loc>https://mithy.fun/archives/</loc>
-    <lastmod>2019-11-11T21:50:04+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithy.fun/categories/</loc>
-    <lastmod>2019-11-11T15:52:08+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mithy.fun/categories/salesforce/</loc>
     <lastmod>2019-11-11T15:50:31+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithy.fun/tags/</loc>
-    <lastmod>2019-11-11T15:52:08+09:00</lastmod>
   </url>
   
   <url>
@@ -95,11 +125,6 @@
   <url>
     <loc>https://mithy.fun/diaries/2019-11-05/</loc>
     <lastmod>2019-11-05T22:36:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithy.fun/categories/development/</loc>
-    <lastmod>2019-11-05T15:31:32+09:00</lastmod>
   </url>
   
   <url>
