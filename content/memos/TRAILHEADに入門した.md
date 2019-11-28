@@ -22,7 +22,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 - セールス・顧客系に強い
 - アプリやコンポーネントをリリースできる
 
-以下、とりあえず[Trailmix | Salesforce Trailhead](https://trailhead.salesforce.com/ja/users/00550000007HqDdAAK/trailmixes/start-develop)を順にメモする
+以下、とりあえず[Trailmix by ルーキー会 Salesforce DeveloperGroup](https://trailhead.salesforce.com/ja/users/00550000007HqDdAAK/trailmixes/start-develop)を順にメモする
 
 ## Salesforceテクノロジモデル
 
@@ -109,3 +109,19 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
         - プラットフォームによっては作成にフックして、UIのページレイアウトが作成される
     - 設定の新規からオブジェクト作成と、オブジェクトの項目とリレーションの新規ボタンからフィールド追加を行った
     - スキーマビルダーというMySQLで言うER図のようなツールもある
+
+## プラットフォーム開発の基礎
+
+- Dream House Realty っていうアプリを作っていってみる
+- Apex
+- SOQL Salesforce Object Query Language
+- Apex上のSOQLは実行されてレコードに変換される
+- Apexで書いたControllerをVisualforceページから利用できる
+- Herokuがでてきた
+- RESTやSOAP APIも使える
+- Heroku ConnectでSalesforceのオブジェクトをHeroku Postgreに変換できる
+
+## Apexの基礎とデータベース
+
+- 小文字と大文字が区別されない
+- 開発者コンソールのDebug > 匿名実行みたいなやつが便利
