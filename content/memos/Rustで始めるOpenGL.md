@@ -186,3 +186,22 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
         0.0, 1.0, 0.0,
     ];
 ```
+
+## Dear ImGui
+
+[ocornut/imgui](https://github.com/ocornut/imgui)
+
+OpenGLに様々なGUIを追加できるライブラリ
+
+これを使ってSDL2のウィンドウに新たにウィンドウを追加する。
+
+出た
+
+![](/img/2019-12-17-15-49-08.png)
+
+![](/img/2019-12-17-15-59-28.png)
+
+### 効果的な使い方
+
+パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
+FPSを表示も
