@@ -374,6 +374,16 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 
 <ul>
 <li>データベースのbeforeSaveとかのこと</li>
+<li><code>trigger SoqlTriggerBulk on Account(after update) {</code> で定義する。このトリガ内で<code>Trigger</code>を呼び出せて、そこに色々情報が詰まってる</li>
+<li>レコードごとに処理すると思いし、制限に引っかかるからSOQLとかDMLとか駆使してやろうね</li>
+</ul>
+
+<h2 id="apexテスト">Apexテスト</h2>
+
+<ul>
+<li><code>@isTest</code>を使うとパラメータを指定できる。知らなかった。</li>
+<li><code>Test &gt; RunAll</code>でやるとコードカバレッジが出せる</li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm">Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers</a></li>
 </ul>
 
   </section>
@@ -399,6 +409,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li><a href="#プラットフォーム開発の基礎">プラットフォーム開発の基礎</a></li>
 <li><a href="#apexの基礎とデータベース">Apexの基礎とデータベース</a></li>
 <li><a href="#apexトリガ">Apexトリガ</a></li>
+<li><a href="#apexテスト">Apexテスト</a></li>
 </ul></li>
 </ul>
 </nav>
