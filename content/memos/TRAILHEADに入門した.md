@@ -133,3 +133,11 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 ## Apexトリガ
 
 - データベースのbeforeSaveとかのこと
+- `trigger SoqlTriggerBulk on Account(after update) {` で定義する。このトリガ内で`Trigger`を呼び出せて、そこに色々情報が詰まってる
+- レコードごとに処理すると思いし、制限に引っかかるからSOQLとかDMLとか駆使してやろうね
+
+## Apexテスト
+
+- `@isTest`を使うとパラメータを指定できる。知らなかった。
+- `Test > RunAll`でやるとコードカバレッジが出せる
+- [Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm)
