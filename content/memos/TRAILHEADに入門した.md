@@ -141,3 +141,72 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 - `@isTest`を使うとパラメータを指定できる。知らなかった。
 - `Test > RunAll`でやるとコードカバレッジが出せる
 - [Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm)
+
+## Visualforceの基礎
+
+- Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク
+- Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる
+- 標準またはApexでビジネスロジックを記述する。
+
+### 使用できる場所
+
+- ナビゲーションバーに追加
+- 標準ページレイアウト内に表示
+- Lightningアプリケーションビルダーでコンポーネントとして追加する
+    - [Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。
+- オブジェクトページの標準ボタンやリンクを上書きして表示する
+- オブジェクトページにカスタムボタンやリンクを配置して表示する
+
+### ページの作成
+
+- APIを使用して作成変更できる
+- 開発者コンソール
+    - エディタがついてる。補完あり
+    - LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get("e.force:navigateToURL").setParams({"url": "/apex/pageName"}).fire();
+- xmlベース
+
+### 単純な変数と数式の使用
+
+- グローバル変数 ex. $[User グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm)
+- 構文 {! expression } を評価して出力してくれる
+    - expressionないは大文字小文字区別なし
+    - 文字列連結は&
+    - 式の演算子 | [Visualforce 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.htm)
+- 標準関数 ex. TODAY(), DAY()... [関数 | Visualforce 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm)
+
+### 標準コントローラの使用
+
+- MVC
+- 標準なアクションとデータアクセスを処理できる
+- `<apex standardController="Account">`で有効化
+- getQueryでコントローラにパラメータを渡せる。ex. /apex/pageName?id={ObjectID}
+
+### レコード、項目、テーブルの表示
+
+- <apex:detail />等の一括出力コンポーネントがある
+- <apex:outputField value="{! Account.Name }"/>のようなUIコンポーネントもある
+- <apex:pageBlockTable>はテーブルUI
+- <apex:relatedList list="Contacts">はリスト
+
+### フォームを使用したデータの入力
+
+- <apex:form>のデータは<apex:page>で指定されたコントローラーを元にする
+- プラットフォームのスタイルを使用する要素としない要素がある
+    - する
+        - <apex:form>を使用している場合
+        - <apex:pageBlock>及び<apex;pageBlockSection>内で入力要素を使用する場合
+- <apex:commandButton />でボタンが作成できる。要素を足すことで色々指定する。action="{! save }",value="Save"等々
+
+### レコードのリスト
+
+- htmlの要素もそのまま書ける
+- `<apex: repeat value="{! accounts }" var="a">`とするとなかで`{!a.id}`とかできる。
+
+- `{! URLFOR($Resource.vfimagetest, 'cats/kitten1.jpg') }`とかのURLresolve便利系がある
+- 静的リソースは設定の静的リソースから追加できる
+
+## 開発者コンソールの基礎
+
+- ワークスペース分けできるらしい
+- Logパネル、Save Perspectiveで配置を保存できる
+- 
