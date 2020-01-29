@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
-    <lastBuildDate>Tue, 12 Nov 2019 15:23:06 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 16:58:28 +0900</lastBuildDate>
     
 	<atom:link href="https://mithy.fun/tags/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LWC</title>
+      <link>https://mithy.fun/tags/lwc/</link>
+      <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
+      
+      <guid>https://mithy.fun/tags/lwc/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>OpenGL</title>
