@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
-    <lastBuildDate>Wed, 15 Jan 2020 16:58:28 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Feb 2020 17:28:59 +0900</lastBuildDate>
     
 	<atom:link href="https://mithy.fun/categories/salesforce/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lightning Experience のリードと商談</title>
+      <link>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
+      <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
+      <description>始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を</description>
+    </item>
     
     <item>
       <title>LWCの基本</title>
