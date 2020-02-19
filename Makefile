@@ -20,7 +20,7 @@ build:
 
 post:
 	@make check > /dev/null
-	hugo new posts/${TITLE}.md
+	hugo new 'posts/${TITLE}.md'
 
 diary:
 	@make check > /dev/null
@@ -28,12 +28,12 @@ diary:
 
 memo:
 	@make check > /dev/null
-	hugo new memos/${TITLE}.md
+	hugo new 'memos/${TITLE}.md'
 
 note:
 	@make check > /dev/null
-	hugo new notes/${TITLE}.md
+	hugo new 'notes/${TITLE}.md'
 
 review:
 	@make check > /dev/null
-	hugo new reviews/${TITLE}.md
+	hugo new 'reviews/${TITLE}.md'
