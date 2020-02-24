@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Auraコンポーネントの使い方</title>
+      <link>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
+      <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
+      <description>Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeControl</description>
+    </item>
+    
+    <item>
       <title>Lightning Experience のリードと商談</title>
       <link>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
       <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
