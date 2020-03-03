@@ -35,12 +35,15 @@ archives: 2020-02
 フック条件はmasterブランチのpushになっています。
 
 ```yml:create-scratch-org.yml
-name: masterブランチpush時にスクラッチ組織作成します。
+name: スクラッチ組織の情報をリストアする
 
 on:
   push:
     branches:
       - master
+
+env:
+  PROJECT_PREFIX: ci-dev
 
 jobs:
   create-scratch-org:
@@ -48,54 +51,47 @@ jobs:
     steps:
       - name: 'Checkout source code'
         uses: actions/checkout@v2
+      - name: 'node_modulesのキャッシュがあったら使う。'
+        id: app-cache-npm
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ env.app-cache-name }}-
+            npm-
+      - name: 'npm ciを実行'
+        if: steps.app-cache-npm.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: 'sfdxが使えるかテスト'
+        run: npx sfdx --help
 
-      - name: 'SFDXのセットアップ'
-        run: npm i -D sfdx
+      - name: 'Secretsに登録したSfdx Auth Urlをファイルへ出力'
+        run: echo ${{ secrets.SFDX_AUTH_URL }} > ./SFDX_AUTH_URL.txt
 
-      - name: 'DevHub認証'
-        shell: bash
-        run: 'echo ${{ secrets.DEVHUB_SFDX_URL }} > ./DEVHUB_SFDX_URL.txt'
+      - name: 'Salesforce組織の認証を得る'
+        run: npx sfdx force:auth:sfdxurl:store -f ./SFDX_AUTH_URL.txt -d
 
-      # Authenticate dev hub
-      - name: 'Authenticate Dev Hub'
-        run: 'npx sfdx force:auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a matchingmap-${{ steps.extract_branch.outputs.branch }} -d'
+      - name: 'スクラッチ組織の作成'
+        run: npx sfdx force:org:create -f config/project-scratch-def.json -a TestScratchOrg -d 1
 
-      # Setup Scratch Org
-      - name: 'Setup Scratch Org'
-        run: 'ORG_HASH=${{ steps.extract_branch.outputs.branch }} EXPIRED_DATE=1 npm run setup'
+      - name: 'ソースをプッシュ'
+        run: npx sfdx force:source:push -u TestScratchOrg
 
-      - name: 'Generate password'
-        run: 'npx sfdx force:user:password:generate -u matchingmap-SCRATCH${{ steps.extract_branch.outputs.branch }}'
+      - name: 'パスワードを発行'
+        run: npx sfdx force:user:password:generate -u TestScratchOrg
 
-      - name: 'Make Login Url'
-        id: make-login-url
+      - name: 'ID/PWからログインURLを作成する'
         shell: bash
         run: |
-          ORG_INFO=$(npx sfdx force:org:display -u matchingmap-SCRATCH${{ steps.extract_branch.outputs.branch }} --json | jq .result)
+          ORG_INFO=$(npx sfdx force:org:display -u TestScratchOrg --json | jq .result)
           INSTANCE_URL=$(echo $ORG_INFO | jq .instanceUrl)
           USER_NAME=$(echo $ORG_INFO | jq .username)
           PASSWORD=$(echo $ORG_INFO | jq .password)
-          echo "##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&pw=${PASSWORD})"
+          echo "##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&pw=${PASSWORD})
 
-      # Send message to slack
-      - name: 'Send scratch org Info to slack'
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        uses: pullreminders/slack-action@v1.0.7
-        with:
-          # [Formatting text for app surfaces | Slack](https://api.slack.com/reference/surfaces/formatting)
-          args: '{
-            \"channel\": \"CKR7N45JT\",
-            \"attachments\": [
-              {
-                \"fallback\": \"メッセージの投稿に失敗しました...\",
-                \"color\": \"#36a64f\",
-                \"title\": \"${{ steps.extract_branch.outputs.branch }}ブランチが更新されました！\",
-                \"text\": \"下記URLからスクラッチ組織にログインすることが出来ます。\n${{ steps.make-login-url.outputs.login-url }}\"
-              }
-            ]
-          }'
-
+      - name: '期限のないログインURLを表示'
+        run: echo ${{ steps.make-login-url.outputs.login-url }}
 ```
 
 ## 各ステップについてなど
@@ -222,7 +218,8 @@ Nameはワークフローからの呼び出しの際に使うのでわかりや�
 
 ### 5. ログイン用のURLを表示する
 
-確認しやすくするために、ログイン用のURLも表示しておきます。
+確認しやすくするために、ログイン用のURLも表示しておきます。  
+`sfdx force:org:open -r`でインスタントなログインURLを取得できますが、恒久的にログインしたかったのでそちらも載せています。
 
 ```yml:create-scratch-org.yml
   jobs:
@@ -233,7 +230,7 @@ Nameはワークフローからの呼び出しの際に使うのでわかりや�
       - name: 'ログインURLの表示、期限が短い'
         run: npx sfdx force:org:open -r -u TestScratchOrg
 
-      ## 恒久的なログインURLを作成する
+      ## 期限のないログインURLを作成する
       - name: 'パスワードを発行'
         run: npx sfdx force:user:password:generate -u TestScratchOrg
 
@@ -244,5 +241,8 @@ Nameはワークフローからの呼び出しの際に使うのでわかりや�
           INSTANCE_URL=$(echo $ORG_INFO | jq .instanceUrl)
           USER_NAME=$(echo $ORG_INFO | jq .username)
           PASSWORD=$(echo $ORG_INFO | jq .password)
-          echo ${INSTANCE_URL}?un=${USER_NAME}\&pw=${PASSWORD}
+          echo "##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&pw=${PASSWORD})
+
+      - name: '期限のないログインURLを表示'
+        run: echo ${{ steps.make-login-url.outputs.login-url }}
 ```
