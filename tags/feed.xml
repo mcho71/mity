@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
-    <lastBuildDate>Fri, 21 Feb 2020 16:10:26 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 27 Feb 2020 16:05:09 +0900</lastBuildDate>
     
 	<atom:link href="https://mithy.fun/tags/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GitHubActions</title>
+      <link>https://mithy.fun/tags/githubactions/</link>
+      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
+      
+      <guid>https://mithy.fun/tags/githubactions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Salesforce</title>
+      <link>https://mithy.fun/tags/salesforce/</link>
+      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
+      
+      <guid>https://mithy.fun/tags/salesforce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SFDX</title>
+      <link>https://mithy.fun/tags/sfdx/</link>
+      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
+      
+      <guid>https://mithy.fun/tags/sfdx/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Aura</title>

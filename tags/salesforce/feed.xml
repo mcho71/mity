@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Salesforce on Mity</title>
+    <link>https://mithy.fun/tags/salesforce/</link>
+    <description>Recent content in Salesforce on Mity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy;Mamoru Machida 2019</copyright>
+    <lastBuildDate>Thu, 27 Feb 2020 16:05:09 +0900</lastBuildDate>
+    
+	<atom:link href="https://mithy.fun/tags/salesforce/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GitHubActionsでSalesforceのスクラッチ組織を作成する</title>
+      <link>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
+      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
+      <description>どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワ</description>
+    </item>
+    
+  </channel>
+</rss>
