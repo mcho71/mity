@@ -1,151 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Mity</title>
+    <title>
+    Tags on 
+    Mity
+    </title>
     <link>https://mithy.fun/tags/</link>
-    <description>Recent content in Tags on Mity</description>
+    <description>Recent content in Tags
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Wed, 04 Mar 2020 17:47:57 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/tags/feed.xml" rel="self" type="application/rss+xml" />
     
+        <atom:link href="https://mithy.fun/tags/feed.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>Aura</title>
-      <link>https://mithy.fun/tags/aura/</link>
-      <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/aura/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Trailhead</title>
-      <link>https://mithy.fun/tags/trailhead/</link>
-      <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/trailhead/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GitHubActions</title>
-      <link>https://mithy.fun/tags/githubactions/</link>
-      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/githubactions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Salesforce</title>
-      <link>https://mithy.fun/tags/salesforce/</link>
-      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/salesforce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SFDX</title>
-      <link>https://mithy.fun/tags/sfdx/</link>
-      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/sfdx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LightningComponent</title>
-      <link>https://mithy.fun/tags/lightningcomponent/</link>
-      <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/lightningcomponent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LWC</title>
-      <link>https://mithy.fun/tags/lwc/</link>
-      <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/lwc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OpenGL</title>
-      <link>https://mithy.fun/tags/opengl/</link>
-      <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/opengl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rust</title>
-      <link>https://mithy.fun/tags/rust/</link>
-      <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Visualforce</title>
-      <link>https://mithy.fun/tags/visualforce/</link>
-      <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/visualforce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vue</title>
-      <link>https://mithy.fun/tags/vue/</link>
-      <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/vue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Webpack</title>
-      <link>https://mithy.fun/tags/webpack/</link>
-      <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/webpack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Coursera</title>
-      <link>https://mithy.fun/tags/coursera/</link>
-      <pubDate>Tue, 27 Aug 2019 21:51:23 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/coursera/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MachineLearning</title>
-      <link>https://mithy.fun/tags/machinelearning/</link>
-      <pubDate>Tue, 27 Aug 2019 21:51:23 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/machinelearning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ML Study Jam Vol.3</title>
-      <link>https://mithy.fun/tags/ml-study-jam-vol.3/</link>
-      <pubDate>Tue, 27 Aug 2019 21:51:23 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/ml-study-jam-vol.3/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

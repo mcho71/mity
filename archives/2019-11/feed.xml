@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2019-11 on Mity</title>
+    <title>
+    2019-11 on 
+    Mity
+    </title>
     <link>https://mithy.fun/archives/2019-11/</link>
-    <description>Recent content in 2019-11 on Mity</description>
+    <description>Recent content in 2019-11
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Tue, 12 Nov 2019 15:27:44 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/archives/2019-11/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/archives/2019-11/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,10 @@
       
       <guid>https://mithy.fun/reviews/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
       <description>[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</description>
+      <content:encoded>
+
+<h2 id="dl版-rustではじめるopengl-toyamaguchi-booth-https-toyamaguchi-booth-pm-items-1557536"><a href="https://toyamaguchi.booth.pm/items/1557536">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a></h2>
+</content:encoded>
     </item>
     
     <item>
@@ -28,6 +38,204 @@
       
       <guid>https://mithy.fun/memos/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
       <description>これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra</description>
+      <content:encoded>
+
+<h2 id="これはなに">これはなに</h2>
+
+<p><a href="https://toyamaguchi.booth.pm/items/1557536">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+
+<h2 id="目次を読む">目次を読む</h2>
+
+<p>ライブラリごとに章が区切られている</p>
+
+<ol>
+<li>環境準備</li>
+<li>SDL</li>
+<li>OpenGL</li>
+<li>Dear ImGui</li>
+<li>3Dオブジェクト</li>
+<li>テクスチャ</li>
+</ol>
+
+<p>ほとんど触れたことがないな、とりあえず上からやっていこう
+ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust">toyamaguchi/start_opengl_in_rust</a></p>
+
+<h2 id="環境">環境</h2>
+
+<ul>
+<li><a href="https://www.rust-lang.org/">Rust Programming Language</a>に従ってRustをインストール
+
+<ul>
+<li>versionは1.39だった</li>
+<li>crateは<a href="https://crates.io/">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
+</ul></li>
+</ul>
+
+<h2 id="sdl">SDL</h2>
+
+<p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
+<a href="https://ja.wikipedia.org/wiki/SDL">SDL - Wikipedia</a><br />
+これだけでも十分な機能を持つゲームを作成可能らしい</p>
+
+<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br />
+<code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
+
+<p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
+
+<h3 id="準備">準備</h3>
+
+<ul>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
+</ul>
+
+<h3 id="作成">作成</h3>
+
+<p><code>sdl2</code>のcrates.ioページを見る。</p>
+
+<h2 id="opengl">OpenGL</h2>
+
+<p>SDLのウィンドウに描画していく</p>
+
+<h3 id="準備-1">準備</h3>
+
+<p><code>cargo.toml</code>に<code>gl</code>(OpenGLのAPIを利用可能に),<code>cgmath</code>(CG用の数学関連機能),<code>c_str_macro</code>(C言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
+
+<h3 id="作成-1">作成</h3>
+
+<p>HelloWorldは難しいらしいので三角形を描画する</p>
+
+<p>シェーダーという言葉が出てきた</p>
+
+<p>写経辛いのでコピペに切り替えていく</p>
+
+<p>OpenGL3.1を使う、このバージョンは丁度APIが一新されたバージョンで、<code>Core</code>(新しいAPIのみ)と<code>Compability</code>(古いAPIもサポート)パッケージがある。今回は<code>Core</code></p>
+
+<p>描画はシェーダと呼ばれる描画プログラムを通してデータを送る<br />
+シェーダなしのサンプルコードは古い可能性があるので注意<br />
+呼び名は<br />
+あり: Programmable Pipeline<br />
+なし: Fixed Function Pipeline<br />
+などというらしい</p>
+
+<p>シェーダは実行時にソースコードをコンパイルして使えるプログラムなのでこういった名称になってる</p>
+
+<p>今回具体的にはVertexシェーダとFragmentシェーダを使った</p>
+
+<h4 id="vertexシェーダ">Vertexシェーダ</h4>
+
+<p>Vertexはそもそも頂点のこと、辺と辺を結ぶ点。3D空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
+
+<p>描画したい頂点が、3D空間の中でどの位置にあるのかを表すモデル行列<br />
+カメラの一を考慮したビュー行列<br />
+カメラから見た3D空間をどのように画面に描画するかを表す射影行列<br />
+3つの行列をかけ合わせて最終的な画面上の座標になる</p>
+
+<h4 id="fragmentシェーダ">Fragmentシェーダ</h4>
+
+<p>色を計算するシェーダ、Vertexシェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
+
+<p>どちらもGLSLを使って実装する。<br />
+GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPUや前段のシェーダからの情報、扱える変数に独特のルールがある。<br />
+GPUでの動作なので並列計算できる、画面上に多くの3Dオブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
+
+<p>GLSLのバージョンは3.3</p>
+
+<p>VBO(Vertex Buffer Object)はCPUからGPUに情報を渡すための入れ物、頂点データだったり色情報だったり<br />
+VAO(Vertex Array Object)はVBOをどのようなまとまりで使うのかを設定するもの</p>
+
+<p>WebGLの話ものってそう</p>
+
+<p>サンプルコードが動かない→動いた、sampleリポジトリのrscフォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
+<div class="highlight"><pre class="chroma"><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.03s
+     Running `target/debug/rust-opengl`
+OK: init OpenGL: version=3.1
+thread &#39;main&#39; panicked at &#39;failed to open file: rsc/shader/shader.vs&#39;, src/shader.rs:28:33
+stack backtrace:
+   0: backtrace::backtrace::libunwind::trace
+             at /Users/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/libunwind.rs:88
+   1: backtrace::backtrace::trace_unsynchronized
+             at /Users/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/mod.rs:66
+   2: std::sys_common::backtrace::_print_fmt
+             at src/libstd/sys_common/backtrace.rs:76
+   3: &lt;std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display&gt;::fmt
+             at src/libstd/sys_common/backtrace.rs:60
+   4: core::fmt::write
+             at src/libcore/fmt/mod.rs:1030
+   5: std::io::Write::write_fmt
+             at src/libstd/io/mod.rs:1412
+   6: std::sys_common::backtrace::_print
+             at src/libstd/sys_common/backtrace.rs:64
+   7: std::sys_common::backtrace::print
+             at src/libstd/sys_common/backtrace.rs:49
+   8: std::panicking::default_hook::{{closure}}
+             at src/libstd/panicking.rs:196
+   9: std::panicking::default_hook
+             at src/libstd/panicking.rs:210
+  10: std::panicking::rust_panic_with_hook
+             at src/libstd/panicking.rs:473
+  11: std::panicking::continue_panic_fmt
+             at src/libstd/panicking.rs:380
+  12: std::thread::local::fast::Key&lt;T&gt;::try_initialize
+  13: rust_opengl::shader::Shader::new::{{closure}}
+             at src/shader.rs:28
+  14: core::result::Result&lt;T,E&gt;::unwrap_or_else
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libcore/result.rs:818
+  15: rust_opengl::shader::Shader::new
+             at src/shader.rs:27
+  16: rust_opengl::main
+             at src/main.rs:52
+  17: std::rt::lang_start::{{closure}}
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libstd/rt.rs:64
+  18: std::rt::lang_start_internal::{{closure}}
+             at src/libstd/rt.rs:49
+  19: std::panicking::try::do_call
+             at src/libstd/panicking.rs:292
+  20: __rust_maybe_catch_panic
+             at src/libpanic_unwind/lib.rs:80
+  21: std::panicking::try
+             at src/libstd/panicking.rs:271
+  22: std::panic::catch_unwind
+             at src/libstd/panic.rs:394
+  23: std::rt::lang_start_internal
+             at src/libstd/rt.rs:48
+  24: std::rt::lang_start
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libstd/rt.rs:64
+  25: rust_opengl::main
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.</code></pre></div>
+<p>できた。
+<img src="/img/2019-11-12-18-08-05.png" alt="" /></p>
+
+<p>頂点情報はこういう感じで書いていた</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
+</span><span class="c1"></span><span class="w">    </span><span class="cp">#[rustfmt::skip]</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">buffer_array</span>: <span class="p">[</span><span class="kt">f32</span><span class="p">;</span><span class="w"> </span><span class="n">BUF_LEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="w">        </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="p">];</span><span class="w">
+</span></code></pre></div>
+<h2 id="dear-imgui">Dear ImGui</h2>
+
+<p><a href="https://github.com/ocornut/imgui">ocornut/imgui</a></p>
+
+<p>OpenGLに様々なGUIを追加できるライブラリ</p>
+
+<p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
+
+<p>出た</p>
+
+<p><img src="/img/2019-12-17-15-49-08.png" alt="" /></p>
+
+<p><img src="/img/2019-12-17-15-59-28.png" alt="" /></p>
+
+<h3 id="効果的な使い方">効果的な使い方</h3>
+
+<p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
+FPSを表示も</p>
+</content:encoded>
     </item>
     
     <item>
@@ -37,6 +245,123 @@
       
       <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
       <description>Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie</description>
+      <content:encoded>
+
+<h2 id="visualforceとは">Visualforceとは</h2>
+
+<ul>
+<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
+<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準またはApexでビジネスロジックを記述する。</li>
+</ul>
+
+<h2 id="使用できる場所">使用できる場所</h2>
+
+<ul>
+<li>ナビゲーションバーに追加</li>
+<li>標準ページレイアウト内に表示</li>
+<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+
+<ul>
+<li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
+</ul></li>
+<li>オブジェクトページの標準ボタンやリンクを上書きして表示する</li>
+<li>オブジェクトページにカスタムボタンやリンクを配置して表示する</li>
+</ul>
+
+<h2 id="ページの作成">ページの作成</h2>
+
+<ul>
+<li>APIを使用して作成変更できる</li>
+<li>開発者コンソール
+
+<ul>
+<li>エディタがついてる。補完あり</li>
+<li>LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+</ul></li>
+<li>xmlベース</li>
+</ul>
+
+<h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
+
+<ul>
+<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>構文 {! expression } を評価して出力してくれる
+
+<ul>
+<li>expressionないは大文字小文字区別なし</li>
+<li>文字列連結は&amp;</li>
+<li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul></li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+
+<h2 id="標準コントローラの使用">標準コントローラの使用</h2>
+
+<ul>
+<li>MVC</li>
+<li>標準なアクションとデータアクセスを処理できる</li>
+<li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
+<li>getQueryでコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
+</ul>
+
+<h2 id="レコード-項目-テーブルの表示">レコード、項目、テーブルの表示</h2>
+
+<ul>
+<li><code>&lt;apex:detail /&gt;</code>等の一括出力コンポーネントがある</li>
+<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のようなUIコンポーネントもある</li>
+<li><code>&lt;!--&gt;</code>はテーブルUI</li>
+<li><code>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;</code>はリスト</li>
+</ul>
+
+<h2 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h2>
+
+<ul>
+<li><code>&lt;apex:form&gt;</code>のデータは<code>&lt;apex:page&gt;</code>で指定されたコントローラーを元にする</li>
+<li>プラットフォームのスタイルを使用する要素としない要素がある
+
+<ul>
+<li>する
+
+<ul>
+<li><code>&lt;apex:form&gt;</code>を使用している場合</li>
+<li><code>&lt;apex:pageBlock&gt;</code>及び<code>&lt;apex;pageBlockSection&gt;</code>内で入力要素を使用する場合</li>
+</ul></li>
+</ul></li>
+<li><code>&lt;apex:commandButton /&gt;</code>でボタンが作成できる。要素を足すことで色々指定する。<code>action=&quot;{! save }&quot;</code>,<code>value=&quot;Save&quot;</code>等々</li>
+</ul>
+
+<h2 id="標準リストコントローラの使用">標準リストコントローラの使用</h2>
+
+<ul>
+<li>クエリ可能</li>
+<li>コレクション変数でレコードの使用、絞り込み、ページネーションなども用意されている</li>
+
+<li><p>一度に多数のレコードを操作することを目的としている</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- recordSetVarで作業するオブジェクトを設定 --&gt;</span>
+<span class="nt">&lt;apex:page</span> <span class="na">standardController=</span><span class="s">&#34;Contact&#34;</span> <span class="na">recordSetVar=</span><span class="s">&#34;contacts&#34;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;apex:pageBlock</span> <span class="na">title=</span><span class="s">&#34;Contacts List&#34;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Contacts List --&gt;</span>
+    <span class="c">&lt;!-- テーブルのvalueにrecordSetVarで設定されたオブジェクトを渡す --&gt;</span>
+    <span class="nt">&lt;apex:pageBlockTable</span> <span class="na">value=</span><span class="s">&#34;{! contacts }&#34;</span> <span class="na">var=</span><span class="s">&#34;ct&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.FirstName }&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.LastName }&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Email }&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Account.Name }&#34;</span><span class="nt">/&gt;</span>
+    <span class="err">&lt;</span>/!--&gt;
+<span class="nt">&lt;/apex:pageBlock&gt;</span>
+<span class="nt">&lt;/apex:page&gt;</span></code></pre></div></li>
+
+<li><p><code>&lt;apex:datalist&gt;</code>, <code>&lt;apex:repeat&gt;</code>等でリストを作れる</p></li>
+</ul>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+</content:encoded>
     </item>
     
     <item>
@@ -46,6 +371,104 @@
       
       <guid>https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
       <description>これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル</description>
+      <content:encoded>
+
+<h2 id="これはなに">これはなに</h2>
+
+<p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
+
+<h2 id="事前知識">事前知識</h2>
+
+<p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
+
+<ul>
+<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトのnpm scriptsに<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
+<li><code>vue inspect</code> - <code>vue.config.js</code>を考慮した実際にビルドの際に使われる<code>webpack.config.js</code>を出力してくれる</li>
+</ul>
+
+<h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
+
+<p><code>vue cli</code>で生成したままのプロジェクト構成でした。
+必要そうなものを抜き出すとこんな感じ</p>
+<div class="highlight"><pre class="chroma"><code class="language-tree" data-lang="tree">├── public
+├── src
+├── tests
+├── package.json
+└── vue.config.js</code></pre></div>
+<p>ちなみにビルドは<code>vue-cli-service build</code>で行っていた。</p>
+
+<h2 id="やりたいこと">やりたいこと</h2>
+
+<ul>
+<li>出力をdist/app, dist/adminのように複数ディレクトリに分ける。</li>
+<li>ビルド、ビルド設定を分ける</li>
+<li>lint設定は共有する</li>
+</ul>
+
+<h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
+
+<p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
+<div class="highlight"><pre class="chroma"><code class="language-tree" data-lang="tree">.
+├── projects
+│    ├── admin
+│    │   ├── public
+│    │   ├── src
+│    │   ├── package.json
+│    │   └── vue.config.js
+│    └── app
+│        ├── public
+│        ├── src
+│        ├── package.json
+│        └── vue.config.js
+└── package.json</code></pre></div>
+<p><code>projects/app</code>には以前から存在していたアプリケーションのコードとそれら周辺のファイルを、<code>projects/admin</code>には<code>vue create admin</code>したものが入っている。<br />
+上記には書いていないが<code>tsconfig.json</code>や<code>.eslintrc</code>はルートと各プロジェクトに配置してあり、ルートのものを各プロジェクトが extends している。<br />
+あとは<code>vue.config.js</code>に<code>outputDir</code>を追加して、出力フォルダを揃えたくらいで、ほぼ初期設定。</p>
+
+<h2 id="こうなった理由">こうなった理由</h2>
+
+<p>やり始めた際は<code>vue.config.js</code>の<code>pages</code>でマルチエントリにして終わりと思っていたけど、そうは行かなかったのは以下。</p>
+
+<ul>
+<li>出力先が同ディレクトリ、プロジェクト毎に一つ深くしたかったが、<code>vue.config.js</code>から制御しきれなかった。</li>
+<li>コンフィグ系が共有
+
+<ul>
+<li><code>tsconfig.json</code>、<code>vue.config.js</code>等々。必要のない設定を読み込むことが双方のプロジェクトに発生する。</li>
+</ul></li>
+<li>ビルドが同時のみ
+
+<ul>
+<li>現時点の<code>vue-cli-service(ver 3.12.1)</code>では<code>vue.config.js</code>の<code>pages</code>はエントリポイントを増やすことだけを行って、個別に<code>webpack.config.js</code>相当のものを作るわけじゃなかった。</li>
+</ul></li>
+</ul>
+
+<p>ということで、<code>projects</code>ディレクトリを作ってそこで<code>vue create admin</code>を叩いた感じになった。</p>
+
+<h2 id="この構成で思うこと">この構成で思うこと</h2>
+
+<ul>
+<li>package.jsonめっちゃある。</li>
+<li>node_modulesもめっちゃある、中身重複しまくりそう。</li>
+<li>vueのモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
+</ul>
+
+<h2 id="これからどうするか">これからどうするか</h2>
+
+<ul>
+<li>Webpackを学ぶ
+
+<ul>
+<li>強くなればもっとスリムにできそう</li>
+<li>コントリビュートへも繋がりそう</li>
+</ul></li>
+<li>VSCodeの拡張機能、エディタの技術を学ぶ
+
+<ul>
+<li>LanguageServerやLinterの最適化に苦労したので・・・</li>
+</ul></li>
+</ul>
+</content:encoded>
     </item>
     
   </channel>

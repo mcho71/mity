@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2019-03 on Mity</title>
+    <title>
+    2019-03 on 
+    Mity
+    </title>
     <link>https://mithy.fun/archives/2019-03/</link>
-    <description>Recent content in 2019-03 on Mity</description>
+    <description>Recent content in 2019-03
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Tue, 12 Mar 2019 14:09:17 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/archives/2019-03/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/archives/2019-03/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,208 @@
       
       <guid>https://mithy.fun/posts/mysql-json/</guid>
       <description>MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使用するために、MySQLのバージョンを8以上にする。 集計対象のJSON型のデータ構造を、集計に適した形にする。 込み入った集計を必要とする場合は、このページの配列型のようなデータ構造のほうが良さそう。 J</description>
+      <content:encoded>
+
+<p>MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。<br />
+このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。</p>
+
+<h2 id="tl-dr">tl;dr</h2>
+
+<ul>
+<li><code>JSON_TABLE</code>関数を使用するために、MySQLのバージョンを8以上にする。</li>
+<li>集計対象のJSON型のデータ構造を、集計に適した形にする。
+
+<ul>
+<li>込み入った集計を必要とする場合は、このページの<a href="#配列型">配列型</a>のようなデータ構造のほうが良さそう。</li>
+</ul></li>
+<li><code>JSON_TABLE</code>が使用できない場合は、取得したあとに集計処理をするほうが簡潔。
+
+<ul>
+<li>ただ、リソースがきつい</li>
+</ul></li>
+</ul>
+
+<h2 id="環境">環境</h2>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">`</span><span class="n">target_table</span><span class="o">`</span> <span class="p">(</span>
+  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="n">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+  <span class="o">`</span><span class="n">info</span><span class="o">`</span> <span class="n">json</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="p">;</span></code></pre></div>
+<p>次に、<code>target_table.info</code>のデータ構造別に集計処理のための前処理的なクエリを作成してみる。</p>
+
+<h2 id="オブジェクト型">オブジェクト型</h2>
+<div class="highlight"><pre class="chroma"><code class="language-オブジェクト型.json" data-lang="オブジェクト型.json"><span class="p">{</span>
+  <span class="nt">&#34;1&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;0&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;foo&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}},</span>
+  <span class="nt">&#34;2&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;0&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&#34;foo&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">}},</span>
+  <span class="err">...</span>
+<span class="p">}</span></code></pre></div>
+<p>こんな感じのデータ構造、厄介な形だとおもう。
+こみいった集計をするには↓のようなデータを取得したくなる</p>
+
+<table>
+<thead>
+<tr>
+<th>key1</th>
+<th>key2</th>
+<th>foo</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>100</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>0</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+
+<p>クエリはこんな感じになった</p>
+<div class="highlight"><pre class="chroma"><code class="language-オブジェクト型集計.sql" data-lang="オブジェクト型集計.sql"><span class="k">SELECT</span>
+  <span class="n">key1table</span><span class="p">.</span><span class="n">key1</span><span class="p">,</span>
+  <span class="n">key2list</span><span class="p">.</span><span class="n">key2</span><span class="p">,</span>
+  <span class="nf">JSON_EXTRACT</span><span class="p">(</span><span class="n">key1table</span><span class="p">.</span><span class="n">key1value</span><span class="p">,</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;$.&#34;&#39;</span><span class="p">,</span> <span class="n">key2list</span><span class="p">.</span><span class="n">key2</span><span class="p">,</span> <span class="s1">&#39;&#34;.foo&#39;</span><span class="p">))</span> <span class="k">AS</span> <span class="n">foo</span>
+<span class="k">FROM</span>
+  <span class="p">(</span>
+    <span class="k">SELECT</span>
+      <span class="n">key1list</span><span class="p">.</span><span class="n">key1</span><span class="p">,</span>
+      <span class="nf">JSON_EXTRACT</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="nf">CONCAT</span><span class="p">(</span><span class="s1">&#39;$.&#34;&#39;</span><span class="p">,</span> <span class="n">key1list</span><span class="p">.</span><span class="n">key1</span><span class="p">,</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">))</span> <span class="k">AS</span> <span class="n">key1value</span>
+    <span class="k">FROM</span>
+      <span class="n">target_table</span><span class="p">,</span>
+      <span class="nf">JSON_TABLE</span> <span class="p">(</span>
+        <span class="nf">JSON_KEYS</span><span class="p">(</span><span class="n">info</span><span class="p">),</span>
+        <span class="s1">&#39;$[*]&#39;</span> <span class="nf">COLUMNS</span> <span class="p">(</span><span class="n">key1</span> <span class="kt">INT</span> <span class="n">PATH</span> <span class="s1">&#39;$&#39;</span><span class="p">)</span>
+      <span class="p">)</span> <span class="k">AS</span> <span class="n">key1list</span>
+  <span class="p">)</span> <span class="k">AS</span> <span class="n">key1table</span><span class="p">,</span>
+  <span class="nf">JSON_TABLE</span><span class="p">(</span>
+    <span class="nf">JSON_KEYS</span><span class="p">(</span><span class="n">key1table</span><span class="p">.</span><span class="n">key1value</span><span class="p">),</span>
+    <span class="s1">&#39;$[*]&#39;</span> <span class="nf">COLUMNS</span> <span class="p">(</span><span class="n">key2</span> <span class="kt">INT</span> <span class="n">PATH</span> <span class="s1">&#39;$&#39;</span><span class="p">)</span>
+  <span class="p">)</span> <span class="k">AS</span> <span class="n">key2list</span>
+<span class="p">;</span></code></pre></div>
+<p>SQL力の低さも相まってか、大げさなクエリになった。サブクエリじゃないにしてもテーブルを結合する必要が有りそう。</p>
+
+<p>以下、テストデータ作成用</p>
+<div class="highlight"><pre class="chroma"><code class="language-オブジェクト型データ挿入.sql" data-lang="オブジェクト型データ挿入.sql"><span class="k">DROP</span> <span class="k">PROCEDURE</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="n">loop_insert_record</span><span class="p">;</span>
+<span class="n">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="nf">loop_insert_record</span><span class="p">(</span><span class="k">IN</span> <span class="n">x</span> <span class="kt">INT</span><span class="p">)</span>
+<span class="n">BEGIN</span>
+  <span class="k">DECLARE</span> <span class="n">i</span> <span class="kt">INT</span><span class="p">;</span>
+  <span class="k">DECLARE</span> <span class="n">info</span> <span class="kt">CHAR</span><span class="p">;</span>
+  <span class="kt">SET</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">WHILE</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="n">DO</span>
+    <span class="kt">SET</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">target_table</span><span class="o">`</span> <span class="p">(</span><span class="n">info</span><span class="p">)</span> <span class="nf">VALUE</span> <span class="p">(</span>
+        <span class="k">REPLACE</span><span class="p">(</span>
+          <span class="k">REPLACE</span><span class="p">(</span>
+            <span class="s1">&#39;{&#34;1&#34;: {&#34;0&#34;: {&#34;foo&#34;: %d1}}, &#34;2&#34;: {&#34;0&#34;: {&#34;foo&#34;: %d2}}}&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;%d1&#39;</span><span class="p">,</span>
+            <span class="k">CONVERT</span><span class="p">(</span><span class="nf">ROUND</span><span class="p">(</span><span class="nf">RAND</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span> <span class="kt">CHAR</span><span class="p">)</span>
+          <span class="p">),</span>
+          <span class="s1">&#39;%d2&#39;</span><span class="p">,</span>
+          <span class="k">CONVERT</span><span class="p">(</span><span class="nf">ROUND</span><span class="p">(</span><span class="nf">RAND</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span> <span class="kt">CHAR</span><span class="p">)</span>
+        <span class="p">)</span>
+      <span class="p">);</span>
+  <span class="n">END</span> <span class="k">WHILE</span><span class="p">;</span>
+<span class="n">END</span>
+<span class="o">//</span>
+<span class="n">delimiter</span> <span class="p">;</span>
+<span class="k">call</span> <span class="nf">lop_insert_record</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span></code></pre></div>
+<h2 id="配列型">配列型</h2>
+<div class="highlight"><pre class="chroma"><code class="language-配列型.json" data-lang="配列型.json"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;key1&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&#34;objectList1&#34;</span><span class="p">:</span> <span class="p">[{</span><span class="nt">&#34;key2&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&#34;objectList2&#34;</span><span class="p">:</span> <span class="p">[{</span><span class="nt">&#34;foo&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}]}]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;key1&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&#34;objectList1&#34;</span><span class="p">:</span> <span class="p">[{</span><span class="nt">&#34;key2&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nt">&#34;objectList2&#34;</span><span class="p">:</span> <span class="p">[{</span><span class="nt">&#34;foo&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">}]},</span> <span class="p">{</span><span class="nt">&#34;key2&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&#34;objectList2&#34;</span><span class="p">:</span> <span class="p">[{</span><span class="nt">&#34;foo&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">}]}]</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></div>
+<p><code>JSON_TABLE</code>で集計しやすい形だと思ってる。
+前項と同様に、集計を行う際には↓ようなデータを取得したい。</p>
+
+<table>
+<thead>
+<tr>
+<th>key1</th>
+<th>key2</th>
+<th>foo</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>100</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>0</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre class="chroma"><code class="language-配列型集計.sql" data-lang="配列型集計.sql"><span class="k">SELECT</span>
+  <span class="n">it</span><span class="p">.</span><span class="o">*</span>
+<span class="k">FROM</span>
+  <span class="n">target_table</span> <span class="n">tt</span><span class="p">,</span>
+  <span class="nf">JSON_TABLE</span> <span class="p">(</span>
+    <span class="n">tt</span><span class="p">.</span><span class="n">info</span><span class="p">,</span>
+    <span class="s1">&#39;$[*]&#39;</span> <span class="nf">COLUMNS</span> <span class="p">(</span>
+      <span class="n">key1</span> <span class="kt">INT</span> <span class="n">PATH</span> <span class="s1">&#39;$.&#34;key1&#34;&#39;</span><span class="p">,</span>
+      <span class="n">NESTED</span> <span class="n">PATH</span> <span class="s1">&#39;$.&#34;objectList1&#34;[*]&#39;</span> <span class="nf">COLUMNS</span> <span class="p">(</span>
+        <span class="n">key2</span> <span class="kt">INT</span> <span class="n">PATH</span> <span class="s1">&#39;$.&#34;key2&#34;&#39;</span><span class="p">,</span>
+        <span class="n">NESTED</span> <span class="n">PATH</span> <span class="s1">&#39;$.&#34;objectList2&#34;[*]&#39;</span> <span class="nf">COLUMNS</span> <span class="p">(</span>
+          <span class="n">foo</span> <span class="kt">INT</span> <span class="n">PATH</span> <span class="s1">&#39;$.&#34;foo&#34;&#39;</span>
+        <span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+  <span class="p">)</span> <span class="k">AS</span> <span class="n">it</span><span class="p">;</span></code></pre></div>
+<p>簡潔に書けた。</p>
+
+<p>以下、テストデータ作成用</p>
+<div class="highlight"><pre class="chroma"><code class="language-配列型データ挿入.sql" data-lang="配列型データ挿入.sql"><span class="k">DROP</span> <span class="k">PROCEDURE</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="n">loop_insert_record</span><span class="p">;</span>
+<span class="n">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="nf">loop_insert_record</span><span class="p">(</span><span class="k">IN</span> <span class="n">x</span> <span class="kt">INT</span><span class="p">)</span>
+<span class="n">BEGIN</span>
+  <span class="k">DECLARE</span> <span class="n">i</span> <span class="kt">INT</span><span class="p">;</span>
+  <span class="k">DECLARE</span> <span class="n">info</span> <span class="kt">CHAR</span><span class="p">;</span>
+  <span class="kt">SET</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">WHILE</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="n">DO</span>
+    <span class="kt">SET</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">target_table</span><span class="o">`</span> <span class="p">(</span><span class="n">info</span><span class="p">)</span> <span class="nf">VALUE</span> <span class="p">(</span>
+        <span class="k">REPLACE</span><span class="p">(</span>
+          <span class="k">REPLACE</span><span class="p">(</span>
+            <span class="s1">&#39;[{&#34;key1&#34;: 1, &#34;objectList1&#34;: [{&#34;key2&#34;: &#34;0&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d1}]}]}, {&#34;key1&#34;: &#34;2&#34;, &#34;objectList1&#34;: [{&#34;key2&#34;: &#34;0&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d2}]}, {&#34;key2&#34;: &#34;1&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d1}]}]}]&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;%d1&#39;</span><span class="p">,</span>
+            <span class="k">CONVERT</span><span class="p">(</span><span class="nf">ROUND</span><span class="p">(</span><span class="nf">RAND</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span> <span class="kt">CHAR</span><span class="p">)</span>
+          <span class="p">),</span>
+          <span class="s1">&#39;%d2&#39;</span><span class="p">,</span>
+          <span class="k">CONVERT</span><span class="p">(</span><span class="nf">ROUND</span><span class="p">(</span><span class="nf">RAND</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span> <span class="kt">CHAR</span><span class="p">)</span>
+        <span class="p">)</span>
+      <span class="p">);</span>
+  <span class="n">END</span> <span class="k">WHILE</span><span class="p">;</span>
+<span class="n">END</span>
+<span class="o">//</span>
+<span class="n">delimiter</span> <span class="p">;</span>
+<span class="k">call</span> <span class="nf">loop_insert_record</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span></code></pre></div>
+<h2 id="おわりに">おわりに</h2>
+
+<p><code>JSON_TABLE</code>に最適化していくのが吉だと思ったので、積極的に配列型のような形にしていきたい。
+オブジェクト型は、中身のデータ構造を気にせずに、キーの有無が大事になる場合が使いどころかな。</p>
+
+<h2 id="参考">参考</h2>
+
+<p><a href="https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html">MySQL :: MySQL 8.0 Reference Manual :: 12.17.1 JSON Function Reference</a></p>
+</content:encoded>
     </item>
     
   </channel>

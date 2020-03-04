@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blockchain on Mity</title>
+    <title>
+    Blockchain on 
+    Mity
+    </title>
     <link>https://mithy.fun/categories/blockchain/</link>
-    <description>Recent content in Blockchain on Mity</description>
+    <description>Recent content in Blockchain
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Fri, 12 Apr 2019 22:07:40 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/categories/blockchain/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/categories/blockchain/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,73 @@
       
       <guid>https://mithy.fun/memos/eos-setup/</guid>
       <description>EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程 1.2 Before You Beginに沿って、eosio/eosioをインストールすると、nodeos/cleos/keosdの3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うこ</description>
+      <content:encoded>
+
+<p><a href="https://developers.eos.io/">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs">GETTING STARTED</a>をやったので、振り返りなどを</p>
+
+<h2 id="development-environment">DEVELOPMENT ENVIRONMENT</h2>
+
+<p>CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程</p>
+
+<p><a href="https://developers.eos.io/eosio-home/docs/setting-up-your-environment">1.2 Before You Begin</a>に沿って、<code>eosio/eosio</code>をインストールすると、<a href="https://developers.eos.io/eosio-nodeos/docs">nodeos</a>/<a href="https://developers.eos.io/eosio-cleos/docs">cleos</a>/<a href="https//developers.eos.io/keosd/docs">keosd</a>の3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、<a href="https://developers.eos.io/eosio-home/docs/how-it-all-fits-together">1.3 About the Stack</a>に記載されていたので、参考になった。</p>
+
+<h3 id="ノードを立てたりする">ノードを立てたりする</h3>
+
+<p>このチュートリアルでは、nodeosでノードを立てる際には以下のコマンドを叩いていた。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nodeos -e -p eosio <span class="se">\
+</span><span class="se"></span>  --plugin eosio::producer_plugin <span class="se">\
+</span><span class="se"></span>  --plugin eosio::chain_api_plugin <span class="se">\
+</span><span class="se"></span>  --plugin eosio::http_plugin <span class="se">\
+</span><span class="se"></span>  --plugin eosio::history_plugin <span class="se">\
+</span><span class="se"></span>  --plugin eosio::history_api_plugin <span class="se">\
+</span><span class="se"></span>  --access-control-allow-origin<span class="o">=</span><span class="s1">&#39;*&#39;</span> <span class="se">\
+</span><span class="se"></span>  --contracts-console <span class="se">\
+</span><span class="se"></span>  --http-validate-host<span class="o">=</span><span class="nb">false</span> <span class="se">\
+</span><span class="se"></span>  --verbose-http-errors &gt;&gt; nodeos.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span></code></pre></div>
+<p>ノードを立てる際には<code>--plugin</code>で拡張を追加することができるようだ。
+他のオプションについてはnodeos自体に対するものと、プラグインに対するものとがある。
+<code>--contracts-console</code>は<code>nodeos</code>に対して、<code>--http-validate-host=false</code>は、<code>eosio::http_plugin</code>に対してのオプションとなっている。</p>
+
+<p>また、このオプションは<code>config.ini</code>に記述することもできる、書き方は、<a href="https://developers.eos.io/eosio-nodeos/v1.0/docs/configuration-file">Configuration</a>を参考に。記述した際には<code>nodeos --config path/to/config.ini</code>などとして起動する。</p>
+
+<p>また、ノードの停止方法の記載がなかったような気がする、止めたいときは<code>pkill nodeos</code>で止めていた。
+また、チェーンを再構築する際には<code>--delete-all-blocks</code>を付与して立ち上げれば良い。</p>
+
+<h3 id="ウォレットを作る">ウォレットを作る</h3>
+
+<p><a href="https://developers.eos.io/eosio-home/docs/wallets">1.6 Create Development Wallet</a>のウォレット作成コマンドは以下のように記されていた。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console</code></pre></div>
+<p>実行してみると<code>default</code>は既に作成済みで、keyも忘れていたので新しい名前でウォレットを作成した。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console -n hoge</code></pre></div>
+<p>このコマンドは、<code>hoge</code>という名前のウォレットを作成している。
+このようにウォレット作成した場合は以降の<code>cleos wallet</code>コマンドには大体<code>-n hoge</code>を付与していくことになる。
+まずは、前項で発行したウォレットを、ユーザー<code>eosio</code>にインポートする。private keyの入力が求められ、ユーザー<code>eosio</code>のprivate keyを入力する必要がある。</p>
+
+<p>若干前後するが、次項のアカウント<code>eosio</code>をウォレット<code>hoge</code>にインポートする。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet import -n hoge</code></pre></div>
+<h3 id="アカウントを発行する">アカウントを発行する</h3>
+
+<p>EOSチェーンを立ち上げると、<code>system user</code>の<code>eosio</code>というアカウントが自動で発行される。このアカウントを使って、新規アカウントを発行するような形になっている。
+新規アカウントの発行は以下のコマンドで行っていた。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># cleos create account &lt;creater&gt; &lt;new-account-name&gt; &lt;owner-key&gt; &lt;active-key (optional)&gt;</span>
+cleos create account eosio bob &lt;eosio private-key&gt;</code></pre></div>
+<p>owner-key、active-keyに対しては、permissionが付与されており、owner-keyに対応する秘密鍵を知っていれば、active-keyの変更が可能。
+active-keyが指定されていない場合はowner-keyと同一のものとなるが、実運用時には分けることを推奨していた。</p>
+
+<h2 id="smart-contract-development">SMART CONTRACT DEVELOPMENT</h2>
+
+<p>コードに関しては深く理解していないので、分かり次第コミットしていきたい。</p>
+
+<p>なんとなくの流れとしては、C++をwasmに変換して、前項で用意したアカウントに書き込み、CLI経由で実行/確認、という感じ。</p>
+
+<p>トークンの発行は、EthereumのERC20に当たる<code>eosio.token</code>は公式リポジトリに用意されており、それを元に、必要な処理を付け足したりして行くことになるようだ。</p>
+
+<h2 id="おわり">おわり</h2>
+
+<p>このチュートリアルをこなす分にはC++の知識はそこまで必要なさそうではあった。ただ、記法を全て理解しようとすると時間は掛かりそう、EOSに関わる部分を追っていきつつ、C++の知識を入れていく感じになりそう。</p>
+
+<p>アカウントベースで、実行、変更の権限を複数の秘密鍵で管理できるのはいいなと思ってる。また、アカウントにEOSを持たせることで、スマートコントラクトの動作のためのCPUやメモリが確保されるらしい、ここらへんは実運用する場合は、把握する必要がありそう。</p>
+</content:encoded>
     </item>
     
   </channel>

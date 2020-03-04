@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2019-10 on Mity</title>
+    <title>
+    2019-10 on 
+    Mity
+    </title>
     <link>https://mithy.fun/archives/2019-10/</link>
-    <description>Recent content in 2019-10 on Mity</description>
+    <description>Recent content in 2019-10
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Thu, 31 Oct 2019 13:07:17 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/archives/2019-10/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/archives/2019-10/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,341 @@
       
       <guid>https://mithy.fun/memos/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
       <description>TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。 やり始める前の認識 無数にあるPaaSの一つ SaaSも提供してる セールス・顧客系に強い アプリやコンポーネントをリリースできる 以下</description>
+      <content:encoded>
+
+<h2 id="trailheadってなに">TRAILHEADってなに</h2>
+
+<p><a href="https://trailhead.salesforce.com/ja/home"><em>Trailhead | 楽しく学ぶ方法</em></a></p>
+
+<p>Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。
+Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。</p>
+
+<h2 id="やり始める前の認識">やり始める前の認識</h2>
+
+<ul>
+<li>無数にあるPaaSの一つ
+
+<ul>
+<li>SaaSも提供してる</li>
+</ul></li>
+<li>セールス・顧客系に強い</li>
+<li>アプリやコンポーネントをリリースできる</li>
+</ul>
+
+<p>以下、とりあえず<a href="https://trailhead.salesforce.com/ja/users/00550000007HqDdAAK/trailmixes/start-develop">Trailmix by ルーキー会 Salesforce DeveloperGroup</a>を順にメモする</p>
+
+<h2 id="salesforceテクノロジモデル">Salesforceテクノロジモデル</h2>
+
+<ul>
+<li>信頼の基準、最も信頼されるために行ってきた投資
+
+<ul>
+<li><a href="https://trust.salesforce.com/ja/">Salesforce Trust</a> でシステムの状況や、セキュリティ対策が見れる</li>
+</ul></li>
+<li>個別の企業以上のセキュリティを提供する方法
+
+<ul>
+<li>マルチテナンシー型で提供する
+
+<ul>
+<li>利益となるイノベーションに注力できる</li>
+<li>高級マンションの建物を想像して
+
+<ul>
+<li>ドアマン、備え付き洗濯機&hellip;</li>
+<li>自分専用のスペース</li>
+<li>インフラ系は大家が管理</li>
+</ul></li>
+<li>Salesforceは大家の役割</li>
+<li>小さい企業から大きい企業まで同じコードベースを利用することで利益を得ることができる</li>
+</ul></li>
+</ul></li>
+<li>規則の厳しい業種がSalesforceに最も重要なデータを委ねる理由
+
+<ul>
+<li>上記の通り</li>
+</ul></li>
+<li>メタデータ
+
+<ul>
+<li>データのためのデータ？</li>
+<li>カスタムタグ、カスタム項目、自動アラート、標準レポート、Chatte等、全てがメタデータ</li>
+<li>カスタム機能と標準機能のすべてを含むSalesforceインスタンスの構造</li>
+<li>カスタマイズは特別なメタデータレイヤに分離している
+
+<ul>
+<li>バックグラウンドの更新やプラットフォームの更新・改善を行うことができる</li>
+</ul></li>
+</ul></li>
+<li>アプリケーション開発
+
+<ul>
+<li>カスタマイズや変更が可能なインフラを提供することが使命</li>
+<li>メタデータ駆動型で速度が出る
+
+<ul>
+<li>ケーキにクリームを塗るように</li>
+</ul></li>
+<li>ポイント&amp;クリックかカスタムコードで開発</li>
+</ul></li>
+</ul>
+
+<h2 id="salesforce-platformの使用開始">Salesforce Platformの使用開始</h2>
+
+<ul>
+<li>標準機能
+
+<ul>
+<li>リードと商談</li>
+<li>顧客サポートのためのケースとコミュニティ</li>
+<li>モバイルアプリ</li>
+<li>会社とつながるためのChatterとコミュニティ</li>
+<li>カスタマージャーニーを管理するためのMarketingCloud</li>
+<li>あまり良くわかってない</li>
+</ul></li>
+<li>用語
+
+<ul>
+<li>アプリケーション
+
+<ul>
+<li>ビジネスプロセスをサポートするオブジェクト、項目、その他の機能のセット</li>
+</ul></li>
+<li>オブジェクト
+
+<ul>
+<li>特定の種類の情報が保存される、DBのテーブル</li>
+<li>標準とカスタムがある</li>
+</ul></li>
+<li>データベース
+
+<ul>
+<li>巨大なスプレッドシートを想像</li>
+</ul></li>
+<li>レコード
+
+<ul>
+<li>オブジェクトデータベーステーブルの行</li>
+</ul></li>
+<li>項目
+
+<ul>
+<li>オブジェクトデータベーステーブルの列</li>
+</ul></li>
+<li>組織
+
+<ul>
+<li>Salesforceの特定のインスタンス</li>
+</ul></li>
+</ul></li>
+<li>実際にポイント&amp;クリックで作ってみた
+
+<ul>
+<li>データベースへカスタムフィールドを追加できた</li>
+<li>データベーステーブルのレコード詳細画面で追加されたフィールドの入力欄が表示された</li>
+</ul></li>
+<li>Salesforce アーキテクチャ
+
+<ul>
+<li>何層にも重なってる</li>
+<li>マルチテナンシー</li>
+</ul></li>
+<li>設定
+
+<ul>
+<li>上部ギアメニューから開く</li>
+<li>組織情報、ユーザ、プロファイル、設定変更履歴の参照、ログイン履歴等見れる</li>
+</ul></li>
+<li>AppExchangeの戦略と、アプリケーションのインストール
+
+<ul>
+<li>使用予定の部門を特定</li>
+<li>要望を最大限に満たすものを調査
+
+<ul>
+<li>ビジネスの問題</li>
+<li>最も苦労している点</li>
+<li>何人のユーザが必要としているか</li>
+<li>予算</li>
+<li>期限</li>
+</ul></li>
+<li>そうすることで最適なアプリケーションを見つけやすくなる</li>
+<li>テスト環境にダウンロード、インストールして、競合がないか確認する</li>
+<li>候補が複数ある場合はテストした内容を、使用できない機能や不要な機能がないか検討。関係者にフィードバックを依頼</li>
+<li>本番にインストール、トレーニング、ドキュメントの提供</li>
+</ul></li>
+</ul>
+
+<h2 id="データモデリング">データモデリング</h2>
+
+<ul>
+<li>Salesプラットフォームでオブジェクトを使用するメリット
+
+<ul>
+<li>オブジェクトはデータベーステーブルのこと、テーブルの列が項目、行がレコードとみなされる</li>
+<li>データモデルはオブジェクトと項目のコレクション</li>
+<li>標準オブジェクト
+
+<ul>
+<li>Salesforceに含まれるオブジェクト</li>
+<li>取引先、取引先責任者、リード、商談などの一般的なビジネスオブジェクト</li>
+</ul></li>
+<li>カスタムオブジェクト
+
+<ul>
+<li>会社や業種に固有の情報を保存するために作成するオブジェクト</li>
+<li>プラットフォームによっては作成にフックして、UIのページレイアウトが作成される</li>
+</ul></li>
+<li>設定の新規からオブジェクト作成と、オブジェクトの項目とリレーションの新規ボタンからフィールド追加を行った</li>
+<li>スキーマビルダーというMySQLで言うER図のようなツールもある</li>
+</ul></li>
+</ul>
+
+<h2 id="プラットフォーム開発の基礎">プラットフォーム開発の基礎</h2>
+
+<ul>
+<li>Dream House Realty っていうアプリを作っていってみる</li>
+<li>Apex</li>
+<li>SOQL Salesforce Object Query Language</li>
+<li>Apex上のSOQLは実行されてレコードに変換される</li>
+<li>Apexで書いたControllerをVisualforceページから利用できる</li>
+<li>Herokuがでてきた</li>
+<li>RESTやSOAP APIも使える</li>
+<li>Heroku ConnectでSalesforceのオブジェクトをHeroku Postgreに変換できる</li>
+</ul>
+
+<h2 id="apexの基礎とデータベース">Apexの基礎とデータベース</h2>
+
+<ul>
+<li>小文字と大文字が区別されない</li>
+<li>開発者コンソールのDebug &gt; 匿名実行みたいなやつが便利</li>
+<li>sObjectは汎用Type、標準オブジェクト、カスタムオブジェクトのレコードに使用できる</li>
+<li>insert, upsert, mergeといった便利なデータ更新用DMLステートメントがある</li>
+<li>Database配下にDMLステートメントと同じ物があって、それの第二引数にfalseを渡すと例外の代わりにResultオブジェクトを返すことができる</li>
+<li>SOSL 組織全体のレコードから特定の情報を検索、部分一致検索、どのオブジェクトのフィールドを対象とするか選べる
+<br /></li>
+</ul>
+
+<h2 id="apexトリガ">Apexトリガ</h2>
+
+<ul>
+<li>データベースのbeforeSaveとかのこと</li>
+<li><code>trigger SoqlTriggerBulk on Account(after update) {</code> で定義する。このトリガ内で<code>Trigger</code>を呼び出せて、そこに色々情報が詰まってる</li>
+<li>レコードごとに処理すると思いし、制限に引っかかるからSOQLとかDMLとか駆使してやろうね</li>
+</ul>
+
+<h2 id="apexテスト">Apexテスト</h2>
+
+<ul>
+<li><code>@isTest</code>を使うとパラメータを指定できる。知らなかった。</li>
+<li><code>Test &gt; RunAll</code>でやるとコードカバレッジが出せる</li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm">Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+
+<h2 id="visualforceの基礎">Visualforceの基礎</h2>
+
+<ul>
+<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
+<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準またはApexでビジネスロジックを記述する。</li>
+</ul>
+
+<h3 id="使用できる場所">使用できる場所</h3>
+
+<ul>
+<li>ナビゲーションバーに追加</li>
+<li>標準ページレイアウト内に表示</li>
+<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+
+<ul>
+<li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
+</ul></li>
+<li>オブジェクトページの標準ボタンやリンクを上書きして表示する</li>
+<li>オブジェクトページにカスタムボタンやリンクを配置して表示する</li>
+</ul>
+
+<h3 id="ページの作成">ページの作成</h3>
+
+<ul>
+<li>APIを使用して作成変更できる</li>
+<li>開発者コンソール
+
+<ul>
+<li>エディタがついてる。補完あり</li>
+<li>LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+</ul></li>
+<li>xmlベース</li>
+</ul>
+
+<h3 id="単純な変数と数式の使用">単純な変数と数式の使用</h3>
+
+<ul>
+<li>グローバル変数 ex. $<a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm">User グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>構文 {! expression } を評価して出力してくれる
+
+<ul>
+<li>expressionないは大文字小文字区別なし</li>
+<li>文字列連結は&amp;</li>
+<li>式の演算子 | <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.htm">Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul></li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+
+<h3 id="標準コントローラの使用">標準コントローラの使用</h3>
+
+<ul>
+<li>MVC</li>
+<li>標準なアクションとデータアクセスを処理できる</li>
+<li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
+<li>getQueryでコントローラにパラメータを渡せる。ex. /apex/pageName?id={ObjectID}</li>
+</ul>
+
+<h3 id="レコード-項目-テーブルの表示">レコード、項目、テーブルの表示</h3>
+
+<ul>
+<li><apex:detail />等の一括出力コンポーネントがある</li>
+<li><apex:outputField value="{! Account.Name }"/>のようなUIコンポーネントもある</li>
+<li><a href="apex:pageBlockTable">apex:pageBlockTable</a>はテーブルUI</li>
+<li><apex:relatedList list="Contacts">はリスト</li>
+</ul>
+
+<h3 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h3>
+
+<ul>
+<li><a href="apex:form">apex:form</a>のデータは<a href="apex:page">apex:page</a>で指定されたコントローラーを元にする</li>
+<li>プラットフォームのスタイルを使用する要素としない要素がある
+
+<ul>
+<li>する
+
+<ul>
+<li><a href="apex:form">apex:form</a>を使用している場合</li>
+<li><a href="apex:pageBlock">apex:pageBlock</a>及び<apex;pageBlockSection>内で入力要素を使用する場合</li>
+</ul></li>
+</ul></li>
+<li><apex:commandButton />でボタンが作成できる。要素を足すことで色々指定する。action=&ldquo;{! save }&rdquo;,value=&ldquo;Save&rdquo;等々</li>
+</ul>
+
+<h3 id="レコードのリスト">レコードのリスト</h3>
+
+<ul>
+<li>htmlの要素もそのまま書ける</li>
+
+<li><p><code>&lt;apex: repeat value=&quot;{! accounts }&quot; var=&quot;a&quot;&gt;</code>とするとなかで<code>{!a.id}</code>とかできる。</p></li>
+
+<li><p><code>{! URLFOR($Resource.vfimagetest, 'cats/kitten1.jpg') }</code>とかのURLresolve便利系がある</p></li>
+
+<li><p>静的リソースは設定の静的リソースから追加できる</p></li>
+</ul>
+
+<h2 id="開発者コンソールの基礎">開発者コンソールの基礎</h2>
+
+<ul>
+<li>ワークスペース分けできるらしい</li>
+<li>Logパネル、Save Perspectiveで配置を保存できる</li>
+<li></li>
+</ul>
+</content:encoded>
     </item>
     
     <item>
@@ -28,6 +369,150 @@
       
       <guid>https://mithy.fun/memos/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
       <description>これはなに 新しいMacを手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnetをインストール すべてをアップデート システム環境設定系 ネットワーク 適宜Wi-Fi、優先でつなぐ Dock 位置を左に 自動的に表示/非表示にチェック 不要なアプリをDockから除いておく トラックパッド スクロールの方向: ナチュラル以外のすべてのチェックボックスをオン 軌跡の速さをやや速めに設定 デス</description>
+      <content:encoded>
+
+<h2 id="これはなに">これはなに</h2>
+
+<p>新しいMacを手に入れたり、初期化した際にすることのメモ</p>
+
+<h2 id="最初にする事">最初にする事</h2>
+
+<ul>
+<li>ソフトウェア・アップデート</li>
+<li>App store
+
+<ul>
+<li>magnetをインストール</li>
+<li>すべてをアップデート</li>
+</ul></li>
+</ul>
+
+<h2 id="システム環境設定系">システム環境設定系</h2>
+
+<h3 id="ネットワーク">ネットワーク</h3>
+
+<ul>
+<li>適宜Wi-Fi、優先でつなぐ</li>
+</ul>
+
+<h3 id="dock">Dock</h3>
+
+<ul>
+<li>位置を左に</li>
+<li>自動的に表示/非表示にチェック</li>
+<li>不要なアプリをDockから除いておく</li>
+</ul>
+
+<h3 id="トラックパッド">トラックパッド</h3>
+
+<ul>
+<li><code>スクロールの方向: ナチュラル</code>以外のすべてのチェックボックスをオン</li>
+<li>軌跡の速さをやや速めに設定</li>
+</ul>
+
+<h3 id="デスクトップとスクリーンセーバ">デスクトップとスクリーンセーバ</h3>
+
+<ul>
+<li>ホットコーナーに画面ロックを追加</li>
+</ul>
+
+<h3 id="ディスプレイ">ディスプレイ</h3>
+
+<ul>
+<li>Night Shift
+
+<ul>
+<li>全日かかるように開始終了時刻設定</li>
+<li>今日の終了設定時刻までオンするをチェック</li>
+</ul></li>
+</ul>
+
+<h3 id="キーボード">キーボード</h3>
+
+<p>※ GoogleIMEのインストールと、外部キーボードの接続を終えてから</p>
+
+<ul>
+<li>外部キーボード設定</li>
+<li>入力ソースをGoogleIMEのひらがなと英数のみにする</li>
+<li>ショートカット &gt; キーボード &gt; 次のウィンドウを捜査対象にするキーを<code>⌥ + tab</code>に変更する</li>
+</ul>
+
+<h3 id="mission-control">Mission Control</h3>
+
+<ul>
+<li>キーボードとマウスのショートカットのMission Controlにマウスボタン3を割り当てる</li>
+</ul>
+
+<h3 id="サウンド">サウンド</h3>
+
+<ul>
+<li>メニューバーに音量を表示をチェック</li>
+</ul>
+
+<h3 id="icloud-インターネットアカウント">iCloud・インターネットアカウント</h3>
+
+<ul>
+<li>適宜ログイン</li>
+</ul>
+
+<h3 id="日付と時刻">日付と時刻</h3>
+
+<ul>
+<li>日付を表示にチェック</li>
+</ul>
+
+<h2 id="アプリケーション">アプリケーション</h2>
+
+<h3 id="最初にすること">最初にすること</h3>
+
+<ul>
+<li><code>xcode-select --install</code>でxcodeを更新する</li>
+<li>dotfilesをクローンする。<code>git clone https://github.com/MamoruMachida/dotfiles $HOME/dotfiles</code></li>
+<li>設定スクリプトを実行する。<code>sh ~/dotfiles/init_osx.sh</code>
+
+<ul>
+<li>スクリプトは完璧ではないので適宜確認しつつ</li>
+</ul></li>
+<li>再起動</li>
+</ul>
+
+<h3 id="言語系〇〇env">言語系〇〇env</h3>
+
+<ul>
+<li>何かしらコマンド利用がある<code>nodenv</code>は必須
+
+<ul>
+<li><code>nodenv install --list</code> で適宜良さそうなバージョンを決める</li>
+<li><code>nodenv install {version} &amp;&amp; nodenv global {version}</code></li>
+</ul></li>
+</ul>
+
+<h3 id="iterm">iTerm</h3>
+
+<ul>
+<li>設定ファイルを読み込む
+
+<ul>
+<li>General &gt; Preferences の設定ファイルを置くフォルダを<code>~/dotfiles</code>にして再起動</li>
+</ul></li>
+<li>Hotkey Window を有効にする
+
+<ul>
+<li>Keys &gt; Hotkey からホットキーウィンドを作成する</li>
+</ul></li>
+</ul>
+
+<h3 id="入力ソース">入力ソース</h3>
+
+<ul>
+<li>IME等インストールが済んでいるので、システム環境設定のキーボード &gt; 入力ソースを変更する</li>
+<li>vim用のカスタムキー設定をする
+
+<ul>
+<li><img src="/img/2019-10-29-22-09-59.png" alt="GoogleIMEのカスタムキー設定" /></li>
+</ul></li>
+</ul>
+</content:encoded>
     </item>
     
   </channel>

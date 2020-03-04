@@ -1,150 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About on Mity</title>
+    <title>
+    About on 
+    Mity
+    </title>
     <link>https://mithy.fun/</link>
-    <description>Recent content in About on Mity</description>
+    <description>Recent content in About
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Fri, 01 Feb 2019 10:02:31 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Archives</title>
-      <link>https://mithy.fun/archive/</link>
-      <pubDate>Fri, 01 Feb 2019 10:02:31 +0900</pubDate>
+      <title>Posts</title>
+      <link>https://mithy.fun/posts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mithy.fun/archive/</guid>
+      <guid>https://mithy.fun/posts/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
-      <title>Aura コンポーネントのため Lightning データサービスの基本</title>
-      <link>https://mithy.fun/memos/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
-      <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
+      <title>Memos</title>
+      <link>https://mithy.fun/memos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mithy.fun/memos/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description>やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h</description>
+      <guid>https://mithy.fun/memos/</guid>
+      <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
-      <title>2020-02-27</title>
-      <link>https://mithy.fun/diaries/2020-02-27/</link>
-      <pubDate>Thu, 27 Feb 2020 21:18:48 +0900</pubDate>
+      <title>Reviews</title>
+      <link>https://mithy.fun/reviews/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mithy.fun/diaries/2020-02-27/</guid>
-      <description>ボーナス出た！ マンC vs レアル面白かった 首を痛めた、妻とか会社の人に優しくしてもらった</description>
-    </item>
-    
-    <item>
-      <title>GitHubActionsでSalesforceのスクラッチ組織を作成する</title>
-      <link>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
-      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
-      
-      <guid>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
-      <description>どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする</description>
-    </item>
-    
-    <item>
-      <title>2020-02-25</title>
-      <link>https://mithy.fun/diaries/2020-02-25/</link>
-      <pubDate>Tue, 25 Feb 2020 22:32:37 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-02-25/</guid>
-      <description>ボーナスが出るらしい 防災意識が高まってる ラテが美味しい</description>
-    </item>
-    
-    <item>
-      <title>2020-02-24</title>
-      <link>https://mithy.fun/diaries/2020-02-24/</link>
-      <pubDate>Mon, 24 Feb 2020 21:52:32 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-02-24/</guid>
-      <description>雪山に行った、小さい子でも遊べそうなエリアがあったけど装備がなかったので泣く泣く引き返した。また今度リベンジする 娘、外食のときはだいたい一人で食べてくれるようになって、とても楽。</description>
-    </item>
-    
-    <item>
-      <title>Auraコンポーネントの使い方</title>
-      <link>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
-      <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
-      
-      <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
-      <description>Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの</description>
-    </item>
-    
-    <item>
-      <title>Lightning Experience のリードと商談</title>
-      <link>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
-      <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
-      
-      <guid>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
-      <description>始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると</description>
-    </item>
-    
-    <item>
-      <title>2020-02-17</title>
-      <link>https://mithy.fun/diaries/2020-02-17/</link>
-      <pubDate>Tue, 18 Feb 2020 00:32:03 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-02-17/</guid>
-      <description>本格的に雪が降ってる プレイマネー上振れた snowieを使ってみた</description>
-    </item>
-    
-    <item>
-      <title>2020-02-16</title>
-      <link>https://mithy.fun/diaries/2020-02-16/</link>
-      <pubDate>Sun, 16 Feb 2020 23:26:09 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-02-16/</guid>
-      <description>プランク大王になった コストコ→香林坊→アピタした 娘、キッズスペースの滑り台、ちゃんと階段から登って滑るようになってる</description>
-    </item>
-    
-    <item>
-      <title>2020-02-15</title>
-      <link>https://mithy.fun/diaries/2020-02-15/</link>
-      <pubDate>Sat, 15 Feb 2020 23:44:17 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-02-15/</guid>
-      <description>福井までいった、駅近くの山の中の動物園、良かった。 ホールデム楽しい 家事を交換してみた</description>
-    </item>
-    
-    <item>
-      <title>2020-02-09</title>
-      <link>https://mithy.fun/diaries/2020-02-09/</link>
-      <pubDate>Sun, 09 Feb 2020 00:26:12 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-02-09/</guid>
-      <description>多分家族皆ウイルス性胃腸炎から回復した 初コメダ珈琲、ショコラノワールおいしかった</description>
-    </item>
-    
-    <item>
-      <title>2020-02-01</title>
-      <link>https://mithy.fun/diaries/2020-02-01/</link>
-      <pubDate>Sat, 01 Feb 2020 23:09:17 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-02-01/</guid>
-      <description>リングフィットしてる 一人ドライブでカフェ探しした 近所のまだ行っていなかったお店でステーキを食べた</description>
-    </item>
-    
-    <item>
-      <title>2020-01-31</title>
-      <link>https://mithy.fun/diaries/2020-01-31/</link>
-      <pubDate>Sat, 01 Feb 2020 00:16:21 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-01-31/</guid>
-      <description>朝から妻と娘が遊んでいた モブプロした かふぇいった、カフェミストおいしい</description>
-    </item>
-    
-    <item>
-      <title>2020-01-29</title>
-      <link>https://mithy.fun/diaries/2020-01-29/</link>
-      <pubDate>Wed, 29 Jan 2020 22:50:27 +0900</pubDate>
-      
-      <guid>https://mithy.fun/diaries/2020-01-29/</guid>
-      <description>朝早くから娘と遊んだ、超ハイテンションになった リングフィット楽しい プログラムの中身を考えることに頭の容量を割けている、コンディション良い</description>
+      <guid>https://mithy.fun/reviews/</guid>
+      <description></description>
+      <content:encoded></content:encoded>
     </item>
     
   </channel>

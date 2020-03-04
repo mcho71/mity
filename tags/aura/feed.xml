@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aura on Mity</title>
+    <title>
+    Aura on 
+    Mity
+    </title>
     <link>https://mithy.fun/tags/aura/</link>
-    <description>Recent content in Aura on Mity</description>
+    <description>Recent content in Aura
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Wed, 04 Mar 2020 17:47:57 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/tags/aura/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/tags/aura/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,29 @@
       
       <guid>https://mithy.fun/memos/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
       <description>やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h</description>
+      <content:encoded>
+
+<h2 id="やる前">やる前</h2>
+
+<p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
+
+<h2 id="メモ">メモ</h2>
+
+<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br />
+レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
+    <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">recordLoader</span> <span class="o">=</span> <span class="nx">cmp</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&#34;recordLoader&#34;</span><span class="p">);</span>
+        <span class="nx">recordLoader</span><span class="p">.</span><span class="nx">saveRecord</span><span class="p">(</span><span class="nx">$A</span><span class="p">.</span><span class="nx">getCallback</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">saveResult</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">saveResult</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="s2">&#34;ERROR&#34;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span>
+        <span class="p">}));</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></content:encoded>
     </item>
     
     <item>
@@ -28,6 +57,44 @@
       
       <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
       <description>Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの</description>
+      <content:encoded>
+
+<p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
+<code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
+<code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
+
+<h2 id="hoge-cmp">Hoge.cmp</h2>
+
+<ul>
+<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
+
+<ul>
+<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+</ul></li>
+<li>コントローラーのメソッドには<code>c</code>からアクセスできる。
+
+<ul>
+<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。cは<code>Controller.js</code>の関数も含む。ハマった</li>
+</ul></li>
+</ul>
+
+<h2 id="hogecontroller-js-hogehelper-js">HogeController.js | HogeHelper.js</h2>
+
+<p>コントローラーの関数は3つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br />
+<code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.lightning.meta/lightning/js_helper.htm">コンポーネントのバンドル内の JavaScript コードの共有 | Lightning Aura Components Developer Guide (Lightning Aura コンポーネント開発者ガイド) | Salesforce Developers</a></li>
+<li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
+<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
+
+<ul>
+<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+</ul></li>
+</ul>
+</content:encoded>
     </item>
     
   </channel>

@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Visualforce on Mity</title>
+    <title>
+    Visualforce on 
+    Mity
+    </title>
     <link>https://mithy.fun/tags/visualforce/</link>
-    <description>Recent content in Visualforce on Mity</description>
+    <description>Recent content in Visualforce
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Mon, 11 Nov 2019 15:50:31 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/tags/visualforce/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/tags/visualforce/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,123 @@
       
       <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
       <description>Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie</description>
+      <content:encoded>
+
+<h2 id="visualforceとは">Visualforceとは</h2>
+
+<ul>
+<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
+<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準またはApexでビジネスロジックを記述する。</li>
+</ul>
+
+<h2 id="使用できる場所">使用できる場所</h2>
+
+<ul>
+<li>ナビゲーションバーに追加</li>
+<li>標準ページレイアウト内に表示</li>
+<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+
+<ul>
+<li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
+</ul></li>
+<li>オブジェクトページの標準ボタンやリンクを上書きして表示する</li>
+<li>オブジェクトページにカスタムボタンやリンクを配置して表示する</li>
+</ul>
+
+<h2 id="ページの作成">ページの作成</h2>
+
+<ul>
+<li>APIを使用して作成変更できる</li>
+<li>開発者コンソール
+
+<ul>
+<li>エディタがついてる。補完あり</li>
+<li>LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+</ul></li>
+<li>xmlベース</li>
+</ul>
+
+<h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
+
+<ul>
+<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>構文 {! expression } を評価して出力してくれる
+
+<ul>
+<li>expressionないは大文字小文字区別なし</li>
+<li>文字列連結は&amp;</li>
+<li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul></li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+
+<h2 id="標準コントローラの使用">標準コントローラの使用</h2>
+
+<ul>
+<li>MVC</li>
+<li>標準なアクションとデータアクセスを処理できる</li>
+<li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
+<li>getQueryでコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
+</ul>
+
+<h2 id="レコード-項目-テーブルの表示">レコード、項目、テーブルの表示</h2>
+
+<ul>
+<li><code>&lt;apex:detail /&gt;</code>等の一括出力コンポーネントがある</li>
+<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のようなUIコンポーネントもある</li>
+<li><code>&lt;!--&gt;</code>はテーブルUI</li>
+<li><code>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;</code>はリスト</li>
+</ul>
+
+<h2 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h2>
+
+<ul>
+<li><code>&lt;apex:form&gt;</code>のデータは<code>&lt;apex:page&gt;</code>で指定されたコントローラーを元にする</li>
+<li>プラットフォームのスタイルを使用する要素としない要素がある
+
+<ul>
+<li>する
+
+<ul>
+<li><code>&lt;apex:form&gt;</code>を使用している場合</li>
+<li><code>&lt;apex:pageBlock&gt;</code>及び<code>&lt;apex;pageBlockSection&gt;</code>内で入力要素を使用する場合</li>
+</ul></li>
+</ul></li>
+<li><code>&lt;apex:commandButton /&gt;</code>でボタンが作成できる。要素を足すことで色々指定する。<code>action=&quot;{! save }&quot;</code>,<code>value=&quot;Save&quot;</code>等々</li>
+</ul>
+
+<h2 id="標準リストコントローラの使用">標準リストコントローラの使用</h2>
+
+<ul>
+<li>クエリ可能</li>
+<li>コレクション変数でレコードの使用、絞り込み、ページネーションなども用意されている</li>
+
+<li><p>一度に多数のレコードを操作することを目的としている</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- recordSetVarで作業するオブジェクトを設定 --&gt;</span>
+<span class="nt">&lt;apex:page</span> <span class="na">standardController=</span><span class="s">&#34;Contact&#34;</span> <span class="na">recordSetVar=</span><span class="s">&#34;contacts&#34;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;apex:pageBlock</span> <span class="na">title=</span><span class="s">&#34;Contacts List&#34;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Contacts List --&gt;</span>
+    <span class="c">&lt;!-- テーブルのvalueにrecordSetVarで設定されたオブジェクトを渡す --&gt;</span>
+    <span class="nt">&lt;apex:pageBlockTable</span> <span class="na">value=</span><span class="s">&#34;{! contacts }&#34;</span> <span class="na">var=</span><span class="s">&#34;ct&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.FirstName }&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.LastName }&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Email }&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Account.Name }&#34;</span><span class="nt">/&gt;</span>
+    <span class="err">&lt;</span>/!--&gt;
+<span class="nt">&lt;/apex:pageBlock&gt;</span>
+<span class="nt">&lt;/apex:page&gt;</span></code></pre></div></li>
+
+<li><p><code>&lt;apex:datalist&gt;</code>, <code>&lt;apex:repeat&gt;</code>等でリストを作れる</p></li>
+</ul>
+
+<h2 id="リンク">リンク</h2>
+
+<ul>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+</content:encoded>
     </item>
     
   </channel>
