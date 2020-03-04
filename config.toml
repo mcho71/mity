@@ -3,7 +3,7 @@ LanguageCode = "ja-JP"
 HasCJKLanguage = true
 title = "Mity"
 theme = "primer"
-summaryLength = 10000
+summaryLength = 200
 # Code pen
 pygmentsCodeFences = true
 pygmentsUseClasses = true
