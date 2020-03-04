@@ -3,7 +3,7 @@ LanguageCode = "ja-JP"
 HasCJKLanguage = true
 title = "Mity"
 theme = "primer"
-summaryLength = 70
+summaryLength = 10000
 # Code pen
 pygmentsCodeFences = true
 pygmentsUseClasses = true
@@ -11,6 +11,7 @@ googleAnalytics = "UA-133713641-1"
 publishDir = "docs"
 enableGitInfo = true
 copyright = "&copy;Mamoru Machida 2019"
+rssLimit = 15
 
 [Author]
   Name = "Mamoru Machida"
