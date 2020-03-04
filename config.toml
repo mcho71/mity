@@ -36,6 +36,7 @@ rssLimit = 15
   creditHugoPrimer = true
   useIcon = true
   UseTwitterCard = true
+  mainSections = ["posts", "memos", "reviews"]
 
 [related]
   threthold = 80
