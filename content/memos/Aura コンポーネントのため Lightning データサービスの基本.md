@@ -19,7 +19,7 @@ archives: 2020-03
 
 ## メモ
 
-`<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">`のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、`force:hasRecordId`があると、`v.recordId`にアクセスできる。
+`<aura:component implements="flexipage:availableForRecordHome, force:hasRecordId">`のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、`force:hasRecordId`は`v.recordId`にアクセスできることを明示できる。[force:hasRecordId - documentation - Salesforce Lightning Component Library](https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation)  
 レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。`recordLoader`は`force:recordData`の`aura:id`。
 
 ```javascript
