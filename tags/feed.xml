@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
-    <lastBuildDate>Thu, 27 Feb 2020 16:05:09 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2020 17:47:57 +0900</lastBuildDate>
     
 	<atom:link href="https://mithy.fun/tags/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aura</title>
+      <link>https://mithy.fun/tags/aura/</link>
+      <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
+      
+      <guid>https://mithy.fun/tags/aura/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trailhead</title>
+      <link>https://mithy.fun/tags/trailhead/</link>
+      <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
+      
+      <guid>https://mithy.fun/tags/trailhead/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>GitHubActions</title>
@@ -40,29 +58,11 @@
     </item>
     
     <item>
-      <title>Aura</title>
-      <link>https://mithy.fun/tags/aura/</link>
-      <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/aura/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>LightningComponent</title>
       <link>https://mithy.fun/tags/lightningcomponent/</link>
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
       <guid>https://mithy.fun/tags/lightningcomponent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Trailhead</title>
-      <link>https://mithy.fun/tags/trailhead/</link>
-      <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
-      
-      <guid>https://mithy.fun/tags/trailhead/</guid>
       <description></description>
     </item>
     
