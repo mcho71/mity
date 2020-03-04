@@ -173,7 +173,7 @@ if (!doNotTrack) {
 
 <h2 id="メモ">メモ</h2>
 
-<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>があると、<code>v.recordId</code>にアクセスできる。
+<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br />
 レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
     <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
