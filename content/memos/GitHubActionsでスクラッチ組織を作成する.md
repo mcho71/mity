@@ -88,7 +88,7 @@ jobs:
           INSTANCE_URL=$(echo $ORG_INFO | jq .instanceUrl)
           USER_NAME=$(echo $ORG_INFO | jq .username)
           PASSWORD=$(echo $ORG_INFO | jq .password)
-          echo "##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&pw=${PASSWORD})
+          echo "##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&pw=${PASSWORD})"
 
       - name: '期限のないログインURLを表示'
         run: echo ${{ steps.make-login-url.outputs.login-url }}
