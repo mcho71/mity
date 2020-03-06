@@ -172,7 +172,7 @@ sfdxでコマンドラインで完結する認証コマンドは`force:auth:sfdx
 ## DevHubを使う組織を認証する。
 sfdx force:auth:web:login -a ForGitHubAction
 
-## --verboseを付けるとSfdx Auth Urlを表示されます
+## --verboseを付けるとSfdx Auth Urlが表示されます
 sfdx force:org:display --verbose -u ForGitHubAction
 ```
 
@@ -199,7 +199,7 @@ Nameはワークフローからの呼び出しの際に使うのでわかりや�
 
 ### 4. スクラッチ組織を作成、セットアップ
 
-普段と同様のスクラッチ組織セットアップ手順を書いていきます。例としてはこんな感じになるかと思います。
+スクラッチ組織のセットアップを行います。例としてはこんな感じになるかと思います。
 
 ```yml:create-scratch-org.yml
   jobs:
@@ -214,12 +214,21 @@ Nameはワークフローからの呼び出しの際に使うのでわかりや�
         run: npx sfdx force:source:push -u TestScratchOrg
 ```
 
-スクラッチ組織は作成上限があるので、期限は一日としています。
+スクラッチ組織は作成上限があるので、期限は一日としています。  
+`config/project-scratch-def.json`がない場合は、[スクラッチ組織定義の設定値](https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm)を参考にしてください。一応下に最低限の物を置いておきます。
+
+```json:config/project-scratch-def.json
+{
+  "orgName": "testOrg",
+  "edition": "Developer",
+  "features": []
+}
+```
 
 ### 5. ログイン用のURLを表示する
 
 確認しやすくするために、ログイン用のURLも表示しておきます。  
-`sfdx force:org:open -r`でインスタントなログインURLを取得できますが、恒久的にログインしたかったのでそちらも載せています。
+`sfdx force:org:open -r`でインスタントなログインURLを取得できますが、恒久的にログインしたかったので、そちらも載せています。
 
 ```yml:create-scratch-org.yml
   jobs:
@@ -227,6 +236,7 @@ Nameはワークフローからの呼び出しの際に使うのでわかりや�
     runs-on: ubuntu-latest
     steps:
       # 省略
+      ## 期限が短いログインURLを表示
       - name: 'ログインURLの表示、期限が短い'
         run: npx sfdx force:org:open -r -u TestScratchOrg
 
@@ -246,3 +256,8 @@ Nameはワークフローからの呼び出しの際に使うのでわかりや�
       - name: '期限のないログインURLを表示'
         run: echo ${{ steps.make-login-url.outputs.login-url }}
 ```
+
+## おわりに
+
+日毎にスクラッチ組織の作成数上限があるので、プルリクpushでトリガしたりする際は注意が必要ですが、Apexテストまでやってくれると結構便利になると思います。  
+あとはこのワークフローをSlack連携させて拡張したりします。
