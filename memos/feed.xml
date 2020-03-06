@@ -131,7 +131,7 @@
 </span><span class="w">          </span>INSTANCE_URL=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.instanceUrl)<span class="w">
 </span><span class="w">          </span>USER_NAME=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.username)<span class="w">
 </span><span class="w">          </span>PASSWORD=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.password)<span class="w">
-</span><span class="w">          </span>echo<span class="w"> </span>&#34;<span class="c">##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})</span><span class="w">
+</span><span class="w">          </span>echo<span class="w"> </span><span class="s2">&#34;##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})&#34;</span><span class="w">
 </span><span class="w">
 </span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;期限のないログインURLを表示&#39;</span><span class="w">
 </span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}</code></pre></div>
@@ -199,7 +199,7 @@ sfdxでコマンドラインで完結する認証コマンドは<code>force:auth
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## DevHubを使う組織を認証する。</span>
 sfdx force:auth:web:login -a ForGitHubAction
 
-<span class="c1">## --verboseを付けるとSfdx Auth Urlを表示されます</span>
+<span class="c1">## --verboseを付けるとSfdx Auth Urlが表示されます</span>
 sfdx force:org:display --verbose -u ForGitHubAction</code></pre></div>
 <p><code>Sfdx Auth Url</code>をコピペして、GitHubリポジトリのSecretsに登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secretsについては<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br />
 Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsからできます。</p>
@@ -220,7 +220,7 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 </span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span><span class="s1">&#39;npx sfdx force:auth:sfdxurl:store -f ./SFDX_AUTH_URL.txt -d&#39;</span></code></pre></div>
 <h3 id="4-スクラッチ組織を作成-セットアップ">4. スクラッチ組織を作成、セットアップ</h3>
 
-<p>普段と同様のスクラッチ組織セットアップ手順を書いていきます。例としてはこんな感じになるかと思います。</p>
+<p>スクラッチ組織のセットアップを行います。例としてはこんな感じになるかと思います。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span>jobs<span class="p">:</span><span class="w">
 </span><span class="w">  </span>create-scratch-org<span class="p">:</span><span class="w">
 </span><span class="w">    </span>runs-on<span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
@@ -231,17 +231,23 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 </span><span class="w">
 </span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
 </span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>source<span class="p">:</span>push<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg</code></pre></div>
-<p>スクラッチ組織は作成上限があるので、期限は一日としています。</p>
-
+<p>スクラッチ組織は作成上限があるので、期限は一日としています。<br />
+<code>config/project-scratch-def.json</code>がない場合は、<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm">スクラッチ組織定義の設定値</a>を参考にしてください。一応下に最低限の物を置いておきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-json:config/project-scratch-def.json" data-lang="json:config/project-scratch-def.json"><span class="p">{</span>
+  <span class="nt">&#34;orgName&#34;</span><span class="p">:</span> <span class="s2">&#34;testOrg&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;edition&#34;</span><span class="p">:</span> <span class="s2">&#34;Developer&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;features&#34;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span></code></pre></div>
 <h3 id="5-ログイン用のurlを表示する">5. ログイン用のURLを表示する</h3>
 
 <p>確認しやすくするために、ログイン用のURLも表示しておきます。<br />
-<code>sfdx force:org:open -r</code>でインスタントなログインURLを取得できますが、恒久的にログインしたかったのでそちらも載せています。</p>
+<code>sfdx force:org:open -r</code>でインスタントなログインURLを取得できますが、恒久的にログインしたかったので、そちらも載せています。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span>jobs<span class="p">:</span><span class="w">
 </span><span class="w">  </span>create-scratch-org<span class="p">:</span><span class="w">
 </span><span class="w">    </span>runs-on<span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
 </span><span class="w">    </span>steps<span class="p">:</span><span class="w">
 </span><span class="w">      </span><span class="c"># 省略</span><span class="w">
+</span><span class="w">      </span><span class="c">## 期限が短いログインURLを表示</span><span class="w">
 </span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;ログインURLの表示、期限が短い&#39;</span><span class="w">
 </span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>org<span class="p">:</span>open<span class="w"> </span>-r<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
 </span><span class="w">
@@ -259,7 +265,12 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 </span><span class="w">          </span>echo<span class="w"> </span>&#34;<span class="c">##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})</span><span class="w">
 </span><span class="w">
 </span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;期限のないログインURLを表示&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}</code></pre></div></content:encoded>
+</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}</code></pre></div>
+<h2 id="おわりに">おわりに</h2>
+
+<p>日毎にスクラッチ組織の作成数上限があるので、プルリクpushでトリガしたりする際は注意が必要ですが、Apexテストまでやってくれると結構便利になると思います。<br />
+あとはこのワークフローをSlack連携させて拡張したりします。</p>
+</content:encoded>
     </item>
     
     <item>
