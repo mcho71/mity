@@ -263,6 +263,43 @@ if (!doNotTrack) {
           <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
             <div class="Subhead mb-2">
               <div class="Subhead-heading">
+                <a href="https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
+                  <div class="h3 mt-1 mb-1">Auraコンポーネントから特定フィールドのPickListValuesを取得する</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/salesforce' class="muted-link">
+  <span class="Label Label--gray-darker">Salesforce</span>
+</a>
+
+
+
+<a href='/tags/aura' class="muted-link">
+  <span class="Label Label--gray">Aura</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-03-09. Published at: 2020-03-09.">
+                    
+                      Published: 2020-03-09
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する Account.Salutation.getDescribe().getPicklistValues()でできる。 汎用的にするには SObject sObj = (SObject)Type.forName(sObjectName).newInstance(); Schema.DescribeSObjectResult describeSObj = sObj.getSObjectType().getDescribe(); Schema.SObjectField field = describeSObj.fields.getMap().get(fieldName); field.getDescribe().getPicklistValues(); という感じになる。Schema.DescribeSO
+            </div>
+          </li>
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
                 <a href="https://mithy.fun/memos/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/">
                   <div class="h3 mt-1 mb-1">Aura コンポーネントのため Lightning データサービスの基本</div>
                 </a>
@@ -417,47 +454,6 @@ if (!doNotTrack) {
             <div class="text-gray ellipsis">
               
               はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningElementがLWCの実装っぽい。HTMLElementをラップしてそう 前から3つ終わったけど、大体開発環境とかの話だったな 所感 やり終わってしまったので所感を書く。雑メモは社スラッ
-            </div>
-          </li>
-        
-          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
-            <div class="Subhead mb-2">
-              <div class="Subhead-heading">
-                <a href="https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/">
-                  <div class="h3 mt-1 mb-1">Visualforceの基礎</div>
-                </a>
-              </div>
-              <div class="Subhead-description">
-                
-
-
-<a href='/categories/salesforce' class="muted-link">
-  <span class="Label Label--gray-darker">Salesforce</span>
-</a>
-
-
-
-<a href='/tags/visualforce' class="muted-link">
-  <span class="Label Label--gray">Visualforce</span>
-</a>
-
-<a href='/tags/trailhead' class="muted-link">
-  <span class="Label Label--gray">Trailhead</span>
-</a>
-
-
-                <div class="float-md-right">
-                  <span title="Lastmod: 2019-11-11. Published at: 2019-11-11.">
-                    
-                      Published: 2019-11-11
-                    
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="text-gray ellipsis">
-              
-              Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie
             </div>
           </li>
         
