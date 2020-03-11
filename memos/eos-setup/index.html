@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133713641-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  EOSIOのGettingStartedをやった &ndash; Mity
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程 1.2 Before You Beginに沿って、eosio/eosioをインストールすると、nodeos/cleos/keosdの3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うこ|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Mity">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@mcho71">
+    <meta name="twitter:creator" content="@mcho71">
+    <meta name="twitter:title" content="EOSIOのGettingStartedをやった | Mity">
+    <meta name="twitter:description" content="EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程 1.2 Before You Beginに沿って、eosio/eosioをインストールすると、nodeos/cleos/keosdの3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うこ|">
+    <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://mithy.fun/">
+    Mity
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    
+    <a class="UnderlineNav-item " href="/">
+      
+      <span>About</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/memos/">
+      
+      <span>Memos</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/reviews/">
+      
+      <span>Reviews</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/diaries/">
+      
+      <span>Diaries</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/archive/">
+      
+      <span>Archives</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">EOSIOのGettingStartedをやった</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/blockchain' class="muted-link">
+  <span class="Label Label--gray-darker">Blockchain</span>
+</a>
+
+
+
+<a href='/tags/eosio' class="muted-link">
+  <span class="Label Label--gray">EOSIO</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-03-11. Published at: 2019-04-12.">
+        
+          Lastmod: 2020-03-11
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom text-gray">
+    <p><a href="https://developers.eos.io/">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs">GETTING STARTED</a>をやったので、振り返りなどを</p>
+<h2 id="development-environment">DEVELOPMENT ENVIRONMENT</h2>
+<p>CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程</p>
+<p><a href="https://developers.eos.io/eosio-home/docs/setting-up-your-environment">1.2 Before You Begin</a>に沿って、<code>eosio/eosio</code>をインストールすると、<a href="https://developers.eos.io/eosio-nodeos/docs">nodeos</a>/<a href="https://developers.eos.io/eosio-cleos/docs">cleos</a>/<a href="https//developers.eos.io/keosd/docs">keosd</a>の3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、<a href="https://developers.eos.io/eosio-home/docs/how-it-all-fits-together">1.3 About the Stack</a>に記載されていたので、参考になった。</p>
+<h3 id="ノードを立てたりする">ノードを立てたりする</h3>
+<p>このチュートリアルでは、nodeosでノードを立てる際には以下のコマンドを叩いていた。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nodeos -e -p eosio <span class="se">\
+</span><span class="se"></span>  --plugin eosio::producer_plugin <span class="se">\
+</span><span class="se"></span>  --plugin eosio::chain_api_plugin <span class="se">\
+</span><span class="se"></span>  --plugin eosio::http_plugin <span class="se">\
+</span><span class="se"></span>  --plugin eosio::history_plugin <span class="se">\
+</span><span class="se"></span>  --plugin eosio::history_api_plugin <span class="se">\
+</span><span class="se"></span>  --access-control-allow-origin<span class="o">=</span><span class="s1">&#39;*&#39;</span> <span class="se">\
+</span><span class="se"></span>  --contracts-console <span class="se">\
+</span><span class="se"></span>  --http-validate-host<span class="o">=</span><span class="nb">false</span> <span class="se">\
+</span><span class="se"></span>  --verbose-http-errors &gt;&gt; nodeos.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</code></pre></div><p>ノードを立てる際には<code>--plugin</code>で拡張を追加することができるようだ。
+他のオプションについてはnodeos自体に対するものと、プラグインに対するものとがある。
+<code>--contracts-console</code>は<code>nodeos</code>に対して、<code>--http-validate-host=false</code>は、<code>eosio::http_plugin</code>に対してのオプションとなっている。</p>
+<p>また、このオプションは<code>config.ini</code>に記述することもできる、書き方は、<a href="https://developers.eos.io/eosio-nodeos/v1.0/docs/configuration-file">Configuration</a>を参考に。記述した際には<code>nodeos --config path/to/config.ini</code>などとして起動する。</p>
+<p>また、ノードの停止方法の記載がなかったような気がする、止めたいときは<code>pkill nodeos</code>で止めていた。
+また、チェーンを再構築する際には<code>--delete-all-blocks</code>を付与して立ち上げれば良い。</p>
+<h3 id="ウォレットを作る">ウォレットを作る</h3>
+<p><a href="https://developers.eos.io/eosio-home/docs/wallets">1.6 Create Development Wallet</a>のウォレット作成コマンドは以下のように記されていた。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console
+</code></pre></div><p>実行してみると<code>default</code>は既に作成済みで、keyも忘れていたので新しい名前でウォレットを作成した。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console -n hoge
+</code></pre></div><p>このコマンドは、<code>hoge</code>という名前のウォレットを作成している。
+このようにウォレット作成した場合は以降の<code>cleos wallet</code>コマンドには大体<code>-n hoge</code>を付与していくことになる。
+まずは、前項で発行したウォレットを、ユーザー<code>eosio</code>にインポートする。private keyの入力が求められ、ユーザー<code>eosio</code>のprivate keyを入力する必要がある。</p>
+<p>若干前後するが、次項のアカウント<code>eosio</code>をウォレット<code>hoge</code>にインポートする。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet import -n hoge
+</code></pre></div><h3 id="アカウントを発行する">アカウントを発行する</h3>
+<p>EOSチェーンを立ち上げると、<code>system user</code>の<code>eosio</code>というアカウントが自動で発行される。このアカウントを使って、新規アカウントを発行するような形になっている。
+新規アカウントの発行は以下のコマンドで行っていた。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># cleos create account &lt;creater&gt; &lt;new-account-name&gt; &lt;owner-key&gt; &lt;active-key (optional)&gt;</span>
+cleos create account eosio bob &lt;eosio private-key&gt;
+</code></pre></div><p>owner-key、active-keyに対しては、permissionが付与されており、owner-keyに対応する秘密鍵を知っていれば、active-keyの変更が可能。
+active-keyが指定されていない場合はowner-keyと同一のものとなるが、実運用時には分けることを推奨していた。</p>
+<h2 id="smart-contract-development">SMART CONTRACT DEVELOPMENT</h2>
+<p>コードに関しては深く理解していないので、分かり次第コミットしていきたい。</p>
+<p>なんとなくの流れとしては、C++をwasmに変換して、前項で用意したアカウントに書き込み、CLI経由で実行/確認、という感じ。</p>
+<p>トークンの発行は、EthereumのERC20に当たる<code>eosio.token</code>は公式リポジトリに用意されており、それを元に、必要な処理を付け足したりして行くことになるようだ。</p>
+<h2 id="おわり">おわり</h2>
+<p>このチュートリアルをこなす分にはC++の知識はそこまで必要なさそうではあった。ただ、記法を全て理解しようとすると時間は掛かりそう、EOSに関わる部分を追っていきつつ、C++の知識を入れていく感じになりそう。</p>
+<p>アカウントベースで、実行、変更の権限を複数の秘密鍵で管理できるのはいいなと思ってる。また、アカウントにEOSを持たせることで、スマートコントラクトの動作のためのCPUやメモリが確保されるらしい、ここらへんは実運用する場合は、把握する必要がありそう。</p>
+
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="mb-3">
+      <b>EOSIOのGettingStartedをやった</b>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#development-environment">DEVELOPMENT ENVIRONMENT</a>
+      <ul>
+        <li><a href="#ノードを立てたりする">ノードを立てたりする</a></li>
+        <li><a href="#ウォレットを作る">ウォレットを作る</a></li>
+        <li><a href="#アカウントを発行する">アカウントを発行する</a></li>
+      </ul>
+    </li>
+    <li><a href="#smart-contract-development">SMART CONTRACT DEVELOPMENT</a></li>
+    <li><a href="#おわり">おわり</a></li>
+  </ul>
+</nav>
+    </div>
+  
+
+  
+    
+    
+      <div>
+        
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+
+        
+          <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&mobile_iframe=true&width=61&height=20&appId" width="61" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        
+
+        
+          <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        
+
+        
+
+      </div>
+    
+  
+
+        </aside>
+      </div>
+
+      <div id="extra" class="px-4 bg-white">
+        
+  
+  
+
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Mamoru Machida 2019 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+  </body>
+</html>

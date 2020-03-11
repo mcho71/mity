@@ -1,70 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Categories on Mity</title>
+    <title>
+    Categories on 
+    Mity
+    </title>
     <link>https://mithy.fun/categories/</link>
-    <description>Recent content in Categories on Mity</description>
+    <description>Recent content in Categories
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Mon, 09 Mar 2020 15:54:48 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/categories/feed.xml" rel="self" type="application/rss+xml" />
     
+        <atom:link href="https://mithy.fun/categories/feed.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>Salesforce</title>
-      <link>https://mithy.fun/categories/salesforce/</link>
-      <pubDate>Mon, 09 Mar 2020 15:54:48 +0900</pubDate>
-      
-      <guid>https://mithy.fun/categories/salesforce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://mithy.fun/categories/development/</link>
-      <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
-      
-      <guid>https://mithy.fun/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
-      <link>https://mithy.fun/categories/mac/</link>
-      <pubDate>Tue, 29 Oct 2019 17:44:59 +0900</pubDate>
-      
-      <guid>https://mithy.fun/categories/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MachineLearning</title>
-      <link>https://mithy.fun/categories/machinelearning/</link>
-      <pubDate>Tue, 27 Aug 2019 21:51:23 +0900</pubDate>
-      
-      <guid>https://mithy.fun/categories/machinelearning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blockchain</title>
-      <link>https://mithy.fun/categories/blockchain/</link>
-      <pubDate>Fri, 12 Apr 2019 22:07:40 +0900</pubDate>
-      
-      <guid>https://mithy.fun/categories/blockchain/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>https://mithy.fun/categories/database/</link>
-      <pubDate>Tue, 12 Mar 2019 14:09:17 +0900</pubDate>
-      
-      <guid>https://mithy.fun/categories/database/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

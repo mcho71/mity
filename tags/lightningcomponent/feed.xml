@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>LightningComponent on Mity</title>
+    <title>
+    LightningComponent on 
+    Mity
+    </title>
     <link>https://mithy.fun/tags/lightningcomponent/</link>
-    <description>Recent content in LightningComponent on Mity</description>
+    <description>Recent content in LightningComponent
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Fri, 21 Feb 2020 16:10:26 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/tags/lightningcomponent/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/tags/lightningcomponent/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,36 @@
       
       <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
       <description>Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの</description>
+      <content:encoded><p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
+<code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
+<code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
+<h2 id="hogecmp">Hoge.cmp</h2>
+<ul>
+<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
+<ul>
+<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+</ul>
+</li>
+<li>コントローラーのメソッドには<code>c</code>からアクセスできる。
+<ul>
+<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。cは<code>Controller.js</code>の関数も含む。ハマった</li>
+</ul>
+</li>
+</ul>
+<h2 id="hogecontrollerjs--hogehelperjs">HogeController.js | HogeHelper.js</h2>
+<p>コントローラーの関数は3つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
+<code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.lightning.meta/lightning/js_helper.htm">コンポーネントのバンドル内の JavaScript コードの共有 | Lightning Aura Components Developer Guide (Lightning Aura コンポーネント開発者ガイド) | Salesforce Developers</a></li>
+<li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
+<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
+<ul>
+<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+</ul>
+</li>
+</ul>
+</content:encoded>
     </item>
     
   </channel>

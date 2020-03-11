@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Salesforce on Mity</title>
+    <title>
+    Salesforce on 
+    Mity
+    </title>
     <link>https://mithy.fun/categories/salesforce/</link>
-    <description>Recent content in Salesforce on Mity</description>
+    <description>Recent content in Salesforce
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Mon, 09 Mar 2020 15:54:48 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/categories/salesforce/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/categories/salesforce/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,21 @@
       
       <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
       <description>やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(</description>
+      <content:encoded><h2 id="やりたいこと">やりたいこと</h2>
+<p>AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
+<h2 id="取得する">取得する</h2>
+<p>ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。</p>
+<p>単純にやると、<code>Account.Salutation.getDescribe().getPicklistValues()</code>でできる。</p>
+<p>汎用的にするには</p>
+<pre><code class="language-apex" data-lang="apex">SObject sObj = (SObject)Type.forName(sObjectName).newInstance();
+Schema.DescribeSObjectResult describeSObj = sObj.getSObjectType().getDescribe();
+Schema.SObjectField field = describeSObj.fields.getMap().get(fieldName);
+field.getDescribe().getPicklistValues();
+</code></pre><p>という感じになる。<code>Schema.DescribeSObjectResult</code>の<code>fields.getMap().get(fieldName)</code>で<code>SObjectField</code>を取得するところが味噌っぽい</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_api_calls_platform.htm">Making API Calls from Components | Lightning Aura Components Developer Guide | Salesforce Developers</a><br>
+<a href="https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_methods_system_sobject_describe.htm">DescribeSObjectResult クラス | Apex 開発者ガイド | Salesforce Developers</a></p>
+</content:encoded>
     </item>
     
     <item>
@@ -28,6 +49,24 @@
       
       <guid>https://mithy.fun/memos/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
       <description>やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h</description>
+      <content:encoded><h2 id="やる前">やる前</h2>
+<p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
+<h2 id="メモ">メモ</h2>
+<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
+レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
+    <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">recordLoader</span> <span class="o">=</span> <span class="nx">cmp</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&#34;recordLoader&#34;</span><span class="p">);</span>
+        <span class="nx">recordLoader</span><span class="p">.</span><span class="nx">saveRecord</span><span class="p">(</span><span class="nx">$A</span><span class="p">.</span><span class="nx">getCallback</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">saveResult</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">saveResult</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="s2">&#34;ERROR&#34;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span>
+        <span class="p">}));</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></content:encoded>
     </item>
     
     <item>
@@ -37,6 +76,204 @@
       
       <guid>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
       <description>どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする</description>
+      <content:encoded><h2 id="どうしてやるの">どうしてやるの</h2>
+<ul>
+<li>ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。</li>
+<li>GitHubActionsが正式リリースされた。</li>
+</ul>
+<h2 id="ワークフローの流れ">ワークフローの流れ</h2>
+<ol>
+<li>ソースをチェックアウト</li>
+<li>SFDXのセットアップ</li>
+<li>DevHub認証</li>
+<li>スクラッチ組織を作成、セットアップ</li>
+<li>ログイン用のURLを表示する</li>
+</ol>
+<h2 id="完成品">完成品</h2>
+<p>完成品のコードです、このままコピペするだけじゃ使えません。<code>2. SFDXのセットアップ</code>と<code>3. DevHubへログインする</code>をする必要があります。<br>
+フック条件はmasterブランチのpushになっています。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織の情報をリストアする<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">branches</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- master<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">env</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">PROJECT_PREFIX</span><span class="p">:</span><span class="w"> </span>ci-dev<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">create-scratch-org</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあったら使う。&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">id</span><span class="p">:</span><span class="w"> </span>app-cache-npm<span class="w">
+</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/cache@v1<span class="w">
+</span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="k">path</span><span class="p">:</span><span class="w"> </span>node_modules<span class="w">
+</span><span class="w">          </span><span class="k">key</span><span class="p">:</span><span class="w"> </span>npm-${{<span class="w"> </span>hashFiles(<span class="s1">&#39;**/package-lock.json&#39;</span>)<span class="w"> </span>}}<span class="w">
+</span><span class="w">          </span><span class="k">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">            npm-${{ env.app-cache-name }}-</span><span class="w">
+</span><span class="w">            </span>npm<span class="sd">-
+</span><span class="sd">      - name: &#39;npm ciを実行&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">if</span><span class="p">:</span><span class="w"> </span>steps.app-cache-npm.outputs.cache-hit<span class="w"> </span>!=<span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npm<span class="w"> </span>ci<span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;sfdxが使えるかテスト&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>--help<span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Secretsに登録したSfdx Auth Urlをファイルへ出力&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>secrets.SFDX_AUTH_URL<span class="w"> </span>}}<span class="w"> </span>&gt;<span class="w"> </span>./SFDX_AUTH_URL.txt<span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Salesforce組織の認証を得る&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>auth<span class="p">:</span>sfdxurl<span class="p">:</span>store<span class="w"> </span>-f<span class="w"> </span>./SFDX_AUTH_URL.txt<span class="w"> </span>-d<span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;スクラッチ組織の作成&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>org<span class="p">:</span>create<span class="w"> </span>-f<span class="w"> </span>config/project-scratch-def.json<span class="w"> </span>-a<span class="w"> </span>TestScratchOrg<span class="w"> </span>-d<span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>source<span class="p">:</span>push<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;パスワードを発行&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>user<span class="p">:</span>password<span class="p">:</span>generate<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ID/PWからログインURLを作成する&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">shell</span><span class="p">:</span><span class="w"> </span>bash<span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">          ORG_INFO=$(npx sfdx force:org:display -u TestScratchOrg --json | jq .result)</span><span class="w">
+</span><span class="w">          </span>INSTANCE_URL=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.instanceUrl)<span class="w">
+</span><span class="w">          </span>USER_NAME=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.username)<span class="w">
+</span><span class="w">          </span>PASSWORD=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.password)<span class="w">
+</span><span class="w">          </span>echo<span class="w"> </span><span class="s2">&#34;##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;期限のないログインURLを表示&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}<span class="w">
+</span></code></pre></div><h2 id="各ステップについてなど">各ステップについてなど</h2>
+<h3 id="ファイル作成と1-ソースコードのチェックアウト">ファイル作成と1. ソースコードのチェックアウト</h3>
+<p><a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file">ワークフローを設定する - GitHub ヘルプ</a>に沿って<code>.github/workflows</code>フォルダ内へ適当にワークフローファイルを設置します。今回は<code>create-scratch-org.yml</code>とします。<br>
+ついでにソースコードのチェックアウトまで書いてしまいます。<a href="https://github.com/actions/checkout">actions/checkout@v2</a>はデフォルトでmasterブランチを、push等のブランチ系アクション場合は対象ブランチをチェックアウトします。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織を作成します。<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">branches</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- master<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">create-scratch-org</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
+</span></code></pre></div><h3 id="2-sfdxのセットアップ">2. SFDXのセットアップ</h3>
+<p>SFDXとは<a href="https://developer.salesforce.com/ja/tools/sfdxcli">Salesforce CLI</a>のことです、<code>Salesforce</code>がコマンドライン上から操作できるものです。<br>
+通常のセットアップでは、上記リンクからダウンロードしてインストール、npmやbrewによるインストールがあります。GitHubActionsのワークフロー上でも同様の手順でセットアップできます。<br>
+今回はnpmを使います。そのため<code>package.json</code>を作成する必要がありますが、これが嫌な場合や、npmが使えない場合は<a href="https://github.com/sfdx-actions/setup-sfdx">sfdx-actions/setup-sfdx</a>や<a href="https://github.com/forcedotcom/salesforcedx-actions">forcedotcom/salesforcedx-actions</a>を使うのも良さそうです。<br>
+npmでsfdxをインストールするためには以下のコマンドをたたきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## package.jsonが存在しない場合は作成する</span>
+npm init --yes
+
+npm i -D sfdx
+</code></pre></div><p>すると<code>package.json</code>と<code>package-lock.json</code>が追加されているはずなのでコミットなりステージングなりしておきます。</p>
+<p>ワークフローのstepsを追記します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">create-scratch-org</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあれば使う&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">id</span><span class="p">:</span><span class="w"> </span>app-cache-npm<span class="w">
+</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/cache@v1<span class="w">
+</span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="k">path</span><span class="p">:</span><span class="w"> </span>node_modules<span class="w">
+</span><span class="w">          </span><span class="k">key</span><span class="p">:</span><span class="w"> </span>npm-${{<span class="w"> </span>hashFiles(<span class="s1">&#39;**/package-lock.json&#39;</span>)<span class="w"> </span>}}<span class="w">
+</span><span class="w">          </span><span class="k">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">            npm-${{ env.app-cache-name }}-</span><span class="w">
+</span><span class="w">            </span>npm<span class="sd">-
+</span><span class="sd">
+</span><span class="sd">      - name: &#39;npm ciを実行&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">if</span><span class="p">:</span><span class="w"> </span>steps.app-cache-npm.outputs.cache-hit<span class="w"> </span>!=<span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npm<span class="w"> </span>ci<span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;sfdxが使えるかテスト&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>--help<span class="w">
+</span></code></pre></div><p>これでsfdxコマンドがワークフロー上で使えるようになりました。</p>
+<h3 id="3-devhub認証">3. DevHub認証</h3>
+<p>DevHubの用意が必要です。<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.html">組織での Dev Hub の有効化 | Salesforce DX 設定ガイド | Salesforce Developers</a><br>
+sfdxでコマンドラインで完結する認証コマンドは<code>force:auth:sfdxurl:store</code>のみ？のようなのでこれを使います。このコマンドは<code>Sfdx Auth Url</code>を使うため、手元の環境で組織の認証をしておく必要があります。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## DevHubを使う組織を認証する。</span>
+sfdx force:auth:web:login -a ForGitHubAction
+
+<span class="c1">## --verboseを付けるとSfdx Auth Urlが表示されます</span>
+sfdx force:org:display --verbose -u ForGitHubAction
+</code></pre></div><p><code>Sfdx Auth Url</code>をコピペして、GitHubリポジトリのSecretsに登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secretsについては<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br>
+Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsからできます。</p>
+<p><img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面"></p>
+<p>Nameはワークフローからの呼び出しの際に使うのでわかりやすいものを、今回は<code>SFDX_AUTH_URL</code>としました。<br>
+ワークフローファイルを追記します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">create-scratch-org</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="c"># 省略</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Secretsに登録したSfdx Auth Urlをファイルへ出力&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;echo ${{ secrets.SFDX_AUTH_URL }} &gt; ./SFDX_AUTH_URL.txt&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Salesforce組織の認証を得る&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;npx sfdx force:auth:sfdxurl:store -f ./SFDX_AUTH_URL.txt -d&#39;</span><span class="w">
+</span></code></pre></div><h3 id="4-スクラッチ組織を作成セットアップ">4. スクラッチ組織を作成、セットアップ</h3>
+<p>スクラッチ組織のセットアップを行います。例としてはこんな感じになるかと思います。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">create-scratch-org</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="c"># 省略</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;スクラッチ組織の作成&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>org<span class="p">:</span>create<span class="w"> </span>-f<span class="w"> </span>config/project-scratch-def.json<span class="w"> </span>-a<span class="w"> </span>TestScratchOrg<span class="w"> </span>-d<span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>source<span class="p">:</span>push<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
+</span></code></pre></div><p>スクラッチ組織は作成上限があるので、期限は一日としています。<br>
+<code>config/project-scratch-def.json</code>がない場合は、<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm">スクラッチ組織定義の設定値</a>を参考にしてください。一応下に最低限の物を置いておきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-json:config/project-scratch-def.json" data-lang="json:config/project-scratch-def.json"><span class="p">{</span>
+  <span class="nt">&#34;orgName&#34;</span><span class="p">:</span> <span class="s2">&#34;testOrg&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;edition&#34;</span><span class="p">:</span> <span class="s2">&#34;Developer&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;features&#34;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="5-ログイン用のurlを表示する">5. ログイン用のURLを表示する</h3>
+<p>確認しやすくするために、ログイン用のURLも表示しておきます。<br>
+<code>sfdx force:org:open -r</code>でインスタントなログインURLを取得できますが、恒久的にログインしたかったので、そちらも載せています。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">create-scratch-org</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="c"># 省略</span><span class="w">
+</span><span class="w">      </span><span class="c">## 期限が短いログインURLを表示</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ログインURLの表示、期限が短い&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>org<span class="p">:</span>open<span class="w"> </span>-r<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
+</span><span class="w">
+</span><span class="w">      </span><span class="c">## 期限のないログインURLを作成する</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;パスワードを発行&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>user<span class="p">:</span>password<span class="p">:</span>generate<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ID/PWからログインURLを作成する&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">shell</span><span class="p">:</span><span class="w"> </span>bash<span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">          ORG_INFO=$(npx sfdx force:org:display -u TestScratchOrg --json | jq .result)</span><span class="w">
+</span><span class="w">          </span>INSTANCE_URL=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.instanceUrl)<span class="w">
+</span><span class="w">          </span>USER_NAME=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.username)<span class="w">
+</span><span class="w">          </span>PASSWORD=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.password)<span class="w">
+</span><span class="w">          </span>echo<span class="w"> </span>&#34;<span class="c">##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;期限のないログインURLを表示&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}<span class="w">
+</span></code></pre></div><h2 id="おわりに">おわりに</h2>
+<p>日毎にスクラッチ組織の作成数上限があるので、プルリクpushでトリガしたりする際は注意が必要ですが、Apexテストまでやってくれると結構便利になると思います。<br>
+あとはこのワークフローをSlack連携させて拡張したりします。</p>
+</content:encoded>
     </item>
     
     <item>
@@ -46,6 +283,36 @@
       
       <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
       <description>Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの</description>
+      <content:encoded><p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
+<code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
+<code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
+<h2 id="hogecmp">Hoge.cmp</h2>
+<ul>
+<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
+<ul>
+<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+</ul>
+</li>
+<li>コントローラーのメソッドには<code>c</code>からアクセスできる。
+<ul>
+<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。cは<code>Controller.js</code>の関数も含む。ハマった</li>
+</ul>
+</li>
+</ul>
+<h2 id="hogecontrollerjs--hogehelperjs">HogeController.js | HogeHelper.js</h2>
+<p>コントローラーの関数は3つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
+<code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.lightning.meta/lightning/js_helper.htm">コンポーネントのバンドル内の JavaScript コードの共有 | Lightning Aura Components Developer Guide (Lightning Aura コンポーネント開発者ガイド) | Salesforce Developers</a></li>
+<li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
+<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
+<ul>
+<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+</ul>
+</li>
+</ul>
+</content:encoded>
     </item>
     
     <item>
@@ -55,6 +322,17 @@
       
       <guid>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
       <description>始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると</description>
+      <content:encoded><h2 id="始める前">始める前</h2>
+<p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。
+とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。</p>
+<h2 id="メモ">メモ</h2>
+<p>リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。<br>
+リードを使用すると、見込み客を区別することが簡単にできる。</p>
+<p>リードレコードを作って、レコードページから取引の開始をクリックすると取引先、取引責任者、商談へ変換できるモーダルが開く
+<img src="/img/2020-02-19-18-09-22.png" alt="変換できるモーダル"></p>
+<p>取引先責任者は商談に紐付けることができ、これでどの責任者とやり取りしているか明確になる。<br>
+取引先は、取引先責任者が所属している組織のこと</p>
+</content:encoded>
     </item>
     
     <item>
@@ -64,6 +342,24 @@
       
       <guid>https://mithy.fun/memos/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
       <description>はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningElementがLWCの実装っぽい。HTMLElementをラップしてそう 前から3つ終わったけど、大体開発環境とかの話だったな 所感 やり終わってしまったので所感を書く。雑メモは社スラッ</description>
+      <content:encoded><h2 id="はじめに">はじめに</h2>
+<p>LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。</p>
+<p>トレイルがあったので、これをやる。
+<a href="https://trailhead.salesforce.com/ja/content/learn/trails/build-lightning-web-components">Lightning Web コンポーネントの作成 | Salesforce Trailhead</a></p>
+<h2 id="lightning-web-コンポーネントの作成">Lightning Web コンポーネントの作成</h2>
+<ul>
+<li><code>LightningElement</code>がLWCの実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
+</ul>
+<p>前から3つ終わったけど、大体開発環境とかの話だったな</p>
+<h2 id="所感">所感</h2>
+<p>やり終わってしまったので所感を書く。雑メモは社スラックに投稿していたので気が向いたらこっちにまとめる。
+Web標準に準拠して作られているので、最近のjavascriptフロントエンドライブラリを触っていれば、固有のAPIやアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
+Salesforceのコンポーネントとしてしか利用出来ないのが惜しいなと、Webのどこにでも入れられるような感じに想像していたのでちょっとがっかり。
+Salesforceのコンポーネントをモダンなjavascriptで書けるのは良い。出来ることはAuraには追いついていないらしいけど、API等の対応も進んでいるので今後はこっちが主流になっていくのかな。
+トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他はSFDXだったり環境構築のことが大半をしめていた。</p>
+<h2 id="さいごに">さいごに</h2>
+<p>日本語でPG組織を作成するとTrailheadのステップで、ホームのAPI名が違って完了しないので注意</p>
+</content:encoded>
     </item>
     
     <item>
@@ -73,6 +369,104 @@
       
       <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
       <description>Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie</description>
+      <content:encoded><h2 id="visualforceとは">Visualforceとは</h2>
+<ul>
+<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
+<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準またはApexでビジネスロジックを記述する。</li>
+</ul>
+<h2 id="使用できる場所">使用できる場所</h2>
+<ul>
+<li>ナビゲーションバーに追加</li>
+<li>標準ページレイアウト内に表示</li>
+<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+<ul>
+<li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
+</ul>
+</li>
+<li>オブジェクトページの標準ボタンやリンクを上書きして表示する</li>
+<li>オブジェクトページにカスタムボタンやリンクを配置して表示する</li>
+</ul>
+<h2 id="ページの作成">ページの作成</h2>
+<ul>
+<li>APIを使用して作成変更できる</li>
+<li>開発者コンソール
+<ul>
+<li>エディタがついてる。補完あり</li>
+<li>LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+</ul>
+</li>
+<li>xmlベース</li>
+</ul>
+<h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
+<ul>
+<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>構文 {! expression } を評価して出力してくれる
+<ul>
+<li>expressionないは大文字小文字区別なし</li>
+<li>文字列連結は&amp;</li>
+<li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+</li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+<h2 id="標準コントローラの使用">標準コントローラの使用</h2>
+<ul>
+<li>MVC</li>
+<li>標準なアクションとデータアクセスを処理できる</li>
+<li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
+<li>getQueryでコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
+</ul>
+<h2 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h2>
+<ul>
+<li><code>&lt;apex:detail /&gt;</code>等の一括出力コンポーネントがある</li>
+<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のようなUIコンポーネントもある</li>
+<li><code>&lt;!--&gt;</code>はテーブルUI</li>
+<li><code>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;</code>はリスト</li>
+</ul>
+<h2 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h2>
+<ul>
+<li><code>&lt;apex:form&gt;</code>のデータは<code>&lt;apex:page&gt;</code>で指定されたコントローラーを元にする</li>
+<li>プラットフォームのスタイルを使用する要素としない要素がある
+<ul>
+<li>する
+<ul>
+<li><code>&lt;apex:form&gt;</code>を使用している場合</li>
+<li><code>&lt;apex:pageBlock&gt;</code>及び<code>&lt;apex;pageBlockSection&gt;</code>内で入力要素を使用する場合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>&lt;apex:commandButton /&gt;</code>でボタンが作成できる。要素を足すことで色々指定する。<code>action=&quot;{! save }&quot;</code>,<code>value=&quot;Save&quot;</code>等々</li>
+</ul>
+<h2 id="標準リストコントローラの使用">標準リストコントローラの使用</h2>
+<ul>
+<li>クエリ可能</li>
+<li>コレクション変数でレコードの使用、絞り込み、ページネーションなども用意されている</li>
+<li>一度に多数のレコードを操作することを目的としている</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- recordSetVarで作業するオブジェクトを設定 --&gt;</span>
+<span class="nt">&lt;apex:page</span> <span class="na">standardController=</span><span class="s">&#34;Contact&#34;</span> <span class="na">recordSetVar=</span><span class="s">&#34;contacts&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;apex:pageBlock</span> <span class="na">title=</span><span class="s">&#34;Contacts List&#34;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Contacts List --&gt;</span>
+        <span class="c">&lt;!-- テーブルのvalueにrecordSetVarで設定されたオブジェクトを渡す --&gt;</span>
+        <span class="nt">&lt;apex:pageBlockTable</span> <span class="na">value=</span><span class="s">&#34;{! contacts }&#34;</span> <span class="na">var=</span><span class="s">&#34;ct&#34;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.FirstName }&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.LastName }&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Email }&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Account.Name }&#34;</span><span class="nt">/&gt;</span>
+        <span class="err">&lt;</span>/!--&gt;
+    <span class="nt">&lt;/apex:pageBlock&gt;</span>
+<span class="nt">&lt;/apex:page&gt;</span>
+</code></pre></div><ul>
+<li><code>&lt;apex:datalist&gt;</code>, <code>&lt;apex:repeat&gt;</code>等でリストを作れる</li>
+</ul>
+<h2 id="リンク">リンク</h2>
+<ul>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+</content:encoded>
     </item>
     
     <item>
@@ -82,6 +476,306 @@
       
       <guid>https://mithy.fun/memos/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
       <description>TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。 やり始める前の認識 無数にあるPaaSの一つ SaaSも提供してる セールス・顧客系に強い アプリやコンポーネントをリリースできる 以下</description>
+      <content:encoded><h2 id="trailheadってなに">TRAILHEADってなに</h2>
+<p><a href="https://trailhead.salesforce.com/ja/home"><em>Trailhead | 楽しく学ぶ方法</em></a></p>
+<p>Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。
+Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。</p>
+<h2 id="やり始める前の認識">やり始める前の認識</h2>
+<ul>
+<li>無数にあるPaaSの一つ
+<ul>
+<li>SaaSも提供してる</li>
+</ul>
+</li>
+<li>セールス・顧客系に強い</li>
+<li>アプリやコンポーネントをリリースできる</li>
+</ul>
+<p>以下、とりあえず<a href="https://trailhead.salesforce.com/ja/users/00550000007HqDdAAK/trailmixes/start-develop">Trailmix by ルーキー会 Salesforce DeveloperGroup</a>を順にメモする</p>
+<h2 id="salesforceテクノロジモデル">Salesforceテクノロジモデル</h2>
+<ul>
+<li>信頼の基準、最も信頼されるために行ってきた投資
+<ul>
+<li><a href="https://trust.salesforce.com/ja/">Salesforce Trust</a> でシステムの状況や、セキュリティ対策が見れる</li>
+</ul>
+</li>
+<li>個別の企業以上のセキュリティを提供する方法
+<ul>
+<li>マルチテナンシー型で提供する
+<ul>
+<li>利益となるイノベーションに注力できる</li>
+<li>高級マンションの建物を想像して
+<ul>
+<li>ドアマン、備え付き洗濯機&hellip;</li>
+<li>自分専用のスペース</li>
+<li>インフラ系は大家が管理</li>
+</ul>
+</li>
+<li>Salesforceは大家の役割</li>
+<li>小さい企業から大きい企業まで同じコードベースを利用することで利益を得ることができる</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>規則の厳しい業種がSalesforceに最も重要なデータを委ねる理由
+<ul>
+<li>上記の通り</li>
+</ul>
+</li>
+<li>メタデータ
+<ul>
+<li>データのためのデータ？</li>
+<li>カスタムタグ、カスタム項目、自動アラート、標準レポート、Chatte等、全てがメタデータ</li>
+<li>カスタム機能と標準機能のすべてを含むSalesforceインスタンスの構造</li>
+<li>カスタマイズは特別なメタデータレイヤに分離している
+<ul>
+<li>バックグラウンドの更新やプラットフォームの更新・改善を行うことができる</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>アプリケーション開発
+<ul>
+<li>カスタマイズや変更が可能なインフラを提供することが使命</li>
+<li>メタデータ駆動型で速度が出る
+<ul>
+<li>ケーキにクリームを塗るように</li>
+</ul>
+</li>
+<li>ポイント&amp;クリックかカスタムコードで開発</li>
+</ul>
+</li>
+</ul>
+<h2 id="salesforce-platformの使用開始">Salesforce Platformの使用開始</h2>
+<ul>
+<li>標準機能
+<ul>
+<li>リードと商談</li>
+<li>顧客サポートのためのケースとコミュニティ</li>
+<li>モバイルアプリ</li>
+<li>会社とつながるためのChatterとコミュニティ</li>
+<li>カスタマージャーニーを管理するためのMarketingCloud</li>
+<li>あまり良くわかってない</li>
+</ul>
+</li>
+<li>用語
+<ul>
+<li>アプリケーション
+<ul>
+<li>ビジネスプロセスをサポートするオブジェクト、項目、その他の機能のセット</li>
+</ul>
+</li>
+<li>オブジェクト
+<ul>
+<li>特定の種類の情報が保存される、DBのテーブル</li>
+<li>標準とカスタムがある</li>
+</ul>
+</li>
+<li>データベース
+<ul>
+<li>巨大なスプレッドシートを想像</li>
+</ul>
+</li>
+<li>レコード
+<ul>
+<li>オブジェクトデータベーステーブルの行</li>
+</ul>
+</li>
+<li>項目
+<ul>
+<li>オブジェクトデータベーステーブルの列</li>
+</ul>
+</li>
+<li>組織
+<ul>
+<li>Salesforceの特定のインスタンス</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>実際にポイント&amp;クリックで作ってみた
+<ul>
+<li>データベースへカスタムフィールドを追加できた</li>
+<li>データベーステーブルのレコード詳細画面で追加されたフィールドの入力欄が表示された</li>
+</ul>
+</li>
+<li>Salesforce アーキテクチャ
+<ul>
+<li>何層にも重なってる</li>
+<li>マルチテナンシー</li>
+</ul>
+</li>
+<li>設定
+<ul>
+<li>上部ギアメニューから開く</li>
+<li>組織情報、ユーザ、プロファイル、設定変更履歴の参照、ログイン履歴等見れる</li>
+</ul>
+</li>
+<li>AppExchangeの戦略と、アプリケーションのインストール
+<ul>
+<li>使用予定の部門を特定</li>
+<li>要望を最大限に満たすものを調査
+<ul>
+<li>ビジネスの問題</li>
+<li>最も苦労している点</li>
+<li>何人のユーザが必要としているか</li>
+<li>予算</li>
+<li>期限</li>
+</ul>
+</li>
+<li>そうすることで最適なアプリケーションを見つけやすくなる</li>
+<li>テスト環境にダウンロード、インストールして、競合がないか確認する</li>
+<li>候補が複数ある場合はテストした内容を、使用できない機能や不要な機能がないか検討。関係者にフィードバックを依頼</li>
+<li>本番にインストール、トレーニング、ドキュメントの提供</li>
+</ul>
+</li>
+</ul>
+<h2 id="データモデリング">データモデリング</h2>
+<ul>
+<li>Salesプラットフォームでオブジェクトを使用するメリット
+<ul>
+<li>オブジェクトはデータベーステーブルのこと、テーブルの列が項目、行がレコードとみなされる</li>
+<li>データモデルはオブジェクトと項目のコレクション</li>
+<li>標準オブジェクト
+<ul>
+<li>Salesforceに含まれるオブジェクト</li>
+<li>取引先、取引先責任者、リード、商談などの一般的なビジネスオブジェクト</li>
+</ul>
+</li>
+<li>カスタムオブジェクト
+<ul>
+<li>会社や業種に固有の情報を保存するために作成するオブジェクト</li>
+<li>プラットフォームによっては作成にフックして、UIのページレイアウトが作成される</li>
+</ul>
+</li>
+<li>設定の新規からオブジェクト作成と、オブジェクトの項目とリレーションの新規ボタンからフィールド追加を行った</li>
+<li>スキーマビルダーというMySQLで言うER図のようなツールもある</li>
+</ul>
+</li>
+</ul>
+<h2 id="プラットフォーム開発の基礎">プラットフォーム開発の基礎</h2>
+<ul>
+<li>Dream House Realty っていうアプリを作っていってみる</li>
+<li>Apex</li>
+<li>SOQL Salesforce Object Query Language</li>
+<li>Apex上のSOQLは実行されてレコードに変換される</li>
+<li>Apexで書いたControllerをVisualforceページから利用できる</li>
+<li>Herokuがでてきた</li>
+<li>RESTやSOAP APIも使える</li>
+<li>Heroku ConnectでSalesforceのオブジェクトをHeroku Postgreに変換できる</li>
+</ul>
+<h2 id="apexの基礎とデータベース">Apexの基礎とデータベース</h2>
+<ul>
+<li>小文字と大文字が区別されない</li>
+<li>開発者コンソールのDebug &gt; 匿名実行みたいなやつが便利</li>
+<li>sObjectは汎用Type、標準オブジェクト、カスタムオブジェクトのレコードに使用できる</li>
+<li>insert, upsert, mergeといった便利なデータ更新用DMLステートメントがある</li>
+<li>Database配下にDMLステートメントと同じ物があって、それの第二引数にfalseを渡すと例外の代わりにResultオブジェクトを返すことができる</li>
+<li>SOSL 組織全体のレコードから特定の情報を検索、部分一致検索、どのオブジェクトのフィールドを対象とするか選べる</li>
+</ul>
+<h2 id="apexトリガ">Apexトリガ</h2>
+<ul>
+<li>データベースのbeforeSaveとかのこと</li>
+<li><code>trigger SoqlTriggerBulk on Account(after update) {</code> で定義する。このトリガ内で<code>Trigger</code>を呼び出せて、そこに色々情報が詰まってる</li>
+<li>レコードごとに処理すると思いし、制限に引っかかるからSOQLとかDMLとか駆使してやろうね</li>
+</ul>
+<h2 id="apexテスト">Apexテスト</h2>
+<ul>
+<li><code>@isTest</code>を使うとパラメータを指定できる。知らなかった。</li>
+<li><code>Test &gt; RunAll</code>でやるとコードカバレッジが出せる</li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm">Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+<h2 id="visualforceの基礎">Visualforceの基礎</h2>
+<ul>
+<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
+<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準またはApexでビジネスロジックを記述する。</li>
+</ul>
+<h3 id="使用できる場所">使用できる場所</h3>
+<ul>
+<li>ナビゲーションバーに追加</li>
+<li>標準ページレイアウト内に表示</li>
+<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+<ul>
+<li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
+</ul>
+</li>
+<li>オブジェクトページの標準ボタンやリンクを上書きして表示する</li>
+<li>オブジェクトページにカスタムボタンやリンクを配置して表示する</li>
+</ul>
+<h3 id="ページの作成">ページの作成</h3>
+<ul>
+<li>APIを使用して作成変更できる</li>
+<li>開発者コンソール
+<ul>
+<li>エディタがついてる。補完あり</li>
+<li>LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+</ul>
+</li>
+<li>xmlベース</li>
+</ul>
+<h3 id="単純な変数と数式の使用">単純な変数と数式の使用</h3>
+<ul>
+<li>グローバル変数 ex. $<a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm">User グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>構文 {! expression } を評価して出力してくれる
+<ul>
+<li>expressionないは大文字小文字区別なし</li>
+<li>文字列連結は&amp;</li>
+<li>式の演算子 | <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.htm">Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+</li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+<h3 id="標準コントローラの使用">標準コントローラの使用</h3>
+<ul>
+<li>MVC</li>
+<li>標準なアクションとデータアクセスを処理できる</li>
+<li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
+<li>getQueryでコントローラにパラメータを渡せる。ex. /apex/pageName?id={ObjectID}</li>
+</ul>
+<h3 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h3>
+<ul>
+<li>&lt;apex:detail /&gt;等の一括出力コンポーネントがある</li>
+<li>&lt;apex:outputField value=&rdquo;{! Account.Name }&quot;/&gt;のようなUIコンポーネントもある</li>
+<li><a href="apex:pageBlockTable">apex:pageBlockTable</a>はテーブルUI</li>
+<li>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;はリスト</li>
+</ul>
+<h3 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h3>
+<ul>
+<li><a href="apex:form">apex:form</a>のデータは<a href="apex:page">apex:page</a>で指定されたコントローラーを元にする</li>
+<li>プラットフォームのスタイルを使用する要素としない要素がある
+<ul>
+<li>する
+<ul>
+<li><a href="apex:form">apex:form</a>を使用している場合</li>
+<li><a href="apex:pageBlock">apex:pageBlock</a>及び&lt;apex;pageBlockSection&gt;内で入力要素を使用する場合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&lt;apex:commandButton /&gt;でボタンが作成できる。要素を足すことで色々指定する。action=&rdquo;{! save }&quot;,value=&quot;Save&quot;等々</li>
+</ul>
+<h3 id="レコードのリスト">レコードのリスト</h3>
+<ul>
+<li>
+<p>htmlの要素もそのまま書ける</p>
+</li>
+<li>
+<p><code>&lt;apex: repeat value=&quot;{! accounts }&quot; var=&quot;a&quot;&gt;</code>とするとなかで<code>{!a.id}</code>とかできる。</p>
+</li>
+<li>
+<p><code>{! URLFOR($Resource.vfimagetest, 'cats/kitten1.jpg') }</code>とかのURLresolve便利系がある</p>
+</li>
+<li>
+<p>静的リソースは設定の静的リソースから追加できる</p>
+</li>
+</ul>
+<h2 id="開発者コンソールの基礎">開発者コンソールの基礎</h2>
+<ul>
+<li>ワークスペース分けできるらしい</li>
+<li>Logパネル、Save Perspectiveで配置を保存できる</li>
+<li></li>
+</ul>
+</content:encoded>
     </item>
     
   </channel>

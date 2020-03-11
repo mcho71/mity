@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Archives on Mity</title>
+    <title>
+    Archives on 
+    Mity
+    </title>
     <link>https://mithy.fun/archives/</link>
-    <description>Recent content in Archives on Mity</description>
+    <description>Recent content in Archives
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Mon, 09 Mar 2020 15:54:48 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/archives/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/archives/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,7 @@
       
       <guid>https://mithy.fun/archives/2020-03/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
@@ -28,6 +35,7 @@
       
       <guid>https://mithy.fun/archives/2020-02/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
@@ -37,6 +45,7 @@
       
       <guid>https://mithy.fun/archives/2020-01/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
@@ -46,6 +55,7 @@
       
       <guid>https://mithy.fun/archives/2019-11/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
@@ -55,6 +65,7 @@
       
       <guid>https://mithy.fun/archives/2019-10/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
@@ -64,6 +75,7 @@
       
       <guid>https://mithy.fun/archives/2019-08/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
@@ -73,6 +85,7 @@
       
       <guid>https://mithy.fun/archives/2019-04/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
@@ -82,6 +95,7 @@
       
       <guid>https://mithy.fun/archives/2019-03/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
     <item>
@@ -91,6 +105,7 @@
       
       <guid>https://mithy.fun/archives/2019-01/</guid>
       <description></description>
+      <content:encoded></content:encoded>
     </item>
     
   </channel>

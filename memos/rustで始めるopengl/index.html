@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133713641-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Rustで始めるOpenGLをやっている &ndash; Mity
+
+    </title>
+    
+    <meta content="Rust, OpenGL" name="keywords">
+    
+    
+    <meta name="description" property="og:description" content="これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Mity">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@mcho71">
+    <meta name="twitter:creator" content="@mcho71">
+    <meta name="twitter:title" content="Rustで始めるOpenGLをやっている | Mity">
+    <meta name="twitter:description" content="これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra|">
+    <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://mithy.fun/">
+    Mity
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    
+    <a class="UnderlineNav-item " href="/">
+      
+      <span>About</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/posts/">
+      
+      <span>Posts</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/memos/">
+      
+      <span>Memos</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/reviews/">
+      
+      <span>Reviews</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/diaries/">
+      
+      <span>Diaries</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/archive/">
+      
+      <span>Archives</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Rustで始めるOpenGLをやっている</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/development' class="muted-link">
+  <span class="Label Label--gray-darker">Development</span>
+</a>
+
+
+
+<a href='/tags/rust' class="muted-link">
+  <span class="Label Label--gray">Rust</span>
+</a>
+
+<a href='/tags/opengl' class="muted-link">
+  <span class="Label Label--gray">OpenGL</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2019-11-12. Published at: 2019-11-12.">
+        
+          Published: 2019-11-12
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom text-gray">
+    <h2 id="これはなに">これはなに</h2>
+<p><a href="https://toyamaguchi.booth.pm/items/1557536">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+<h2 id="目次を読む">目次を読む</h2>
+<p>ライブラリごとに章が区切られている</p>
+<ol>
+<li>環境準備</li>
+<li>SDL</li>
+<li>OpenGL</li>
+<li>Dear ImGui</li>
+<li>3Dオブジェクト</li>
+<li>テクスチャ</li>
+</ol>
+<p>ほとんど触れたことがないな、とりあえず上からやっていこう
+ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust">toyamaguchi/start_opengl_in_rust</a></p>
+<h2 id="環境">環境</h2>
+<ul>
+<li><a href="https://www.rust-lang.org/">Rust Programming Language</a>に従ってRustをインストール
+<ul>
+<li>versionは1.39だった</li>
+<li>crateは<a href="https://crates.io/">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="sdl">SDL</h2>
+<p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
+<a href="https://ja.wikipedia.org/wiki/SDL">SDL - Wikipedia</a><br>
+これだけでも十分な機能を持つゲームを作成可能らしい</p>
+<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
+<code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
+<p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
+<h3 id="準備">準備</h3>
+<ul>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
+</ul>
+<h3 id="作成">作成</h3>
+<p><code>sdl2</code>のcrates.ioページを見る。</p>
+<h2 id="opengl">OpenGL</h2>
+<p>SDLのウィンドウに描画していく</p>
+<h3 id="準備-1">準備</h3>
+<p><code>cargo.toml</code>に<code>gl</code>(OpenGLのAPIを利用可能に),<code>cgmath</code>(CG用の数学関連機能),<code>c_str_macro</code>(C言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
+<h3 id="作成-1">作成</h3>
+<p>HelloWorldは難しいらしいので三角形を描画する</p>
+<p>シェーダーという言葉が出てきた</p>
+<p>写経辛いのでコピペに切り替えていく</p>
+<p>OpenGL3.1を使う、このバージョンは丁度APIが一新されたバージョンで、<code>Core</code>(新しいAPIのみ)と<code>Compability</code>(古いAPIもサポート)パッケージがある。今回は<code>Core</code></p>
+<p>描画はシェーダと呼ばれる描画プログラムを通してデータを送る<br>
+シェーダなしのサンプルコードは古い可能性があるので注意<br>
+呼び名は<br>
+あり: Programmable Pipeline<br>
+なし: Fixed Function Pipeline<br>
+などというらしい</p>
+<p>シェーダは実行時にソースコードをコンパイルして使えるプログラムなのでこういった名称になってる</p>
+<p>今回具体的にはVertexシェーダとFragmentシェーダを使った</p>
+<h4 id="vertexシェーダ">Vertexシェーダ</h4>
+<p>Vertexはそもそも頂点のこと、辺と辺を結ぶ点。3D空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
+<p>描画したい頂点が、3D空間の中でどの位置にあるのかを表すモデル行列<br>
+カメラの一を考慮したビュー行列<br>
+カメラから見た3D空間をどのように画面に描画するかを表す射影行列<br>
+3つの行列をかけ合わせて最終的な画面上の座標になる</p>
+<h4 id="fragmentシェーダ">Fragmentシェーダ</h4>
+<p>色を計算するシェーダ、Vertexシェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
+<p>どちらもGLSLを使って実装する。<br>
+GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPUや前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
+GPUでの動作なので並列計算できる、画面上に多くの3Dオブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
+<p>GLSLのバージョンは3.3</p>
+<p>VBO(Vertex Buffer Object)はCPUからGPUに情報を渡すための入れ物、頂点データだったり色情報だったり<br>
+VAO(Vertex Array Object)はVBOをどのようなまとまりで使うのかを設定するもの</p>
+<p>WebGLの話ものってそう</p>
+<p>サンプルコードが動かない→動いた、sampleリポジトリのrscフォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
+<pre><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.03s
+     Running `target/debug/rust-opengl`
+OK: init OpenGL: version=3.1
+thread 'main' panicked at 'failed to open file: rsc/shader/shader.vs', src/shader.rs:28:33
+stack backtrace:
+   0: backtrace::backtrace::libunwind::trace
+             at /Users/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/libunwind.rs:88
+   1: backtrace::backtrace::trace_unsynchronized
+             at /Users/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/mod.rs:66
+   2: std::sys_common::backtrace::_print_fmt
+             at src/libstd/sys_common/backtrace.rs:76
+   3: &lt;std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display&gt;::fmt
+             at src/libstd/sys_common/backtrace.rs:60
+   4: core::fmt::write
+             at src/libcore/fmt/mod.rs:1030
+   5: std::io::Write::write_fmt
+             at src/libstd/io/mod.rs:1412
+   6: std::sys_common::backtrace::_print
+             at src/libstd/sys_common/backtrace.rs:64
+   7: std::sys_common::backtrace::print
+             at src/libstd/sys_common/backtrace.rs:49
+   8: std::panicking::default_hook::{{closure}}
+             at src/libstd/panicking.rs:196
+   9: std::panicking::default_hook
+             at src/libstd/panicking.rs:210
+  10: std::panicking::rust_panic_with_hook
+             at src/libstd/panicking.rs:473
+  11: std::panicking::continue_panic_fmt
+             at src/libstd/panicking.rs:380
+  12: std::thread::local::fast::Key&lt;T&gt;::try_initialize
+  13: rust_opengl::shader::Shader::new::{{closure}}
+             at src/shader.rs:28
+  14: core::result::Result&lt;T,E&gt;::unwrap_or_else
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libcore/result.rs:818
+  15: rust_opengl::shader::Shader::new
+             at src/shader.rs:27
+  16: rust_opengl::main
+             at src/main.rs:52
+  17: std::rt::lang_start::{{closure}}
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libstd/rt.rs:64
+  18: std::rt::lang_start_internal::{{closure}}
+             at src/libstd/rt.rs:49
+  19: std::panicking::try::do_call
+             at src/libstd/panicking.rs:292
+  20: __rust_maybe_catch_panic
+             at src/libpanic_unwind/lib.rs:80
+  21: std::panicking::try
+             at src/libstd/panicking.rs:271
+  22: std::panic::catch_unwind
+             at src/libstd/panic.rs:394
+  23: std::rt::lang_start_internal
+             at src/libstd/rt.rs:48
+  24: std::rt::lang_start
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libstd/rt.rs:64
+  25: rust_opengl::main
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+</code></pre><p>できた。
+<img src="/img/2019-11-12-18-08-05.png" alt=""></p>
+<p>頂点情報はこういう感じで書いていた</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
+</span><span class="c1"></span><span class="w">    </span><span class="cp">#[rustfmt::skip]</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">buffer_array</span>: <span class="p">[</span><span class="kt">f32</span><span class="p">;</span><span class="w"> </span><span class="n">BUF_LEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="w">        </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="p">];</span><span class="w">
+</span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
+<p><a href="https://github.com/ocornut/imgui">ocornut/imgui</a></p>
+<p>OpenGLに様々なGUIを追加できるライブラリ</p>
+<p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
+<p>出た</p>
+<p><img src="/img/2019-12-17-15-49-08.png" alt=""></p>
+<p><img src="/img/2019-12-17-15-59-28.png" alt=""></p>
+<h3 id="効果的な使い方">効果的な使い方</h3>
+<p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
+FPSを表示も</p>
+
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="mb-3">
+      <b>Rustで始めるOpenGLをやっている</b>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#これはなに">これはなに</a></li>
+    <li><a href="#目次を読む">目次を読む</a></li>
+    <li><a href="#環境">環境</a></li>
+    <li><a href="#sdl">SDL</a>
+      <ul>
+        <li><a href="#準備">準備</a></li>
+        <li><a href="#作成">作成</a></li>
+      </ul>
+    </li>
+    <li><a href="#opengl">OpenGL</a>
+      <ul>
+        <li><a href="#準備-1">準備</a></li>
+        <li><a href="#作成-1">作成</a></li>
+      </ul>
+    </li>
+    <li><a href="#dear-imgui">Dear ImGui</a>
+      <ul>
+        <li><a href="#効果的な使い方">効果的な使い方</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  
+
+  
+    
+    
+      <div>
+        
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+
+        
+          <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&mobile_iframe=true&width=61&height=20&appId" width="61" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        
+
+        
+          <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        
+
+        
+
+      </div>
+    
+  
+
+        </aside>
+      </div>
+
+      <div id="extra" class="px-4 bg-white">
+        
+  
+  
+    <div class="mt-5">
+      <h2>Related Notes</h2>
+      <ul class="mt-3">
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/">
+                  <div class="h3 mt-1 mb-1">Vueでモノレポがしたかった</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/development' class="muted-link">
+  <span class="Label Label--gray-darker">Development</span>
+</a>
+
+
+
+<a href='/tags/vue' class="muted-link">
+  <span class="Label Label--gray">Vue</span>
+</a>
+
+<a href='/tags/webpack' class="muted-link">
+  <span class="Label Label--gray">Webpack</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2019-11-05. Published at: 2019-11-05.">
+                    
+                      Published: 2019-11-05
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  
+
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Mamoru Machida 2019 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+  </body>
+</html>

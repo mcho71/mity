@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Webpack on Mity</title>
+    <title>
+    Webpack on 
+    Mity
+    </title>
     <link>https://mithy.fun/tags/webpack/</link>
-    <description>Recent content in Webpack on Mity</description>
+    <description>Recent content in Webpack
+    on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
+    
+    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Tue, 05 Nov 2019 15:31:32 +0900</lastBuildDate>
     
-	<atom:link href="https://mithy.fun/tags/webpack/feed.xml" rel="self" type="application/rss+xml" />
+    
+        <atom:link href="https://mithy.fun/tags/webpack/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,6 +25,84 @@
       
       <guid>https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
       <description>これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル</description>
+      <content:encoded><h2 id="これはなに">これはなに</h2>
+<p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
+<h2 id="事前知識">事前知識</h2>
+<p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
+<ul>
+<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトのnpm scriptsに<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
+<li><code>vue inspect</code> - <code>vue.config.js</code>を考慮した実際にビルドの際に使われる<code>webpack.config.js</code>を出力してくれる</li>
+</ul>
+<h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
+<p><code>vue cli</code>で生成したままのプロジェクト構成でした。
+必要そうなものを抜き出すとこんな感じ</p>
+<pre><code class="language-tree" data-lang="tree">├── public
+├── src
+├── tests
+├── package.json
+└── vue.config.js
+</code></pre><p>ちなみにビルドは<code>vue-cli-service build</code>で行っていた。</p>
+<h2 id="やりたいこと">やりたいこと</h2>
+<ul>
+<li>出力をdist/app, dist/adminのように複数ディレクトリに分ける。</li>
+<li>ビルド、ビルド設定を分ける</li>
+<li>lint設定は共有する</li>
+</ul>
+<h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
+<p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
+<pre><code class="language-tree" data-lang="tree">.
+├── projects
+│    ├── admin
+│    │   ├── public
+│    │   ├── src
+│    │   ├── package.json
+│    │   └── vue.config.js
+│    └── app
+│        ├── public
+│        ├── src
+│        ├── package.json
+│        └── vue.config.js
+└── package.json
+</code></pre><p><code>projects/app</code>には以前から存在していたアプリケーションのコードとそれら周辺のファイルを、<code>projects/admin</code>には<code>vue create admin</code>したものが入っている。<br>
+上記には書いていないが<code>tsconfig.json</code>や<code>.eslintrc</code>はルートと各プロジェクトに配置してあり、ルートのものを各プロジェクトが extends している。<br>
+あとは<code>vue.config.js</code>に<code>outputDir</code>を追加して、出力フォルダを揃えたくらいで、ほぼ初期設定。</p>
+<h2 id="こうなった理由">こうなった理由</h2>
+<p>やり始めた際は<code>vue.config.js</code>の<code>pages</code>でマルチエントリにして終わりと思っていたけど、そうは行かなかったのは以下。</p>
+<ul>
+<li>出力先が同ディレクトリ、プロジェクト毎に一つ深くしたかったが、<code>vue.config.js</code>から制御しきれなかった。</li>
+<li>コンフィグ系が共有
+<ul>
+<li><code>tsconfig.json</code>、<code>vue.config.js</code>等々。必要のない設定を読み込むことが双方のプロジェクトに発生する。</li>
+</ul>
+</li>
+<li>ビルドが同時のみ
+<ul>
+<li>現時点の<code>vue-cli-service(ver 3.12.1)</code>では<code>vue.config.js</code>の<code>pages</code>はエントリポイントを増やすことだけを行って、個別に<code>webpack.config.js</code>相当のものを作るわけじゃなかった。</li>
+</ul>
+</li>
+</ul>
+<p>ということで、<code>projects</code>ディレクトリを作ってそこで<code>vue create admin</code>を叩いた感じになった。</p>
+<h2 id="この構成で思うこと">この構成で思うこと</h2>
+<ul>
+<li>package.jsonめっちゃある。</li>
+<li>node_modulesもめっちゃある、中身重複しまくりそう。</li>
+<li>vueのモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
+</ul>
+<h2 id="これからどうするか">これからどうするか</h2>
+<ul>
+<li>Webpackを学ぶ
+<ul>
+<li>強くなればもっとスリムにできそう</li>
+<li>コントリビュートへも繋がりそう</li>
+</ul>
+</li>
+<li>VSCodeの拡張機能、エディタの技術を学ぶ
+<ul>
+<li>LanguageServerやLinterの最適化に苦労したので・・・</li>
+</ul>
+</li>
+</ul>
+</content:encoded>
     </item>
     
   </channel>
