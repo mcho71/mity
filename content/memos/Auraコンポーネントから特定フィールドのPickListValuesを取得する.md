@@ -4,7 +4,7 @@ date: 2020-03-09T15:54:48+09:00
 categories: 
 - Salesforce
 tags: 
-- Aura
+- Apex
 keywords: 
 - 敬称
 - Salutation
@@ -25,7 +25,9 @@ AuraコンポーネントからオブジェクトのPickListフィールドのPi
 
 ## 取得する
 
-`Account.Salutation.getDescribe().getPicklistValues()`でできる。
+ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。
+
+単純にやると、`Account.Salutation.getDescribe().getPicklistValues()`でできる。
 
 汎用的にするには
 
@@ -40,4 +42,5 @@ field.getDescribe().getPicklistValues();
 
 ## 参考
 
+[Making API Calls from Components | Lightning Aura Components Developer Guide | Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_api_calls_platform.htm)  
 [DescribeSObjectResult クラス | Apex 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_methods_system_sobject_describe.htm)
