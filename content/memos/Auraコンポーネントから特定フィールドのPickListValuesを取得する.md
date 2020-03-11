@@ -5,6 +5,7 @@ categories:
 - Salesforce
 tags: 
 - Apex
+- Aura
 keywords: 
 - 敬称
 - Salutation
