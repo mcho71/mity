@@ -24,8 +24,8 @@
       <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
-      <description>どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする</description>
-      <content:encoded><h2 id="どうしてやるの">どうしてやるの</h2>
+      <description><![CDATA[どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする]]></description>
+      <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
 <li>ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。</li>
 <li>GitHubActionsが正式リリースされた。</li>
@@ -100,8 +100,8 @@
 </span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}<span class="w">
 </span></code></pre></div><h2 id="各ステップについてなど">各ステップについてなど</h2>
 <h3 id="ファイル作成と1-ソースコードのチェックアウト">ファイル作成と1. ソースコードのチェックアウト</h3>
-<p><a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file">ワークフローを設定する - GitHub ヘルプ</a>に沿って<code>.github/workflows</code>フォルダ内へ適当にワークフローファイルを設置します。今回は<code>create-scratch-org.yml</code>とします。<br>
-ついでにソースコードのチェックアウトまで書いてしまいます。<a href="https://github.com/actions/checkout">actions/checkout@v2</a>はデフォルトでmasterブランチを、push等のブランチ系アクション場合は対象ブランチをチェックアウトします。</p>
+<p><a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file" target="_blank" rel="nofollow noopener">ワークフローを設定する - GitHub ヘルプ</a>に沿って<code>.github/workflows</code>フォルダ内へ適当にワークフローファイルを設置します。今回は<code>create-scratch-org.yml</code>とします。<br>
+ついでにソースコードのチェックアウトまで書いてしまいます。<a href="https://github.com/actions/checkout" target="_blank" rel="nofollow noopener">actions/checkout@v2</a>はデフォルトでmasterブランチを、push等のブランチ系アクション場合は対象ブランチをチェックアウトします。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織を作成します。<span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
@@ -116,9 +116,9 @@
 </span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
 </span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
 </span></code></pre></div><h3 id="2-sfdxのセットアップ">2. SFDXのセットアップ</h3>
-<p>SFDXとは<a href="https://developer.salesforce.com/ja/tools/sfdxcli">Salesforce CLI</a>のことです、<code>Salesforce</code>がコマンドライン上から操作できるものです。<br>
+<p>SFDXとは<a href="https://developer.salesforce.com/ja/tools/sfdxcli" target="_blank" rel="nofollow noopener">Salesforce CLI</a>のことです、<code>Salesforce</code>がコマンドライン上から操作できるものです。<br>
 通常のセットアップでは、上記リンクからダウンロードしてインストール、npmやbrewによるインストールがあります。GitHubActionsのワークフロー上でも同様の手順でセットアップできます。<br>
-今回はnpmを使います。そのため<code>package.json</code>を作成する必要がありますが、これが嫌な場合や、npmが使えない場合は<a href="https://github.com/sfdx-actions/setup-sfdx">sfdx-actions/setup-sfdx</a>や<a href="https://github.com/forcedotcom/salesforcedx-actions">forcedotcom/salesforcedx-actions</a>を使うのも良さそうです。<br>
+今回はnpmを使います。そのため<code>package.json</code>を作成する必要がありますが、これが嫌な場合や、npmが使えない場合は<a href="https://github.com/sfdx-actions/setup-sfdx" target="_blank" rel="nofollow noopener">sfdx-actions/setup-sfdx</a>や<a href="https://github.com/forcedotcom/salesforcedx-actions" target="_blank" rel="nofollow noopener">forcedotcom/salesforcedx-actions</a>を使うのも良さそうです。<br>
 npmでsfdxをインストールするためには以下のコマンドをたたきます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## package.jsonが存在しない場合は作成する</span>
 npm init --yes
@@ -151,14 +151,14 @@ npm i -D sfdx
 </span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>--help<span class="w">
 </span></code></pre></div><p>これでsfdxコマンドがワークフロー上で使えるようになりました。</p>
 <h3 id="3-devhub認証">3. DevHub認証</h3>
-<p>DevHubの用意が必要です。<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.html">組織での Dev Hub の有効化 | Salesforce DX 設定ガイド | Salesforce Developers</a><br>
+<p>DevHubの用意が必要です。<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.html" target="_blank" rel="nofollow noopener">組織での Dev Hub の有効化 | Salesforce DX 設定ガイド | Salesforce Developers</a><br>
 sfdxでコマンドラインで完結する認証コマンドは<code>force:auth:sfdxurl:store</code>のみ？のようなのでこれを使います。このコマンドは<code>Sfdx Auth Url</code>を使うため、手元の環境で組織の認証をしておく必要があります。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## DevHubを使う組織を認証する。</span>
 sfdx force:auth:web:login -a ForGitHubAction
 
 <span class="c1">## --verboseを付けるとSfdx Auth Urlが表示されます</span>
 sfdx force:org:display --verbose -u ForGitHubAction
-</code></pre></div><p><code>Sfdx Auth Url</code>をコピペして、GitHubリポジトリのSecretsに登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secretsについては<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br>
+</code></pre></div><p><code>Sfdx Auth Url</code>をコピペして、GitHubリポジトリのSecretsに登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secretsについては<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow" target="_blank" rel="nofollow noopener">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br>
 Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsからできます。</p>
 <p><img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面"></p>
 <p>Nameはワークフローからの呼び出しの際に使うのでわかりやすいものを、今回は<code>SFDX_AUTH_URL</code>としました。<br>
@@ -186,7 +186,7 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 </span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
 </span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>source<span class="p">:</span>push<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
 </span></code></pre></div><p>スクラッチ組織は作成上限があるので、期限は一日としています。<br>
-<code>config/project-scratch-def.json</code>がない場合は、<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm">スクラッチ組織定義の設定値</a>を参考にしてください。一応下に最低限の物を置いておきます。</p>
+<code>config/project-scratch-def.json</code>がない場合は、<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm" target="_blank" rel="nofollow noopener">スクラッチ組織定義の設定値</a>を参考にしてください。一応下に最低限の物を置いておきます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-json:config/project-scratch-def.json" data-lang="json:config/project-scratch-def.json"><span class="p">{</span>
   <span class="nt">&#34;orgName&#34;</span><span class="p">:</span> <span class="s2">&#34;testOrg&#34;</span><span class="p">,</span>
   <span class="nt">&#34;edition&#34;</span><span class="p">:</span> <span class="s2">&#34;Developer&#34;</span><span class="p">,</span>
@@ -222,7 +222,7 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 </span></code></pre></div><h2 id="おわりに">おわりに</h2>
 <p>日毎にスクラッチ組織の作成数上限があるので、プルリクpushでトリガしたりする際は注意が必要ですが、Apexテストまでやってくれると結構便利になると思います。<br>
 あとはこのワークフローをSlack連携させて拡張したりします。</p>
-</content:encoded>
+]]></content:encoded>
     </item>
     
   </channel>

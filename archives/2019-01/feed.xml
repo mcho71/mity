@@ -24,9 +24,9 @@
       <pubDate>Thu, 31 Jan 2019 17:43:40 +0900</pubDate>
       
       <guid>https://mithy.fun/posts/hello/</guid>
-      <description>hello&amp;mdash;:</description>
-      <content:encoded><p>hello&mdash;:</p>
-</content:encoded>
+      <description><![CDATA[hello&amp;mdash;:]]></description>
+      <content:encoded><![CDATA[<p>hello&mdash;:</p>
+]]></content:encoded>
     </item>
     
   </channel>

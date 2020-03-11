@@ -22,15 +22,15 @@
       <pubDate>Tue, 12 Mar 2019 14:09:17 +0900</pubDate>
       
       <guid>https://mithy.fun/posts/mysql-json/</guid>
-      <description>MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使用するために、MySQLのバージョンを8以上にする。 集計対象のJSON型のデータ構造を、集計に適した形にする。 込み入った集計を必要とする場合は、このページの配列型のようなデータ構造のほうが良さそう。 J</description>
-      <content:encoded><p>MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。<br>
+      <description><![CDATA[MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使用するために、MySQLのバージョンを8以上にする。 集計対象のJSON型のデータ構造を、集計に適した形にする。 込み入った集計を必要とする場合は、このページの配列型のようなデータ構造のほうが良さそう。 J]]></description>
+      <content:encoded><![CDATA[<p>MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。<br>
 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。</p>
 <h2 id="tldr">tl;dr</h2>
 <ul>
 <li><code>JSON_TABLE</code>関数を使用するために、MySQLのバージョンを8以上にする。</li>
 <li>集計対象のJSON型のデータ構造を、集計に適した形にする。
 <ul>
-<li>込み入った集計を必要とする場合は、このページの<a href="#%E9%85%8D%E5%88%97%E5%9E%8B">配列型</a>のようなデータ構造のほうが良さそう。</li>
+<li>込み入った集計を必要とする場合は、このページの<a href="#%e9%85%8d%e5%88%97%e5%9e%8b">配列型</a>のようなデータ構造のほうが良さそう。</li>
 </ul>
 </li>
 <li><code>JSON_TABLE</code>が使用できない場合は、取得したあとに集計処理をするほうが簡潔。
@@ -205,8 +205,8 @@
 <p><code>JSON_TABLE</code>に最適化していくのが吉だと思ったので、積極的に配列型のような形にしていきたい。
 オブジェクト型は、中身のデータ構造を気にせずに、キーの有無が大事になる場合が使いどころかな。</p>
 <h2 id="参考">参考</h2>
-<p><a href="https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html">MySQL :: MySQL 8.0 Reference Manual :: 12.17.1 JSON Function Reference</a></p>
-</content:encoded>
+<p><a href="https://dev.mysql.com/doc/refman/8.0/en/json-function-reference.html" target="_blank" rel="nofollow noopener">MySQL :: MySQL 8.0 Reference Manual :: 12.17.1 JSON Function Reference</a></p>
+]]></content:encoded>
     </item>
     
     <item>
@@ -215,9 +215,9 @@
       <pubDate>Thu, 31 Jan 2019 17:43:40 +0900</pubDate>
       
       <guid>https://mithy.fun/posts/hello/</guid>
-      <description>hello&amp;mdash;:</description>
-      <content:encoded><p>hello&mdash;:</p>
-</content:encoded>
+      <description><![CDATA[hello&amp;mdash;:]]></description>
+      <content:encoded><![CDATA[<p>hello&mdash;:</p>
+]]></content:encoded>
     </item>
     
   </channel>

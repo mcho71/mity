@@ -24,9 +24,9 @@
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
-      <description>これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra</description>
-      <content:encoded><h2 id="これはなに">これはなに</h2>
-<p><a href="https://toyamaguchi.booth.pm/items/1557536">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
+<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
 <h2 id="目次を読む">目次を読む</h2>
 <p>ライブラリごとに章が区切られている</p>
 <ol>
@@ -38,27 +38,27 @@
 <li>テクスチャ</li>
 </ol>
 <p>ほとんど触れたことがないな、とりあえず上からやっていこう
-ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust">toyamaguchi/start_opengl_in_rust</a></p>
+ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
 <h2 id="環境">環境</h2>
 <ul>
-<li><a href="https://www.rust-lang.org/">Rust Programming Language</a>に従ってRustをインストール
+<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従ってRustをインストール
 <ul>
 <li>versionは1.39だった</li>
-<li>crateは<a href="https://crates.io/">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>crateは<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
 <li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="sdl">SDL</h2>
 <p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
-<a href="https://ja.wikipedia.org/wiki/SDL">SDL - Wikipedia</a><br>
+<a href="https://ja.wikipedia.org/wiki/SDL" target="_blank" rel="nofollow noopener">SDL - Wikipedia</a><br>
 これだけでも十分な機能を持つゲームを作成可能らしい</p>
-<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
+<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
 <code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
 <p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
 <h3 id="準備">準備</h3>
 <ul>
-<li><a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
 <li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
 </ul>
 <h3 id="作成">作成</h3>
@@ -164,7 +164,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </span><span class="w">        </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
 </span><span class="w">    </span><span class="p">];</span><span class="w">
 </span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
-<p><a href="https://github.com/ocornut/imgui">ocornut/imgui</a></p>
+<p><a href="https://github.com/ocornut/imgui" target="_blank" rel="nofollow noopener">ocornut/imgui</a></p>
 <p>OpenGLに様々なGUIを追加できるライブラリ</p>
 <p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
 <p>出た</p>
@@ -173,7 +173,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 <h3 id="効果的な使い方">効果的な使い方</h3>
 <p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
 FPSを表示も</p>
-</content:encoded>
+]]></content:encoded>
     </item>
     
   </channel>

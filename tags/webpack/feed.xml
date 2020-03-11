@@ -24,8 +24,8 @@
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
-      <description>これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル</description>
-      <content:encoded><h2 id="これはなに">これはなに</h2>
+      <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
 <h2 id="事前知識">事前知識</h2>
 <p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
@@ -102,7 +102,7 @@
 </ul>
 </li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
   </channel>

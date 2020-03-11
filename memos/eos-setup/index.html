@@ -159,10 +159,10 @@ if (!doNotTrack) {
 <article>
   
   <section class="pb-6 mb-3 border-bottom text-gray">
-    <p><a href="https://developers.eos.io/">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs">GETTING STARTED</a>をやったので、振り返りなどを</p>
+    <p><a href="https://developers.eos.io/" target="_blank" rel="nofollow noopener">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs" target="_blank" rel="nofollow noopener">GETTING STARTED</a>をやったので、振り返りなどを</p>
 <h2 id="development-environment">DEVELOPMENT ENVIRONMENT</h2>
 <p>CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程</p>
-<p><a href="https://developers.eos.io/eosio-home/docs/setting-up-your-environment">1.2 Before You Begin</a>に沿って、<code>eosio/eosio</code>をインストールすると、<a href="https://developers.eos.io/eosio-nodeos/docs">nodeos</a>/<a href="https://developers.eos.io/eosio-cleos/docs">cleos</a>/<a href="https//developers.eos.io/keosd/docs">keosd</a>の3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、<a href="https://developers.eos.io/eosio-home/docs/how-it-all-fits-together">1.3 About the Stack</a>に記載されていたので、参考になった。</p>
+<p><a href="https://developers.eos.io/eosio-home/docs/setting-up-your-environment" target="_blank" rel="nofollow noopener">1.2 Before You Begin</a>に沿って、<code>eosio/eosio</code>をインストールすると、<a href="https://developers.eos.io/eosio-nodeos/docs" target="_blank" rel="nofollow noopener">nodeos</a>/<a href="https://developers.eos.io/eosio-cleos/docs" target="_blank" rel="nofollow noopener">cleos</a>/<a href="https//developers.eos.io/keosd/docs" target="_blank" rel="nofollow noopener">keosd</a>の3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、<a href="https://developers.eos.io/eosio-home/docs/how-it-all-fits-together" target="_blank" rel="nofollow noopener">1.3 About the Stack</a>に記載されていたので、参考になった。</p>
 <h3 id="ノードを立てたりする">ノードを立てたりする</h3>
 <p>このチュートリアルでは、nodeosでノードを立てる際には以下のコマンドを叩いていた。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nodeos -e -p eosio <span class="se">\
@@ -178,11 +178,11 @@ if (!doNotTrack) {
 </code></pre></div><p>ノードを立てる際には<code>--plugin</code>で拡張を追加することができるようだ。
 他のオプションについてはnodeos自体に対するものと、プラグインに対するものとがある。
 <code>--contracts-console</code>は<code>nodeos</code>に対して、<code>--http-validate-host=false</code>は、<code>eosio::http_plugin</code>に対してのオプションとなっている。</p>
-<p>また、このオプションは<code>config.ini</code>に記述することもできる、書き方は、<a href="https://developers.eos.io/eosio-nodeos/v1.0/docs/configuration-file">Configuration</a>を参考に。記述した際には<code>nodeos --config path/to/config.ini</code>などとして起動する。</p>
+<p>また、このオプションは<code>config.ini</code>に記述することもできる、書き方は、<a href="https://developers.eos.io/eosio-nodeos/v1.0/docs/configuration-file" target="_blank" rel="nofollow noopener">Configuration</a>を参考に。記述した際には<code>nodeos --config path/to/config.ini</code>などとして起動する。</p>
 <p>また、ノードの停止方法の記載がなかったような気がする、止めたいときは<code>pkill nodeos</code>で止めていた。
 また、チェーンを再構築する際には<code>--delete-all-blocks</code>を付与して立ち上げれば良い。</p>
 <h3 id="ウォレットを作る">ウォレットを作る</h3>
-<p><a href="https://developers.eos.io/eosio-home/docs/wallets">1.6 Create Development Wallet</a>のウォレット作成コマンドは以下のように記されていた。</p>
+<p><a href="https://developers.eos.io/eosio-home/docs/wallets" target="_blank" rel="nofollow noopener">1.6 Create Development Wallet</a>のウォレット作成コマンドは以下のように記されていた。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console
 </code></pre></div><p>実行してみると<code>default</code>は既に作成済みで、keyも忘れていたので新しい名前でウォレットを作成した。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console -n hoge

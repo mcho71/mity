@@ -22,8 +22,8 @@
       <pubDate>Mon, 09 Mar 2020 15:54:48 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
-      <description>やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(</description>
-      <content:encoded><h2 id="やりたいこと">やりたいこと</h2>
+      <description><![CDATA[やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(]]></description>
+      <content:encoded><![CDATA[<h2 id="やりたいこと">やりたいこと</h2>
 <p>AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
 <h2 id="取得する">取得する</h2>
 <p>ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。</p>
@@ -35,9 +35,9 @@ Schema.SObjectField field = describeSObj.fields.getMap().get(fieldName);
 field.getDescribe().getPicklistValues();
 </code></pre><p>という感じになる。<code>Schema.DescribeSObjectResult</code>の<code>fields.getMap().get(fieldName)</code>で<code>SObjectField</code>を取得するところが味噌っぽい</p>
 <h2 id="参考">参考</h2>
-<p><a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_api_calls_platform.htm">Making API Calls from Components | Lightning Aura Components Developer Guide | Salesforce Developers</a><br>
-<a href="https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_methods_system_sobject_describe.htm">DescribeSObjectResult クラス | Apex 開発者ガイド | Salesforce Developers</a></p>
-</content:encoded>
+<p><a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_api_calls_platform.htm" target="_blank" rel="nofollow noopener">Making API Calls from Components | Lightning Aura Components Developer Guide | Salesforce Developers</a><br>
+<a href="https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_methods_system_sobject_describe.htm" target="_blank" rel="nofollow noopener">DescribeSObjectResult クラス | Apex 開発者ガイド | Salesforce Developers</a></p>
+]]></content:encoded>
     </item>
     
     <item>
@@ -46,11 +46,11 @@ field.getDescribe().getPicklistValues();
       <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description>やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h</description>
-      <content:encoded><h2 id="やる前">やる前</h2>
+      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h]]></description>
+      <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
 <p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
 <h2 id="メモ">メモ</h2>
-<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
+<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
 レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
     <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
@@ -64,7 +64,7 @@ field.getDescribe().getPicklistValues();
         <span class="p">}));</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</code></pre></div></content:encoded>
+</code></pre></div>]]></content:encoded>
     </item>
     
     <item>
@@ -73,8 +73,8 @@ field.getDescribe().getPicklistValues();
       <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
-      <description>どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする</description>
-      <content:encoded><h2 id="どうしてやるの">どうしてやるの</h2>
+      <description><![CDATA[どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする]]></description>
+      <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
 <li>ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。</li>
 <li>GitHubActionsが正式リリースされた。</li>
@@ -149,8 +149,8 @@ field.getDescribe().getPicklistValues();
 </span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}<span class="w">
 </span></code></pre></div><h2 id="各ステップについてなど">各ステップについてなど</h2>
 <h3 id="ファイル作成と1-ソースコードのチェックアウト">ファイル作成と1. ソースコードのチェックアウト</h3>
-<p><a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file">ワークフローを設定する - GitHub ヘルプ</a>に沿って<code>.github/workflows</code>フォルダ内へ適当にワークフローファイルを設置します。今回は<code>create-scratch-org.yml</code>とします。<br>
-ついでにソースコードのチェックアウトまで書いてしまいます。<a href="https://github.com/actions/checkout">actions/checkout@v2</a>はデフォルトでmasterブランチを、push等のブランチ系アクション場合は対象ブランチをチェックアウトします。</p>
+<p><a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file" target="_blank" rel="nofollow noopener">ワークフローを設定する - GitHub ヘルプ</a>に沿って<code>.github/workflows</code>フォルダ内へ適当にワークフローファイルを設置します。今回は<code>create-scratch-org.yml</code>とします。<br>
+ついでにソースコードのチェックアウトまで書いてしまいます。<a href="https://github.com/actions/checkout" target="_blank" rel="nofollow noopener">actions/checkout@v2</a>はデフォルトでmasterブランチを、push等のブランチ系アクション場合は対象ブランチをチェックアウトします。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織を作成します。<span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
@@ -165,9 +165,9 @@ field.getDescribe().getPicklistValues();
 </span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
 </span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
 </span></code></pre></div><h3 id="2-sfdxのセットアップ">2. SFDXのセットアップ</h3>
-<p>SFDXとは<a href="https://developer.salesforce.com/ja/tools/sfdxcli">Salesforce CLI</a>のことです、<code>Salesforce</code>がコマンドライン上から操作できるものです。<br>
+<p>SFDXとは<a href="https://developer.salesforce.com/ja/tools/sfdxcli" target="_blank" rel="nofollow noopener">Salesforce CLI</a>のことです、<code>Salesforce</code>がコマンドライン上から操作できるものです。<br>
 通常のセットアップでは、上記リンクからダウンロードしてインストール、npmやbrewによるインストールがあります。GitHubActionsのワークフロー上でも同様の手順でセットアップできます。<br>
-今回はnpmを使います。そのため<code>package.json</code>を作成する必要がありますが、これが嫌な場合や、npmが使えない場合は<a href="https://github.com/sfdx-actions/setup-sfdx">sfdx-actions/setup-sfdx</a>や<a href="https://github.com/forcedotcom/salesforcedx-actions">forcedotcom/salesforcedx-actions</a>を使うのも良さそうです。<br>
+今回はnpmを使います。そのため<code>package.json</code>を作成する必要がありますが、これが嫌な場合や、npmが使えない場合は<a href="https://github.com/sfdx-actions/setup-sfdx" target="_blank" rel="nofollow noopener">sfdx-actions/setup-sfdx</a>や<a href="https://github.com/forcedotcom/salesforcedx-actions" target="_blank" rel="nofollow noopener">forcedotcom/salesforcedx-actions</a>を使うのも良さそうです。<br>
 npmでsfdxをインストールするためには以下のコマンドをたたきます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## package.jsonが存在しない場合は作成する</span>
 npm init --yes
@@ -200,14 +200,14 @@ npm i -D sfdx
 </span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>--help<span class="w">
 </span></code></pre></div><p>これでsfdxコマンドがワークフロー上で使えるようになりました。</p>
 <h3 id="3-devhub認証">3. DevHub認証</h3>
-<p>DevHubの用意が必要です。<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.html">組織での Dev Hub の有効化 | Salesforce DX 設定ガイド | Salesforce Developers</a><br>
+<p>DevHubの用意が必要です。<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.html" target="_blank" rel="nofollow noopener">組織での Dev Hub の有効化 | Salesforce DX 設定ガイド | Salesforce Developers</a><br>
 sfdxでコマンドラインで完結する認証コマンドは<code>force:auth:sfdxurl:store</code>のみ？のようなのでこれを使います。このコマンドは<code>Sfdx Auth Url</code>を使うため、手元の環境で組織の認証をしておく必要があります。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## DevHubを使う組織を認証する。</span>
 sfdx force:auth:web:login -a ForGitHubAction
 
 <span class="c1">## --verboseを付けるとSfdx Auth Urlが表示されます</span>
 sfdx force:org:display --verbose -u ForGitHubAction
-</code></pre></div><p><code>Sfdx Auth Url</code>をコピペして、GitHubリポジトリのSecretsに登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secretsについては<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br>
+</code></pre></div><p><code>Sfdx Auth Url</code>をコピペして、GitHubリポジトリのSecretsに登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secretsについては<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow" target="_blank" rel="nofollow noopener">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br>
 Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsからできます。</p>
 <p><img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面"></p>
 <p>Nameはワークフローからの呼び出しの際に使うのでわかりやすいものを、今回は<code>SFDX_AUTH_URL</code>としました。<br>
@@ -235,7 +235,7 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 </span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
 </span><span class="w">        </span><span class="k">run</span><span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>source<span class="p">:</span>push<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
 </span></code></pre></div><p>スクラッチ組織は作成上限があるので、期限は一日としています。<br>
-<code>config/project-scratch-def.json</code>がない場合は、<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm">スクラッチ組織定義の設定値</a>を参考にしてください。一応下に最低限の物を置いておきます。</p>
+<code>config/project-scratch-def.json</code>がない場合は、<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm" target="_blank" rel="nofollow noopener">スクラッチ組織定義の設定値</a>を参考にしてください。一応下に最低限の物を置いておきます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-json:config/project-scratch-def.json" data-lang="json:config/project-scratch-def.json"><span class="p">{</span>
   <span class="nt">&#34;orgName&#34;</span><span class="p">:</span> <span class="s2">&#34;testOrg&#34;</span><span class="p">,</span>
   <span class="nt">&#34;edition&#34;</span><span class="p">:</span> <span class="s2">&#34;Developer&#34;</span><span class="p">,</span>
@@ -271,7 +271,7 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 </span></code></pre></div><h2 id="おわりに">おわりに</h2>
 <p>日毎にスクラッチ組織の作成数上限があるので、プルリクpushでトリガしたりする際は注意が必要ですが、Apexテストまでやってくれると結構便利になると思います。<br>
 あとはこのワークフローをSlack連携させて拡張したりします。</p>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -280,8 +280,8 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
-      <description>Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの</description>
-      <content:encoded><p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
+      <description><![CDATA[Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの]]></description>
+      <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
 <code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
 <h2 id="hogecmp">Hoge.cmp</h2>
@@ -302,15 +302,15 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 <code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
 <h2 id="参考">参考</h2>
 <ul>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.lightning.meta/lightning/js_helper.htm">コンポーネントのバンドル内の JavaScript コードの共有 | Lightning Aura Components Developer Guide (Lightning Aura コンポーネント開発者ガイド) | Salesforce Developers</a></li>
-<li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.lightning.meta/lightning/js_helper.htm" target="_blank" rel="nofollow noopener">コンポーネントのバンドル内の JavaScript コードの共有 | Lightning Aura Components Developer Guide (Lightning Aura コンポーネント開発者ガイド) | Salesforce Developers</a></li>
+<li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE" target="_blank" rel="nofollow noopener">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
 <li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
 <ul>
 <li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
 </ul>
 </li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -319,8 +319,8 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
       <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
-      <description>始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると取</description>
-      <content:encoded><h2 id="始める前">始める前</h2>
+      <description><![CDATA[始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると取]]></description>
+      <content:encoded><![CDATA[<h2 id="始める前">始める前</h2>
 <p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。
 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。</p>
 <h2 id="メモ">メモ</h2>
@@ -330,7 +330,7 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 <img src="/img/2020-02-19-18-09-22.png" alt="変換できるモーダル"></p>
 <p>取引先責任者は商談に紐付けることができ、これでどの責任者とやり取りしているか明確になる。<br>
 取引先は、取引先責任者が所属している組織のこと</p>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -339,11 +339,11 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
       <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description>はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningElementがLWCの実装っぽい。HTMLElementをラップしてそう 前から3つ終わったけど、大体開発環境とかの話だったな 所感 やり終わってしまったので所感を書く。雑メモは社スラッ</description>
-      <content:encoded><h2 id="はじめに">はじめに</h2>
+      <description><![CDATA[はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningElementがLWCの実装っぽい。HTMLElementをラップしてそう 前から3つ終わったけど、大体開発環境とかの話だったな 所感 やり終わってしまったので所感を書く。雑メモは社スラッ]]></description>
+      <content:encoded><![CDATA[<h2 id="はじめに">はじめに</h2>
 <p>LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。</p>
 <p>トレイルがあったので、これをやる。
-<a href="https://trailhead.salesforce.com/ja/content/learn/trails/build-lightning-web-components">Lightning Web コンポーネントの作成 | Salesforce Trailhead</a></p>
+<a href="https://trailhead.salesforce.com/ja/content/learn/trails/build-lightning-web-components" target="_blank" rel="nofollow noopener">Lightning Web コンポーネントの作成 | Salesforce Trailhead</a></p>
 <h2 id="lightning-web-コンポーネントの作成">Lightning Web コンポーネントの作成</h2>
 <ul>
 <li><code>LightningElement</code>がLWCの実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
@@ -357,7 +357,7 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
 トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他はSFDXだったり環境構築のことが大半をしめていた。</p>
 <h2 id="さいごに">さいごに</h2>
 <p>日本語でPG組織を作成するとTrailheadのステップで、ホームのAPI名が違って完了しないので注意</p>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -366,9 +366,9 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
-      <description>これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra</description>
-      <content:encoded><h2 id="これはなに">これはなに</h2>
-<p><a href="https://toyamaguchi.booth.pm/items/1557536">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
+<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
 <h2 id="目次を読む">目次を読む</h2>
 <p>ライブラリごとに章が区切られている</p>
 <ol>
@@ -380,27 +380,27 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
 <li>テクスチャ</li>
 </ol>
 <p>ほとんど触れたことがないな、とりあえず上からやっていこう
-ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust">toyamaguchi/start_opengl_in_rust</a></p>
+ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
 <h2 id="環境">環境</h2>
 <ul>
-<li><a href="https://www.rust-lang.org/">Rust Programming Language</a>に従ってRustをインストール
+<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従ってRustをインストール
 <ul>
 <li>versionは1.39だった</li>
-<li>crateは<a href="https://crates.io/">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>crateは<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
 <li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="sdl">SDL</h2>
 <p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
-<a href="https://ja.wikipedia.org/wiki/SDL">SDL - Wikipedia</a><br>
+<a href="https://ja.wikipedia.org/wiki/SDL" target="_blank" rel="nofollow noopener">SDL - Wikipedia</a><br>
 これだけでも十分な機能を持つゲームを作成可能らしい</p>
-<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
+<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
 <code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
 <p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
 <h3 id="準備">準備</h3>
 <ul>
-<li><a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
 <li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
 </ul>
 <h3 id="作成">作成</h3>
@@ -506,7 +506,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </span><span class="w">        </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
 </span><span class="w">    </span><span class="p">];</span><span class="w">
 </span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
-<p><a href="https://github.com/ocornut/imgui">ocornut/imgui</a></p>
+<p><a href="https://github.com/ocornut/imgui" target="_blank" rel="nofollow noopener">ocornut/imgui</a></p>
 <p>OpenGLに様々なGUIを追加できるライブラリ</p>
 <p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
 <p>出た</p>
@@ -515,7 +515,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 <h3 id="効果的な使い方">効果的な使い方</h3>
 <p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
 FPSを表示も</p>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -524,8 +524,8 @@ FPSを表示も</p>
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
-      <description>Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie</description>
-      <content:encoded><h2 id="visualforceとは">Visualforceとは</h2>
+      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie]]></description>
+      <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
 <ul>
 <li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
 <li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
@@ -556,16 +556,16 @@ FPSを表示も</p>
 </ul>
 <h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
 <ul>
-<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 <li>構文 {! expression } を評価して出力してくれる
 <ul>
 <li>expressionないは大文字小文字区別なし</li>
 <li>文字列連結は&amp;</li>
 <li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html" target="_blank" rel="nofollow noopener">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
 </li>
-<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm" target="_blank" rel="nofollow noopener">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
 <h2 id="標準コントローラの使用">標準コントローラの使用</h2>
 <ul>
@@ -620,9 +620,9 @@ FPSを表示も</p>
 </ul>
 <h2 id="リンク">リンク</h2>
 <ul>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm" target="_blank" rel="nofollow noopener">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -631,8 +631,8 @@ FPSを表示も</p>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
-      <description>これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル</description>
-      <content:encoded><h2 id="これはなに">これはなに</h2>
+      <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
 <h2 id="事前知識">事前知識</h2>
 <p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
@@ -709,7 +709,7 @@ FPSを表示も</p>
 </ul>
 </li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -718,9 +718,9 @@ FPSを表示も</p>
       <pubDate>Thu, 31 Oct 2019 13:07:17 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
-      <description>TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。 やり始める前の認識 無数にあるPaaSの一つ SaaSも提供してる セールス・顧客系に強い アプリやコンポーネントをリリースできる 以下</description>
-      <content:encoded><h2 id="trailheadってなに">TRAILHEADってなに</h2>
-<p><a href="https://trailhead.salesforce.com/ja/home"><em>Trailhead | 楽しく学ぶ方法</em></a></p>
+      <description><![CDATA[TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。 やり始める前の認識 無数にあるPaaSの一つ SaaSも提供してる セールス・顧客系に強い アプリやコンポーネントをリリースできる 以下]]></description>
+      <content:encoded><![CDATA[<h2 id="trailheadってなに">TRAILHEADってなに</h2>
+<p><a href="https://trailhead.salesforce.com/ja/home" target="_blank" rel="nofollow noopener"><em>Trailhead | 楽しく学ぶ方法</em></a></p>
 <p>Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。
 Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。</p>
 <h2 id="やり始める前の認識">やり始める前の認識</h2>
@@ -733,12 +733,12 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li>セールス・顧客系に強い</li>
 <li>アプリやコンポーネントをリリースできる</li>
 </ul>
-<p>以下、とりあえず<a href="https://trailhead.salesforce.com/ja/users/00550000007HqDdAAK/trailmixes/start-develop">Trailmix by ルーキー会 Salesforce DeveloperGroup</a>を順にメモする</p>
+<p>以下、とりあえず<a href="https://trailhead.salesforce.com/ja/users/00550000007HqDdAAK/trailmixes/start-develop" target="_blank" rel="nofollow noopener">Trailmix by ルーキー会 Salesforce DeveloperGroup</a>を順にメモする</p>
 <h2 id="salesforceテクノロジモデル">Salesforceテクノロジモデル</h2>
 <ul>
 <li>信頼の基準、最も信頼されるために行ってきた投資
 <ul>
-<li><a href="https://trust.salesforce.com/ja/">Salesforce Trust</a> でシステムの状況や、セキュリティ対策が見れる</li>
+<li><a href="https://trust.salesforce.com/ja/" target="_blank" rel="nofollow noopener">Salesforce Trust</a> でシステムの状況や、セキュリティ対策が見れる</li>
 </ul>
 </li>
 <li>個別の企業以上のセキュリティを提供する方法
@@ -925,7 +925,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <ul>
 <li><code>@isTest</code>を使うとパラメータを指定できる。知らなかった。</li>
 <li><code>Test &gt; RunAll</code>でやるとコードカバレッジが出せる</li>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm">Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers</a></li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm" target="_blank" rel="nofollow noopener">Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers</a></li>
 </ul>
 <h2 id="visualforceの基礎">Visualforceの基礎</h2>
 <ul>
@@ -958,15 +958,15 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </ul>
 <h3 id="単純な変数と数式の使用">単純な変数と数式の使用</h3>
 <ul>
-<li>グローバル変数 ex. $<a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm">User グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>グローバル変数 ex. $<a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">User グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 <li>構文 {! expression } を評価して出力してくれる
 <ul>
 <li>expressionないは大文字小文字区別なし</li>
 <li>文字列連結は&amp;</li>
-<li>式の演算子 | <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.htm">Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>式の演算子 | <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.htm" target="_blank" rel="nofollow noopener">Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
 </li>
-<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm" target="_blank" rel="nofollow noopener">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
 <h3 id="標準コントローラの使用">標準コントローラの使用</h3>
 <ul>
@@ -1018,7 +1018,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li>Logパネル、Save Perspectiveで配置を保存できる</li>
 <li></li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -1027,8 +1027,8 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
       <pubDate>Tue, 29 Oct 2019 17:44:59 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
-      <description>これはなに 新しいMacを手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnetをインストール すべてをアップデート システム環境設定系 ネットワーク 適宜Wi-Fi、優先でつなぐ Dock 位置を左に 自動的に表示/非表示にチェック 不要なアプリをDockから除いておく トラックパッド スクロールの方向: ナチュラル以外のすべてのチェックボックスをオン 軌跡の速さをやや速めに設定 デスク</description>
-      <content:encoded><h2 id="これはなに">これはなに</h2>
+      <description><![CDATA[これはなに 新しいMacを手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnetをインストール すべてをアップデート システム環境設定系 ネットワーク 適宜Wi-Fi、優先でつなぐ Dock 位置を左に 自動的に表示/非表示にチェック 不要なアプリをDockから除いておく トラックパッド スクロールの方向: ナチュラル以外のすべてのチェックボックスをオン 軌跡の速さをやや速めに設定 デスク]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>新しいMacを手に入れたり、初期化した際にすることのメモ</p>
 <h2 id="最初にする事">最初にする事</h2>
 <ul>
@@ -1135,7 +1135,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </ul>
 </li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -1144,8 +1144,8 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
       <pubDate>Tue, 27 Aug 2019 21:51:23 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/launching_into_machine_learning_%E5%8F%97%E8%AC%9B%E3%83%AD%E3%82%B0/</guid>
-      <description>Launching into Machine Learning MLの開始について このコースは、機械学習の用語や、普及の歴史、モデル作成のためのコードや知識を身につけます コースには最適化モジュールがあり、学習問題が用意位されている。最急降下法を使います。 実践的なMLについて 歴史を振り返って実践のときに参考にできるようします グーグルが全プロジェクトに機械学習を取り入れる取り組みについて紹介します 教師あり学習 教師あり学習 モデルになにを学習させるか これまで発</description>
-      <content:encoded><h1 id="launching-into-machine-learning">Launching into Machine Learning</h1>
+      <description><![CDATA[Launching into Machine Learning MLの開始について このコースは、機械学習の用語や、普及の歴史、モデル作成のためのコードや知識を身につけます コースには最適化モジュールがあり、学習問題が用意位されている。最急降下法を使います。 実践的なMLについて 歴史を振り返って実践のときに参考にできるようします グーグルが全プロジェクトに機械学習を取り入れる取り組みについて紹介します 教師あり学習 教師あり学習 モデルになにを学習させるか これまで発]]></description>
+      <content:encoded><![CDATA[<h1 id="launching-into-machine-learning">Launching into Machine Learning</h1>
 <h2 id="mlの開始について">MLの開始について</h2>
 <ul>
 <li>このコースは、機械学習の用語や、普及の歴史、モデル作成のためのコードや知識を身につけます</li>
@@ -1275,7 +1275,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li>反比例の形でないときは問題あり</li>
 <li>一般に学習率は1より遥かに小さい値</li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -1284,11 +1284,11 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
       <pubDate>Fri, 12 Apr 2019 22:07:40 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/eos-setup/</guid>
-      <description>EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程 1.2 Before You Beginに沿って、eosio/eosioをインストールすると、nodeos/cleos/keosdの3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うこ</description>
-      <content:encoded><p><a href="https://developers.eos.io/">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs">GETTING STARTED</a>をやったので、振り返りなどを</p>
+      <description><![CDATA[EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程 1.2 Before You Beginに沿って、eosio/eosioをインストールすると、nodeos/cleos/keosdの3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うこ]]></description>
+      <content:encoded><![CDATA[<p><a href="https://developers.eos.io/" target="_blank" rel="nofollow noopener">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs" target="_blank" rel="nofollow noopener">GETTING STARTED</a>をやったので、振り返りなどを</p>
 <h2 id="development-environment">DEVELOPMENT ENVIRONMENT</h2>
 <p>CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程</p>
-<p><a href="https://developers.eos.io/eosio-home/docs/setting-up-your-environment">1.2 Before You Begin</a>に沿って、<code>eosio/eosio</code>をインストールすると、<a href="https://developers.eos.io/eosio-nodeos/docs">nodeos</a>/<a href="https://developers.eos.io/eosio-cleos/docs">cleos</a>/<a href="https//developers.eos.io/keosd/docs">keosd</a>の3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、<a href="https://developers.eos.io/eosio-home/docs/how-it-all-fits-together">1.3 About the Stack</a>に記載されていたので、参考になった。</p>
+<p><a href="https://developers.eos.io/eosio-home/docs/setting-up-your-environment" target="_blank" rel="nofollow noopener">1.2 Before You Begin</a>に沿って、<code>eosio/eosio</code>をインストールすると、<a href="https://developers.eos.io/eosio-nodeos/docs" target="_blank" rel="nofollow noopener">nodeos</a>/<a href="https://developers.eos.io/eosio-cleos/docs" target="_blank" rel="nofollow noopener">cleos</a>/<a href="https//developers.eos.io/keosd/docs" target="_blank" rel="nofollow noopener">keosd</a>の3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、<a href="https://developers.eos.io/eosio-home/docs/how-it-all-fits-together" target="_blank" rel="nofollow noopener">1.3 About the Stack</a>に記載されていたので、参考になった。</p>
 <h3 id="ノードを立てたりする">ノードを立てたりする</h3>
 <p>このチュートリアルでは、nodeosでノードを立てる際には以下のコマンドを叩いていた。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nodeos -e -p eosio <span class="se">\
@@ -1304,11 +1304,11 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </code></pre></div><p>ノードを立てる際には<code>--plugin</code>で拡張を追加することができるようだ。
 他のオプションについてはnodeos自体に対するものと、プラグインに対するものとがある。
 <code>--contracts-console</code>は<code>nodeos</code>に対して、<code>--http-validate-host=false</code>は、<code>eosio::http_plugin</code>に対してのオプションとなっている。</p>
-<p>また、このオプションは<code>config.ini</code>に記述することもできる、書き方は、<a href="https://developers.eos.io/eosio-nodeos/v1.0/docs/configuration-file">Configuration</a>を参考に。記述した際には<code>nodeos --config path/to/config.ini</code>などとして起動する。</p>
+<p>また、このオプションは<code>config.ini</code>に記述することもできる、書き方は、<a href="https://developers.eos.io/eosio-nodeos/v1.0/docs/configuration-file" target="_blank" rel="nofollow noopener">Configuration</a>を参考に。記述した際には<code>nodeos --config path/to/config.ini</code>などとして起動する。</p>
 <p>また、ノードの停止方法の記載がなかったような気がする、止めたいときは<code>pkill nodeos</code>で止めていた。
 また、チェーンを再構築する際には<code>--delete-all-blocks</code>を付与して立ち上げれば良い。</p>
 <h3 id="ウォレットを作る">ウォレットを作る</h3>
-<p><a href="https://developers.eos.io/eosio-home/docs/wallets">1.6 Create Development Wallet</a>のウォレット作成コマンドは以下のように記されていた。</p>
+<p><a href="https://developers.eos.io/eosio-home/docs/wallets" target="_blank" rel="nofollow noopener">1.6 Create Development Wallet</a>のウォレット作成コマンドは以下のように記されていた。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console
 </code></pre></div><p>実行してみると<code>default</code>は既に作成済みで、keyも忘れていたので新しい名前でウォレットを作成した。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console -n hoge
@@ -1331,7 +1331,7 @@ active-keyが指定されていない場合はowner-keyと同一のものとな�
 <h2 id="おわり">おわり</h2>
 <p>このチュートリアルをこなす分にはC++の知識はそこまで必要なさそうではあった。ただ、記法を全て理解しようとすると時間は掛かりそう、EOSに関わる部分を追っていきつつ、C++の知識を入れていく感じになりそう。</p>
 <p>アカウントベースで、実行、変更の権限を複数の秘密鍵で管理できるのはいいなと思ってる。また、アカウントにEOSを持たせることで、スマートコントラクトの動作のためのCPUやメモリが確保されるらしい、ここらへんは実運用する場合は、把握する必要がありそう。</p>
-</content:encoded>
+]]></content:encoded>
     </item>
     
   </channel>

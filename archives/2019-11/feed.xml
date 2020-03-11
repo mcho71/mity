@@ -24,9 +24,9 @@
       <pubDate>Tue, 12 Nov 2019 15:27:44 +0900</pubDate>
       
       <guid>https://mithy.fun/reviews/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
-      <description>[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</description>
-      <content:encoded><h2 id="dl版-rustではじめるopengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a></h2>
-</content:encoded>
+      <description><![CDATA[[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH]]></description>
+      <content:encoded><![CDATA[<h2 id="dl版-rustではじめるopengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a></h2>
+]]></content:encoded>
     </item>
     
     <item>
@@ -35,9 +35,9 @@
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
-      <description>これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra</description>
-      <content:encoded><h2 id="これはなに">これはなに</h2>
-<p><a href="https://toyamaguchi.booth.pm/items/1557536">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
+<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
 <h2 id="目次を読む">目次を読む</h2>
 <p>ライブラリごとに章が区切られている</p>
 <ol>
@@ -49,27 +49,27 @@
 <li>テクスチャ</li>
 </ol>
 <p>ほとんど触れたことがないな、とりあえず上からやっていこう
-ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust">toyamaguchi/start_opengl_in_rust</a></p>
+ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
 <h2 id="環境">環境</h2>
 <ul>
-<li><a href="https://www.rust-lang.org/">Rust Programming Language</a>に従ってRustをインストール
+<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従ってRustをインストール
 <ul>
 <li>versionは1.39だった</li>
-<li>crateは<a href="https://crates.io/">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>crateは<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
 <li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="sdl">SDL</h2>
 <p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
-<a href="https://ja.wikipedia.org/wiki/SDL">SDL - Wikipedia</a><br>
+<a href="https://ja.wikipedia.org/wiki/SDL" target="_blank" rel="nofollow noopener">SDL - Wikipedia</a><br>
 これだけでも十分な機能を持つゲームを作成可能らしい</p>
-<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
+<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
 <code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
 <p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
 <h3 id="準備">準備</h3>
 <ul>
-<li><a href="https://github.com/Rust-SDL2/rust-sdl2">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
 <li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
 </ul>
 <h3 id="作成">作成</h3>
@@ -175,7 +175,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </span><span class="w">        </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
 </span><span class="w">    </span><span class="p">];</span><span class="w">
 </span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
-<p><a href="https://github.com/ocornut/imgui">ocornut/imgui</a></p>
+<p><a href="https://github.com/ocornut/imgui" target="_blank" rel="nofollow noopener">ocornut/imgui</a></p>
 <p>OpenGLに様々なGUIを追加できるライブラリ</p>
 <p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
 <p>出た</p>
@@ -184,7 +184,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 <h3 id="効果的な使い方">効果的な使い方</h3>
 <p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
 FPSを表示も</p>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -193,8 +193,8 @@ FPSを表示も</p>
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
-      <description>Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie</description>
-      <content:encoded><h2 id="visualforceとは">Visualforceとは</h2>
+      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie]]></description>
+      <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
 <ul>
 <li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
 <li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
@@ -225,16 +225,16 @@ FPSを表示も</p>
 </ul>
 <h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
 <ul>
-<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 <li>構文 {! expression } を評価して出力してくれる
 <ul>
 <li>expressionないは大文字小文字区別なし</li>
 <li>文字列連結は&amp;</li>
 <li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html" target="_blank" rel="nofollow noopener">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
 </li>
-<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm" target="_blank" rel="nofollow noopener">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
 <h2 id="標準コントローラの使用">標準コントローラの使用</h2>
 <ul>
@@ -289,9 +289,9 @@ FPSを表示も</p>
 </ul>
 <h2 id="リンク">リンク</h2>
 <ul>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm" target="_blank" rel="nofollow noopener">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
     <item>
@@ -300,8 +300,8 @@ FPSを表示も</p>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
-      <description>これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル</description>
-      <content:encoded><h2 id="これはなに">これはなに</h2>
+      <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
 <h2 id="事前知識">事前知識</h2>
 <p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
@@ -378,7 +378,7 @@ FPSを表示も</p>
 </ul>
 </li>
 </ul>
-</content:encoded>
+]]></content:encoded>
     </item>
     
   </channel>
