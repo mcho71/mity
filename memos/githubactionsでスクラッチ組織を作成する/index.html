@@ -468,8 +468,8 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
 
 
 
-<a href='/tags/aura' class="muted-link">
-  <span class="Label Label--gray">Aura</span>
+<a href='/tags/apex' class="muted-link">
+  <span class="Label Label--gray">Apex</span>
 </a>
 
 
@@ -484,7 +484,7 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
             </div>
             <div class="text-gray ellipsis">
               
-              やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する Account.Salutation.getDescribe().getPicklistValues()でできる。 汎用的にするには SObject sObj = (SObject)Type.forName(sObjectName).newInstance(); Schema.DescribeSObjectResult describeSObj = sObj.getSObjectType().getDescribe(); Schema.SObjectField field = describeSObj.fields.getMap().get(fieldName); field.getDescribe().getPicklistValues(); という感じになる。Schema.DescribeSO
+              やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(
             </div>
           </li>
         

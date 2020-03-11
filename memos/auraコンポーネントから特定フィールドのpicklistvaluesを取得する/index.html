@@ -26,7 +26,7 @@ if (!doNotTrack) {
     <meta content="敬称, Salutation, PersonAccount, 個人, 取引先, Account, Aura, Salesforce, PickListValues, 選択リスト" name="keywords">
     
     
-    <meta name="description" property="og:description" content="やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する Account.Salutation.getDescribe().getPicklistValues()でできる。 汎用的にするには SObject sObj = (SObject)Type.forName(sObjectName).newInstance(); Schema.DescribeSObjectResult describeSObj = sObj.getSObjectType().getDescribe(); Schema.SObjectField field = describeSObj.fields.getMap().get(fieldName); field.getDescribe().getPicklistValues(); という感じになる。Schema.DescribeSO|">
+    <meta name="description" property="og:description" content="やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(|">
     
 
     <meta name="apple-mobile-web-app-title" content="Mity">
@@ -46,7 +46,7 @@ if (!doNotTrack) {
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
     <meta name="twitter:title" content="Auraコンポーネントから特定フィールドのPickListValuesを取得する | Mity">
-    <meta name="twitter:description" content="やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する Account.Salutation.getDescribe().getPicklistValues()でできる。 汎用的にするには SObject sObj = (SObject)Type.forName(sObjectName).newInstance(); Schema.DescribeSObjectResult describeSObj = sObj.getSObjectType().getDescribe(); Schema.SObjectField field = describeSObj.fields.getMap().get(fieldName); field.getDescribe().getPicklistValues(); という感じになる。Schema.DescribeSO|">
+    <meta name="twitter:description" content="やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -141,8 +141,8 @@ if (!doNotTrack) {
 
 
 
-<a href='/tags/aura' class="muted-link">
-  <span class="Label Label--gray">Aura</span>
+<a href='/tags/apex' class="muted-link">
+  <span class="Label Label--gray">Apex</span>
 </a>
 
 
@@ -169,7 +169,9 @@ if (!doNotTrack) {
 
 <h2 id="取得する">取得する</h2>
 
-<p><code>Account.Salutation.getDescribe().getPicklistValues()</code>でできる。</p>
+<p>ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。</p>
+
+<p>単純にやると、<code>Account.Salutation.getDescribe().getPicklistValues()</code>でできる。</p>
 
 <p>汎用的にするには</p>
 <div class="highlight"><pre class="chroma"><code class="language-apex" data-lang="apex">SObject sObj = (SObject)Type.forName(sObjectName).newInstance();
@@ -180,7 +182,8 @@ field.getDescribe().getPicklistValues();</code></pre></div>
 
 <h2 id="参考">参考</h2>
 
-<p><a href="https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_methods_system_sobject_describe.htm">DescribeSObjectResult クラス | Apex 開発者ガイド | Salesforce Developers</a></p>
+<p><a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_api_calls_platform.htm">Making API Calls from Components | Lightning Aura Components Developer Guide | Salesforce Developers</a><br />
+<a href="https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_methods_system_sobject_describe.htm">DescribeSObjectResult クラス | Apex 開発者ガイド | Salesforce Developers</a></p>
 
   </section>
 </article>
@@ -283,47 +286,6 @@ field.getDescribe().getPicklistValues();</code></pre></div>
           <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
             <div class="Subhead mb-2">
               <div class="Subhead-heading">
-                <a href="https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/">
-                  <div class="h3 mt-1 mb-1">Auraコンポーネントの使い方</div>
-                </a>
-              </div>
-              <div class="Subhead-description">
-                
-
-
-<a href='/categories/salesforce' class="muted-link">
-  <span class="Label Label--gray-darker">Salesforce</span>
-</a>
-
-
-
-<a href='/tags/aura' class="muted-link">
-  <span class="Label Label--gray">Aura</span>
-</a>
-
-<a href='/tags/lightningcomponent' class="muted-link">
-  <span class="Label Label--gray">LightningComponent</span>
-</a>
-
-
-                <div class="float-md-right">
-                  <span title="Lastmod: 2020-02-21. Published at: 2020-02-21.">
-                    
-                      Published: 2020-02-21
-                    
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="text-gray ellipsis">
-              
-              Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの
-            </div>
-          </li>
-        
-          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
-            <div class="Subhead mb-2">
-              <div class="Subhead-heading">
                 <a href="https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">
                   <div class="h3 mt-1 mb-1">GitHubActionsでSalesforceのスクラッチ組織を作成する</div>
                 </a>
@@ -363,6 +325,47 @@ field.getDescribe().getPicklistValues();</code></pre></div>
             <div class="text-gray ellipsis">
               
               どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする
+            </div>
+          </li>
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/">
+                  <div class="h3 mt-1 mb-1">Auraコンポーネントの使い方</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/salesforce' class="muted-link">
+  <span class="Label Label--gray-darker">Salesforce</span>
+</a>
+
+
+
+<a href='/tags/aura' class="muted-link">
+  <span class="Label Label--gray">Aura</span>
+</a>
+
+<a href='/tags/lightningcomponent' class="muted-link">
+  <span class="Label Label--gray">LightningComponent</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-02-21. Published at: 2020-02-21.">
+                    
+                      Published: 2020-02-21
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの
             </div>
           </li>
         
