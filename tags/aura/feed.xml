@@ -12,11 +12,44 @@
     
     
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
-    <lastBuildDate>Wed, 04 Mar 2020 17:47:57 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 15:54:48 +0900</lastBuildDate>
     
     
         <atom:link href="https://mithy.fun/tags/aura/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Auraコンポーネントから特定フィールドのPickListValuesを取得する</title>
+      <link>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</link>
+      <pubDate>Mon, 09 Mar 2020 15:54:48 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
+      <description>やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(</description>
+      <content:encoded>
+
+<h2 id="やりたいこと">やりたいこと</h2>
+
+<p>AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
+
+<h2 id="取得する">取得する</h2>
+
+<p>ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。</p>
+
+<p>単純にやると、<code>Account.Salutation.getDescribe().getPicklistValues()</code>でできる。</p>
+
+<p>汎用的にするには</p>
+<div class="highlight"><pre class="chroma"><code class="language-apex" data-lang="apex">SObject sObj = (SObject)Type.forName(sObjectName).newInstance();
+Schema.DescribeSObjectResult describeSObj = sObj.getSObjectType().getDescribe();
+Schema.SObjectField field = describeSObj.fields.getMap().get(fieldName);
+field.getDescribe().getPicklistValues();</code></pre></div>
+<p>という感じになる。<code>Schema.DescribeSObjectResult</code>の<code>fields.getMap().get(fieldName)</code>で<code>SObjectField</code>を取得するところが味噌っぽい</p>
+
+<h2 id="参考">参考</h2>
+
+<p><a href="https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/js_api_calls_platform.htm">Making API Calls from Components | Lightning Aura Components Developer Guide | Salesforce Developers</a><br />
+<a href="https://developer.salesforce.com/docs/atlas.ja-jp.apexcode.meta/apexcode/apex_methods_system_sobject_describe.htm">DescribeSObjectResult クラス | Apex 開発者ガイド | Salesforce Developers</a></p>
+</content:encoded>
+    </item>
     
     <item>
       <title>Aura コンポーネントのため Lightning データサービスの基本</title>
