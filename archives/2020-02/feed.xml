@@ -1,21 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>
-    2020-02 on 
-    Mity
-    </title>
+    <title>2020-02 on Mity</title>
     <link>https://mithy.fun/archives/2020-02/</link>
-    <description>Recent content in 2020-02
-    on Mity</description>
+    <description>Recent content in 2020-02 on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    
-    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Thu, 27 Feb 2020 16:05:09 +0900</lastBuildDate>
     
-    
-        <atom:link href="https://mithy.fun/archives/2020-02/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mithy.fun/archives/2020-02/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -25,222 +19,6 @@
       
       <guid>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
       <description>どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする</description>
-      <content:encoded>
-
-<h2 id="どうしてやるの">どうしてやるの</h2>
-
-<ul>
-<li>ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。</li>
-<li>GitHubActionsが正式リリースされた。</li>
-</ul>
-
-<h2 id="ワークフローの流れ">ワークフローの流れ</h2>
-
-<ol>
-<li>ソースをチェックアウト</li>
-<li>SFDXのセットアップ</li>
-<li>DevHub認証</li>
-<li>スクラッチ組織を作成、セットアップ</li>
-<li>ログイン用のURLを表示する</li>
-</ol>
-
-<h2 id="完成品">完成品</h2>
-
-<p>完成品のコードです、このままコピペするだけじゃ使えません。<code>2. SFDXのセットアップ</code>と<code>3. DevHubへログインする</code>をする必要があります。<br />
-フック条件はmasterブランチのpushになっています。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml">name<span class="p">:</span><span class="w"> </span>スクラッチ組織の情報をリストアする<span class="w">
-</span><span class="w">
-</span><span class="w"></span>on<span class="p">:</span><span class="w">
-</span><span class="w">  </span>push<span class="p">:</span><span class="w">
-</span><span class="w">    </span>branches<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>master<span class="w">
-</span><span class="w">
-</span><span class="w"></span>env<span class="p">:</span><span class="w">
-</span><span class="w">  </span>PROJECT_PREFIX<span class="p">:</span><span class="w"> </span>ci-dev<span class="w">
-</span><span class="w">
-</span><span class="w"></span>jobs<span class="p">:</span><span class="w">
-</span><span class="w">  </span>create-scratch-org<span class="p">:</span><span class="w">
-</span><span class="w">    </span>runs-on<span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
-</span><span class="w">    </span>steps<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
-</span><span class="w">        </span>uses<span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあったら使う。&#39;</span><span class="w">
-</span><span class="w">        </span>id<span class="p">:</span><span class="w"> </span>app-cache-npm<span class="w">
-</span><span class="w">        </span>uses<span class="p">:</span><span class="w"> </span>actions/cache@v1<span class="w">
-</span><span class="w">        </span>with<span class="p">:</span><span class="w">
-</span><span class="w">          </span>path<span class="p">:</span><span class="w"> </span>node_modules<span class="w">
-</span><span class="w">          </span>key<span class="p">:</span><span class="w"> </span>npm-${{<span class="w"> </span>hashFiles(<span class="s1">&#39;**/package-lock.json&#39;</span>)<span class="w"> </span>}}<span class="w">
-</span><span class="w">          </span>restore-keys<span class="p">:</span><span class="w"> </span><span class="sd">|
-</span><span class="sd">            npm-${{ env.app-cache-name }}-</span><span class="w">
-</span><span class="w">            </span>npm<span class="sd">-
-</span><span class="sd">      - name: &#39;npm ciを実行&#39;</span><span class="w">
-</span><span class="w">        </span>if<span class="p">:</span><span class="w"> </span>steps.app-cache-npm.outputs.cache-hit<span class="w"> </span>!=<span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npm<span class="w"> </span>ci<span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;sfdxが使えるかテスト&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>--help<span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;Secretsに登録したSfdx Auth Urlをファイルへ出力&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>secrets.SFDX_AUTH_URL<span class="w"> </span>}}<span class="w"> </span>&gt;<span class="w"> </span>./SFDX_AUTH_URL.txt<span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;Salesforce組織の認証を得る&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>auth<span class="p">:</span>sfdxurl<span class="p">:</span>store<span class="w"> </span>-f<span class="w"> </span>./SFDX_AUTH_URL.txt<span class="w"> </span>-d<span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;スクラッチ組織の作成&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>org<span class="p">:</span>create<span class="w"> </span>-f<span class="w"> </span>config/project-scratch-def.json<span class="w"> </span>-a<span class="w"> </span>TestScratchOrg<span class="w"> </span>-d<span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>source<span class="p">:</span>push<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;パスワードを発行&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>user<span class="p">:</span>password<span class="p">:</span>generate<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;ID/PWからログインURLを作成する&#39;</span><span class="w">
-</span><span class="w">        </span>shell<span class="p">:</span><span class="w"> </span>bash<span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span><span class="sd">|
-</span><span class="sd">          ORG_INFO=$(npx sfdx force:org:display -u TestScratchOrg --json | jq .result)</span><span class="w">
-</span><span class="w">          </span>INSTANCE_URL=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.instanceUrl)<span class="w">
-</span><span class="w">          </span>USER_NAME=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.username)<span class="w">
-</span><span class="w">          </span>PASSWORD=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.password)<span class="w">
-</span><span class="w">          </span>echo<span class="w"> </span><span class="s2">&#34;##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})&#34;</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;期限のないログインURLを表示&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}</code></pre></div>
-<h2 id="各ステップについてなど">各ステップについてなど</h2>
-
-<h3 id="ファイル作成と1-ソースコードのチェックアウト">ファイル作成と1. ソースコードのチェックアウト</h3>
-
-<p><a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file">ワークフローを設定する - GitHub ヘルプ</a>に沿って<code>.github/workflows</code>フォルダ内へ適当にワークフローファイルを設置します。今回は<code>create-scratch-org.yml</code>とします。<br />
-ついでにソースコードのチェックアウトまで書いてしまいます。<a href="https://github.com/actions/checkout">actions/checkout@v2</a>はデフォルトでmasterブランチを、push等のブランチ系アクション場合は対象ブランチをチェックアウトします。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml">name<span class="p">:</span><span class="w"> </span>スクラッチ組織を作成します。<span class="w">
-</span><span class="w">
-</span><span class="w"></span>on<span class="p">:</span><span class="w">
-</span><span class="w">  </span>push<span class="p">:</span><span class="w">
-</span><span class="w">    </span>branches<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>master<span class="w">
-</span><span class="w">
-</span><span class="w"></span>jobs<span class="p">:</span><span class="w">
-</span><span class="w">  </span>create-scratch-org<span class="p">:</span><span class="w">
-</span><span class="w">    </span>runs-on<span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
-</span><span class="w">    </span>steps<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
-</span><span class="w">        </span>uses<span class="p">:</span><span class="w"> </span>actions/checkout@v2</code></pre></div>
-<h3 id="2-sfdxのセットアップ">2. SFDXのセットアップ</h3>
-
-<p>SFDXとは<a href="https://developer.salesforce.com/ja/tools/sfdxcli">Salesforce CLI</a>のことです、<code>Salesforce</code>がコマンドライン上から操作できるものです。<br />
-通常のセットアップでは、上記リンクからダウンロードしてインストール、npmやbrewによるインストールがあります。GitHubActionsのワークフロー上でも同様の手順でセットアップできます。<br />
-今回はnpmを使います。そのため<code>package.json</code>を作成する必要がありますが、これが嫌な場合や、npmが使えない場合は<a href="https://github.com/sfdx-actions/setup-sfdx">sfdx-actions/setup-sfdx</a>や<a href="https://github.com/forcedotcom/salesforcedx-actions">forcedotcom/salesforcedx-actions</a>を使うのも良さそうです。<br />
-npmでsfdxをインストールするためには以下のコマンドをたたきます。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## package.jsonが存在しない場合は作成する</span>
-npm init --yes
-
-npm i -D sfdx</code></pre></div>
-<p>すると<code>package.json</code>と<code>package-lock.json</code>が追加されているはずなのでコミットなりステージングなりしておきます。</p>
-
-<p>ワークフローのstepsを追記します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span>jobs<span class="p">:</span><span class="w">
-</span><span class="w">  </span>create-scratch-org<span class="p">:</span><span class="w">
-</span><span class="w">    </span>runs-on<span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
-</span><span class="w">    </span>steps<span class="p">:</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
-</span><span class="w">        </span>uses<span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあれば使う&#39;</span><span class="w">
-</span><span class="w">        </span>id<span class="p">:</span><span class="w"> </span>app-cache-npm<span class="w">
-</span><span class="w">        </span>uses<span class="p">:</span><span class="w"> </span>actions/cache@v1<span class="w">
-</span><span class="w">        </span>with<span class="p">:</span><span class="w">
-</span><span class="w">          </span>path<span class="p">:</span><span class="w"> </span>node_modules<span class="w">
-</span><span class="w">          </span>key<span class="p">:</span><span class="w"> </span>npm-${{<span class="w"> </span>hashFiles(<span class="s1">&#39;**/package-lock.json&#39;</span>)<span class="w"> </span>}}<span class="w">
-</span><span class="w">          </span>restore-keys<span class="p">:</span><span class="w"> </span><span class="sd">|
-</span><span class="sd">            npm-${{ env.app-cache-name }}-</span><span class="w">
-</span><span class="w">            </span>npm<span class="sd">-
-</span><span class="sd">
-</span><span class="sd">      - name: &#39;npm ciを実行&#39;</span><span class="w">
-</span><span class="w">        </span>if<span class="p">:</span><span class="w"> </span>steps.app-cache-npm.outputs.cache-hit<span class="w"> </span>!=<span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npm<span class="w"> </span>ci<span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;sfdxが使えるかテスト&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>--help</code></pre></div>
-<p>これでsfdxコマンドがワークフロー上で使えるようになりました。</p>
-
-<h3 id="3-devhub認証">3. DevHub認証</h3>
-
-<p>DevHubの用意が必要です。<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.html">組織での Dev Hub の有効化 | Salesforce DX 設定ガイド | Salesforce Developers</a><br />
-sfdxでコマンドラインで完結する認証コマンドは<code>force:auth:sfdxurl:store</code>のみ？のようなのでこれを使います。このコマンドは<code>Sfdx Auth Url</code>を使うため、手元の環境で組織の認証をしておく必要があります。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## DevHubを使う組織を認証する。</span>
-sfdx force:auth:web:login -a ForGitHubAction
-
-<span class="c1">## --verboseを付けるとSfdx Auth Urlが表示されます</span>
-sfdx force:org:display --verbose -u ForGitHubAction</code></pre></div>
-<p><code>Sfdx Auth Url</code>をコピペして、GitHubリポジトリのSecretsに登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secretsについては<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br />
-Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsからできます。</p>
-
-<p><img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面" /></p>
-
-<p>Nameはワークフローからの呼び出しの際に使うのでわかりやすいものを、今回は<code>SFDX_AUTH_URL</code>としました。<br />
-ワークフローファイルを追記します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span>jobs<span class="p">:</span><span class="w">
-</span><span class="w">  </span>create-scratch-org<span class="p">:</span><span class="w">
-</span><span class="w">    </span>runs-on<span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
-</span><span class="w">    </span>steps<span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="c"># 省略</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;Secretsに登録したSfdx Auth Urlをファイルへ出力&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span><span class="s1">&#39;echo ${{ secrets.SFDX_AUTH_URL }} &gt; ./SFDX_AUTH_URL.txt&#39;</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;Salesforce組織の認証を得る&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span><span class="s1">&#39;npx sfdx force:auth:sfdxurl:store -f ./SFDX_AUTH_URL.txt -d&#39;</span></code></pre></div>
-<h3 id="4-スクラッチ組織を作成-セットアップ">4. スクラッチ組織を作成、セットアップ</h3>
-
-<p>スクラッチ組織のセットアップを行います。例としてはこんな感じになるかと思います。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span>jobs<span class="p">:</span><span class="w">
-</span><span class="w">  </span>create-scratch-org<span class="p">:</span><span class="w">
-</span><span class="w">    </span>runs-on<span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
-</span><span class="w">    </span>steps<span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="c"># 省略</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;スクラッチ組織の作成&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>org<span class="p">:</span>create<span class="w"> </span>-f<span class="w"> </span>config/project-scratch-def.json<span class="w"> </span>-a<span class="w"> </span>TestScratchOrg<span class="w"> </span>-d<span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>source<span class="p">:</span>push<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg</code></pre></div>
-<p>スクラッチ組織は作成上限があるので、期限は一日としています。<br />
-<code>config/project-scratch-def.json</code>がない場合は、<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm">スクラッチ組織定義の設定値</a>を参考にしてください。一応下に最低限の物を置いておきます。</p>
-<div class="highlight"><pre class="chroma"><code class="language-json:config/project-scratch-def.json" data-lang="json:config/project-scratch-def.json"><span class="p">{</span>
-  <span class="nt">&#34;orgName&#34;</span><span class="p">:</span> <span class="s2">&#34;testOrg&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;edition&#34;</span><span class="p">:</span> <span class="s2">&#34;Developer&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;features&#34;</span><span class="p">:</span> <span class="p">[]</span>
-<span class="p">}</span></code></pre></div>
-<h3 id="5-ログイン用のurlを表示する">5. ログイン用のURLを表示する</h3>
-
-<p>確認しやすくするために、ログイン用のURLも表示しておきます。<br />
-<code>sfdx force:org:open -r</code>でインスタントなログインURLを取得できますが、恒久的にログインしたかったので、そちらも載せています。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="w">  </span>jobs<span class="p">:</span><span class="w">
-</span><span class="w">  </span>create-scratch-org<span class="p">:</span><span class="w">
-</span><span class="w">    </span>runs-on<span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
-</span><span class="w">    </span>steps<span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="c"># 省略</span><span class="w">
-</span><span class="w">      </span><span class="c">## 期限が短いログインURLを表示</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;ログインURLの表示、期限が短い&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>org<span class="p">:</span>open<span class="w"> </span>-r<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
-</span><span class="w">
-</span><span class="w">      </span><span class="c">## 期限のないログインURLを作成する</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;パスワードを発行&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>npx<span class="w"> </span>sfdx<span class="w"> </span>force<span class="p">:</span>user<span class="p">:</span>password<span class="p">:</span>generate<span class="w"> </span>-u<span class="w"> </span>TestScratchOrg<span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;ID/PWからログインURLを作成する&#39;</span><span class="w">
-</span><span class="w">        </span>shell<span class="p">:</span><span class="w"> </span>bash<span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span><span class="sd">|
-</span><span class="sd">          ORG_INFO=$(npx sfdx force:org:display -u TestScratchOrg --json | jq .result)</span><span class="w">
-</span><span class="w">          </span>INSTANCE_URL=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.instanceUrl)<span class="w">
-</span><span class="w">          </span>USER_NAME=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.username)<span class="w">
-</span><span class="w">          </span>PASSWORD=$(echo<span class="w"> </span>$ORG_INFO<span class="w"> </span>|<span class="w"> </span>jq<span class="w"> </span>.password)<span class="w">
-</span><span class="w">          </span>echo<span class="w"> </span>&#34;<span class="c">##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span><span class="s1">&#39;期限のないログインURLを表示&#39;</span><span class="w">
-</span><span class="w">        </span>run<span class="p">:</span><span class="w"> </span>echo<span class="w"> </span>${{<span class="w"> </span>steps.make-login-url.outputs.login-url<span class="w"> </span>}}</code></pre></div>
-<h2 id="おわりに">おわりに</h2>
-
-<p>日毎にスクラッチ組織の作成数上限があるので、プルリクpushでトリガしたりする際は注意が必要ですが、Apexテストまでやってくれると結構便利になると思います。<br />
-あとはこのワークフローをSlack連携させて拡張したりします。</p>
-</content:encoded>
     </item>
     
     <item>
@@ -250,44 +28,6 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
       
       <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
       <description>Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの</description>
-      <content:encoded>
-
-<p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
-<code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
-<code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
-
-<h2 id="hoge-cmp">Hoge.cmp</h2>
-
-<ul>
-<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
-
-<ul>
-<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
-</ul></li>
-<li>コントローラーのメソッドには<code>c</code>からアクセスできる。
-
-<ul>
-<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。cは<code>Controller.js</code>の関数も含む。ハマった</li>
-</ul></li>
-</ul>
-
-<h2 id="hogecontroller-js-hogehelper-js">HogeController.js | HogeHelper.js</h2>
-
-<p>コントローラーの関数は3つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br />
-<code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
-
-<h2 id="参考">参考</h2>
-
-<ul>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.lightning.meta/lightning/js_helper.htm">コンポーネントのバンドル内の JavaScript コードの共有 | Lightning Aura Components Developer Guide (Lightning Aura コンポーネント開発者ガイド) | Salesforce Developers</a></li>
-<li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
-<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
-
-<ul>
-<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
-</ul></li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -297,24 +37,6 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
       
       <guid>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
       <description>始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると</description>
-      <content:encoded>
-
-<h2 id="始める前">始める前</h2>
-
-<p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。
-とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。</p>
-
-<h2 id="メモ">メモ</h2>
-
-<p>リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。<br />
-リードを使用すると、見込み客を区別することが簡単にできる。</p>
-
-<p>リードレコードを作って、レコードページから取引の開始をクリックすると取引先、取引責任者、商談へ変換できるモーダルが開く
-<img src="/img/2020-02-19-18-09-22.png" alt="変換できるモーダル" /></p>
-
-<p>取引先責任者は商談に紐付けることができ、これでどの責任者とやり取りしているか明確になる。<br />
-取引先は、取引先責任者が所属している組織のこと</p>
-</content:encoded>
     </item>
     
   </channel>

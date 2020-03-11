@@ -1,21 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>
-    2019-01 on 
-    Mity
-    </title>
+    <title>2019-01 on Mity</title>
     <link>https://mithy.fun/archives/2019-01/</link>
-    <description>Recent content in 2019-01
-    on Mity</description>
+    <description>Recent content in 2019-01 on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    
-    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     <lastBuildDate>Thu, 31 Jan 2019 17:43:40 +0900</lastBuildDate>
     
-    
-        <atom:link href="https://mithy.fun/archives/2019-01/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mithy.fun/archives/2019-01/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -25,8 +19,6 @@
       
       <guid>https://mithy.fun/posts/hello/</guid>
       <description>hello&amp;mdash;:</description>
-      <content:encoded><p>hello&mdash;:</p>
-</content:encoded>
     </item>
     
   </channel>

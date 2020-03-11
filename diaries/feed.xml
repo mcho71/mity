@@ -1,19 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>
-    Diaries on 
-    Mity
-    </title>
+    <title>Diaries on Mity</title>
     <link>https://mithy.fun/diaries/</link>
-    <description>Recent content in Diaries
-    on Mity</description>
+    <description>Recent content in Diaries on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    
-    
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     
-        <atom:link href="https://mithy.fun/diaries/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mithy.fun/diaries/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -23,12 +18,6 @@
       
       <guid>https://mithy.fun/diaries/2020-02-27/</guid>
       <description>ボーナス出た！ マンC vs レアル面白かった 首を痛めた、妻とか会社の人に優しくしてもらった</description>
-      <content:encoded><ul>
-<li>ボーナス出た！</li>
-<li>マンC vs レアル面白かった</li>
-<li>首を痛めた、妻とか会社の人に優しくしてもらった</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -38,12 +27,6 @@
       
       <guid>https://mithy.fun/diaries/2020-02-25/</guid>
       <description>ボーナスが出るらしい 防災意識が高まってる ラテが美味しい</description>
-      <content:encoded><ul>
-<li>ボーナスが出るらしい</li>
-<li>防災意識が高まってる</li>
-<li>ラテが美味しい</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -53,11 +36,6 @@
       
       <guid>https://mithy.fun/diaries/2020-02-24/</guid>
       <description>雪山に行った、小さい子でも遊べそうなエリアがあったけど装備がなかったので泣く泣く引き返した。また今度リベンジする 娘、外食のときはだいたい一人で食べてくれるようになって、とても楽。</description>
-      <content:encoded><ul>
-<li>雪山に行った、小さい子でも遊べそうなエリアがあったけど装備がなかったので泣く泣く引き返した。また今度リベンジする</li>
-<li>娘、外食のときはだいたい一人で食べてくれるようになって、とても楽。</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -67,12 +45,6 @@
       
       <guid>https://mithy.fun/diaries/2020-02-17/</guid>
       <description>本格的に雪が降ってる プレイマネー上振れた snowieを使ってみた</description>
-      <content:encoded><ul>
-<li>本格的に雪が降ってる</li>
-<li>プレイマネー上振れた</li>
-<li>snowieを使ってみた</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -82,12 +54,6 @@
       
       <guid>https://mithy.fun/diaries/2020-02-16/</guid>
       <description>プランク大王になった コストコ→香林坊→アピタした 娘、キッズスペースの滑り台、ちゃんと階段から登って滑るようになってる</description>
-      <content:encoded><ul>
-<li>プランク大王になった</li>
-<li>コストコ→香林坊→アピタした</li>
-<li>娘、キッズスペースの滑り台、ちゃんと階段から登って滑るようになってる</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -97,12 +63,6 @@
       
       <guid>https://mithy.fun/diaries/2020-02-15/</guid>
       <description>福井までいった、駅近くの山の中の動物園、良かった。 ホールデム楽しい 家事を交換してみた</description>
-      <content:encoded><ul>
-<li>福井までいった、駅近くの山の中の動物園、良かった。</li>
-<li>ホールデム楽しい</li>
-<li>家事を交換してみた</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -112,11 +72,6 @@
       
       <guid>https://mithy.fun/diaries/2020-02-09/</guid>
       <description>多分家族皆ウイルス性胃腸炎から回復した 初コメダ珈琲、ショコラノワールおいしかった</description>
-      <content:encoded><ul>
-<li>多分家族皆ウイルス性胃腸炎から回復した</li>
-<li>初コメダ珈琲、ショコラノワールおいしかった</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -126,12 +81,6 @@
       
       <guid>https://mithy.fun/diaries/2020-02-01/</guid>
       <description>リングフィットしてる 一人ドライブでカフェ探しした 近所のまだ行っていなかったお店でステーキを食べた</description>
-      <content:encoded><ul>
-<li>リングフィットしてる</li>
-<li>一人ドライブでカフェ探しした</li>
-<li>近所のまだ行っていなかったお店でステーキを食べた</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -141,12 +90,6 @@
       
       <guid>https://mithy.fun/diaries/2020-01-31/</guid>
       <description>朝から妻と娘が遊んでいた モブプロした かふぇいった、カフェミストおいしい</description>
-      <content:encoded><ul>
-<li>朝から妻と娘が遊んでいた</li>
-<li>モブプロした</li>
-<li>かふぇいった、カフェミストおいしい</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -156,12 +99,6 @@
       
       <guid>https://mithy.fun/diaries/2020-01-29/</guid>
       <description>朝早くから娘と遊んだ、超ハイテンションになった リングフィット楽しい プログラムの中身を考えることに頭の容量を割けている、コンディション良い</description>
-      <content:encoded><ul>
-<li>朝早くから娘と遊んだ、超ハイテンションになった</li>
-<li>リングフィット楽しい</li>
-<li>プログラムの中身を考えることに頭の容量を割けている、コンディション良い</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -171,12 +108,6 @@
       
       <guid>https://mithy.fun/diaries/2020-01-28/</guid>
       <description>娘、寝る前に乗っかってくるようになった カフェで仕事した、良い Vuexのことを考えてる</description>
-      <content:encoded><ul>
-<li>娘、寝る前に乗っかってくるようになった</li>
-<li>カフェで仕事した、良い</li>
-<li>Vuexのことを考えてる</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -186,12 +117,6 @@
       
       <guid>https://mithy.fun/diaries/2020-01-27/</guid>
       <description>娘、ママがいないと寂しくなるようになった 娘、ご飯をほぼ一人で食べられるように チョコチップクッキー美味しい</description>
-      <content:encoded><ul>
-<li>娘、ママがいないと寂しくなるようになった</li>
-<li>娘、ご飯をほぼ一人で食べられるように</li>
-<li>チョコチップクッキー美味しい</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -201,12 +126,6 @@
       
       <guid>https://mithy.fun/diaries/2020-01-26/</guid>
       <description>公園で遊んだ、土遊び、枯れた木の実、色々興味が増えてる コストコで買い物、もう目が届かないところまで行けるようになった 今日は腰が軽かった</description>
-      <content:encoded><ul>
-<li>公園で遊んだ、土遊び、枯れた木の実、色々興味が増えてる</li>
-<li>コストコで買い物、もう目が届かないところまで行けるようになった</li>
-<li>今日は腰が軽かった</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -216,12 +135,6 @@
       
       <guid>https://mithy.fun/diaries/2020-01-24/</guid>
       <description>娘、意思表示が明確になってきた リングフィットした 大人の三角チョコパイおいしい</description>
-      <content:encoded><ul>
-<li>娘、意思表示が明確になってきた</li>
-<li>リングフィットした</li>
-<li>大人の三角チョコパイおいしい</li>
-</ul>
-</content:encoded>
     </item>
     
     <item>
@@ -231,12 +144,6 @@
       
       <guid>https://mithy.fun/diaries/2020-01-19/</guid>
       <description>洗車した、手際良くなってきた 隣の市の図書館へ行った 娘、うん と いや を使い分けるようになった</description>
-      <content:encoded><ul>
-<li>洗車した、手際良くなってきた</li>
-<li>隣の市の図書館へ行った</li>
-<li>娘、うん と いや　を使い分けるようになった</li>
-</ul>
-</content:encoded>
     </item>
     
   </channel>
