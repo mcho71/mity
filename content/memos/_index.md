@@ -1,5 +1,5 @@
 ---
-title: "Memos"
+title: "Memo"
 menu: "main"
 weight: 3
 ---
