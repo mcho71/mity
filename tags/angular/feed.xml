@@ -1,0 +1,22 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>
+    Angular on 
+    Mity
+    </title>
+    <link>https://mithy.fun/tags/angular/</link>
+    <description>Recent content in Angular
+    on Mity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    
+    
+    <copyright>&amp;copy;Mamoru Machida 2019</copyright>
+    <lastBuildDate>Mon, 16 Mar 2020 12:06:21 +0900</lastBuildDate>
+    
+    
+        <atom:link href="https://mithy.fun/tags/angular/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

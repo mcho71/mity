@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>
-    Posts on 
+    Note on 
     Mity
     </title>
-    <link>https://mithy.fun/posts/</link>
-    <description>Recent content in Posts
+    <link>https://mithy.fun/notes/</link>
+    <description>Recent content in Note
     on Mity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
@@ -13,15 +13,63 @@
     
     <copyright>&amp;copy;Mamoru Machida 2019</copyright>
     
-        <atom:link href="https://mithy.fun/posts/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mithy.fun/notes/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた</title>
+      <link>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+      <pubDate>Mon, 16 Mar 2020 12:06:21 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
+      <description><![CDATA[モチベーション 各所でtslintからeslintの移行が進んでるのと、vscodeのeslintフォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLIのバージョンは9.0.6でした。 パッケージのインストール まず、@angular-eslint/angular-eslintのパッケージをインストールします。 angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular npm i -D eslint \ @angular-eslint/builder \ @angular-eslint/eslint-plugin \ @angular-eslint/template-parser \ @angular-eslint/eslint-plugin-template コマンドと]]></description>
+      <content:encoded><![CDATA[<h2 id="モチベーション">モチベーション</h2>
+<p>各所でtslintからeslintの移行が進んでるのと、vscodeのeslintフォーマッターを使いたかった。</p>
+<h2 id="移行手順">移行手順</h2>
+<p><code>ng new</code>したところから始めます。AngularCLIのバージョンは<code>9.0.6</code>でした。</p>
+<h3 id="パッケージのインストール">パッケージのインストール</h3>
+<p>まず、@angular-eslint/angular-eslintのパッケージをインストールします。
+<a href="https://github.com/angular-eslint/angular-eslint" target="_blank" rel="nofollow noopener">angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D eslint <span class="se">\
+</span><span class="se"></span>  @angular-eslint/builder <span class="se">\
+</span><span class="se"></span>  @angular-eslint/eslint-plugin <span class="se">\
+</span><span class="se"></span>  @angular-eslint/template-parser <span class="se">\
+</span><span class="se"></span>  @angular-eslint/eslint-plugin-template
+</code></pre></div><h3 id="コマンドとeslintの設定を修正">コマンドとESLintの設定を修正</h3>
+<p>前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に<code>angular.json</code>を修正、<strong><code>.eslintrc.js</code></strong>を追加しました。angular.jsonの差分はこんな感じ<br>
+<img src="/img/2020-03-16-12-41-16.png" alt="angular.jsonの差分"></p>
+<p><code>.eslint.js</code>のサンプルは
+<a href="https://github.com/angular-eslint/angular-eslint/blob/master/packages/integration-tests/fixtures/angular-cli-workspace/.eslintrc.js" target="_blank" rel="nofollow noopener">ここ</a>からいただきました。</p>
+<p>また、この<code>.eslint.js</code>を使うために、<code>@typescript-eslint</code>関連のパッケージが必要なので以下のコマンドでインストールします。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D @typescript-eslint/eslint-plugin <span class="se">\
+</span><span class="se"></span>  @typescript-eslint/parser
+</code></pre></div><p>ここまでで<code>ng lint</code>は動くようになるはずです。手元の環境では、<code>app.component.spec.ts</code>でクオートのエラーがでました。</p>
+<h2 id="vscodeでも動かしてみる">VSCodeでも動かしてみる</h2>
+<p>設定されてるルールが適用されてるか見てみます。サンプルにあった<code>'@typescript-eslint/no-non-null-assertion': 'error'</code>で試してみます。</p>
+<p><img src="/img/2020-03-16-18-37-21.png" alt="'@typescript-eslint/no-non-null-assertion&rsquo;: &lsquo;error&rsquo;"></p>
+<p>画像や動画をとっていないですが、<code>ESLint: Fix all auto-fixable Problems</code>も効きました。</p>
+<h2 id="終わり">終わり</h2>
+<p>Angular本体のESLint対応も待ち遠しいですが、とりあえずは<code>@angular-eslint/angular-eslint</code>で良いなと思いました。</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>[読んでいる]DL版 RustではじめるOpenGL</title>
+      <link>https://mithy.fun/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</link>
+      <pubDate>Tue, 12 Nov 2019 15:27:44 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
+      <description><![CDATA[[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH]]></description>
+      <content:encoded><![CDATA[<h2 id="dl版-rustではじめるopengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a></h2>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>MySQL JSON型の集計</title>
-      <link>https://mithy.fun/posts/mysql-json/</link>
+      <link>https://mithy.fun/notes/mysql-json/</link>
       <pubDate>Tue, 12 Mar 2019 14:09:17 +0900</pubDate>
       
-      <guid>https://mithy.fun/posts/mysql-json/</guid>
+      <guid>https://mithy.fun/notes/mysql-json/</guid>
       <description><![CDATA[MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使用するために、MySQLのバージョンを8以上にする。 集計対象のJSON型のデータ構造を、集計に適した形にする。 込み入った集計を必要とする場合は、このページの配列型のようなデータ構造のほうが良さそう。 J]]></description>
       <content:encoded><![CDATA[<p>MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。<br>
 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。</p>
@@ -211,10 +259,10 @@
     
     <item>
       <title>Hello</title>
-      <link>https://mithy.fun/posts/hello/</link>
+      <link>https://mithy.fun/notes/hello/</link>
       <pubDate>Thu, 31 Jan 2019 17:43:40 +0900</pubDate>
       
-      <guid>https://mithy.fun/posts/hello/</guid>
+      <guid>https://mithy.fun/notes/hello/</guid>
       <description><![CDATA[hello&amp;mdash;:]]></description>
       <content:encoded><![CDATA[<p>hello&mdash;:</p>
 ]]></content:encoded>
