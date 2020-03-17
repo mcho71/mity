@@ -16,7 +16,7 @@ archives: 2020-03
 
 ## モチベーション
 
-各所でtslintからeslintの移行が進んでるのと、vscodeのeslintフォーマッターを使いたかった。
+各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。
 
 ## 移行手順
 
@@ -24,7 +24,7 @@ archives: 2020-03
 
 ### パッケージのインストール
 
-まず、@angular-eslint/angular-eslintのパッケージをインストールします。
+まず、`eslint`と`@angular-eslint`関連のパッケージをインストールします。
 [angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular](https://github.com/angular-eslint/angular-eslint)
 
 ```sh
@@ -46,8 +46,7 @@ npm i -D eslint \
 また、この`.eslint.js`を使うために、`@typescript-eslint`関連のパッケージが必要なので以下のコマンドでインストールします。
 
 ```sh
-npm i -D @typescript-eslint/eslint-plugin \
-  @typescript-eslint/parser
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 ```
 
 ここまでで`ng lint`は動くようになるはずです。手元の環境では、`app.component.spec.ts`でクオートのエラーがでました。
@@ -58,8 +57,8 @@ npm i -D @typescript-eslint/eslint-plugin \
 
 !['@typescript-eslint/no-non-null-assertion': 'error'](/img/2020-03-16-18-37-21.png)
 
-画像や動画をとっていないですが、`ESLint: Fix all auto-fixable Problems`も効きました。
+無事Lintされていました。また、画像や動画をとっていないですが、`ESLint: Fix all auto-fixable Problems`も効きました。
 
 ## 終わり
 
-Angular本体のESLint対応も待ち遠しいですが、とりあえずは`@angular-eslint/angular-eslint`で良いなと思いました。
+Angular本体のESLint対応も待ち遠しいですが、`@angular-eslint/angular-eslint`はルールも順次対応していくようなので、とりあえずこちらで良さそうですね
