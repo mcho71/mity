@@ -393,7 +393,7 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
 <li>開発者コンソール
 <ul>
 <li>エディタがついてる。補完あり</li>
-<li>LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+<li>LightningExperienceのページから実行でLightningExperienceでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
 </ul>
 </li>
 <li>xmlベース</li>
