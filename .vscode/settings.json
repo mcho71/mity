@@ -3,10 +3,13 @@
         "editor.tabSize": 4
     },
     "cSpell.words": [
-        "bigint",
-        "githubactions",
-        "pullreminders",
+        "EOSIO",
         "InnoDB",
-        "mity"
+        "bigint",
+        "cleos",
+        "githubactions",
+        "mity",
+        "nodeos",
+        "pullreminders"
     ]
 }
