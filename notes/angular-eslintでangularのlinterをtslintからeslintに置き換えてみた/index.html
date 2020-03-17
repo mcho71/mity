@@ -26,7 +26,7 @@ if (!doNotTrack) {
     <meta content="ESLint, TSLint, Angular" name="keywords">
     
     
-    <meta name="description" property="og:description" content="モチベーション 各所でtslintからeslintの移行が進んでるのと、vscodeのeslintフォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLIのバージョンは9.0.6でした。 パッケージのインストール まず、@angular-eslint/angular-eslintのパッケージをインストールします。 angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular npm i -D eslint \ @angular-eslint/builder \ @angular-eslint/eslint-plugin \ @angular-eslint/template-parser \ @angular-eslint/eslint-plugin-template コマンドと|">
+    <meta name="description" property="og:description" content="モチベーション 各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLIのバージョンは9.0.6でした。 パッケージのインストール まず、eslintと@angular-eslint関連のパッケージをインストールします。 angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular npm i -D eslint \ @angular-eslint/builder \ @angular-eslint/eslint-plugin \ @angular-eslint/template-parser \ @angular-eslint/eslint-plugin-template コマンドとESLint|">
     
 
     <meta name="apple-mobile-web-app-title" content="Mity">
@@ -46,7 +46,7 @@ if (!doNotTrack) {
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
     <meta name="twitter:title" content="@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた | Mity">
-    <meta name="twitter:description" content="モチベーション 各所でtslintからeslintの移行が進んでるのと、vscodeのeslintフォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLIのバージョンは9.0.6でした。 パッケージのインストール まず、@angular-eslint/angular-eslintのパッケージをインストールします。 angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular npm i -D eslint \ @angular-eslint/builder \ @angular-eslint/eslint-plugin \ @angular-eslint/template-parser \ @angular-eslint/eslint-plugin-template コマンドと|">
+    <meta name="twitter:description" content="モチベーション 各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLIのバージョンは9.0.6でした。 パッケージのインストール まず、eslintと@angular-eslint関連のパッケージをインストールします。 angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular npm i -D eslint \ @angular-eslint/builder \ @angular-eslint/eslint-plugin \ @angular-eslint/template-parser \ @angular-eslint/eslint-plugin-template コマンドとESLint|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -162,11 +162,11 @@ if (!doNotTrack) {
   
   <section class="pb-6 mb-3 border-bottom text-gray">
     <h2 id="モチベーション">モチベーション</h2>
-<p>各所でtslintからeslintの移行が進んでるのと、vscodeのeslintフォーマッターを使いたかった。</p>
+<p>各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。</p>
 <h2 id="移行手順">移行手順</h2>
 <p><code>ng new</code>したところから始めます。AngularCLIのバージョンは<code>9.0.6</code>でした。</p>
 <h3 id="パッケージのインストール">パッケージのインストール</h3>
-<p>まず、@angular-eslint/angular-eslintのパッケージをインストールします。
+<p>まず、<code>eslint</code>と<code>@angular-eslint</code>関連のパッケージをインストールします。
 <a href="https://github.com/angular-eslint/angular-eslint" target="_blank" rel="nofollow noopener">angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D eslint <span class="se">\
 </span><span class="se"></span>  @angular-eslint/builder <span class="se">\
@@ -179,15 +179,14 @@ if (!doNotTrack) {
 <p><code>.eslint.js</code>のサンプルは
 <a href="https://github.com/angular-eslint/angular-eslint/blob/master/packages/integration-tests/fixtures/angular-cli-workspace/.eslintrc.js" target="_blank" rel="nofollow noopener">ここ</a>からいただきました。</p>
 <p>また、この<code>.eslint.js</code>を使うために、<code>@typescript-eslint</code>関連のパッケージが必要なので以下のコマンドでインストールします。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D @typescript-eslint/eslint-plugin <span class="se">\
-</span><span class="se"></span>  @typescript-eslint/parser
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 </code></pre></div><p>ここまでで<code>ng lint</code>は動くようになるはずです。手元の環境では、<code>app.component.spec.ts</code>でクオートのエラーがでました。</p>
 <h2 id="vscodeでも動かしてみる">VSCodeでも動かしてみる</h2>
 <p>設定されてるルールが適用されてるか見てみます。サンプルにあった<code>'@typescript-eslint/no-non-null-assertion': 'error'</code>で試してみます。</p>
 <p><img src="/img/2020-03-16-18-37-21.png" alt="'@typescript-eslint/no-non-null-assertion&rsquo;: &lsquo;error&rsquo;"></p>
-<p>画像や動画をとっていないですが、<code>ESLint: Fix all auto-fixable Problems</code>も効きました。</p>
+<p>無事Lintされていました。また、画像や動画をとっていないですが、<code>ESLint: Fix all auto-fixable Problems</code>も効きました。</p>
 <h2 id="終わり">終わり</h2>
-<p>Angular本体のESLint対応も待ち遠しいですが、とりあえずは<code>@angular-eslint/angular-eslint</code>で良いなと思いました。</p>
+<p>Angular本体のESLint対応も待ち遠しいですが、<code>@angular-eslint/angular-eslint</code>はルールも順次対応していくようなので、とりあえずこちらで良さそうですね</p>
 
   </section>
 </article>
