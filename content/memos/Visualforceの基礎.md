@@ -29,7 +29,7 @@ archives: 2019-11
 - APIを使用して作成変更できる
 - 開発者コンソール
     - エディタがついてる。補完あり
-    - LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get("e.force:navigateToURL").setParams({"url": "/apex/pageName"}).fire();
+    - LightningExperienceのページから実行でLightningExperienceでプレビュ  $A.get("e.force:navigateToURL").setParams({"url": "/apex/pageName"}).fire();
 - xmlベース
 
 ## 単純な変数と数式の使用

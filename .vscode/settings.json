@@ -1,5 +1,12 @@
 {
     "[markdown]": {
         "editor.tabSize": 4
-    }
+    },
+    "cSpell.words": [
+        "bigint",
+        "githubactions",
+        "pullreminders",
+        "InnoDB",
+        "mity"
+    ]
 }
