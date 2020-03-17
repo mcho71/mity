@@ -186,7 +186,7 @@ if (!doNotTrack) {
 </code></pre></div><h3 id="アカウントを発行する">アカウントを発行する</h3>
 <p>EOSチェーンを立ち上げると、<code>system user</code>の<code>eosio</code>というアカウントが自動で発行される。このアカウントを使って、新規アカウントを発行するような形になっている。
 新規アカウントの発行は以下のコマンドで行っていた。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># cleos create account &lt;creater&gt; &lt;new-account-name&gt; &lt;owner-key&gt; &lt;active-key (optional)&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># cleos create account &lt;creator&gt; &lt;new-account-name&gt; &lt;owner-key&gt; &lt;active-key (optional)&gt;</span>
 cleos create account eosio bob &lt;eosio private-key&gt;
 </code></pre></div><p>owner-key、active-keyに対しては、permissionが付与されており、owner-keyに対応する秘密鍵を知っていれば、active-keyの変更が可能。
 active-keyが指定されていない場合はowner-keyと同一のものとなるが、実運用時には分けることを推奨していた。</p>

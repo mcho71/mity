@@ -20,10 +20,10 @@
     
     <item>
       <title>TRAILHEADに入門した</title>
-      <link>https://mithy.fun/memos/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</link>
+      <link>https://mithy.fun/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</link>
       <pubDate>Thu, 31 Oct 2019 13:07:17 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
+      <guid>https://mithy.fun/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
       <description><![CDATA[TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。 やり始める前の認識 無数にあるPaaSの一つ SaaSも提供してる セールス・顧客系に強い アプリやコンポーネントをリリースできる 以下]]></description>
       <content:encoded><![CDATA[<h2 id="trailheadってなに">TRAILHEADってなに</h2>
 <p><a href="https://trailhead.salesforce.com/ja/home" target="_blank" rel="nofollow noopener"><em>Trailhead | 楽しく学ぶ方法</em></a></p>
@@ -329,10 +329,10 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
     
     <item>
       <title>Macのセットアップでやること</title>
-      <link>https://mithy.fun/memos/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
+      <link>https://mithy.fun/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
       <pubDate>Tue, 29 Oct 2019 17:44:59 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
+      <guid>https://mithy.fun/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
       <description><![CDATA[これはなに 新しいMacを手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnetをインストール すべてをアップデート システム環境設定系 ネットワーク 適宜Wi-Fi、優先でつなぐ Dock 位置を左に 自動的に表示/非表示にチェック 不要なアプリをDockから除いておく トラックパッド スクロールの方向: ナチュラル以外のすべてのチェックボックスをオン 軌跡の速さをやや速めに設定 デスク]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>新しいMacを手に入れたり、初期化した際にすることのメモ</p>

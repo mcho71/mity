@@ -20,10 +20,10 @@
     
     <item>
       <title>EOSIOのGettingStartedをやった</title>
-      <link>https://mithy.fun/memos/eos-setup/</link>
+      <link>https://mithy.fun/notes/eos-setup/</link>
       <pubDate>Fri, 12 Apr 2019 22:07:40 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/eos-setup/</guid>
+      <guid>https://mithy.fun/notes/eos-setup/</guid>
       <description><![CDATA[EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程 1.2 Before You Beginに沿って、eosio/eosioをインストールすると、nodeos/cleos/keosdの3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うこ]]></description>
       <content:encoded><![CDATA[<p><a href="https://developers.eos.io/" target="_blank" rel="nofollow noopener">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs" target="_blank" rel="nofollow noopener">GETTING STARTED</a>をやったので、振り返りなどを</p>
 <h2 id="development-environment">DEVELOPMENT ENVIRONMENT</h2>
@@ -60,7 +60,7 @@
 </code></pre></div><h3 id="アカウントを発行する">アカウントを発行する</h3>
 <p>EOSチェーンを立ち上げると、<code>system user</code>の<code>eosio</code>というアカウントが自動で発行される。このアカウントを使って、新規アカウントを発行するような形になっている。
 新規アカウントの発行は以下のコマンドで行っていた。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># cleos create account &lt;creater&gt; &lt;new-account-name&gt; &lt;owner-key&gt; &lt;active-key (optional)&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># cleos create account &lt;creator&gt; &lt;new-account-name&gt; &lt;owner-key&gt; &lt;active-key (optional)&gt;</span>
 cleos create account eosio bob &lt;eosio private-key&gt;
 </code></pre></div><p>owner-key、active-keyに対しては、permissionが付与されており、owner-keyに対応する秘密鍵を知っていれば、active-keyの変更が可能。
 active-keyが指定されていない場合はowner-keyと同一のものとなるが、実運用時には分けることを推奨していた。</p>

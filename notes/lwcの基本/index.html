@@ -19,14 +19,14 @@ if (!doNotTrack) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  Aura コンポーネントのため Lightning データサービスの基本 &ndash; Mity
+  LWCの基本 &ndash; Mity
 
     </title>
     
-    <meta content="Salesforce, Trailhead, Aura" name="keywords">
+    <meta content="LightningWebComponent, Trailhead, , LWC" name="keywords">
     
     
-    <meta name="description" property="og:description" content="やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h|">
+    <meta name="description" property="og:description" content="はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningElementがLWCの実装っぽい。HTMLElementをラップしてそう 前から3つ終わったけど、大体開発環境とかの話だったな 所感 やり終わってしまったので所感を書く。雑メモは社スラッ|">
     
 
     <meta name="apple-mobile-web-app-title" content="Mity">
@@ -45,8 +45,8 @@ if (!doNotTrack) {
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
-    <meta name="twitter:title" content="Aura コンポーネントのため Lightning データサービスの基本 | Mity">
-    <meta name="twitter:description" content="やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h|">
+    <meta name="twitter:title" content="LWCの基本 | Mity">
+    <meta name="twitter:description" content="はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningElementがLWCの実装っぽい。HTMLElementをラップしてそう 前から3つ終わったけど、大体開発環境とかの話だったな 所感 やり終わってしまったので所感を書く。雑メモは社スラッ|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -121,7 +121,7 @@ if (!doNotTrack) {
 
 <div class="Subhead">
   <div class="Subhead-heading">
-    <div class="h1 mt-3 mb-1">Aura コンポーネントのため Lightning データサービスの基本</div>
+    <div class="h1 mt-3 mb-1">LWCの基本</div>
   </div>
   <div class="Subhead-description">
     
@@ -133,21 +133,17 @@ if (!doNotTrack) {
 
 
 
-<a href='/tags/trailhead' class="muted-link">
-  <span class="Label Label--gray">Trailhead</span>
-</a>
-
-<a href='/tags/aura' class="muted-link">
-  <span class="Label Label--gray">Aura</span>
+<a href='/tags/lwc' class="muted-link">
+  <span class="Label Label--gray">LWC</span>
 </a>
 
 
 
     
     <div class="float-md-right">
-      <span title="Lastmod: 2020-03-04. Published at: 2020-03-04.">
+      <span title="Lastmod: 2020-01-15. Published at: 2020-01-15.">
         
-          Published: 2020-03-04
+          Published: 2020-01-15
         
       </span>
     </div>
@@ -157,24 +153,24 @@ if (!doNotTrack) {
 <article>
   
   <section class="pb-6 mb-3 border-bottom text-gray">
-    <h2 id="やる前">やる前</h2>
-<p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
-<h2 id="メモ">メモ</h2>
-<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
-レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
-    <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">recordLoader</span> <span class="o">=</span> <span class="nx">cmp</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&#34;recordLoader&#34;</span><span class="p">);</span>
-        <span class="nx">recordLoader</span><span class="p">.</span><span class="nx">saveRecord</span><span class="p">(</span><span class="nx">$A</span><span class="p">.</span><span class="nx">getCallback</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">saveResult</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">saveResult</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="s2">&#34;ERROR&#34;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="p">...</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="p">...</span>
-            <span class="p">}</span>
-        <span class="p">}));</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-</code></pre></div>
+    <h2 id="はじめに">はじめに</h2>
+<p>LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。</p>
+<p>トレイルがあったので、これをやる。
+<a href="https://trailhead.salesforce.com/ja/content/learn/trails/build-lightning-web-components" target="_blank" rel="nofollow noopener">Lightning Web コンポーネントの作成 | Salesforce Trailhead</a></p>
+<h2 id="lightning-web-コンポーネントの作成">Lightning Web コンポーネントの作成</h2>
+<ul>
+<li><code>LightningElement</code>がLWCの実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
+</ul>
+<p>前から3つ終わったけど、大体開発環境とかの話だったな</p>
+<h2 id="所感">所感</h2>
+<p>やり終わってしまったので所感を書く。雑メモは社スラックに投稿していたので気が向いたらこっちにまとめる。
+Web標準に準拠して作られているので、最近のjavascriptフロントエンドライブラリを触っていれば、固有のAPIやアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
+Salesforceのコンポーネントとしてしか利用出来ないのが惜しいなと、Webのどこにでも入れられるような感じに想像していたのでちょっとがっかり。
+Salesforceのコンポーネントをモダンなjavascriptで書けるのは良い。出来ることはAuraには追いついていないらしいけど、API等の対応も進んでいるので今後はこっちが主流になっていくのかな。
+トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他はSFDXだったり環境構築のことが大半をしめていた。</p>
+<h2 id="さいごに">さいごに</h2>
+<p>日本語でPG組織を作成するとTrailheadのステップで、ホームのAPI名が違って完了しないので注意</p>
+
   </section>
 </article>
 
@@ -185,11 +181,13 @@ if (!doNotTrack) {
           
   
     <div id="toc" class="mb-3">
-      <b>Aura コンポーネントのため Lightning データサービスの基本</b>
+      <b>LWCの基本</b>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#やる前">やる前</a></li>
-    <li><a href="#メモ">メモ</a></li>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#lightning-web-コンポーネントの作成">Lightning Web コンポーネントの作成</a></li>
+    <li><a href="#所感">所感</a></li>
+    <li><a href="#さいごに">さいごに</a></li>
   </ul>
 </nav>
     </div>
@@ -231,7 +229,7 @@ if (!doNotTrack) {
           <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
             <div class="Subhead mb-2">
               <div class="Subhead-heading">
-                <a href="https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
+                <a href="https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
                   <div class="h3 mt-1 mb-1">Auraコンポーネントから特定フィールドのPickListValuesを取得する</div>
                 </a>
               </div>
@@ -272,7 +270,93 @@ if (!doNotTrack) {
           <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
             <div class="Subhead mb-2">
               <div class="Subhead-heading">
-                <a href="https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/">
+                <a href="https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/">
+                  <div class="h3 mt-1 mb-1">Aura コンポーネントのため Lightning データサービスの基本</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/salesforce' class="muted-link">
+  <span class="Label Label--gray-darker">Salesforce</span>
+</a>
+
+
+
+<a href='/tags/trailhead' class="muted-link">
+  <span class="Label Label--gray">Trailhead</span>
+</a>
+
+<a href='/tags/aura' class="muted-link">
+  <span class="Label Label--gray">Aura</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-03-04. Published at: 2020-03-04.">
+                    
+                      Published: 2020-03-04
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h
+            </div>
+          </li>
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">
+                  <div class="h3 mt-1 mb-1">GitHubActionsでSalesforceのスクラッチ組織を作成する</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/salesforce' class="muted-link">
+  <span class="Label Label--gray-darker">Salesforce</span>
+</a>
+
+
+
+<a href='/tags/salesforce' class="muted-link">
+  <span class="Label Label--gray">Salesforce</span>
+</a>
+
+<a href='/tags/githubactions' class="muted-link">
+  <span class="Label Label--gray">GitHubActions</span>
+</a>
+
+<a href='/tags/sfdx' class="muted-link">
+  <span class="Label Label--gray">SFDX</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-02-27. Published at: 2020-02-27.">
+                    
+                      Published: 2020-02-27
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする
+            </div>
+          </li>
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/">
                   <div class="h3 mt-1 mb-1">Auraコンポーネントの使い方</div>
                 </a>
               </div>
@@ -313,7 +397,7 @@ if (!doNotTrack) {
           <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
             <div class="Subhead mb-2">
               <div class="Subhead-heading">
-                <a href="https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/">
+                <a href="https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/">
                   <div class="h3 mt-1 mb-1">Lightning Experience のリードと商談</div>
                 </a>
               </div>
@@ -344,92 +428,6 @@ if (!doNotTrack) {
             <div class="text-gray ellipsis">
               
               始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると取
-            </div>
-          </li>
-        
-          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
-            <div class="Subhead mb-2">
-              <div class="Subhead-heading">
-                <a href="https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/">
-                  <div class="h3 mt-1 mb-1">Visualforceの基礎</div>
-                </a>
-              </div>
-              <div class="Subhead-description">
-                
-
-
-<a href='/categories/salesforce' class="muted-link">
-  <span class="Label Label--gray-darker">Salesforce</span>
-</a>
-
-
-
-<a href='/tags/visualforce' class="muted-link">
-  <span class="Label Label--gray">Visualforce</span>
-</a>
-
-<a href='/tags/trailhead' class="muted-link">
-  <span class="Label Label--gray">Trailhead</span>
-</a>
-
-
-                <div class="float-md-right">
-                  <span title="Lastmod: 2019-11-11. Published at: 2019-11-11.">
-                    
-                      Published: 2019-11-11
-                    
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="text-gray ellipsis">
-              
-              Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie
-            </div>
-          </li>
-        
-          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
-            <div class="Subhead mb-2">
-              <div class="Subhead-heading">
-                <a href="https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">
-                  <div class="h3 mt-1 mb-1">GitHubActionsでSalesforceのスクラッチ組織を作成する</div>
-                </a>
-              </div>
-              <div class="Subhead-description">
-                
-
-
-<a href='/categories/salesforce' class="muted-link">
-  <span class="Label Label--gray-darker">Salesforce</span>
-</a>
-
-
-
-<a href='/tags/salesforce' class="muted-link">
-  <span class="Label Label--gray">Salesforce</span>
-</a>
-
-<a href='/tags/githubactions' class="muted-link">
-  <span class="Label Label--gray">GitHubActions</span>
-</a>
-
-<a href='/tags/sfdx' class="muted-link">
-  <span class="Label Label--gray">SFDX</span>
-</a>
-
-
-                <div class="float-md-right">
-                  <span title="Lastmod: 2020-02-27. Published at: 2020-02-27.">
-                    
-                      Published: 2020-02-27
-                    
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="text-gray ellipsis">
-              
-              どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする
             </div>
           </li>
         

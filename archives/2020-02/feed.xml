@@ -20,10 +20,10 @@
     
     <item>
       <title>GitHubActionsでSalesforceのスクラッチ組織を作成する</title>
-      <link>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
+      <link>https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
       <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
+      <guid>https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
       <description><![CDATA[どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActionsが正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDXのセットアップ DevHub認証 スクラッチ組織を作成、セットアップ ログイン用のURLを表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインする]]></description>
       <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
@@ -227,10 +227,10 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
     
     <item>
       <title>Auraコンポーネントの使い方</title>
-      <link>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
+      <link>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
+      <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
       <description><![CDATA[Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの]]></description>
       <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
@@ -266,10 +266,10 @@ Secretsの登録はGitHubのリポジトリページのSettings &gt; Secretsか�
     
     <item>
       <title>Lightning Experience のリードと商談</title>
-      <link>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
+      <link>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
       <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
+      <guid>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
       <description><![CDATA[始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると取]]></description>
       <content:encoded><![CDATA[<h2 id="始める前">始める前</h2>
 <p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。

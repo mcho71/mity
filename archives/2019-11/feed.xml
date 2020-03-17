@@ -31,10 +31,10 @@
     
     <item>
       <title>Rustで始めるOpenGLをやっている</title>
-      <link>https://mithy.fun/memos/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</link>
+      <link>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</link>
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
+      <guid>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
       <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
@@ -189,10 +189,10 @@ FPSを表示も</p>
     
     <item>
       <title>Visualforceの基礎</title>
-      <link>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</link>
+      <link>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</link>
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
+      <guid>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
       <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie]]></description>
       <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
 <ul>
@@ -296,10 +296,10 @@ FPSを表示も</p>
     
     <item>
       <title>Vueでモノレポがしたかった</title>
-      <link>https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
+      <link>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
+      <guid>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
       <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
