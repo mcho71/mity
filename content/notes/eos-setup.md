@@ -72,7 +72,7 @@ EOSチェーンを立ち上げると、`system user`の`eosio`というアカウ
 新規アカウントの発行は以下のコマンドで行っていた。
 
 ```sh
-# cleos create account <creater> <new-account-name> <owner-key> <active-key (optional)>
+# cleos create account <creator> <new-account-name> <owner-key> <active-key (optional)>
 cleos create account eosio bob <eosio private-key>
 ```
 
