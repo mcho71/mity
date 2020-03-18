@@ -128,6 +128,43 @@ if (!doNotTrack) {
 <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
   <div class="Subhead mb-2">
     <div class="Subhead-heading">
+      <a href="/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/">
+        <div class="h2 mt-1 mb-1">GitHub Actionsのubuntu-latestでURLEncode</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/githubactions' class="muted-link">
+  <span class="Label Label--gray-darker">GitHubActions</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span title="Lastmod: 2020-03-18. Published at: 2020-03-18.">
+          
+            Published: 2020-03-18
+          
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    jsonから値を抜きだしてURLを作りたかったので結局こんな感じになった USER_NAME=$(python3 -c &#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&#34; $(echo $HOGE_JSON | jq .huga))&#39; ENCODED_URL=$(echo https://example.com?un=${USER_NAME}) $(echo $HOGE)は引数に渡るときに&quot;hoge&quot;となるのでsys.argv[1][1:-1]で両端のダブルクオートを切り取ってる もっといいやり方がありそうだけどとりあえずこれで
+    <a class="muted-link" href="/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
       <a href="/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/">
         <div class="h2 mt-1 mb-1">@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた</div>
       </a>
@@ -412,6 +449,11 @@ if (!doNotTrack) {
     <span class="css-truncate no-wrap m-1 pl-1">
       <a href="/categories/development/" class="link-gray text-emphasized css-truncate-target"><span class="">Development</span></a>
       <span class="text-right Counter">2</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/githubactions/" class="link-gray text-emphasized css-truncate-target"><span class="">GitHubActions</span></a>
+      <span class="text-right Counter">1</span>
     </span>
     
     <span class="css-truncate no-wrap m-1 pl-1">
