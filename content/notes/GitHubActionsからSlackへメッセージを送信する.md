@@ -84,6 +84,8 @@ jobs:
           args: '{\"channel\":\"GM84QDF1P\",\"text\":\"Hello Slack\"}'
 ```
 
+以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。
+
 ## 終わり
 
-以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。
+あとは色々組み合わせよう
