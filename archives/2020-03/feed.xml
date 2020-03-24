@@ -94,6 +94,66 @@ field.getDescribe().getPicklistValues();
     </item>
     
     <item>
+      <title>GitHubActionsからSlackへメッセージを送信する</title>
+      <link>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</link>
+      <pubDate>Fri, 06 Mar 2020 17:34:24 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</guid>
+      <description><![CDATA[どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットアップ 上記リポジトリの手順通り進める。流れは Slack App を作成 Slack App トークンを GitHub に登録 GitHub Actions のワークフローを作成 です、詳しくは前述したリポジトリの方見てください。 セットアップしていく 1. Slack App を作成 Slack API: Applications | Slackを]]></description>
+      <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
+<ul>
+<li><a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions で Salesforce のスクラッチ組織を作成する</a>のワークフローから Slack にログイン URL を送りたかった。</li>
+</ul>
+<h2 id="なにを使うか">なにを使うか</h2>
+<p><a href="https://github.com/pullreminders/slack-action" target="_blank" rel="nofollow noopener">pullreminders/slack-action: GitHub Action for posting Slack messages</a>を使うことにした。<br>
+今気づいたんですが、これ PullPanda のリポジトリだ</p>
+<h2 id="セットアップ">セットアップ</h2>
+<p>上記リポジトリの手順通り進める。流れは</p>
+<ol>
+<li>Slack App を作成</li>
+<li>Slack App トークンを GitHub に登録</li>
+<li>GitHub Actions のワークフローを作成</li>
+</ol>
+<p>です、詳しくは前述したリポジトリの方見てください。</p>
+<h2 id="セットアップしていく">セットアップしていく</h2>
+<h3 id="1-slack-app-を作成">1. Slack App を作成</h3>
+<p><a href="https://api.slack.com/apps" target="_blank" rel="nofollow noopener">Slack API: Applications | Slack</a>を開いて<code>Create New App</code>ボタンをクリックしてアプリを作成します。今回は AppName を<code>GABot</code>としました。Slack ワークスペースは追加したい場所を選択してください。</p>
+<p>メッセージ送信ができるようにアプリに Bot 用の機能を追加します。アプリの Basic Information ページの上部アコーディオンを開き<code>Bots</code>をクリックすると追加できます。</p>
+<p>※画像は設定済みのものになります</p>
+<p><img src="/img/2020-03-24-16-06-13.png" alt="bot権限を付与"></p>
+<p>Slack ワークスペースに アプリをインストールします。
+<img src="/img/2020-03-24-16-08-09.png" alt="Slackワークスペースにインストール"></p>
+<p>※private チェンネルの場合は、チャンネルの詳細タブを開いてそこからアプリをインストールしてください。</p>
+<h3 id="2-slack-app-トークンを-github-に登録">2. Slack App トークンを GitHub に登録</h3>
+<p>アプリの OAuth &amp; Permissions ページの Bot User OAuth Access Token をコピーして</p>
+<p><img src="/img/2020-03-24-16-19-59.png" alt="Bot User OAuth Access Token"></p>
+<p>GitHub の Secrets に登録します。</p>
+<p><img src="/img/2020-03-24-16-22-21.png" alt="GitHubのSecretsに登録"></p>
+<h3 id="3-github-actions-のワークフローを作成">3. GitHub Actions のワークフローを作成</h3>
+<p>簡単なメッセージを送信するワークフローで試してみます。<code>.github/workflows</code>に <code>hello-slack.yml</code>を作成して、以下をコピペします。コピペしたら一番下の行の<code>\&quot;channel\&quot;:\&quot;GM84QDF1P\&quot;</code>を投稿したいチャンネル ID に書き換えます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>GABotでHelloSlack<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">branches</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- master<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">hello-slack</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Hello Slack&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">env</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="k">SLACK_BOT_TOKEN</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.GA_BOT_TOKEN<span class="w"> </span>}}<span class="w">
+</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>pullreminders/slack-action@master<span class="w">
+</span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{\&#34;channel\&#34;:\&#34;GM84QDF1P\&#34;,\&#34;text\&#34;:\&#34;Hello Slack\&#34;}&#39;</span><span class="w">
+</span></code></pre></div><h2 id="終わり">終わり</h2>
+<p>以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>Aura コンポーネントのため Lightning データサービスの基本</title>
       <link>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
       <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
