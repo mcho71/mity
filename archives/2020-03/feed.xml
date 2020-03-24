@@ -148,8 +148,9 @@ field.getDescribe().getPicklistValues();
 </span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>pullreminders/slack-action@master<span class="w">
 </span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">
 </span><span class="w">          </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{\&#34;channel\&#34;:\&#34;GM84QDF1P\&#34;,\&#34;text\&#34;:\&#34;Hello Slack\&#34;}&#39;</span><span class="w">
-</span></code></pre></div><h2 id="終わり">終わり</h2>
-<p>以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。</p>
+</span></code></pre></div><p>以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。</p>
+<h2 id="終わり">終わり</h2>
+<p>あとは色々組み合わせよう</p>
 ]]></content:encoded>
     </item>
     
