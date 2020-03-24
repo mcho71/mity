@@ -12,6 +12,7 @@ publishDir = "docs"
 enableGitInfo = true
 copyright = "&copy;Mamoru Machida 2019"
 rssLimit = 15
+disqusShortname = "mity"
 
 [Author]
   Name = "Mamoru Machida"
