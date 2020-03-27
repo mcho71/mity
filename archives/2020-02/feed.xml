@@ -41,15 +41,12 @@
 <h2 id="完成品">完成品</h2>
 <p>完成品のコードです、このままコピペするだけじゃ使えません。<code>2. SFDXのセットアップ</code>と<code>3. DevHubへログインする</code>をする必要があります。<br>
 フック条件は master ブランチの push になっています。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織の情報をリストアする<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織を作成する<span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
 </span><span class="w">    </span><span class="k">branches</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span>- master<span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">env</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">PROJECT_PREFIX</span><span class="p">:</span><span class="w"> </span>ci-dev<span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="k">create-scratch-org</span><span class="p">:</span><span class="w">
@@ -57,7 +54,7 @@
 </span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
 </span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
-</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあったら使う。&#39;</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあったら使う&#39;</span><span class="w">
 </span><span class="w">        </span><span class="k">id</span><span class="p">:</span><span class="w"> </span>app-cache-npm<span class="w">
 </span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/cache@v1<span class="w">
 </span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">

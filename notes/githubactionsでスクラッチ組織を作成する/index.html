@@ -177,15 +177,12 @@ if (!doNotTrack) {
 <h2 id="完成品">完成品</h2>
 <p>完成品のコードです、このままコピペするだけじゃ使えません。<code>2. SFDXのセットアップ</code>と<code>3. DevHubへログインする</code>をする必要があります。<br>
 フック条件は master ブランチの push になっています。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織の情報をリストアする<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織を作成する<span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
 </span><span class="w">    </span><span class="k">branches</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span>- master<span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">env</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">PROJECT_PREFIX</span><span class="p">:</span><span class="w"> </span>ci-dev<span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="k">create-scratch-org</span><span class="p">:</span><span class="w">
@@ -193,7 +190,7 @@ if (!doNotTrack) {
 </span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
 </span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
-</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあったら使う。&#39;</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあったら使う&#39;</span><span class="w">
 </span><span class="w">        </span><span class="k">id</span><span class="p">:</span><span class="w"> </span>app-cache-npm<span class="w">
 </span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/cache@v1<span class="w">
 </span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">
@@ -450,6 +447,55 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
           <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
             <div class="Subhead mb-2">
               <div class="Subhead-heading">
+                <a href="https://mithy.fun/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/">
+                  <div class="h3 mt-1 mb-1">Salesforceで開発中のスクラッチ組織を非技術者に簡単に見てもらうためにやったこと</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/salesforce' class="muted-link">
+  <span class="Label Label--gray-darker">Salesforce</span>
+</a>
+
+
+
+<a href='/tags/githubactions' class="muted-link">
+  <span class="Label Label--gray">GitHubActions</span>
+</a>
+
+<a href='/tags/sfdx' class="muted-link">
+  <span class="Label Label--gray">SFDX</span>
+</a>
+
+<a href='/tags/slack' class="muted-link">
+  <span class="Label Label--gray">Slack</span>
+</a>
+
+<a href='/tags/pullreminders' class="muted-link">
+  <span class="Label Label--gray">pullreminders</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-03-26. Published at: 2020-03-26.">
+                    
+                      Published: 2020-03-26
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるのか プロジェクトの内容が変更されたら、自動的にスクラッチ組織を作成して、Slack に通知する、という流れです。 今回のプロジェクトは GitHub で管理されているため、具体的には以下の流れでやりました。 GitHub の master ブランチが更新される 変更されたソースを元にスクラッチ組織を作成/セットア
+            </div>
+          </li>
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
                 <a href="https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
                   <div class="h3 mt-1 mb-1">Auraコンポーネントから特定フィールドのPickListValuesを取得する</div>
                 </a>
@@ -608,43 +654,6 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
             <div class="text-gray ellipsis">
               
               Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの
-            </div>
-          </li>
-        
-          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
-            <div class="Subhead mb-2">
-              <div class="Subhead-heading">
-                <a href="https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/">
-                  <div class="h3 mt-1 mb-1">Lightning Experience のリードと商談</div>
-                </a>
-              </div>
-              <div class="Subhead-description">
-                
-
-
-<a href='/categories/salesforce' class="muted-link">
-  <span class="Label Label--gray-darker">Salesforce</span>
-</a>
-
-
-
-<a href='/tags/trailhead' class="muted-link">
-  <span class="Label Label--gray">Trailhead</span>
-</a>
-
-
-                <div class="float-md-right">
-                  <span title="Lastmod: 2020-02-19. Published at: 2020-02-19.">
-                    
-                      Published: 2020-02-19
-                    
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="text-gray ellipsis">
-              
-              始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると取
             </div>
           </li>
         

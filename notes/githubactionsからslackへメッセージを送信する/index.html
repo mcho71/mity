@@ -181,7 +181,7 @@ if (!doNotTrack) {
 <p>Slack ワークスペースに アプリをインストールします。
 <img src="/img/2020-03-24-16-08-09.png" alt="Slackワークスペースにインストール"></p>
 <p>※private チェンネルの場合は、チャンネルの詳細タブを開いてそこからアプリをインストールしてください。</p>
-<h3 id="2-slack-app-トークンを-github-に登録">2. Slack App トークンを GitHub に登録</h3>
+<h3 id="2-slack-app-の-bot-user-oauth-access-token-を-github-に登録">2. Slack App の Bot User OAuth Access Token を GitHub に登録</h3>
 <p>アプリの OAuth &amp; Permissions ページの Bot User OAuth Access Token をコピーして</p>
 <p><img src="/img/2020-03-24-16-19-59.png" alt="Bot User OAuth Access Token"></p>
 <p>GitHub の Secrets に登録します。</p>
@@ -252,7 +252,7 @@ if (!doNotTrack) {
     <li><a href="#セットアップしていく">セットアップしていく</a>
       <ul>
         <li><a href="#1-slack-app-を作成">1. Slack App を作成</a></li>
-        <li><a href="#2-slack-app-トークンを-github-に登録">2. Slack App トークンを GitHub に登録</a></li>
+        <li><a href="#2-slack-app-の-bot-user-oauth-access-token-を-github-に登録">2. Slack App の Bot User OAuth Access Token を GitHub に登録</a></li>
         <li><a href="#3-github-actions-のワークフローを作成">3. GitHub Actions のワークフローを作成</a></li>
       </ul>
     </li>
@@ -294,6 +294,55 @@ if (!doNotTrack) {
     <div class="mt-5">
       <h2>Related Notes</h2>
       <ul class="mt-3">
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/">
+                  <div class="h3 mt-1 mb-1">Salesforceで開発中のスクラッチ組織を非技術者に簡単に見てもらうためにやったこと</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/salesforce' class="muted-link">
+  <span class="Label Label--gray-darker">Salesforce</span>
+</a>
+
+
+
+<a href='/tags/githubactions' class="muted-link">
+  <span class="Label Label--gray">GitHubActions</span>
+</a>
+
+<a href='/tags/sfdx' class="muted-link">
+  <span class="Label Label--gray">SFDX</span>
+</a>
+
+<a href='/tags/slack' class="muted-link">
+  <span class="Label Label--gray">Slack</span>
+</a>
+
+<a href='/tags/pullreminders' class="muted-link">
+  <span class="Label Label--gray">pullreminders</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-03-26. Published at: 2020-03-26.">
+                    
+                      Published: 2020-03-26
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるのか プロジェクトの内容が変更されたら、自動的にスクラッチ組織を作成して、Slack に通知する、という流れです。 今回のプロジェクトは GitHub で管理されているため、具体的には以下の流れでやりました。 GitHub の master ブランチが更新される 変更されたソースを元にスクラッチ組織を作成/セットア
+            </div>
+          </li>
         
           <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
             <div class="Subhead mb-2">
