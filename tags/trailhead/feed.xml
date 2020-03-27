@@ -18,5 +18,159 @@
         <atom:link href="https://mithy.fun/tags/trailhead/feed.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Aura コンポーネントのため Lightning データサービスの基本</title>
+      <link>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
+      <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
+      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h]]></description>
+      <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
+<p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
+<h2 id="メモ">メモ</h2>
+<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
+レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
+    <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">recordLoader</span> <span class="o">=</span> <span class="nx">cmp</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&#34;recordLoader&#34;</span><span class="p">);</span>
+        <span class="nx">recordLoader</span><span class="p">.</span><span class="nx">saveRecord</span><span class="p">(</span><span class="nx">$A</span><span class="p">.</span><span class="nx">getCallback</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">saveResult</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">saveResult</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="s2">&#34;ERROR&#34;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="p">...</span>
+            <span class="p">}</span>
+        <span class="p">}));</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Lightning Experience のリードと商談</title>
+      <link>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
+      <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
+      <description><![CDATA[始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると取]]></description>
+      <content:encoded><![CDATA[<h2 id="始める前">始める前</h2>
+<p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。
+とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。</p>
+<h2 id="メモ">メモ</h2>
+<p>リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。<br>
+リードを使用すると、見込み客を区別することが簡単にできる。</p>
+<p>リードレコードを作って、レコードページから取引の開始をクリックすると取引先、取引責任者、商談へ変換できるモーダルが開く
+<img src="/img/2020-02-19-18-09-22.png" alt="変換できるモーダル"></p>
+<p>取引先責任者は商談に紐付けることができ、これでどの責任者とやり取りしているか明確になる。<br>
+取引先は、取引先責任者が所属している組織のこと</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Visualforceの基礎</title>
+      <link>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</link>
+      <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
+      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie]]></description>
+      <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
+<ul>
+<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
+<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準またはApexでビジネスロジックを記述する。</li>
+</ul>
+<h2 id="使用できる場所">使用できる場所</h2>
+<ul>
+<li>ナビゲーションバーに追加</li>
+<li>標準ページレイアウト内に表示</li>
+<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+<ul>
+<li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
+</ul>
+</li>
+<li>オブジェクトページの標準ボタンやリンクを上書きして表示する</li>
+<li>オブジェクトページにカスタムボタンやリンクを配置して表示する</li>
+</ul>
+<h2 id="ページの作成">ページの作成</h2>
+<ul>
+<li>APIを使用して作成変更できる</li>
+<li>開発者コンソール
+<ul>
+<li>エディタがついてる。補完あり</li>
+<li>LightningExperienceのページから実行でLightningExperienceでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+</ul>
+</li>
+<li>xmlベース</li>
+</ul>
+<h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
+<ul>
+<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+<li>構文 {! expression } を評価して出力してくれる
+<ul>
+<li>expressionないは大文字小文字区別なし</li>
+<li>文字列連結は&amp;</li>
+<li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html" target="_blank" rel="nofollow noopener">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+</li>
+<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm" target="_blank" rel="nofollow noopener">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+<h2 id="標準コントローラの使用">標準コントローラの使用</h2>
+<ul>
+<li>MVC</li>
+<li>標準なアクションとデータアクセスを処理できる</li>
+<li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
+<li>getQueryでコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
+</ul>
+<h2 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h2>
+<ul>
+<li><code>&lt;apex:detail /&gt;</code>等の一括出力コンポーネントがある</li>
+<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のようなUIコンポーネントもある</li>
+<li><code>&lt;!--&gt;</code>はテーブルUI</li>
+<li><code>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;</code>はリスト</li>
+</ul>
+<h2 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h2>
+<ul>
+<li><code>&lt;apex:form&gt;</code>のデータは<code>&lt;apex:page&gt;</code>で指定されたコントローラーを元にする</li>
+<li>プラットフォームのスタイルを使用する要素としない要素がある
+<ul>
+<li>する
+<ul>
+<li><code>&lt;apex:form&gt;</code>を使用している場合</li>
+<li><code>&lt;apex:pageBlock&gt;</code>及び<code>&lt;apex;pageBlockSection&gt;</code>内で入力要素を使用する場合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>&lt;apex:commandButton /&gt;</code>でボタンが作成できる。要素を足すことで色々指定する。<code>action=&quot;{! save }&quot;</code>,<code>value=&quot;Save&quot;</code>等々</li>
+</ul>
+<h2 id="標準リストコントローラの使用">標準リストコントローラの使用</h2>
+<ul>
+<li>クエリ可能</li>
+<li>コレクション変数でレコードの使用、絞り込み、ページネーションなども用意されている</li>
+<li>一度に多数のレコードを操作することを目的としている</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- recordSetVarで作業するオブジェクトを設定 --&gt;</span>
+<span class="nt">&lt;apex:page</span> <span class="na">standardController=</span><span class="s">&#34;Contact&#34;</span> <span class="na">recordSetVar=</span><span class="s">&#34;contacts&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;apex:pageBlock</span> <span class="na">title=</span><span class="s">&#34;Contacts List&#34;</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- Contacts List --&gt;</span>
+        <span class="c">&lt;!-- テーブルのvalueにrecordSetVarで設定されたオブジェクトを渡す --&gt;</span>
+        <span class="nt">&lt;apex:pageBlockTable</span> <span class="na">value=</span><span class="s">&#34;{! contacts }&#34;</span> <span class="na">var=</span><span class="s">&#34;ct&#34;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.FirstName }&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.LastName }&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Email }&#34;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Account.Name }&#34;</span><span class="nt">/&gt;</span>
+        <span class="err">&lt;</span>/!--&gt;
+    <span class="nt">&lt;/apex:pageBlock&gt;</span>
+<span class="nt">&lt;/apex:page&gt;</span>
+</code></pre></div><ul>
+<li><code>&lt;apex:datalist&gt;</code>, <code>&lt;apex:repeat&gt;</code>等でリストを作れる</li>
+</ul>
+<h2 id="リンク">リンク</h2>
+<ul>
+<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm" target="_blank" rel="nofollow noopener">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    
   </channel>
 </rss>

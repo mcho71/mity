@@ -18,5 +18,311 @@
         <atom:link href="https://mithy.fun/categories/development/feed.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>GitHubActionsからSlackへメッセージを送信する</title>
+      <link>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</link>
+      <pubDate>Fri, 06 Mar 2020 17:34:24 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</guid>
+      <description><![CDATA[どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットアップ 上記リポジトリの手順通り進める。流れは Slack App を作成 Slack App トークンを GitHub に登録 GitHub Actions のワークフローを作成 です、詳しくは前述したリポジトリの方見てください。 セットアップしていく 1. Slack App を作成 Slack API: Applications | Slackを]]></description>
+      <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
+<ul>
+<li><a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions で Salesforce のスクラッチ組織を作成する</a>のワークフローから Slack にログイン URL を送りたかった。</li>
+</ul>
+<h2 id="なにを使うか">なにを使うか</h2>
+<p><a href="https://github.com/pullreminders/slack-action" target="_blank" rel="nofollow noopener">pullreminders/slack-action: GitHub Action for posting Slack messages</a>を使うことにした。<br>
+今気づいたんですが、これ PullPanda のリポジトリだ</p>
+<h2 id="セットアップ">セットアップ</h2>
+<p>上記リポジトリの手順通り進める。流れは</p>
+<ol>
+<li>Slack App を作成</li>
+<li>Slack App トークンを GitHub に登録</li>
+<li>GitHub Actions のワークフローを作成</li>
+</ol>
+<p>です、詳しくは前述したリポジトリの方見てください。</p>
+<h2 id="セットアップしていく">セットアップしていく</h2>
+<h3 id="1-slack-app-を作成">1. Slack App を作成</h3>
+<p><a href="https://api.slack.com/apps" target="_blank" rel="nofollow noopener">Slack API: Applications | Slack</a>を開いて<code>Create New App</code>ボタンをクリックしてアプリを作成します。今回は AppName を<code>GABot</code>としました。Slack ワークスペースは追加したい場所を選択してください。</p>
+<p>メッセージ送信ができるようにアプリに Bot 用の機能を追加します。アプリの Basic Information ページの上部アコーディオンを開き<code>Bots</code>をクリックすると追加できます。</p>
+<p>※画像は設定済みのものになります</p>
+<p><img src="/img/2020-03-24-16-06-13.png" alt="bot権限を付与"></p>
+<p>Slack ワークスペースに アプリをインストールします。
+<img src="/img/2020-03-24-16-08-09.png" alt="Slackワークスペースにインストール"></p>
+<p>※private チェンネルの場合は、チャンネルの詳細タブを開いてそこからアプリをインストールしてください。</p>
+<h3 id="2-slack-app-の-bot-user-oauth-access-token-を-github-に登録">2. Slack App の Bot User OAuth Access Token を GitHub に登録</h3>
+<p>アプリの OAuth &amp; Permissions ページの Bot User OAuth Access Token をコピーして</p>
+<p><img src="/img/2020-03-24-16-19-59.png" alt="Bot User OAuth Access Token"></p>
+<p>GitHub の Secrets に登録します。</p>
+<p><img src="/img/2020-03-24-16-22-21.png" alt="GitHubのSecretsに登録"></p>
+<h3 id="3-github-actions-のワークフローを作成">3. GitHub Actions のワークフローを作成</h3>
+<p>簡単なメッセージを送信するワークフローで試してみます。<code>.github/workflows</code>に <code>hello-slack.yml</code>を作成して、以下をコピペします。コピペしたら一番下の行の<code>\&quot;channel\&quot;:\&quot;GM84QDF1P\&quot;</code>を投稿したいチャンネル ID に書き換えます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>GABotでHelloSlack<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">branches</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- master<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">hello-slack</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Hello Slack&#39;</span><span class="w">
+</span><span class="w">        </span><span class="k">env</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="k">SLACK_BOT_TOKEN</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.GA_BOT_TOKEN<span class="w"> </span>}}<span class="w">
+</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>pullreminders/slack-action@master<span class="w">
+</span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{\&#34;channel\&#34;:\&#34;GM84QDF1P\&#34;,\&#34;text\&#34;:\&#34;Hello Slack\&#34;}&#39;</span><span class="w">
+</span></code></pre></div><p>以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。</p>
+<h2 id="終わり">終わり</h2>
+<p>あとは色々組み合わせよう</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Rustで始めるOpenGLをやっている</title>
+      <link>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</link>
+      <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
+      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
+<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+<h2 id="目次を読む">目次を読む</h2>
+<p>ライブラリごとに章が区切られている</p>
+<ol>
+<li>環境準備</li>
+<li>SDL</li>
+<li>OpenGL</li>
+<li>Dear ImGui</li>
+<li>3Dオブジェクト</li>
+<li>テクスチャ</li>
+</ol>
+<p>ほとんど触れたことがないな、とりあえず上からやっていこう
+ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
+<h2 id="環境">環境</h2>
+<ul>
+<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従ってRustをインストール
+<ul>
+<li>versionは1.39だった</li>
+<li>crateは<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="sdl">SDL</h2>
+<p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
+<a href="https://ja.wikipedia.org/wiki/SDL" target="_blank" rel="nofollow noopener">SDL - Wikipedia</a><br>
+これだけでも十分な機能を持つゲームを作成可能らしい</p>
+<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
+<code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
+<p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
+<h3 id="準備">準備</h3>
+<ul>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
+</ul>
+<h3 id="作成">作成</h3>
+<p><code>sdl2</code>のcrates.ioページを見る。</p>
+<h2 id="opengl">OpenGL</h2>
+<p>SDLのウィンドウに描画していく</p>
+<h3 id="準備-1">準備</h3>
+<p><code>cargo.toml</code>に<code>gl</code>(OpenGLのAPIを利用可能に),<code>cgmath</code>(CG用の数学関連機能),<code>c_str_macro</code>(C言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
+<h3 id="作成-1">作成</h3>
+<p>HelloWorldは難しいらしいので三角形を描画する</p>
+<p>シェーダーという言葉が出てきた</p>
+<p>写経辛いのでコピペに切り替えていく</p>
+<p>OpenGL3.1を使う、このバージョンは丁度APIが一新されたバージョンで、<code>Core</code>(新しいAPIのみ)と<code>Compability</code>(古いAPIもサポート)パッケージがある。今回は<code>Core</code></p>
+<p>描画はシェーダと呼ばれる描画プログラムを通してデータを送る<br>
+シェーダなしのサンプルコードは古い可能性があるので注意<br>
+呼び名は<br>
+あり: Programmable Pipeline<br>
+なし: Fixed Function Pipeline<br>
+などというらしい</p>
+<p>シェーダは実行時にソースコードをコンパイルして使えるプログラムなのでこういった名称になってる</p>
+<p>今回具体的にはVertexシェーダとFragmentシェーダを使った</p>
+<h4 id="vertexシェーダ">Vertexシェーダ</h4>
+<p>Vertexはそもそも頂点のこと、辺と辺を結ぶ点。3D空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
+<p>描画したい頂点が、3D空間の中でどの位置にあるのかを表すモデル行列<br>
+カメラの一を考慮したビュー行列<br>
+カメラから見た3D空間をどのように画面に描画するかを表す射影行列<br>
+3つの行列をかけ合わせて最終的な画面上の座標になる</p>
+<h4 id="fragmentシェーダ">Fragmentシェーダ</h4>
+<p>色を計算するシェーダ、Vertexシェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
+<p>どちらもGLSLを使って実装する。<br>
+GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPUや前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
+GPUでの動作なので並列計算できる、画面上に多くの3Dオブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
+<p>GLSLのバージョンは3.3</p>
+<p>VBO(Vertex Buffer Object)はCPUからGPUに情報を渡すための入れ物、頂点データだったり色情報だったり<br>
+VAO(Vertex Array Object)はVBOをどのようなまとまりで使うのかを設定するもの</p>
+<p>WebGLの話ものってそう</p>
+<p>サンプルコードが動かない→動いた、sampleリポジトリのrscフォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
+<pre><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.03s
+     Running `target/debug/rust-opengl`
+OK: init OpenGL: version=3.1
+thread 'main' panicked at 'failed to open file: rsc/shader/shader.vs', src/shader.rs:28:33
+stack backtrace:
+   0: backtrace::backtrace::libunwind::trace
+             at /Users/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/libunwind.rs:88
+   1: backtrace::backtrace::trace_unsynchronized
+             at /Users/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/mod.rs:66
+   2: std::sys_common::backtrace::_print_fmt
+             at src/libstd/sys_common/backtrace.rs:76
+   3: &lt;std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display&gt;::fmt
+             at src/libstd/sys_common/backtrace.rs:60
+   4: core::fmt::write
+             at src/libcore/fmt/mod.rs:1030
+   5: std::io::Write::write_fmt
+             at src/libstd/io/mod.rs:1412
+   6: std::sys_common::backtrace::_print
+             at src/libstd/sys_common/backtrace.rs:64
+   7: std::sys_common::backtrace::print
+             at src/libstd/sys_common/backtrace.rs:49
+   8: std::panicking::default_hook::{{closure}}
+             at src/libstd/panicking.rs:196
+   9: std::panicking::default_hook
+             at src/libstd/panicking.rs:210
+  10: std::panicking::rust_panic_with_hook
+             at src/libstd/panicking.rs:473
+  11: std::panicking::continue_panic_fmt
+             at src/libstd/panicking.rs:380
+  12: std::thread::local::fast::Key&lt;T&gt;::try_initialize
+  13: rust_opengl::shader::Shader::new::{{closure}}
+             at src/shader.rs:28
+  14: core::result::Result&lt;T,E&gt;::unwrap_or_else
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libcore/result.rs:818
+  15: rust_opengl::shader::Shader::new
+             at src/shader.rs:27
+  16: rust_opengl::main
+             at src/main.rs:52
+  17: std::rt::lang_start::{{closure}}
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libstd/rt.rs:64
+  18: std::rt::lang_start_internal::{{closure}}
+             at src/libstd/rt.rs:49
+  19: std::panicking::try::do_call
+             at src/libstd/panicking.rs:292
+  20: __rust_maybe_catch_panic
+             at src/libpanic_unwind/lib.rs:80
+  21: std::panicking::try
+             at src/libstd/panicking.rs:271
+  22: std::panic::catch_unwind
+             at src/libstd/panic.rs:394
+  23: std::rt::lang_start_internal
+             at src/libstd/rt.rs:48
+  24: std::rt::lang_start
+             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libstd/rt.rs:64
+  25: rust_opengl::main
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+</code></pre><p>できた。
+<img src="/img/2019-11-12-18-08-05.png" alt=""></p>
+<p>頂点情報はこういう感じで書いていた</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
+</span><span class="c1"></span><span class="w">    </span><span class="cp">#[rustfmt::skip]</span><span class="w">
+</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">buffer_array</span>: <span class="p">[</span><span class="kt">f32</span><span class="p">;</span><span class="w"> </span><span class="n">BUF_LEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="w">        </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">        </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span><span class="p">];</span><span class="w">
+</span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
+<p><a href="https://github.com/ocornut/imgui" target="_blank" rel="nofollow noopener">ocornut/imgui</a></p>
+<p>OpenGLに様々なGUIを追加できるライブラリ</p>
+<p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
+<p>出た</p>
+<p><img src="/img/2019-12-17-15-49-08.png" alt=""></p>
+<p><img src="/img/2019-12-17-15-59-28.png" alt=""></p>
+<h3 id="効果的な使い方">効果的な使い方</h3>
+<p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
+FPSを表示も</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Vueでモノレポがしたかった</title>
+      <link>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
+      <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
+      
+      <guid>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
+      <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル]]></description>
+      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
+<p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
+<h2 id="事前知識">事前知識</h2>
+<p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
+<ul>
+<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトのnpm scriptsに<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
+<li><code>vue inspect</code> - <code>vue.config.js</code>を考慮した実際にビルドの際に使われる<code>webpack.config.js</code>を出力してくれる</li>
+</ul>
+<h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
+<p><code>vue cli</code>で生成したままのプロジェクト構成でした。
+必要そうなものを抜き出すとこんな感じ</p>
+<pre><code class="language-tree" data-lang="tree">├── public
+├── src
+├── tests
+├── package.json
+└── vue.config.js
+</code></pre><p>ちなみにビルドは<code>vue-cli-service build</code>で行っていた。</p>
+<h2 id="やりたいこと">やりたいこと</h2>
+<ul>
+<li>出力をdist/app, dist/adminのように複数ディレクトリに分ける。</li>
+<li>ビルド、ビルド設定を分ける</li>
+<li>lint設定は共有する</li>
+</ul>
+<h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
+<p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
+<pre><code class="language-tree" data-lang="tree">.
+├── projects
+│    ├── admin
+│    │   ├── public
+│    │   ├── src
+│    │   ├── package.json
+│    │   └── vue.config.js
+│    └── app
+│        ├── public
+│        ├── src
+│        ├── package.json
+│        └── vue.config.js
+└── package.json
+</code></pre><p><code>projects/app</code>には以前から存在していたアプリケーションのコードとそれら周辺のファイルを、<code>projects/admin</code>には<code>vue create admin</code>したものが入っている。<br>
+上記には書いていないが<code>tsconfig.json</code>や<code>.eslintrc</code>はルートと各プロジェクトに配置してあり、ルートのものを各プロジェクトが extends している。<br>
+あとは<code>vue.config.js</code>に<code>outputDir</code>を追加して、出力フォルダを揃えたくらいで、ほぼ初期設定。</p>
+<h2 id="こうなった理由">こうなった理由</h2>
+<p>やり始めた際は<code>vue.config.js</code>の<code>pages</code>でマルチエントリにして終わりと思っていたけど、そうは行かなかったのは以下。</p>
+<ul>
+<li>出力先が同ディレクトリ、プロジェクト毎に一つ深くしたかったが、<code>vue.config.js</code>から制御しきれなかった。</li>
+<li>コンフィグ系が共有
+<ul>
+<li><code>tsconfig.json</code>、<code>vue.config.js</code>等々。必要のない設定を読み込むことが双方のプロジェクトに発生する。</li>
+</ul>
+</li>
+<li>ビルドが同時のみ
+<ul>
+<li>現時点の<code>vue-cli-service(ver 3.12.1)</code>では<code>vue.config.js</code>の<code>pages</code>はエントリポイントを増やすことだけを行って、個別に<code>webpack.config.js</code>相当のものを作るわけじゃなかった。</li>
+</ul>
+</li>
+</ul>
+<p>ということで、<code>projects</code>ディレクトリを作ってそこで<code>vue create admin</code>を叩いた感じになった。</p>
+<h2 id="この構成で思うこと">この構成で思うこと</h2>
+<ul>
+<li>package.jsonめっちゃある。</li>
+<li>node_modulesもめっちゃある、中身重複しまくりそう。</li>
+<li>vueのモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
+</ul>
+<h2 id="これからどうするか">これからどうするか</h2>
+<ul>
+<li>Webpackを学ぶ
+<ul>
+<li>強くなればもっとスリムにできそう</li>
+<li>コントリビュートへも繋がりそう</li>
+</ul>
+</li>
+<li>VSCodeの拡張機能、エディタの技術を学ぶ
+<ul>
+<li>LanguageServerやLinterの最適化に苦労したので・・・</li>
+</ul>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
   </channel>
 </rss>
