@@ -37,7 +37,7 @@ disqusShortname = "mity"
   creditHugoPrimer = true
   useIcon = true
   UseTwitterCard = true
-  mainSections = ["posts", "memos", "reviews"]
+  mainSections = ["notes", "memos"]
 
 [related]
   threthold = 80
