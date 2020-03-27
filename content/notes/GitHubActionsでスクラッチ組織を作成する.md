@@ -35,15 +35,12 @@ archives: 2020-02
 フック条件は master ブランチの push になっています。
 
 ```yml:create-scratch-org.yml
-name: スクラッチ組織の情報をリストアする
+name: スクラッチ組織を作成する
 
 on:
   push:
     branches:
       - master
-
-env:
-  PROJECT_PREFIX: ci-dev
 
 jobs:
   create-scratch-org:
@@ -51,7 +48,7 @@ jobs:
     steps:
       - name: 'Checkout source code'
         uses: actions/checkout@v2
-      - name: 'node_modulesのキャッシュがあったら使う。'
+      - name: 'node_modulesのキャッシュがあったら使う'
         id: app-cache-npm
         uses: actions/cache@v1
         with:

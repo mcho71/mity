@@ -50,7 +50,7 @@ Slack ワークスペースに アプリをインストールします。
 
 ※private チェンネルの場合は、チャンネルの詳細タブを開いてそこからアプリをインストールしてください。
 
-### 2. Slack App トークンを GitHub に登録
+### 2. Slack App の Bot User OAuth Access Token を GitHub に登録
 
 アプリの OAuth & Permissions ページの Bot User OAuth Access Token をコピーして
 
