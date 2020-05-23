@@ -285,7 +285,13 @@ sfdx force:auth:web:login -a ForGitHubAction
 sfdx force:org:display --verbose -u ForGitHubAction
 </code></pre></div><p><code>Sfdx Auth Url</code>をコピペして、GitHub リポジトリの Secrets に登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secrets については<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow" target="_blank" rel="nofollow noopener">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br>
 Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets からできます。</p>
-<p><img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面"></p>
+<p>
+
+
+<picture>
+  <img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面" decoding="async" loading="lazy">
+</picture>
+</p>
 <p>Name はワークフローからの呼び出しの際に使うのでわかりやすいものを、今回は<code>SFDX_AUTH_URL</code>としました。<br>
 ワークフローファイルを追記します。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">jobs</span><span class="p">:</span><span class="w">

@@ -51,7 +51,13 @@
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## 事前にDevHubを使用する組織にログインしておいてください</span>
 sfdx force:org:display --verbose -u ForGitHubAction
 </code></pre></div><p>Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets からできます。</p>
-<p><img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面"></p>
+<p>
+
+
+<picture>
+  <img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面" decoding="async" loading="lazy">
+</picture>
+</p>
 <p>最後に、スクラッチ組織を作成する GitHubActions のワークフローを作成して準備は完了です。以下のコードを<code>.github/workflows/create-scratch-org.yml</code>に貼り付けてコミットプッシュします。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織のログインURLをSlackに通知する<span class="w">
 </span><span class="w">
@@ -116,15 +122,39 @@ sfdx force:org:display --verbose -u ForGitHubAction
 <p><a href="https://api.slack.com/apps" target="_blank" rel="nofollow noopener">Slack API: Applications | Slack</a>を開いて<code>Create New App</code>ボタンをクリックしてアプリを作成します。今回は AppName を<code>GABot</code>としました。Slack ワークスペースは適宜追加したい場所を選択してください。</p>
 <p>メッセージ送信ができるようにアプリに Bot 用の機能を追加します。アプリの Basic Information ページの上部アコーディオンを開き<code>Bots</code>をクリックすると追加できます。</p>
 <p>※画像は設定済みのものになります</p>
-<p><img src="/img/2020-03-24-16-06-13.png" alt="bot権限を付与"></p>
+<p>
+
+
+<picture>
+  <img src="/img/2020-03-24-16-06-13.png" alt="bot権限を付与" decoding="async" loading="lazy">
+</picture>
+</p>
 <p>Slack ワークスペースに アプリをインストールします。
-<img src="/img/2020-03-24-16-08-09.png" alt="Slackワークスペースにインストール"></p>
+
+
+
+<picture>
+  <img src="/img/2020-03-24-16-08-09.png" alt="Slackワークスペースにインストール" decoding="async" loading="lazy">
+</picture>
+</p>
 <p>※private チェンネルの場合は、チャンネルの詳細タブを開いてそこからアプリをインストールしてください。</p>
 <h4 id="slack-app-の-bot-user-oauth-access-token-トークンを-github-に登録">Slack App の Bot User OAuth Access Token トークンを GitHub に登録</h4>
 <p>アプリの OAuth &amp; Permissions ページの Bot User OAuth Access Token をコピーして</p>
-<p><img src="/img/2020-03-24-16-19-59.png" alt="Bot User OAuth Access Token"></p>
+<p>
+
+
+<picture>
+  <img src="/img/2020-03-24-16-19-59.png" alt="Bot User OAuth Access Token" decoding="async" loading="lazy">
+</picture>
+</p>
 <p>GitHub の Secrets に登録します。</p>
-<p><img src="/img/2020-03-24-16-22-21.png" alt="GitHubのSecretsに登録"></p>
+<p>
+
+
+<picture>
+  <img src="/img/2020-03-24-16-22-21.png" alt="GitHubのSecretsに登録" decoding="async" loading="lazy">
+</picture>
+</p>
 <h3 id="github-actions-のワークフローを作成">GitHub Actions のワークフローを作成</h3>
 <p>簡単なメッセージを送信するワークフローで試してみます。<code>.github/workflows/hello-slack.yml</code>を作成して、以下をコピペします。コピペしたら一番下の行の<code>\&quot;channel\&quot;:\&quot;GM84QDF1P\&quot;</code>を投稿したいチャンネル ID に書き換えます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>GABotでHelloSlack<span class="w">
@@ -146,7 +176,13 @@ sfdx force:org:display --verbose -u ForGitHubAction
 </span><span class="w">          </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{\&#34;channel\&#34;:\&#34;GM84QDF1P\&#34;,\&#34;text\&#34;:\&#34;Hello world\&#34;}&#39;</span><span class="w">
 </span></code></pre></div><p>args に指定するメッセージのフォーマットは<a href="https://api.slack.com/reference/surfaces/formatting" target="_blank" rel="nofollow noopener">Formatting text for app surfaces | Slack</a>を参考に、適宜調節します。<br>
 以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。</p>
-<p><img src="/img/2020-03-27-15-23-30.png" alt="Hello Slack"></p>
+<p>
+
+
+<picture>
+  <img src="/img/2020-03-27-15-23-30.png" alt="Hello Slack" decoding="async" loading="lazy">
+</picture>
+</p>
 <h2 id="完成したワークフロー">完成したワークフロー</h2>
 <p>上記二つのワークフローが、うまく動くことを確かめたら、二つをマージします。完成したワークフローは以下になります、ファイル名をわかりやすく<code>.github/workflows/create-scratch-org-and-notification-to-slack.yml</code>として保存しました。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>スクラッチ組織のログインURLをSlackに通知する<span class="w">
@@ -219,7 +255,13 @@ sfdx force:org:display --verbose -u ForGitHubAction
 </span><span class="s1">            ]
 </span><span class="s1">          }&#39;</span><span class="w">
 </span></code></pre></div><p>これをコミットして master ブランチ更新して push すると、ログイン URL を含んだ以下のメッセージが指定の Slack チャンネルに送られてくれば完成です！</p>
-<p><img src="/img/2020-03-27-15-58-51.png" alt="ログインURLをSlackに通知"></p>
+<p>
+
+
+<picture>
+  <img src="/img/2020-03-27-15-58-51.png" alt="ログインURLをSlackに通知" decoding="async" loading="lazy">
+</picture>
+</p>
 <h2 id="終わり">終わり</h2>
 <p>以上です、Slack からこのワークフローをトリガーできたりしたら更に便利になりそうです。</p>
 ]]></content:encoded>
@@ -415,7 +457,13 @@ sfdx force:auth:web:login -a ForGitHubAction
 sfdx force:org:display --verbose -u ForGitHubAction
 </code></pre></div><p><code>Sfdx Auth Url</code>をコピペして、GitHub リポジトリの Secrets に登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secrets については<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow" target="_blank" rel="nofollow noopener">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br>
 Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets からできます。</p>
-<p><img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面"></p>
+<p>
+
+
+<picture>
+  <img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面" decoding="async" loading="lazy">
+</picture>
+</p>
 <p>Name はワークフローからの呼び出しの際に使うのでわかりやすいものを、今回は<code>SFDX_AUTH_URL</code>としました。<br>
 ワークフローファイルを追記します。</p>
 <div class="highlight"><pre class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="k">jobs</span><span class="p">:</span><span class="w">
@@ -533,7 +581,13 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
 <p>リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。<br>
 リードを使用すると、見込み客を区別することが簡単にできる。</p>
 <p>リードレコードを作って、レコードページから取引の開始をクリックすると取引先、取引責任者、商談へ変換できるモーダルが開く
-<img src="/img/2020-02-19-18-09-22.png" alt="変換できるモーダル"></p>
+
+
+
+<picture>
+  <img src="/img/2020-02-19-18-09-22.png" alt="変換できるモーダル" decoding="async" loading="lazy">
+</picture>
+</p>
 <p>取引先責任者は商談に紐付けることができ、これでどの責任者とやり取りしているか明確になる。<br>
 取引先は、取引先責任者が所属している組織のこと</p>
 ]]></content:encoded>

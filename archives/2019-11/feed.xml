@@ -165,7 +165,13 @@ stack backtrace:
   25: rust_opengl::main
 note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
 </code></pre><p>できた。
-<img src="/img/2019-11-12-18-08-05.png" alt=""></p>
+
+
+
+<picture>
+  <img src="/img/2019-11-12-18-08-05.png" alt="" decoding="async" loading="lazy">
+</picture>
+</p>
 <p>頂点情報はこういう感じで書いていた</p>
 <div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
 </span><span class="c1"></span><span class="w">    </span><span class="cp">#[rustfmt::skip]</span><span class="w">
@@ -179,8 +185,20 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 <p>OpenGLに様々なGUIを追加できるライブラリ</p>
 <p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
 <p>出た</p>
-<p><img src="/img/2019-12-17-15-49-08.png" alt=""></p>
-<p><img src="/img/2019-12-17-15-59-28.png" alt=""></p>
+<p>
+
+
+<picture>
+  <img src="/img/2019-12-17-15-49-08.png" alt="" decoding="async" loading="lazy">
+</picture>
+</p>
+<p>
+
+
+<picture>
+  <img src="/img/2019-12-17-15-59-28.png" alt="" decoding="async" loading="lazy">
+</picture>
+</p>
 <h3 id="効果的な使い方">効果的な使い方</h3>
 <p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
 FPSを表示も</p>
