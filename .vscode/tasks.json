@@ -16,20 +16,9 @@
             "problemMatcher": []
         },
         {
-            "label": "new diary",
-            "type": "shell",
-            "command": "make diary",
-            "problemMatcher": []
-        },
-        {
             "label": "new memo",
             "type": "shell",
             "command": "make memo TITLE=\"${input:Title}\""
-        },
-        {
-            "label": "new review",
-            "type": "shell",
-            "command": "make review TITLE=\"${input:Title}\""
         },
         {
             "label": "new note",
