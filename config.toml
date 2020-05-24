@@ -1,9 +1,9 @@
 BaseURL = "https://mithy.fun/"
 LanguageCode = "ja-JP"
 HasCJKLanguage = true
-title = "Mity"
+title = "Mcho's Space"
 theme = "primer"
-summaryLength = 200
+summaryLength = 100
 # Code pen
 pygmentsCodeFences = true
 pygmentsUseClasses = true
