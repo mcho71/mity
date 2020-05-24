@@ -19,17 +19,17 @@ if (!doNotTrack) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  GitHubActionsでSalesforceのスクラッチ組織を作成する &ndash; Mity
+  GitHubActionsでSalesforceのスクラッチ組織を作成する &ndash; Mcho&#39;s Space
 
     </title>
     
     <meta content="セールズフォース, Salesforce, GitHubActions, CI, SFDX" name="keywords">
     
     
-    <meta name="description" property="og:description" content="どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セットアップ ログイン用の URL を表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインするをする必要があります。 フック条件は master ブランチ|">
+    <meta name="description" property="og:description" content="どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セ|">
     
 
-    <meta name="apple-mobile-web-app-title" content="Mity">
+    <meta name="apple-mobile-web-app-title" content="Mcho&#39;s Space">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -45,8 +45,8 @@ if (!doNotTrack) {
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
-    <meta name="twitter:title" content="GitHubActionsでSalesforceのスクラッチ組織を作成する | Mity">
-    <meta name="twitter:description" content="どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セットアップ ログイン用の URL を表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインするをする必要があります。 フック条件は master ブランチ|">
+    <meta name="twitter:title" content="GitHubActionsでSalesforceのスクラッチ組織を作成する | Mcho&#39;s Space">
+    <meta name="twitter:description" content="どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セ|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -54,6 +54,9 @@ if (!doNotTrack) {
     <link rel="stylesheet" href="/assets/syntax.css">
     <link rel="stylesheet" href="/assets/primer-build.css">
     <link rel="stylesheet" href="/assets/style.css">
+
+    
+    
   </head>
 
 
@@ -63,7 +66,7 @@ if (!doNotTrack) {
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="https://mithy.fun/">
-    Mity
+    Mcho&#39;s Space
   </a>
 
   
@@ -487,7 +490,7 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
             </div>
             <div class="text-gray ellipsis">
               
-              この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。 どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるのか プロジェクトの内容が変更されたら、自動的にスクラッチ組織を作成して、Slack に通知する、という流れです。 今回のプロジェクトは GitHub で管理されているため、具体的には以下の流れでやりました。 GitHub の master ブランチ
+              この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。 どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるの
             </div>
           </li>
         
@@ -528,7 +531,7 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
             </div>
             <div class="text-gray ellipsis">
               
-              やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(
+              やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-a
             </div>
           </li>
         
@@ -569,7 +572,7 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
             </div>
             <div class="text-gray ellipsis">
               
-              どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットアップ 上記リポジトリの手順通り進める。流れは Slack App を作成 Slack App トークンを GitHub に登録 GitHub Actions のワークフローを作成 です、詳しくは前述したリポジトリの方見てください。 セットアップしていく 1. Slack App を作成 Slack API: Applications | Slackを
+              どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットア
             </div>
           </li>
         
@@ -610,7 +613,7 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
             </div>
             <div class="text-gray ellipsis">
               
-              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h
+              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implementsがないとL
             </div>
           </li>
         
@@ -651,7 +654,7 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
             </div>
             <div class="text-gray ellipsis">
               
-              Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの
+              Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡さ
             </div>
           </li>
         

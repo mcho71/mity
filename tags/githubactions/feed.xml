@@ -2,11 +2,11 @@
   <channel>
     <title>
     GitHubActions on 
-    Mity
+    Mcho&#39;s Space
     </title>
     <link>https://mithy.fun/tags/githubactions/</link>
     <description>Recent content in GitHubActions
-    on Mity</description>
+    on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     
@@ -24,7 +24,7 @@
       <pubDate>Thu, 26 Mar 2020 17:13:09 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</guid>
-      <description><![CDATA[この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。 どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるのか プロジェクトの内容が変更されたら、自動的にスクラッチ組織を作成して、Slack に通知する、という流れです。 今回のプロジェクトは GitHub で管理されているため、具体的には以下の流れでやりました。 GitHub の master ブランチ]]></description>
+      <description><![CDATA[この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。 どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるの]]></description>
       <content:encoded><![CDATA[<p>この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。</p>
 <h2 id="どうしてやろうとしたのか">どうしてやろうとしたのか</h2>
 <p>SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。</p>
@@ -273,7 +273,7 @@ sfdx force:org:display --verbose -u ForGitHubAction
       <pubDate>Fri, 06 Mar 2020 17:34:24 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</guid>
-      <description><![CDATA[どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットアップ 上記リポジトリの手順通り進める。流れは Slack App を作成 Slack App トークンを GitHub に登録 GitHub Actions のワークフローを作成 です、詳しくは前述したリポジトリの方見てください。 セットアップしていく 1. Slack App を作成 Slack API: Applications | Slackを]]></description>
+      <description><![CDATA[どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットア]]></description>
       <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
 <li><a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions で Salesforce のスクラッチ組織を作成する</a>のワークフローから Slack にログイン URL を送りたかった。</li>
@@ -358,7 +358,7 @@ sfdx force:org:display --verbose -u ForGitHubAction
       <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
-      <description><![CDATA[どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セットアップ ログイン用の URL を表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインするをする必要があります。 フック条件は master ブランチ]]></description>
+      <description><![CDATA[どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セ]]></description>
       <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
 <li>ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。</li>

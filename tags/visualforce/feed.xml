@@ -2,11 +2,11 @@
   <channel>
     <title>
     Visualforce on 
-    Mity
+    Mcho&#39;s Space
     </title>
     <link>https://mithy.fun/tags/visualforce/</link>
     <description>Recent content in Visualforce
-    on Mity</description>
+    on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     
@@ -24,7 +24,7 @@
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
-      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie]]></description>
+      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標]]></description>
       <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
 <ul>
 <li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>

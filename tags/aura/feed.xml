@@ -2,11 +2,11 @@
   <channel>
     <title>
     Aura on 
-    Mity
+    Mcho&#39;s Space
     </title>
     <link>https://mithy.fun/tags/aura/</link>
     <description>Recent content in Aura
-    on Mity</description>
+    on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     
@@ -24,7 +24,7 @@
       <pubDate>Mon, 09 Mar 2020 15:54:48 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
-      <description><![CDATA[やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(]]></description>
+      <description><![CDATA[やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-a]]></description>
       <content:encoded><![CDATA[<h2 id="やりたいこと">やりたいこと</h2>
 <p>AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
 <h2 id="取得する">取得する</h2>
@@ -48,7 +48,7 @@ field.getDescribe().getPicklistValues();
       <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h]]></description>
+      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとL]]></description>
       <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
 <p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
 <h2 id="メモ">メモ</h2>
@@ -75,7 +75,7 @@ field.getDescribe().getPicklistValues();
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
-      <description><![CDATA[Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの]]></description>
+      <description><![CDATA[Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡さ]]></description>
       <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
 <code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>

@@ -2,11 +2,11 @@
   <channel>
     <title>
     2019-04 on 
-    Mity
+    Mcho&#39;s Space
     </title>
     <link>https://mithy.fun/archives/2019-04/</link>
     <description>Recent content in 2019-04
-    on Mity</description>
+    on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     
@@ -24,7 +24,7 @@
       <pubDate>Fri, 12 Apr 2019 22:07:40 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/eos-setup/</guid>
-      <description><![CDATA[EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程 1.2 Before You Beginに沿って、eosio/eosioをインストールすると、nodeos/cleos/keosdの3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うこ]]></description>
+      <description><![CDATA[EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程 1.2 Before You Be]]></description>
       <content:encoded><![CDATA[<p><a href="https://developers.eos.io/" target="_blank" rel="nofollow noopener">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs" target="_blank" rel="nofollow noopener">GETTING STARTED</a>をやったので、振り返りなどを</p>
 <h2 id="development-environment">DEVELOPMENT ENVIRONMENT</h2>
 <p>CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程</p>

@@ -2,11 +2,11 @@
   <channel>
     <title>
     Trailhead on 
-    Mity
+    Mcho&#39;s Space
     </title>
     <link>https://mithy.fun/tags/trailhead/</link>
     <description>Recent content in Trailhead
-    on Mity</description>
+    on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     
@@ -24,7 +24,7 @@
       <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h]]></description>
+      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとL]]></description>
       <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
 <p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
 <h2 id="メモ">メモ</h2>
@@ -51,7 +51,7 @@
       <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
-      <description><![CDATA[始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。 リードを使用すると、見込み客を区別することが簡単にできる。 リードレコードを作って、レコードページから取引の開始をクリックすると取]]></description>
+      <description><![CDATA[始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客と]]></description>
       <content:encoded><![CDATA[<h2 id="始める前">始める前</h2>
 <p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。
 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。</p>
@@ -77,7 +77,7 @@
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
-      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標準またはApexでビジネスロジックを記述する。 使用できる場所 ナビゲーションバーに追加 標準ページレイアウト内に表示 Lightningアプリケーションビルダーでコンポーネントとして追加する [Lightning Experie]]></description>
+      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標]]></description>
       <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
 <ul>
 <li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>

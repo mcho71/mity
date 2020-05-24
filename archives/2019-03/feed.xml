@@ -2,11 +2,11 @@
   <channel>
     <title>
     2019-03 on 
-    Mity
+    Mcho&#39;s Space
     </title>
     <link>https://mithy.fun/archives/2019-03/</link>
     <description>Recent content in 2019-03
-    on Mity</description>
+    on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     
@@ -24,7 +24,7 @@
       <pubDate>Tue, 12 Mar 2019 14:09:17 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/mysql-json/</guid>
-      <description><![CDATA[MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使用するために、MySQLのバージョンを8以上にする。 集計対象のJSON型のデータ構造を、集計に適した形にする。 込み入った集計を必要とする場合は、このページの配列型のようなデータ構造のほうが良さそう。 J]]></description>
+      <description><![CDATA[MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使]]></description>
       <content:encoded><![CDATA[<p>MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。<br>
 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。</p>
 <h2 id="tldr">tl;dr</h2>

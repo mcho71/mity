@@ -2,11 +2,11 @@
   <channel>
     <title>
     Development on 
-    Mity
+    Mcho&#39;s Space
     </title>
     <link>https://mithy.fun/categories/development/</link>
     <description>Recent content in Development
-    on Mity</description>
+    on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     
@@ -24,7 +24,7 @@
       <pubDate>Fri, 06 Mar 2020 17:34:24 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</guid>
-      <description><![CDATA[どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットアップ 上記リポジトリの手順通り進める。流れは Slack App を作成 Slack App トークンを GitHub に登録 GitHub Actions のワークフローを作成 です、詳しくは前述したリポジトリの方見てください。 セットアップしていく 1. Slack App を作成 Slack API: Applications | Slackを]]></description>
+      <description><![CDATA[どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットア]]></description>
       <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
 <li><a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions で Salesforce のスクラッチ組織を作成する</a>のワークフローから Slack にログイン URL を送りたかった。</li>
@@ -109,7 +109,7 @@
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からやっていこう ソースコード→toyamaguchi/start_opengl_in_rust 環境 Rust Programming Languageに従ってRustをインストール versionは1.39だった cra]]></description>
+      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがない]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
 <h2 id="目次を読む">目次を読む</h2>
@@ -285,7 +285,7 @@ FPSを表示も</p>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
-      <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue createで作成されたプロジェクトのnpm scriptsにnpm run buildとして登録されていた。vue.config.jsにビルド設定がある。 vue inspect - vue.config.jsを考慮した実際にビル]]></description>
+      <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build -]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
 <h2 id="事前知識">事前知識</h2>

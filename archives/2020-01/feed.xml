@@ -2,11 +2,11 @@
   <channel>
     <title>
     2020-01 on 
-    Mity
+    Mcho&#39;s Space
     </title>
     <link>https://mithy.fun/archives/2020-01/</link>
     <description>Recent content in 2020-01
-    on Mity</description>
+    on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     
@@ -24,7 +24,7 @@
       <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningElementがLWCの実装っぽい。HTMLElementをラップしてそう 前から3つ終わったけど、大体開発環境とかの話だったな 所感 やり終わってしまったので所感を書く。雑メモは社スラッ]]></description>
+      <description><![CDATA[はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成]]></description>
       <content:encoded><![CDATA[<h2 id="はじめに">はじめに</h2>
 <p>LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。</p>
 <p>トレイルがあったので、これをやる。

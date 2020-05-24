@@ -19,15 +19,15 @@ if (!doNotTrack) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
       
-  TRAILHEADに入門した &ndash; Mity
+  TRAILHEADに入門した &ndash; Mcho&#39;s Space
 
     </title>
     
     
-    <meta name="description" property="og:description" content="TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。 やり始める前の認識 無数にあるPaaSの一つ SaaSも提供してる セールス・顧客系に強い アプリやコンポーネントをリリースできる 以下|">
+    <meta name="description" property="og:description" content="TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以|">
     
 
-    <meta name="apple-mobile-web-app-title" content="Mity">
+    <meta name="apple-mobile-web-app-title" content="Mcho&#39;s Space">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -43,8 +43,8 @@ if (!doNotTrack) {
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
-    <meta name="twitter:title" content="TRAILHEADに入門した | Mity">
-    <meta name="twitter:description" content="TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。 やり始める前の認識 無数にあるPaaSの一つ SaaSも提供してる セールス・顧客系に強い アプリやコンポーネントをリリースできる 以下|">
+    <meta name="twitter:title" content="TRAILHEADに入門した | Mcho&#39;s Space">
+    <meta name="twitter:description" content="TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -52,6 +52,9 @@ if (!doNotTrack) {
     <link rel="stylesheet" href="/assets/syntax.css">
     <link rel="stylesheet" href="/assets/primer-build.css">
     <link rel="stylesheet" href="/assets/style.css">
+
+    
+    
   </head>
 
 
@@ -61,7 +64,7 @@ if (!doNotTrack) {
       <div id="header" class="px-1 bg-white">
         <nav class="UnderlineNav UnderlineNav--right px-2">
   <a class="UnderlineNav-actions muted-link h2" href="https://mithy.fun/">
-    Mity
+    Mcho&#39;s Space
   </a>
 
   
@@ -580,7 +583,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
             </div>
             <div class="text-gray ellipsis">
               
-              この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。 どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるのか プロジェクトの内容が変更されたら、自動的にスクラッチ組織を作成して、Slack に通知する、という流れです。 今回のプロジェクトは GitHub で管理されているため、具体的には以下の流れでやりました。 GitHub の master ブランチ
+              この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。 どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるの
             </div>
           </li>
         
@@ -621,7 +624,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
             </div>
             <div class="text-gray ellipsis">
               
-              やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。 単純にやると、Account.Salutation.getDescribe(
+              やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-a
             </div>
           </li>
         
@@ -662,7 +665,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
             </div>
             <div class="text-gray ellipsis">
               
-              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、force:hasRecordIdはv.recordIdにアクセスできることを明示できる。force:h
+              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implementsがないとL
             </div>
           </li>
         
@@ -707,7 +710,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
             </div>
             <div class="text-gray ellipsis">
               
-              どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セットアップ ログイン用の URL を表示する 完成品 完成品のコードです、このままコピペするだけじゃ使えません。2. SFDXのセットアップと3. DevHubへログインするをする必要があります。 フック条件は master ブランチ
+              どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セ
             </div>
           </li>
         
@@ -748,7 +751,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
             </div>
             <div class="text-gray ellipsis">
               
-              Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。 Hoge.cmp レコードのデータは{! v.simpleRecord.Name }のような感じでアクセスできる actionで開いたモーダル内のコンポーネントだとv.simpleRecordとv.recordはundefinedだった コントローラーの
+              Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡さ
             </div>
           </li>
         
