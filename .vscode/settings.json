@@ -13,5 +13,7 @@
         "mity",
         "nodeos",
         "pullreminders"
-    ]
+    ],
+    "pasteImage.basePath": "${currentFileDir}",
+    "pasteImage.path": "${currentFileDir}/image"
 }
