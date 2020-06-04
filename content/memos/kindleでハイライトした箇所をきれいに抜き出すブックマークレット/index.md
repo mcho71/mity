@@ -2,6 +2,7 @@
 title: 'Kindleでハイライトした箇所をきれいに抜き出すブックマークレット'
 date: 2020-06-04T13:06:17+09:00
 categories:
+  - Bookmark
 tags:
   - kindle
 keywords:

@@ -2,6 +2,7 @@
 title: 'VSCodeのRemote Containerという拡張が良さそう'
 date: 2020-06-04T23:02:19+09:00
 categories:
+  - Bookmark
 tags:
   - VSCode
   - Docker
