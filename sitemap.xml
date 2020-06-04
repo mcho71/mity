@@ -4,22 +4,22 @@
   
   <url>
     <loc>https://mithy.fun/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/notes/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/memos/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archive/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
@@ -29,7 +29,17 @@
   
   <url>
     <loc>https://mithy.fun/archives/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/categories/bookmark/</loc>
+    <lastmod>2020-06-04T23:02:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/categories/</loc>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
@@ -39,7 +49,7 @@
   
   <url>
     <loc>https://mithy.fun/tags/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
@@ -65,11 +75,6 @@
   <url>
     <loc>https://mithy.fun/archives/2020-03/</loc>
     <lastmod>2020-03-26T17:13:09+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithy.fun/categories/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
   </url>
   
   <url>
@@ -329,52 +334,52 @@
   
   <url>
     <loc>https://mithy.fun/archives/2019-04/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/categories/blockchain/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/tags/eosio/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/notes/eos-setup/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archives/2019-03/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/categories/database/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/tags/mysql/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/notes/mysql-json/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archives/2019-01/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/notes/hello/</loc>
-    <lastmod>2020-06-04T23:06:50+09:00</lastmod>
+    <lastmod>2020-06-04T23:07:22+09:00</lastmod>
   </url>
   
 </urlset>
