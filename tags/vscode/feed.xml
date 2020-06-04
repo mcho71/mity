@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>
-    2020-06 on 
+    VSCode on 
     Mcho&#39;s Space
     </title>
-    <link>https://mithy.fun/archives/2020-06/</link>
-    <description>Recent content in 2020-06
+    <link>https://mithy.fun/tags/vscode/</link>
+    <description>Recent content in VSCode
     on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Thu, 04 Jun 2020 23:02:19 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/archives/2020-06/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mithy.fun/tags/vscode/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -29,18 +29,6 @@
 <a href="https://www.keisuke69.net/entry/2020/06/04/145719" target="_blank" rel="nofollow noopener">Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape</a></p>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target="_blank" rel="nofollow noopener">Remote - Containers - Visual Studio Marketplace</a></p>
 <p>拡張機能をコンテナで管理できるようで、便利そう</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Kindleでハイライトした箇所をきれいに抜き出すブックマークレット</title>
-      <link>https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</link>
-      <pubDate>Thu, 04 Jun 2020 13:06:17 +0900</pubDate>
-      
-      <guid>https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</guid>
-      <description><![CDATA[下のページのfor pcをブックマークに登録するとできる kindle highlight js]]></description>
-      <content:encoded><![CDATA[<p>下のページの<code>for pc</code>をブックマークに登録するとできる
-<a href="https://hilotter.github.io/kindle_highlight_js/" target="_blank" rel="nofollow noopener">kindle highlight js</a></p>
 ]]></content:encoded>
     </item>
     
