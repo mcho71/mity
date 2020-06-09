@@ -1,26 +1,26 @@
 ---
-title: "@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた"
+title: '@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた'
 date: 2020-03-16T12:06:21+09:00
-categories: 
-- Web
-tags: 
-- Angular
-- ESLint
-- TSLint
-keywords: 
-- ESLint
-- TSLint
-- Angular
+categories:
+  - Web
+tags:
+  - Angular
+  - ESLint
+  - TSLint
+keywords:
+  - ESLint
+  - TSLint
+  - Angular
 archives: 2020-03
 ---
 
 ## モチベーション
 
-各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。
+各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。
 
 ## 移行手順
 
-`ng new`したところから始めます。AngularCLIのバージョンは`9.0.6`でした。
+`ng new`したところから始めます。AngularCLI のバージョンは`9.0.6`でした。
 
 ### パッケージのインストール
 
@@ -35,9 +35,9 @@ npm i -D eslint \
   @angular-eslint/eslint-plugin-template
 ```
 
-### コマンドとESLintの設定を修正
+### コマンドと ESLint の設定を修正
 
-前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に`angular.json`を修正、**`.eslintrc.js`**を追加しました。angular.jsonの差分はこんな感じ  
+前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に`angular.json`を修正、**`.eslintrc.js`**を追加しました。angular.json の差分はこんな感じ  
 ![angular.jsonの差分](/img/2020-03-16-12-41-16.png)
 
 `.eslint.js`のサンプルは
@@ -51,14 +51,14 @@ npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 
 ここまでで`ng lint`は動くようになるはずです。手元の環境では、`app.component.spec.ts`でクオートのエラーがでました。
 
-## VSCodeでも動かしてみる
+## VSCode でも動かしてみる
 
 設定されてるルールが適用されてるか見てみます。サンプルにあった`'@typescript-eslint/no-non-null-assertion': 'error'`で試してみます。
 
 !['@typescript-eslint/no-non-null-assertion': 'error'](/img/2020-03-16-18-37-21.png)
 
-無事Lintされていました。また、画像や動画をとっていないですが、`ESLint: Fix all auto-fixable Problems`も効きました。
+無事 Lint されていました。また、画像や動画をとっていないですが、`ESLint: Fix all auto-fixable Problems`も効きました。
 
 ## 終わり
 
-Angular本体のESLint対応も待ち遠しいですが、`@angular-eslint/angular-eslint`はルールも順次対応していくようなので、とりあえずこちらで良さそうですね
+Angular 本体の ESLint 対応も待ち遠しいですが、`@angular-eslint/angular-eslint`はルールも順次対応していくようなので、とりあえずこちらで良さそうですね

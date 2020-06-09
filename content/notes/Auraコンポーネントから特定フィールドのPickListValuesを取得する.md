@@ -1,32 +1,32 @@
 ---
-title: "Auraコンポーネントから特定フィールドのPickListValuesを取得する"
+title: 'Auraコンポーネントから特定フィールドのPickListValuesを取得する'
 date: 2020-03-09T15:54:48+09:00
-categories: 
-- Salesforce
-tags: 
-- Apex
-- Aura
-keywords: 
-- 敬称
-- Salutation
-- PersonAccount
-- 個人
-- 取引先
-- Account
-- Aura
-- Salesforce
-- PickListValues
-- 選択リスト
+categories:
+  - Salesforce
+tags:
+  - Apex
+  - Aura
+keywords:
+  - 敬称
+  - Salutation
+  - PersonAccount
+  - 個人
+  - 取引先
+  - Account
+  - Aura
+  - Salesforce
+  - PickListValues
+  - 選択リスト
 archives: 2020-03
 ---
 
 ## やりたいこと
 
-AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。
+Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。
 
 ## 取得する
 
-ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。
+ui-api か Apex コントローラーで取得できそう。ui-api は試したら CSP が必要だったので、Apex コントローラーで取得する。
 
 単純にやると、`Account.Salutation.getDescribe().getPicklistValues()`でできる。
 

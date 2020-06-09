@@ -1,25 +1,25 @@
 ---
-title: "MySQL JSON型の集計"
+title: 'MySQL JSON型の集計'
 date: 2019-03-12T14:09:17+09:00
-categories: 
-- Database
-tags: 
-- MySQL
-keywords: 
-- MySQL
-- JSON
-- 集計
-- JSON_TABLE
+categories:
+  - Database
+tags:
+  - MySQL
+keywords:
+  - MySQL
+  - JSON
+  - 集計
+  - JSON_TABLE
 archives: 2019-03
 ---
 
-MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。  
+MySQL の JSON 型に対するクエリを書く際に苦労したので、それのメモを。  
 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。
 
 ## tl;dr
 
-- `JSON_TABLE`関数を使用するために、MySQLのバージョンを8以上にする。
-- 集計対象のJSON型のデータ構造を、集計に適した形にする。
+- `JSON_TABLE`関数を使用するために、MySQL のバージョンを 8 以上にする。
+- 集計対象の JSON 型のデータ構造を、集計に適した形にする。
   - 込み入った集計を必要とする場合は、このページの[配列型](#配列型)のようなデータ構造のほうが良さそう。
 - `JSON_TABLE`が使用できない場合は、取得したあとに集計処理をするほうが簡潔。
   - ただ、リソースがきつい
@@ -47,7 +47,7 @@ CREATE TABLE `target_table` (
 ```
 
 こんな感じのデータ構造、厄介な形だとおもう。
-こみいった集計をするには↓のようなデータを取得したくなる
+こみいった集計をするには ↓ のようなデータを取得したくなる
 
 | key1 | key2 | foo |
 | ---- | ---- | --- |
@@ -80,7 +80,7 @@ FROM
 ;
 ```
 
-SQL力の低さも相まってか、大げさなクエリになった。サブクエリじゃないにしてもテーブルを結合する必要が有りそう。
+SQL 力の低さも相まってか、大げさなクエリになった。サブクエリじゃないにしてもテーブルを結合する必要が有りそう。
 
 以下、テストデータ作成用
 
@@ -128,7 +128,7 @@ call lop_insert_record(100);
 ```
 
 `JSON_TABLE`で集計しやすい形だと思ってる。
-前項と同様に、集計を行う際には↓ようなデータを取得したい。
+前項と同様に、集計を行う際には ↓ ようなデータを取得したい。
 
 | key1 | key2 | foo |
 | ---- | ---- | --- |
@@ -171,7 +171,7 @@ BEGIN
     INSERT INTO `target_table` (info) VALUE (
         REPLACE(
           REPLACE(
-            '[{"key1": 1, "objectList1": [{"key2": "0", "objectList2": [{"foo": %d1}]}]}, {"key1": "2", "objectList1": [{"key2": "0", "objectList2": [{"foo": %d2}]}, {"key2": "1", "objectList2": [{"foo": %d1}]}]}]', 
+            '[{"key1": 1, "objectList1": [{"key2": "0", "objectList2": [{"foo": %d1}]}]}, {"key1": "2", "objectList1": [{"key2": "0", "objectList2": [{"foo": %d2}]}, {"key2": "1", "objectList2": [{"foo": %d1}]}]}]',
             '%d1',
             CONVERT(ROUND(RAND() * 100), CHAR)
           ),

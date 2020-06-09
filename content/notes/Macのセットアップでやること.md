@@ -1,33 +1,33 @@
 ---
 title: Macのセットアップでやること
 date: 2019-10-29T17:44:59+09:00
-categories: 
-- Mac
+categories:
+  - Mac
 archives: 2019-10
 ---
 
 ## これはなに
 
-新しいMacを手に入れたり、初期化した際にすることのメモ
+新しい Mac を手に入れたり、初期化した際にすることのメモ
 
 ## 最初にする事
 
 - ソフトウェア・アップデート
 - App store
-  - magnetをインストール
+  - magnet をインストール
   - すべてをアップデート
 
 ## システム環境設定系
 
 ### ネットワーク
 
-- 適宜Wi-Fi、優先でつなぐ
+- 適宜 Wi-Fi、優先でつなぐ
 
 ### Dock
 
 - 位置を左に
 - 自動的に表示/非表示にチェック
-- 不要なアプリをDockから除いておく
+- 不要なアプリを Dock から除いておく
 
 ### トラックパッド
 
@@ -46,15 +46,15 @@ archives: 2019-10
 
 ### キーボード
 
-※ GoogleIMEのインストールと、外部キーボードの接続を終えてから
+※ GoogleIME のインストールと、外部キーボードの接続を終えてから
 
 - 外部キーボード設定
-- 入力ソースをGoogleIMEのひらがなと英数のみにする
+- 入力ソースを GoogleIME のひらがなと英数のみにする
 - ショートカット > キーボード > 次のウィンドウを捜査対象にするキーを`⌥ + tab`に変更する
 
 ### Mission Control
 
-- キーボードとマウスのショートカットのMission Controlにマウスボタン3を割り当てる
+- キーボードとマウスのショートカットの Mission Control にマウスボタン 3 を割り当てる
 
 ### サウンド
 
@@ -72,13 +72,13 @@ archives: 2019-10
 
 ### 最初にすること
 
-- `xcode-select --install`でxcodeを更新する
-- dotfilesをクローンする。`git clone https://github.com/MamoruMachida/dotfiles $HOME/dotfiles`
+- `xcode-select --install`で xcode を更新する
+- dotfiles をクローンする。`git clone https://github.com/MamoruMachida/dotfiles $HOME/dotfiles`
 - 設定スクリプトを実行する。`sh ~/dotfiles/init_osx.sh`
   - スクリプトは完璧ではないので適宜確認しつつ
 - 再起動
 
-### 言語系〇〇env
+### 言語系〇〇 env
 
 - 何かしらコマンド利用がある`nodenv`は必須
   - `nodenv install --list` で適宜良さそうなバージョンを決める
@@ -93,6 +93,6 @@ archives: 2019-10
 
 ### 入力ソース
 
-- IME等インストールが済んでいるので、システム環境設定のキーボード > 入力ソースを変更する
-- vim用のカスタムキー設定をする
+- IME 等インストールが済んでいるので、システム環境設定のキーボード > 入力ソースを変更する
+- vim 用のカスタムキー設定をする
   - ![GoogleIMEのカスタムキー設定](/img/2019-10-29-22-09-59.png)

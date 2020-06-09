@@ -1,11 +1,11 @@
 ---
-title: "Lightning Experience のリードと商談"
+title: 'Lightning Experience のリードと商談'
 date: 2020-02-19T17:28:59+09:00
-categories: 
-- Salesforce
-tags: 
-- Trailhead
-keywords: 
+categories:
+  - Salesforce
+tags:
+  - Trailhead
+keywords:
 archives: 2020-02
 ---
 

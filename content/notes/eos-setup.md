@@ -1,10 +1,10 @@
 ---
 title: EOSIOのGettingStartedをやった
 date: 2019-04-12T22:07:40+09:00
-categories: 
-- Blockchain
-tags: 
-- EOSIO
+categories:
+  - Blockchain
+tags:
+  - EOSIO
 archives: 2019-04
 ---
 
@@ -12,13 +12,13 @@ archives: 2019-04
 
 ## DEVELOPMENT ENVIRONMENT
 
-CLIツールのインストールと、各CLIを使ってEOSチェーンを使うための手順を確認する工程
+CLI ツールのインストールと、各 CLI を使って EOS チェーンを使うための手順を確認する工程
 
-[1.2 Before You Begin](https://developers.eos.io/eosio-home/docs/setting-up-your-environment)に沿って、`eosio/eosio`をインストールすると、[nodeos](https://developers.eos.io/eosio-nodeos/docs)/[cleos](https://developers.eos.io/eosio-cleos/docs)/[keosd](https//developers.eos.io/keosd/docs)の3つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、[1.3 About the Stack](https://developers.eos.io/eosio-home/docs/how-it-all-fits-together)に記載されていたので、参考になった。
+[1.2 Before You Begin](https://developers.eos.io/eosio-home/docs/setting-up-your-environment)に沿って、`eosio/eosio`をインストールすると、[nodeos](https://developers.eos.io/eosio-nodeos/docs)/[cleos](https://developers.eos.io/eosio-cleos/docs)/[keosd](https//developers.eos.io/keosd/docs)の 3 つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、[1.3 About the Stack](https://developers.eos.io/eosio-home/docs/how-it-all-fits-together)に記載されていたので、参考になった。
 
 ### ノードを立てたりする
 
-このチュートリアルでは、nodeosでノードを立てる際には以下のコマンドを叩いていた。
+このチュートリアルでは、nodeos でノードを立てる際には以下のコマンドを叩いていた。
 
 ```sh
 nodeos -e -p eosio \
@@ -34,7 +34,7 @@ nodeos -e -p eosio \
 ```
 
 ノードを立てる際には`--plugin`で拡張を追加することができるようだ。
-他のオプションについてはnodeos自体に対するものと、プラグインに対するものとがある。
+他のオプションについては nodeos 自体に対するものと、プラグインに対するものとがある。
 `--contracts-console`は`nodeos`に対して、`--http-validate-host=false`は、`eosio::http_plugin`に対してのオプションとなっている。
 
 また、このオプションは`config.ini`に記述することもできる、書き方は、[Configuration](https://developers.eos.io/eosio-nodeos/v1.0/docs/configuration-file)を参考に。記述した際には`nodeos --config path/to/config.ini`などとして起動する。
@@ -50,7 +50,7 @@ nodeos -e -p eosio \
 cleos wallet create --to-console
 ```
 
-実行してみると`default`は既に作成済みで、keyも忘れていたので新しい名前でウォレットを作成した。
+実行してみると`default`は既に作成済みで、key も忘れていたので新しい名前でウォレットを作成した。
 
 ```sh
 cleos wallet create --to-console -n hoge
@@ -58,7 +58,7 @@ cleos wallet create --to-console -n hoge
 
 このコマンドは、`hoge`という名前のウォレットを作成している。
 このようにウォレット作成した場合は以降の`cleos wallet`コマンドには大体`-n hoge`を付与していくことになる。
-まずは、前項で発行したウォレットを、ユーザー`eosio`にインポートする。private keyの入力が求められ、ユーザー`eosio`のprivate keyを入力する必要がある。
+まずは、前項で発行したウォレットを、ユーザー`eosio`にインポートする。private key の入力が求められ、ユーザー`eosio`の private key を入力する必要がある。
 
 若干前後するが、次項のアカウント`eosio`をウォレット`hoge`にインポートする。
 
@@ -68,7 +68,7 @@ cleos wallet import -n hoge
 
 ### アカウントを発行する
 
-EOSチェーンを立ち上げると、`system user`の`eosio`というアカウントが自動で発行される。このアカウントを使って、新規アカウントを発行するような形になっている。
+EOS チェーンを立ち上げると、`system user`の`eosio`というアカウントが自動で発行される。このアカウントを使って、新規アカウントを発行するような形になっている。
 新規アカウントの発行は以下のコマンドで行っていた。
 
 ```sh
@@ -76,19 +76,19 @@ EOSチェーンを立ち上げると、`system user`の`eosio`というアカウ
 cleos create account eosio bob <eosio private-key>
 ```
 
-owner-key、active-keyに対しては、permissionが付与されており、owner-keyに対応する秘密鍵を知っていれば、active-keyの変更が可能。
-active-keyが指定されていない場合はowner-keyと同一のものとなるが、実運用時には分けることを推奨していた。
+owner-key、active-key に対しては、permission が付与されており、owner-key に対応する秘密鍵を知っていれば、active-key の変更が可能。
+active-key が指定されていない場合は owner-key と同一のものとなるが、実運用時には分けることを推奨していた。
 
 ## SMART CONTRACT DEVELOPMENT
 
 コードに関しては深く理解していないので、分かり次第コミットしていきたい。
 
-なんとなくの流れとしては、C++をwasmに変換して、前項で用意したアカウントに書き込み、CLI経由で実行/確認、という感じ。
+なんとなくの流れとしては、C++を wasm に変換して、前項で用意したアカウントに書き込み、CLI 経由で実行/確認、という感じ。
 
-トークンの発行は、EthereumのERC20に当たる`eosio.token`は公式リポジトリに用意されており、それを元に、必要な処理を付け足したりして行くことになるようだ。
+トークンの発行は、Ethereum の ERC20 に当たる`eosio.token`は公式リポジトリに用意されており、それを元に、必要な処理を付け足したりして行くことになるようだ。
 
 ## おわり
 
-このチュートリアルをこなす分にはC++の知識はそこまで必要なさそうではあった。ただ、記法を全て理解しようとすると時間は掛かりそう、EOSに関わる部分を追っていきつつ、C++の知識を入れていく感じになりそう。
+このチュートリアルをこなす分には C++の知識はそこまで必要なさそうではあった。ただ、記法を全て理解しようとすると時間は掛かりそう、EOS に関わる部分を追っていきつつ、C++の知識を入れていく感じになりそう。
 
-アカウントベースで、実行、変更の権限を複数の秘密鍵で管理できるのはいいなと思ってる。また、アカウントにEOSを持たせることで、スマートコントラクトの動作のためのCPUやメモリが確保されるらしい、ここらへんは実運用する場合は、把握する必要がありそう。
+アカウントベースで、実行、変更の権限を複数の秘密鍵で管理できるのはいいなと思ってる。また、アカウントに EOS を持たせることで、スマートコントラクトの動作のための CPU やメモリが確保されるらしい、ここらへんは実運用する場合は、把握する必要がありそう。

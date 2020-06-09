@@ -1,20 +1,20 @@
 ---
-title: "Rustで始めるOpenGLをやっている"
+title: 'Rustで始めるOpenGLをやっている'
 date: 2019-11-12T15:23:06+09:00
-categories: 
-- Development
-tags: 
-- Rust
-- OpenGL
-keywords: 
-- Rust
-- OpenGL
+categories:
+  - Development
+tags:
+  - Rust
+  - OpenGL
+keywords:
+  - Rust
+  - OpenGL
 archives: 2019-11
 ---
 
 ## これはなに
 
-[[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH](https://toyamaguchi.booth.pm/items/1557536)をなぞった際のメモです。
+[[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH](https://toyamaguchi.booth.pm/items/1557536)をなぞった際のメモです。
 
 ## 目次を読む
 
@@ -24,56 +24,56 @@ archives: 2019-11
 2. SDL
 3. OpenGL
 4. Dear ImGui
-5. 3Dオブジェクト
+5. 3D オブジェクト
 6. テクスチャ
 
 ほとんど触れたことがないな、とりあえず上からやっていこう
-ソースコード→[toyamaguchi/start_opengl_in_rust](https://github.com/toyamaguchi/start_opengl_in_rust)
+ソースコード →[toyamaguchi/start_opengl_in_rust](https://github.com/toyamaguchi/start_opengl_in_rust)
 
 ## 環境
 
-- [Rust Programming Language](https://www.rust-lang.org/)に従ってRustをインストール
-    - versionは1.39だった
-    - crateは[crates.io: Rust Package Registry](https://crates.io/)で検索できる
-    - VSCodeのrls、rustupのパスを通してやる必要があった。`"rust-client.rustupPath": "~/.cargo/bin/rustup"`
+- [Rust Programming Language](https://www.rust-lang.org/)に従って Rust をインストール
+  - version は 1.39 だった
+  - crate は[crates.io: Rust Package Registry](https://crates.io/)で検索できる
+  - VSCode の rls、rustup のパスを通してやる必要があった。`"rust-client.rustupPath": "~/.cargo/bin/rustup"`
 
 ## SDL
 
-SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
+SDL は、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
 [SDL - Wikipedia](https://ja.wikipedia.org/wiki/SDL)  
 これだけでも十分な機能を持つゲームを作成可能らしい
 
-Rustからの利用は`crate「sdl2」`を利用する。[Rust-SDL2/rust-sdl2: SDL2 bindings for Rust](https://github.com/Rust-SDL2/rust-sdl2)  
-`sd12`はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。
+Rust からの利用は`crate「sdl2」`を利用する。[Rust-SDL2/rust-sdl2: SDL2 bindings for Rust](https://github.com/Rust-SDL2/rust-sdl2)  
+`sd12`は C 言語で書かれたライブラリを間接的に利用するラッパーのため SDL のインストールも必要。
 
-SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。
+SDL を使ってソフトに必要な構造を作って OpenGL で描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。
 
 ### 準備
 
-- [Rust-SDL2/rust-sdl2: SDL2 bindings for Rust](https://github.com/Rust-SDL2/rust-sdl2) の手順通りSDLをインストール
+- [Rust-SDL2/rust-sdl2: SDL2 bindings for Rust](https://github.com/Rust-SDL2/rust-sdl2) の手順通り SDL をインストール
 - `cargo.toml`に`sd12`を追加
 
 ### 作成
 
-`sdl2`のcrates.ioページを見る。
+`sdl2`の crates.io ページを見る。
 
 ## OpenGL
 
-SDLのウィンドウに描画していく
+SDL のウィンドウに描画していく
 
 ### 準備
 
-`cargo.toml`に`gl`(OpenGLのAPIを利用可能に),`cgmath`(CG用の数学関連機能),`c_str_macro`(C言語とコンパチビリティんのある文字列型を生成できる`c_str!`マクロが使えるようになる)を追加
+`cargo.toml`に`gl`(OpenGL の API を利用可能に),`cgmath`(CG 用の数学関連機能),`c_str_macro`(C 言語とコンパチビリティんのある文字列型を生成できる`c_str!`マクロが使えるようになる)を追加
 
 ### 作成
 
-HelloWorldは難しいらしいので三角形を描画する
+HelloWorld は難しいらしいので三角形を描画する
 
 シェーダーという言葉が出てきた
 
 写経辛いのでコピペに切り替えていく
 
-OpenGL3.1を使う、このバージョンは丁度APIが一新されたバージョンで、`Core`(新しいAPIのみ)と`Compability`(古いAPIもサポート)パッケージがある。今回は`Core`
+OpenGL3.1 を使う、このバージョンは丁度 API が一新されたバージョンで、`Core`(新しい API のみ)と`Compability`(古い API もサポート)パッケージがある。今回は`Core`
 
 描画はシェーダと呼ばれる描画プログラムを通してデータを送る  
 シェーダなしのサンプルコードは古い可能性があるので注意  
@@ -84,33 +84,33 @@ OpenGL3.1を使う、このバージョンは丁度APIが一新されたバー�
 
 シェーダは実行時にソースコードをコンパイルして使えるプログラムなのでこういった名称になってる
 
-今回具体的にはVertexシェーダとFragmentシェーダを使った
+今回具体的には Vertex シェーダと Fragment シェーダを使った
 
-#### Vertexシェーダ
+#### Vertex シェーダ
 
-Vertexはそもそも頂点のこと、辺と辺を結ぶ点。3D空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる
+Vertex はそもそも頂点のこと、辺と辺を結ぶ点。3D 空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる
 
-描画したい頂点が、3D空間の中でどの位置にあるのかを表すモデル行列  
+描画したい頂点が、3D 空間の中でどの位置にあるのかを表すモデル行列  
 カメラの一を考慮したビュー行列  
-カメラから見た3D空間をどのように画面に描画するかを表す射影行列  
-3つの行列をかけ合わせて最終的な画面上の座標になる
+カメラから見た 3D 空間をどのように画面に描画するかを表す射影行列  
+3 つの行列をかけ合わせて最終的な画面上の座標になる
 
-#### Fragmentシェーダ
+#### Fragment シェーダ
 
-色を計算するシェーダ、Vertexシェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう
-  
-どちらもGLSLを使って実装する。  
-GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPUや前段のシェーダからの情報、扱える変数に独特のルールがある。  
-GPUでの動作なので並列計算できる、画面上に多くの3Dオブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。
+色を計算するシェーダ、Vertex シェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう
 
-GLSLのバージョンは3.3
+どちらも GLSL を使って実装する。  
+GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPU や前段のシェーダからの情報、扱える変数に独特のルールがある。  
+GPU での動作なので並列計算できる、画面上に多くの 3D オブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。
 
-VBO(Vertex Buffer Object)はCPUからGPUに情報を渡すための入れ物、頂点データだったり色情報だったり  
-VAO(Vertex Array Object)はVBOをどのようなまとまりで使うのかを設定するもの
+GLSL のバージョンは 3.3
 
-WebGLの話ものってそう
+VBO(Vertex Buffer Object)は CPU から GPU に情報を渡すための入れ物、頂点データだったり色情報だったり  
+VAO(Vertex Array Object)は VBO をどのようなまとまりで使うのかを設定するもの
 
-サンプルコードが動かない→動いた、sampleリポジトリのrscフォルダを追加すればよかっただけだった。章の最後に書いてあった。
+WebGL の話ものってそう
+
+サンプルコードが動かない → 動いた、sample リポジトリの rsc フォルダを追加すればよかっただけだった。章の最後に書いてあった。
 
 ```log
 RUST_BACKTRACE=1 cargo run
@@ -191,9 +191,9 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 
 [ocornut/imgui](https://github.com/ocornut/imgui)
 
-OpenGLに様々なGUIを追加できるライブラリ
+OpenGL に様々な GUI を追加できるライブラリ
 
-これを使ってSDL2のウィンドウに新たにウィンドウを追加する。
+これを使って SDL2 のウィンドウに新たにウィンドウを追加する。
 
 出た
 
@@ -204,4 +204,4 @@ OpenGLに様々なGUIを追加できるライブラリ
 ### 効果的な使い方
 
 パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
-FPSを表示も
+FPS を表示も

@@ -1,45 +1,45 @@
 ---
-title: "Visualforceの基礎"
+title: 'Visualforceの基礎'
 date: 2019-11-11T15:50:31+09:00
-categories: 
-- Salesforce
-tags: 
-- Visualforce
-- Trailhead
+categories:
+  - Salesforce
+tags:
+  - Visualforce
+  - Trailhead
 archives: 2019-11
 ---
 
-## Visualforceとは
+## Visualforce とは
 
-- Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク
-- Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる
-- 標準またはApexでビジネスロジックを記述する。
+- Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク
+- Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる
+- 標準または Apex でビジネスロジックを記述する。
 
 ## 使用できる場所
 
 - ナビゲーションバーに追加
 - 標準ページレイアウト内に表示
-- Lightningアプリケーションビルダーでコンポーネントとして追加する
-    - [Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。
+- Lightning アプリケーションビルダーでコンポーネントとして追加する
+  - [Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。
 - オブジェクトページの標準ボタンやリンクを上書きして表示する
 - オブジェクトページにカスタムボタンやリンクを配置して表示する
 
 ## ページの作成
 
-- APIを使用して作成変更できる
+- API を使用して作成変更できる
 - 開発者コンソール
-    - エディタがついてる。補完あり
-    - LightningExperienceのページから実行でLightningExperienceでプレビュ  $A.get("e.force:navigateToURL").setParams({"url": "/apex/pageName"}).fire();
-- xmlベース
+  - エディタがついてる。補完あり
+  - LightningExperience のページから実行で LightningExperience でプレビュ \$A.get("e.force:navigateToURL").setParams({"url": "/apex/pageName"}).fire();
+- xml ベース
 
 ## 単純な変数と数式の使用
 
 - グローバル変数 ex. `$User` [グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm)
 - 構文 {! expression } を評価して出力してくれる
-    - expressionないは大文字小文字区別なし
-    - 文字列連結は&
-    - メンバーアクセスは`.`(ドット)つなぎ
-    - [式の演算子 | Visualforce 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html)
+  - expression ないは大文字小文字区別なし
+  - 文字列連結は&
+  - メンバーアクセスは`.`(ドット)つなぎ
+  - [式の演算子 | Visualforce 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html)
 - 標準関数 ex. TODAY(), DAY()... [関数 | Visualforce 開発者ガイド | Salesforce Developers](https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm)
 
 ## 標準コントローラの使用
@@ -47,22 +47,22 @@ archives: 2019-11
 - MVC
 - 標準なアクションとデータアクセスを処理できる
 - `<apex standardController="Account">`で有効化
-- getQueryでコントローラにパラメータを渡せる。ex. `/apex/pageName?id={ObjectID}`
+- getQuery でコントローラにパラメータを渡せる。ex. `/apex/pageName?id={ObjectID}`
 
 ## レコード、項目、テーブルの表示
 
 - `<apex:detail />`等の一括出力コンポーネントがある
-- `<apex:outputField value="{! Account.Name }"/>`のようなUIコンポーネントもある
-- `<!-->`はテーブルUI
+- `<apex:outputField value="{! Account.Name }"/>`のような UI コンポーネントもある
+- `<!-->`はテーブル UI
 - `<apex:relatedList list="Contacts">`はリスト
 
 ## フォームを使用したデータの入力
 
 - `<apex:form>`のデータは`<apex:page>`で指定されたコントローラーを元にする
 - プラットフォームのスタイルを使用する要素としない要素がある
-    - する
-        - `<apex:form>`を使用している場合
-        - `<apex:pageBlock>`及び`<apex;pageBlockSection>`内で入力要素を使用する場合
+  - する
+    - `<apex:form>`を使用している場合
+    - `<apex:pageBlock>`及び`<apex;pageBlockSection>`内で入力要素を使用する場合
 - `<apex:commandButton />`でボタンが作成できる。要素を足すことで色々指定する。`action="{! save }"`,`value="Save"`等々
 
 ## 標準リストコントローラの使用

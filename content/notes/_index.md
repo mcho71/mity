@@ -1,5 +1,5 @@
 ---
-title: "Note"
-menu: "main"
+title: 'Note'
+menu: 'main'
 weight: 2
 ---
