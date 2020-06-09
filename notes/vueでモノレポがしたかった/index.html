@@ -26,7 +26,7 @@ if (!doNotTrack) {
     <meta content="monorepo, モノレポ, multi projects, マルチプロジェクト, vue, vue-cli-service, vue.config.js, multi page app, マルチページ" name="keywords">
     
     
-    <meta name="description" property="og:description" content="これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build -|">
+    <meta name="description" property="og:description" content="これはなに Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue c|">
     
 
     <meta name="apple-mobile-web-app-title" content="Mcho&#39;s Space">
@@ -46,7 +46,7 @@ if (!doNotTrack) {
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
     <meta name="twitter:title" content="Vueでモノレポがしたかった | Mcho&#39;s Space">
-    <meta name="twitter:description" content="これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build -|">
+    <meta name="twitter:description" content="これはなに Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue c|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -153,11 +153,11 @@ if (!doNotTrack) {
   
   <section class="pb-6 mb-3 border-bottom text-gray">
     <h2 id="これはなに">これはなに</h2>
-<p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
+<p>Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
 <h2 id="事前知識">事前知識</h2>
 <p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
 <ul>
-<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトのnpm scriptsに<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
+<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトの npm scripts に<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
 <li><code>vue inspect</code> - <code>vue.config.js</code>を考慮した実際にビルドの際に使われる<code>webpack.config.js</code>を出力してくれる</li>
 </ul>
 <h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
@@ -171,9 +171,9 @@ if (!doNotTrack) {
 </code></pre><p>ちなみにビルドは<code>vue-cli-service build</code>で行っていた。</p>
 <h2 id="やりたいこと">やりたいこと</h2>
 <ul>
-<li>出力をdist/app, dist/adminのように複数ディレクトリに分ける。</li>
+<li>出力を dist/app, dist/admin のように複数ディレクトリに分ける。</li>
 <li>ビルド、ビルド設定を分ける</li>
-<li>lint設定は共有する</li>
+<li>lint 設定は共有する</li>
 </ul>
 <h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
 <p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
@@ -211,21 +211,21 @@ if (!doNotTrack) {
 <p>ということで、<code>projects</code>ディレクトリを作ってそこで<code>vue create admin</code>を叩いた感じになった。</p>
 <h2 id="この構成で思うこと">この構成で思うこと</h2>
 <ul>
-<li>package.jsonめっちゃある。</li>
-<li>node_modulesもめっちゃある、中身重複しまくりそう。</li>
-<li>vueのモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
+<li>package.json めっちゃある。</li>
+<li>node_modules もめっちゃある、中身重複しまくりそう。</li>
+<li>vue のモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
 </ul>
 <h2 id="これからどうするか">これからどうするか</h2>
 <ul>
-<li>Webpackを学ぶ
+<li>Webpack を学ぶ
 <ul>
 <li>強くなればもっとスリムにできそう</li>
 <li>コントリビュートへも繋がりそう</li>
 </ul>
 </li>
-<li>VSCodeの拡張機能、エディタの技術を学ぶ
+<li>VSCode の拡張機能、エディタの技術を学ぶ
 <ul>
-<li>LanguageServerやLinterの最適化に苦労したので・・・</li>
+<li>LanguageServer や Linter の最適化に苦労したので・・・</li>
 </ul>
 </li>
 </ul>
@@ -391,7 +391,7 @@ if (!doNotTrack) {
             </div>
             <div class="text-gray ellipsis">
               
-              これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがない
+              これはなに [DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3D オブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からや
             </div>
           </li>
         

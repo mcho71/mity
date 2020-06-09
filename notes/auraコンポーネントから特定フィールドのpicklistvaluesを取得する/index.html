@@ -26,7 +26,7 @@ if (!doNotTrack) {
     <meta content="敬称, Salutation, PersonAccount, 個人, 取引先, Account, Aura, Salesforce, PickListValues, 選択リスト" name="keywords">
     
     
-    <meta name="description" property="og:description" content="やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-a|">
+    <meta name="description" property="og:description" content="やりたいこと Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-api か Apex コントローラーで取得できそう。ui-api は試し|">
     
 
     <meta name="apple-mobile-web-app-title" content="Mcho&#39;s Space">
@@ -46,7 +46,7 @@ if (!doNotTrack) {
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
     <meta name="twitter:title" content="Auraコンポーネントから特定フィールドのPickListValuesを取得する | Mcho&#39;s Space">
-    <meta name="twitter:description" content="やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-a|">
+    <meta name="twitter:description" content="やりたいこと Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-api か Apex コントローラーで取得できそう。ui-api は試し|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -153,9 +153,9 @@ if (!doNotTrack) {
   
   <section class="pb-6 mb-3 border-bottom text-gray">
     <h2 id="やりたいこと">やりたいこと</h2>
-<p>AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
+<p>Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
 <h2 id="取得する">取得する</h2>
-<p>ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。</p>
+<p>ui-api か Apex コントローラーで取得できそう。ui-api は試したら CSP が必要だったので、Apex コントローラーで取得する。</p>
 <p>単純にやると、<code>Account.Salutation.getDescribe().getPicklistValues()</code>でできる。</p>
 <p>汎用的にするには</p>
 <pre><code class="language-apex" data-lang="apex">SObject sObj = (SObject)Type.forName(sObjectName).newInstance();
@@ -282,7 +282,7 @@ field.getDescribe().getPicklistValues();
             </div>
             <div class="text-gray ellipsis">
               
-              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implementsがないとL
+              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implements がないと LightningAppBuilder
             </div>
           </li>
         
@@ -323,7 +323,7 @@ field.getDescribe().getPicklistValues();
             </div>
             <div class="text-gray ellipsis">
               
-              Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡さ
+              Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。
             </div>
           </li>
         

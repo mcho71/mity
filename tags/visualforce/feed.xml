@@ -24,18 +24,18 @@
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
-      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標]]></description>
-      <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
+      <description><![CDATA[Visualforce とは Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる 標準または Apex でビジネスロジックを記述する。 使用できる場所]]></description>
+      <content:encoded><![CDATA[<h2 id="visualforce-とは">Visualforce とは</h2>
 <ul>
-<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
-<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
-<li>標準またはApexでビジネスロジックを記述する。</li>
+<li>Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク</li>
+<li>Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準または Apex でビジネスロジックを記述する。</li>
 </ul>
 <h2 id="使用できる場所">使用できる場所</h2>
 <ul>
 <li>ナビゲーションバーに追加</li>
 <li>標準ページレイアウト内に表示</li>
-<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+<li>Lightning アプリケーションビルダーでコンポーネントとして追加する
 <ul>
 <li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
 </ul>
@@ -45,21 +45,21 @@
 </ul>
 <h2 id="ページの作成">ページの作成</h2>
 <ul>
-<li>APIを使用して作成変更できる</li>
+<li>API を使用して作成変更できる</li>
 <li>開発者コンソール
 <ul>
 <li>エディタがついてる。補完あり</li>
-<li>LightningExperienceのページから実行でLightningExperienceでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+<li>LightningExperience のページから実行で LightningExperience でプレビュ $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
 </ul>
 </li>
-<li>xmlベース</li>
+<li>xml ベース</li>
 </ul>
 <h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
 <ul>
 <li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 <li>構文 {! expression } を評価して出力してくれる
 <ul>
-<li>expressionないは大文字小文字区別なし</li>
+<li>expression ないは大文字小文字区別なし</li>
 <li>文字列連結は&amp;</li>
 <li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
 <li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html" target="_blank" rel="nofollow noopener">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
@@ -72,13 +72,13 @@
 <li>MVC</li>
 <li>標準なアクションとデータアクセスを処理できる</li>
 <li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
-<li>getQueryでコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
+<li>getQuery でコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
 </ul>
 <h2 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h2>
 <ul>
 <li><code>&lt;apex:detail /&gt;</code>等の一括出力コンポーネントがある</li>
-<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のようなUIコンポーネントもある</li>
-<li><code>&lt;!--&gt;</code>はテーブルUI</li>
+<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のような UI コンポーネントもある</li>
+<li><code>&lt;!--&gt;</code>はテーブル UI</li>
 <li><code>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;</code>はリスト</li>
 </ul>
 <h2 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h2>

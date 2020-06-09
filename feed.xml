@@ -316,8 +316,8 @@ sfdx force:org:display --verbose -u ForGitHubAction
       <pubDate>Wed, 18 Mar 2020 15:27:50 +0900</pubDate>
       
       <guid>https://mithy.fun/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</guid>
-      <description><![CDATA[jsonから値を抜きだしてURLを作りたかったので結局こんな感じになった USER_NAME=$(python3 -c &amp;#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&amp;#34; $(echo $HOGE_JSON | jq .huga))&amp;#39; ENCODED_URL=$(echo https://example.com?un=${USER_NAME}) $(echo $HOGE)は引数に渡るときに&amp;quot;hoge&amp;quot;となるのでsys.argv[1]]]></description>
-      <content:encoded><![CDATA[<p>jsonから値を抜きだしてURLを作りたかったので結局こんな感じになった</p>
+      <description><![CDATA[json から値を抜きだして URL を作りたかったので結局こんな感じになった USER_NAME=$(python3 -c &amp;#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&amp;#34; $(echo $HOGE_JSON | jq .huga))&amp;#39; ENCODED_URL=$(echo https://example.com?un=${USER_NAME}) $(echo $HOGE)は引数に渡るときに&amp;quot;hoge&amp;quot;となるのでsys.argv[1][1:-1]]></description>
+      <content:encoded><![CDATA[<p>json から値を抜きだして URL を作りたかったので結局こんな感じになった</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">USER_NAME</span><span class="o">=</span><span class="k">$(</span>python3 -c <span class="s2">&#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&#34;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$HOGE_JSON</span> <span class="p">|</span> jq .huga<span class="k">))</span><span class="err">&#39;</span>
 <span class="nv">ENCODED_URL</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> https://example.com?un<span class="o">=</span><span class="si">${</span><span class="nv">USER_NAME</span><span class="si">}</span><span class="k">)</span>
 </code></pre></div><p><code>$(echo $HOGE)</code>は引数に渡るときに<code>&quot;hoge&quot;</code>となるので<code>sys.argv[1][1:-1]</code>で両端のダブルクオートを切り取ってる
@@ -331,11 +331,11 @@ sfdx force:org:display --verbose -u ForGitHubAction
       <pubDate>Mon, 16 Mar 2020 12:06:21 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
-      <description><![CDATA[モチベーション 各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLIのバージョンは]]></description>
+      <description><![CDATA[モチベーション 各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLI のバージョンは9.0.6でした。 パッケージの]]></description>
       <content:encoded><![CDATA[<h2 id="モチベーション">モチベーション</h2>
-<p>各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。</p>
+<p>各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。</p>
 <h2 id="移行手順">移行手順</h2>
-<p><code>ng new</code>したところから始めます。AngularCLIのバージョンは<code>9.0.6</code>でした。</p>
+<p><code>ng new</code>したところから始めます。AngularCLI のバージョンは<code>9.0.6</code>でした。</p>
 <h3 id="パッケージのインストール">パッケージのインストール</h3>
 <p>まず、<code>eslint</code>と<code>@angular-eslint</code>関連のパッケージをインストールします。
 <a href="https://github.com/angular-eslint/angular-eslint" target="_blank" rel="nofollow noopener">angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular</a></p>
@@ -344,8 +344,8 @@ sfdx force:org:display --verbose -u ForGitHubAction
 </span><span class="se"></span>  @angular-eslint/eslint-plugin <span class="se">\
 </span><span class="se"></span>  @angular-eslint/template-parser <span class="se">\
 </span><span class="se"></span>  @angular-eslint/eslint-plugin-template
-</code></pre></div><h3 id="コマンドとeslintの設定を修正">コマンドとESLintの設定を修正</h3>
-<p>前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に<code>angular.json</code>を修正、<strong><code>.eslintrc.js</code></strong>を追加しました。angular.jsonの差分はこんな感じ<br>
+</code></pre></div><h3 id="コマンドと-eslint-の設定を修正">コマンドと ESLint の設定を修正</h3>
+<p>前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に<code>angular.json</code>を修正、<strong><code>.eslintrc.js</code></strong>を追加しました。angular.json の差分はこんな感じ<br>
 
 
 
@@ -358,7 +358,7 @@ sfdx force:org:display --verbose -u ForGitHubAction
 <p>また、この<code>.eslint.js</code>を使うために、<code>@typescript-eslint</code>関連のパッケージが必要なので以下のコマンドでインストールします。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 </code></pre></div><p>ここまでで<code>ng lint</code>は動くようになるはずです。手元の環境では、<code>app.component.spec.ts</code>でクオートのエラーがでました。</p>
-<h2 id="vscodeでも動かしてみる">VSCodeでも動かしてみる</h2>
+<h2 id="vscode-でも動かしてみる">VSCode でも動かしてみる</h2>
 <p>設定されてるルールが適用されてるか見てみます。サンプルにあった<code>'@typescript-eslint/no-non-null-assertion': 'error'</code>で試してみます。</p>
 <p>
 
@@ -367,9 +367,9 @@ sfdx force:org:display --verbose -u ForGitHubAction
   <img src="/img/2020-03-16-18-37-21.png" alt="&#39;@typescript-eslint/no-non-null-assertion&rsquo;: &lsquo;error&rsquo;" decoding="async" loading="lazy">
 </picture>
 </p>
-<p>無事Lintされていました。また、画像や動画をとっていないですが、<code>ESLint: Fix all auto-fixable Problems</code>も効きました。</p>
+<p>無事 Lint されていました。また、画像や動画をとっていないですが、<code>ESLint: Fix all auto-fixable Problems</code>も効きました。</p>
 <h2 id="終わり">終わり</h2>
-<p>Angular本体のESLint対応も待ち遠しいですが、<code>@angular-eslint/angular-eslint</code>はルールも順次対応していくようなので、とりあえずこちらで良さそうですね</p>
+<p>Angular 本体の ESLint 対応も待ち遠しいですが、<code>@angular-eslint/angular-eslint</code>はルールも順次対応していくようなので、とりあえずこちらで良さそうですね</p>
 ]]></content:encoded>
     </item>
     
@@ -379,11 +379,11 @@ sfdx force:org:display --verbose -u ForGitHubAction
       <pubDate>Mon, 09 Mar 2020 15:54:48 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
-      <description><![CDATA[やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-a]]></description>
+      <description><![CDATA[やりたいこと Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-api か Apex コントローラーで取得できそう。ui-api は試し]]></description>
       <content:encoded><![CDATA[<h2 id="やりたいこと">やりたいこと</h2>
-<p>AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
+<p>Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
 <h2 id="取得する">取得する</h2>
-<p>ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。</p>
+<p>ui-api か Apex コントローラーで取得できそう。ui-api は試したら CSP が必要だったので、Apex コントローラーで取得する。</p>
 <p>単純にやると、<code>Account.Salutation.getDescribe().getPicklistValues()</code>でできる。</p>
 <p>汎用的にするには</p>
 <pre><code class="language-apex" data-lang="apex">SObject sObj = (SObject)Type.forName(sObjectName).newInstance();
@@ -488,11 +488,11 @@ field.getDescribe().getPicklistValues();
       <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとL]]></description>
+      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implements がないと LightningAppBuilder]]></description>
       <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
 <p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
 <h2 id="メモ">メモ</h2>
-<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
+<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implements がないと LightningAppBuilder でレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
 レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
     <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
@@ -725,25 +725,25 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
-      <description><![CDATA[Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡さ]]></description>
-      <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
+      <description><![CDATA[Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。]]></description>
+      <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
 <code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
 <h2 id="hogecmp">Hoge.cmp</h2>
 <ul>
 <li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
 <ul>
-<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+<li>action で開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
 </ul>
 </li>
 <li>コントローラーのメソッドには<code>c</code>からアクセスできる。
 <ul>
-<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。cは<code>Controller.js</code>の関数も含む。ハマった</li>
+<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。c は<code>Controller.js</code>の関数も含む。ハマった</li>
 </ul>
 </li>
 </ul>
 <h2 id="hogecontrollerjs--hogehelperjs">HogeController.js | HogeHelper.js</h2>
-<p>コントローラーの関数は3つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
+<p>コントローラーの関数は 3 つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
 <code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
 <h2 id="参考">参考</h2>
 <ul>
@@ -751,7 +751,7 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
 <li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE" target="_blank" rel="nofollow noopener">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
 <li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
 <ul>
-<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+<li>action で開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
 </ul>
 </li>
 </ul>
@@ -790,24 +790,24 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
       <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成]]></description>
+      <description><![CDATA[はじめに LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningEleme]]></description>
       <content:encoded><![CDATA[<h2 id="はじめに">はじめに</h2>
-<p>LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。</p>
+<p>LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。</p>
 <p>トレイルがあったので、これをやる。
 <a href="https://trailhead.salesforce.com/ja/content/learn/trails/build-lightning-web-components" target="_blank" rel="nofollow noopener">Lightning Web コンポーネントの作成 | Salesforce Trailhead</a></p>
 <h2 id="lightning-web-コンポーネントの作成">Lightning Web コンポーネントの作成</h2>
 <ul>
-<li><code>LightningElement</code>がLWCの実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
+<li><code>LightningElement</code>が LWC の実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
 </ul>
-<p>前から3つ終わったけど、大体開発環境とかの話だったな</p>
+<p>前から 3 つ終わったけど、大体開発環境とかの話だったな</p>
 <h2 id="所感">所感</h2>
 <p>やり終わってしまったので所感を書く。雑メモは社スラックに投稿していたので気が向いたらこっちにまとめる。
-Web標準に準拠して作られているので、最近のjavascriptフロントエンドライブラリを触っていれば、固有のAPIやアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
-Salesforceのコンポーネントとしてしか利用出来ないのが惜しいなと、Webのどこにでも入れられるような感じに想像していたのでちょっとがっかり。
-Salesforceのコンポーネントをモダンなjavascriptで書けるのは良い。出来ることはAuraには追いついていないらしいけど、API等の対応も進んでいるので今後はこっちが主流になっていくのかな。
-トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他はSFDXだったり環境構築のことが大半をしめていた。</p>
+Web 標準に準拠して作られているので、最近の javascript フロントエンドライブラリを触っていれば、固有の API やアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
+Salesforce のコンポーネントとしてしか利用出来ないのが惜しいなと、Web のどこにでも入れられるような感じに想像していたのでちょっとがっかり。
+Salesforce のコンポーネントをモダンな javascript で書けるのは良い。出来ることは Aura には追いついていないらしいけど、API 等の対応も進んでいるので今後はこっちが主流になっていくのかな。
+トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他は SFDX だったり環境構築のことが大半をしめていた。</p>
 <h2 id="さいごに">さいごに</h2>
-<p>日本語でPG組織を作成するとTrailheadのステップで、ホームのAPI名が違って完了しないので注意</p>
+<p>日本語で PG 組織を作成すると Trailhead のステップで、ホームの API 名が違って完了しないので注意</p>
 ]]></content:encoded>
     </item>
     
@@ -817,8 +817,8 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
       <pubDate>Tue, 12 Nov 2019 15:27:44 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH]]></description>
-      <content:encoded><![CDATA[<h2 id="dl版-rustではじめるopengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a></h2>
+      <description><![CDATA[[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH]]></description>
+      <content:encoded><![CDATA[<h2 id="dl-版-rust-ではじめる-opengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a></h2>
 ]]></content:encoded>
     </item>
     
@@ -828,9 +828,9 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがない]]></description>
+      <description><![CDATA[これはなに [DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3D オブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からや]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
 <h2 id="目次を読む">目次を読む</h2>
 <p>ライブラリごとに章が区切られている</p>
 <ol>
@@ -838,44 +838,44 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
 <li>SDL</li>
 <li>OpenGL</li>
 <li>Dear ImGui</li>
-<li>3Dオブジェクト</li>
+<li>3D オブジェクト</li>
 <li>テクスチャ</li>
 </ol>
 <p>ほとんど触れたことがないな、とりあえず上からやっていこう
-ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
+ソースコード →<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
 <h2 id="環境">環境</h2>
 <ul>
-<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従ってRustをインストール
+<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従って Rust をインストール
 <ul>
-<li>versionは1.39だった</li>
-<li>crateは<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
-<li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
+<li>version は 1.39 だった</li>
+<li>crate は<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>VSCode の rls、rustup のパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="sdl">SDL</h2>
-<p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
+<p>SDL は、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
 <a href="https://ja.wikipedia.org/wiki/SDL" target="_blank" rel="nofollow noopener">SDL - Wikipedia</a><br>
 これだけでも十分な機能を持つゲームを作成可能らしい</p>
-<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
-<code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
-<p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
+<p>Rust からの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
+<code>sd12</code>は C 言語で書かれたライブラリを間接的に利用するラッパーのため SDL のインストールも必要。</p>
+<p>SDL を使ってソフトに必要な構造を作って OpenGL で描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
 <h3 id="準備">準備</h3>
 <ul>
-<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通り SDL をインストール</li>
 <li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
 </ul>
 <h3 id="作成">作成</h3>
-<p><code>sdl2</code>のcrates.ioページを見る。</p>
+<p><code>sdl2</code>の crates.io ページを見る。</p>
 <h2 id="opengl">OpenGL</h2>
-<p>SDLのウィンドウに描画していく</p>
+<p>SDL のウィンドウに描画していく</p>
 <h3 id="準備-1">準備</h3>
-<p><code>cargo.toml</code>に<code>gl</code>(OpenGLのAPIを利用可能に),<code>cgmath</code>(CG用の数学関連機能),<code>c_str_macro</code>(C言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
+<p><code>cargo.toml</code>に<code>gl</code>(OpenGL の API を利用可能に),<code>cgmath</code>(CG 用の数学関連機能),<code>c_str_macro</code>(C 言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
 <h3 id="作成-1">作成</h3>
-<p>HelloWorldは難しいらしいので三角形を描画する</p>
+<p>HelloWorld は難しいらしいので三角形を描画する</p>
 <p>シェーダーという言葉が出てきた</p>
 <p>写経辛いのでコピペに切り替えていく</p>
-<p>OpenGL3.1を使う、このバージョンは丁度APIが一新されたバージョンで、<code>Core</code>(新しいAPIのみ)と<code>Compability</code>(古いAPIもサポート)パッケージがある。今回は<code>Core</code></p>
+<p>OpenGL3.1 を使う、このバージョンは丁度 API が一新されたバージョンで、<code>Core</code>(新しい API のみ)と<code>Compability</code>(古い API もサポート)パッケージがある。今回は<code>Core</code></p>
 <p>描画はシェーダと呼ばれる描画プログラムを通してデータを送る<br>
 シェーダなしのサンプルコードは古い可能性があるので注意<br>
 呼び名は<br>
@@ -883,23 +883,23 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
 なし: Fixed Function Pipeline<br>
 などというらしい</p>
 <p>シェーダは実行時にソースコードをコンパイルして使えるプログラムなのでこういった名称になってる</p>
-<p>今回具体的にはVertexシェーダとFragmentシェーダを使った</p>
-<h4 id="vertexシェーダ">Vertexシェーダ</h4>
-<p>Vertexはそもそも頂点のこと、辺と辺を結ぶ点。3D空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
-<p>描画したい頂点が、3D空間の中でどの位置にあるのかを表すモデル行列<br>
+<p>今回具体的には Vertex シェーダと Fragment シェーダを使った</p>
+<h4 id="vertex-シェーダ">Vertex シェーダ</h4>
+<p>Vertex はそもそも頂点のこと、辺と辺を結ぶ点。3D 空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
+<p>描画したい頂点が、3D 空間の中でどの位置にあるのかを表すモデル行列<br>
 カメラの一を考慮したビュー行列<br>
-カメラから見た3D空間をどのように画面に描画するかを表す射影行列<br>
-3つの行列をかけ合わせて最終的な画面上の座標になる</p>
-<h4 id="fragmentシェーダ">Fragmentシェーダ</h4>
-<p>色を計算するシェーダ、Vertexシェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
-<p>どちらもGLSLを使って実装する。<br>
-GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPUや前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
-GPUでの動作なので並列計算できる、画面上に多くの3Dオブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
-<p>GLSLのバージョンは3.3</p>
-<p>VBO(Vertex Buffer Object)はCPUからGPUに情報を渡すための入れ物、頂点データだったり色情報だったり<br>
-VAO(Vertex Array Object)はVBOをどのようなまとまりで使うのかを設定するもの</p>
-<p>WebGLの話ものってそう</p>
-<p>サンプルコードが動かない→動いた、sampleリポジトリのrscフォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
+カメラから見た 3D 空間をどのように画面に描画するかを表す射影行列<br>
+3 つの行列をかけ合わせて最終的な画面上の座標になる</p>
+<h4 id="fragment-シェーダ">Fragment シェーダ</h4>
+<p>色を計算するシェーダ、Vertex シェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
+<p>どちらも GLSL を使って実装する。<br>
+GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPU や前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
+GPU での動作なので並列計算できる、画面上に多くの 3D オブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
+<p>GLSL のバージョンは 3.3</p>
+<p>VBO(Vertex Buffer Object)は CPU から GPU に情報を渡すための入れ物、頂点データだったり色情報だったり<br>
+VAO(Vertex Array Object)は VBO をどのようなまとまりで使うのかを設定するもの</p>
+<p>WebGL の話ものってそう</p>
+<p>サンプルコードが動かない → 動いた、sample リポジトリの rsc フォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
 <pre><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.03s
      Running `target/debug/rust-opengl`
@@ -975,8 +975,8 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </span><span class="w">    </span><span class="p">];</span><span class="w">
 </span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
 <p><a href="https://github.com/ocornut/imgui" target="_blank" rel="nofollow noopener">ocornut/imgui</a></p>
-<p>OpenGLに様々なGUIを追加できるライブラリ</p>
-<p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
+<p>OpenGL に様々な GUI を追加できるライブラリ</p>
+<p>これを使って SDL2 のウィンドウに新たにウィンドウを追加する。</p>
 <p>出た</p>
 <p>
 
@@ -994,7 +994,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </p>
 <h3 id="効果的な使い方">効果的な使い方</h3>
 <p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
-FPSを表示も</p>
+FPS を表示も</p>
 ]]></content:encoded>
     </item>
     

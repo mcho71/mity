@@ -26,7 +26,7 @@ if (!doNotTrack) {
     <meta content="Salesforce, Aura, LightningComponent" name="keywords">
     
     
-    <meta name="description" property="og:description" content="Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡さ|">
+    <meta name="description" property="og:description" content="Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。|">
     
 
     <meta name="apple-mobile-web-app-title" content="Mcho&#39;s Space">
@@ -46,7 +46,7 @@ if (!doNotTrack) {
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
     <meta name="twitter:title" content="Auraコンポーネントの使い方 | Mcho&#39;s Space">
-    <meta name="twitter:description" content="Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡さ|">
+    <meta name="twitter:description" content="Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -152,24 +152,24 @@ if (!doNotTrack) {
 <article>
   
   <section class="pb-6 mb-3 border-bottom text-gray">
-    <p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
+    <p><code>Hoge.cmp</code>: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
 <code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
 <h2 id="hogecmp">Hoge.cmp</h2>
 <ul>
 <li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
 <ul>
-<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+<li>action で開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
 </ul>
 </li>
 <li>コントローラーのメソッドには<code>c</code>からアクセスできる。
 <ul>
-<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。cは<code>Controller.js</code>の関数も含む。ハマった</li>
+<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。c は<code>Controller.js</code>の関数も含む。ハマった</li>
 </ul>
 </li>
 </ul>
 <h2 id="hogecontrollerjs--hogehelperjs">HogeController.js | HogeHelper.js</h2>
-<p>コントローラーの関数は3つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
+<p>コントローラーの関数は 3 つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
 <code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
 <h2 id="参考">参考</h2>
 <ul>
@@ -177,7 +177,7 @@ if (!doNotTrack) {
 <li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE" target="_blank" rel="nofollow noopener">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
 <li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
 <ul>
-<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+<li>action で開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
 </ul>
 </li>
 </ul>
@@ -297,7 +297,7 @@ if (!doNotTrack) {
             </div>
             <div class="text-gray ellipsis">
               
-              やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-a
+              やりたいこと Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-api か Apex コントローラーで取得できそう。ui-api は試し
             </div>
           </li>
         
@@ -338,7 +338,7 @@ if (!doNotTrack) {
             </div>
             <div class="text-gray ellipsis">
               
-              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implementsがないとL
+              やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;のように、implements がないと LightningAppBuilder
             </div>
           </li>
         

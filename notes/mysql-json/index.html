@@ -26,7 +26,7 @@ if (!doNotTrack) {
     <meta content="MySQL, JSON, 集計, JSON_TABLE" name="keywords">
     
     
-    <meta name="description" property="og:description" content="MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使|">
+    <meta name="description" property="og:description" content="MySQL の JSON 型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使用するために、|">
     
 
     <meta name="apple-mobile-web-app-title" content="Mcho&#39;s Space">
@@ -46,7 +46,7 @@ if (!doNotTrack) {
     <meta name="twitter:site" content="@mcho71">
     <meta name="twitter:creator" content="@mcho71">
     <meta name="twitter:title" content="MySQL JSON型の集計 | Mcho&#39;s Space">
-    <meta name="twitter:description" content="MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使|">
+    <meta name="twitter:description" content="MySQL の JSON 型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使用するために、|">
     <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
     
 
@@ -148,12 +148,12 @@ if (!doNotTrack) {
 <article>
   
   <section class="pb-6 mb-3 border-bottom text-gray">
-    <p>MySQLのJSON型に対するクエリを書く際に苦労したので、それのメモを。<br>
+    <p>MySQL の JSON 型に対するクエリを書く際に苦労したので、それのメモを。<br>
 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。</p>
 <h2 id="tldr">tl;dr</h2>
 <ul>
-<li><code>JSON_TABLE</code>関数を使用するために、MySQLのバージョンを8以上にする。</li>
-<li>集計対象のJSON型のデータ構造を、集計に適した形にする。
+<li><code>JSON_TABLE</code>関数を使用するために、MySQL のバージョンを 8 以上にする。</li>
+<li>集計対象の JSON 型のデータ構造を、集計に適した形にする。
 <ul>
 <li>込み入った集計を必要とする場合は、このページの<a href="#%e9%85%8d%e5%88%97%e5%9e%8b">配列型</a>のようなデータ構造のほうが良さそう。</li>
 </ul>
@@ -178,7 +178,7 @@ if (!doNotTrack) {
   <span class="err">...</span>
 <span class="p">}</span>
 </code></pre></div><p>こんな感じのデータ構造、厄介な形だとおもう。
-こみいった集計をするには↓のようなデータを取得したくなる</p>
+こみいった集計をするには ↓ のようなデータを取得したくなる</p>
 <table>
 <thead>
 <tr>
@@ -222,7 +222,7 @@ if (!doNotTrack) {
     <span class="s1">&#39;$[*]&#39;</span> <span class="nf">COLUMNS</span> <span class="p">(</span><span class="n">key2</span> <span class="kt">INT</span> <span class="n">PATH</span> <span class="s1">&#39;$&#39;</span><span class="p">)</span>
   <span class="p">)</span> <span class="k">AS</span> <span class="n">key2list</span>
 <span class="p">;</span>
-</code></pre></div><p>SQL力の低さも相まってか、大げさなクエリになった。サブクエリじゃないにしてもテーブルを結合する必要が有りそう。</p>
+</code></pre></div><p>SQL 力の低さも相まってか、大げさなクエリになった。サブクエリじゃないにしてもテーブルを結合する必要が有りそう。</p>
 <p>以下、テストデータ作成用</p>
 <div class="highlight"><pre class="chroma"><code class="language-オブジェクト型データ挿入.sql" data-lang="オブジェクト型データ挿入.sql"><span class="k">DROP</span> <span class="k">PROCEDURE</span> <span class="k">IF</span> <span class="k">EXISTS</span> <span class="n">loop_insert_record</span><span class="p">;</span>
 <span class="n">DELIMITER</span> <span class="o">//</span>
@@ -261,7 +261,7 @@ if (!doNotTrack) {
   <span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div><p><code>JSON_TABLE</code>で集計しやすい形だと思ってる。
-前項と同様に、集計を行う際には↓ようなデータを取得したい。</p>
+前項と同様に、集計を行う際には ↓ ようなデータを取得したい。</p>
 <table>
 <thead>
 <tr>
@@ -313,7 +313,7 @@ if (!doNotTrack) {
     <span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">`</span><span class="n">target_table</span><span class="o">`</span> <span class="p">(</span><span class="n">info</span><span class="p">)</span> <span class="nf">VALUE</span> <span class="p">(</span>
         <span class="k">REPLACE</span><span class="p">(</span>
           <span class="k">REPLACE</span><span class="p">(</span>
-            <span class="s1">&#39;[{&#34;key1&#34;: 1, &#34;objectList1&#34;: [{&#34;key2&#34;: &#34;0&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d1}]}]}, {&#34;key1&#34;: &#34;2&#34;, &#34;objectList1&#34;: [{&#34;key2&#34;: &#34;0&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d2}]}, {&#34;key2&#34;: &#34;1&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d1}]}]}]&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;[{&#34;key1&#34;: 1, &#34;objectList1&#34;: [{&#34;key2&#34;: &#34;0&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d1}]}]}, {&#34;key1&#34;: &#34;2&#34;, &#34;objectList1&#34;: [{&#34;key2&#34;: &#34;0&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d2}]}, {&#34;key2&#34;: &#34;1&#34;, &#34;objectList2&#34;: [{&#34;foo&#34;: %d1}]}]}]&#39;</span><span class="p">,</span>
             <span class="s1">&#39;%d1&#39;</span><span class="p">,</span>
             <span class="k">CONVERT</span><span class="p">(</span><span class="nf">ROUND</span><span class="p">(</span><span class="nf">RAND</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span> <span class="kt">CHAR</span><span class="p">)</span>
           <span class="p">),</span>

@@ -24,24 +24,24 @@
       <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成]]></description>
+      <description><![CDATA[はじめに LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningEleme]]></description>
       <content:encoded><![CDATA[<h2 id="はじめに">はじめに</h2>
-<p>LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。</p>
+<p>LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。</p>
 <p>トレイルがあったので、これをやる。
 <a href="https://trailhead.salesforce.com/ja/content/learn/trails/build-lightning-web-components" target="_blank" rel="nofollow noopener">Lightning Web コンポーネントの作成 | Salesforce Trailhead</a></p>
 <h2 id="lightning-web-コンポーネントの作成">Lightning Web コンポーネントの作成</h2>
 <ul>
-<li><code>LightningElement</code>がLWCの実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
+<li><code>LightningElement</code>が LWC の実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
 </ul>
-<p>前から3つ終わったけど、大体開発環境とかの話だったな</p>
+<p>前から 3 つ終わったけど、大体開発環境とかの話だったな</p>
 <h2 id="所感">所感</h2>
 <p>やり終わってしまったので所感を書く。雑メモは社スラックに投稿していたので気が向いたらこっちにまとめる。
-Web標準に準拠して作られているので、最近のjavascriptフロントエンドライブラリを触っていれば、固有のAPIやアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
-Salesforceのコンポーネントとしてしか利用出来ないのが惜しいなと、Webのどこにでも入れられるような感じに想像していたのでちょっとがっかり。
-Salesforceのコンポーネントをモダンなjavascriptで書けるのは良い。出来ることはAuraには追いついていないらしいけど、API等の対応も進んでいるので今後はこっちが主流になっていくのかな。
-トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他はSFDXだったり環境構築のことが大半をしめていた。</p>
+Web 標準に準拠して作られているので、最近の javascript フロントエンドライブラリを触っていれば、固有の API やアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
+Salesforce のコンポーネントとしてしか利用出来ないのが惜しいなと、Web のどこにでも入れられるような感じに想像していたのでちょっとがっかり。
+Salesforce のコンポーネントをモダンな javascript で書けるのは良い。出来ることは Aura には追いついていないらしいけど、API 等の対応も進んでいるので今後はこっちが主流になっていくのかな。
+トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他は SFDX だったり環境構築のことが大半をしめていた。</p>
 <h2 id="さいごに">さいごに</h2>
-<p>日本語でPG組織を作成するとTrailheadのステップで、ホームのAPI名が違って完了しないので注意</p>
+<p>日本語で PG 組織を作成すると Trailhead のステップで、ホームの API 名が違って完了しないので注意</p>
 ]]></content:encoded>
     </item>
     

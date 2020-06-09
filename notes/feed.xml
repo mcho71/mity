@@ -271,11 +271,11 @@ sfdx force:org:display --verbose -u ForGitHubAction
       <pubDate>Mon, 16 Mar 2020 12:06:21 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
-      <description><![CDATA[モチベーション 各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLIのバージョンは]]></description>
+      <description><![CDATA[モチベーション 各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLI のバージョンは9.0.6でした。 パッケージの]]></description>
       <content:encoded><![CDATA[<h2 id="モチベーション">モチベーション</h2>
-<p>各所でTSLintからESLintの移行が進んでるのと、VSCodeのESLintフォーマッターを使いたかった。</p>
+<p>各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。</p>
 <h2 id="移行手順">移行手順</h2>
-<p><code>ng new</code>したところから始めます。AngularCLIのバージョンは<code>9.0.6</code>でした。</p>
+<p><code>ng new</code>したところから始めます。AngularCLI のバージョンは<code>9.0.6</code>でした。</p>
 <h3 id="パッケージのインストール">パッケージのインストール</h3>
 <p>まず、<code>eslint</code>と<code>@angular-eslint</code>関連のパッケージをインストールします。
 <a href="https://github.com/angular-eslint/angular-eslint" target="_blank" rel="nofollow noopener">angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular</a></p>
@@ -284,8 +284,8 @@ sfdx force:org:display --verbose -u ForGitHubAction
 </span><span class="se"></span>  @angular-eslint/eslint-plugin <span class="se">\
 </span><span class="se"></span>  @angular-eslint/template-parser <span class="se">\
 </span><span class="se"></span>  @angular-eslint/eslint-plugin-template
-</code></pre></div><h3 id="コマンドとeslintの設定を修正">コマンドとESLintの設定を修正</h3>
-<p>前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に<code>angular.json</code>を修正、<strong><code>.eslintrc.js</code></strong>を追加しました。angular.jsonの差分はこんな感じ<br>
+</code></pre></div><h3 id="コマンドと-eslint-の設定を修正">コマンドと ESLint の設定を修正</h3>
+<p>前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に<code>angular.json</code>を修正、<strong><code>.eslintrc.js</code></strong>を追加しました。angular.json の差分はこんな感じ<br>
 
 
 
@@ -298,7 +298,7 @@ sfdx force:org:display --verbose -u ForGitHubAction
 <p>また、この<code>.eslint.js</code>を使うために、<code>@typescript-eslint</code>関連のパッケージが必要なので以下のコマンドでインストールします。</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 </code></pre></div><p>ここまでで<code>ng lint</code>は動くようになるはずです。手元の環境では、<code>app.component.spec.ts</code>でクオートのエラーがでました。</p>
-<h2 id="vscodeでも動かしてみる">VSCodeでも動かしてみる</h2>
+<h2 id="vscode-でも動かしてみる">VSCode でも動かしてみる</h2>
 <p>設定されてるルールが適用されてるか見てみます。サンプルにあった<code>'@typescript-eslint/no-non-null-assertion': 'error'</code>で試してみます。</p>
 <p>
 
@@ -307,9 +307,9 @@ sfdx force:org:display --verbose -u ForGitHubAction
   <img src="/img/2020-03-16-18-37-21.png" alt="&#39;@typescript-eslint/no-non-null-assertion&rsquo;: &lsquo;error&rsquo;" decoding="async" loading="lazy">
 </picture>
 </p>
-<p>無事Lintされていました。また、画像や動画をとっていないですが、<code>ESLint: Fix all auto-fixable Problems</code>も効きました。</p>
+<p>無事 Lint されていました。また、画像や動画をとっていないですが、<code>ESLint: Fix all auto-fixable Problems</code>も効きました。</p>
 <h2 id="終わり">終わり</h2>
-<p>Angular本体のESLint対応も待ち遠しいですが、<code>@angular-eslint/angular-eslint</code>はルールも順次対応していくようなので、とりあえずこちらで良さそうですね</p>
+<p>Angular 本体の ESLint 対応も待ち遠しいですが、<code>@angular-eslint/angular-eslint</code>はルールも順次対応していくようなので、とりあえずこちらで良さそうですね</p>
 ]]></content:encoded>
     </item>
     
@@ -319,11 +319,11 @@ sfdx force:org:display --verbose -u ForGitHubAction
       <pubDate>Mon, 09 Mar 2020 15:54:48 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
-      <description><![CDATA[やりたいこと AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-a]]></description>
+      <description><![CDATA[やりたいこと Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-api か Apex コントローラーで取得できそう。ui-api は試し]]></description>
       <content:encoded><![CDATA[<h2 id="やりたいこと">やりたいこと</h2>
-<p>AuraコンポーネントからオブジェクトのPickListフィールドのPickListValuesを取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
+<p>Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
 <h2 id="取得する">取得する</h2>
-<p>ui-apiかApexコントローラーで取得できそう。ui-apiは試したらCSPが必要だったので、Apexコントローラーで取得する。</p>
+<p>ui-api か Apex コントローラーで取得できそう。ui-api は試したら CSP が必要だったので、Apex コントローラーで取得する。</p>
 <p>単純にやると、<code>Account.Salutation.getDescribe().getPicklistValues()</code>でできる。</p>
 <p>汎用的にするには</p>
 <pre><code class="language-apex" data-lang="apex">SObject sObj = (SObject)Type.forName(sObjectName).newInstance();
@@ -428,11 +428,11 @@ field.getDescribe().getPicklistValues();
       <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implementsがないとL]]></description>
+      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implements がないと LightningAppBuilder]]></description>
       <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
 <p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
 <h2 id="メモ">メモ</h2>
-<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implementsがないとLightningAppBuilderでレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
+<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implements がないと LightningAppBuilder でレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
 レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
 <div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
     <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
@@ -665,25 +665,25 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
-      <description><![CDATA[Hoge.cmp: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡さ]]></description>
-      <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: Viewテンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
+      <description><![CDATA[Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。]]></description>
+      <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
 <code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
 <h2 id="hogecmp">Hoge.cmp</h2>
 <ul>
 <li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
 <ul>
-<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+<li>action で開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
 </ul>
 </li>
 <li>コントローラーのメソッドには<code>c</code>からアクセスできる。
 <ul>
-<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。cは<code>Controller.js</code>の関数も含む。ハマった</li>
+<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。c は<code>Controller.js</code>の関数も含む。ハマった</li>
 </ul>
 </li>
 </ul>
 <h2 id="hogecontrollerjs--hogehelperjs">HogeController.js | HogeHelper.js</h2>
-<p>コントローラーの関数は3つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
+<p>コントローラーの関数は 3 つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
 <code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
 <h2 id="参考">参考</h2>
 <ul>
@@ -691,7 +691,7 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
 <li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE" target="_blank" rel="nofollow noopener">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
 <li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
 <ul>
-<li>actionで開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
+<li>action で開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
 </ul>
 </li>
 </ul>
@@ -730,24 +730,24 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
       <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[はじめに LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成]]></description>
+      <description><![CDATA[はじめに LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningEleme]]></description>
       <content:encoded><![CDATA[<h2 id="はじめに">はじめに</h2>
-<p>LWCを使いそうなので基本をやる。所謂WebComponentsが中身になってるってことはどこかでみた。</p>
+<p>LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。</p>
 <p>トレイルがあったので、これをやる。
 <a href="https://trailhead.salesforce.com/ja/content/learn/trails/build-lightning-web-components" target="_blank" rel="nofollow noopener">Lightning Web コンポーネントの作成 | Salesforce Trailhead</a></p>
 <h2 id="lightning-web-コンポーネントの作成">Lightning Web コンポーネントの作成</h2>
 <ul>
-<li><code>LightningElement</code>がLWCの実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
+<li><code>LightningElement</code>が LWC の実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
 </ul>
-<p>前から3つ終わったけど、大体開発環境とかの話だったな</p>
+<p>前から 3 つ終わったけど、大体開発環境とかの話だったな</p>
 <h2 id="所感">所感</h2>
 <p>やり終わってしまったので所感を書く。雑メモは社スラックに投稿していたので気が向いたらこっちにまとめる。
-Web標準に準拠して作られているので、最近のjavascriptフロントエンドライブラリを触っていれば、固有のAPIやアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
-Salesforceのコンポーネントとしてしか利用出来ないのが惜しいなと、Webのどこにでも入れられるような感じに想像していたのでちょっとがっかり。
-Salesforceのコンポーネントをモダンなjavascriptで書けるのは良い。出来ることはAuraには追いついていないらしいけど、API等の対応も進んでいるので今後はこっちが主流になっていくのかな。
-トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他はSFDXだったり環境構築のことが大半をしめていた。</p>
+Web 標準に準拠して作られているので、最近の javascript フロントエンドライブラリを触っていれば、固有の API やアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
+Salesforce のコンポーネントとしてしか利用出来ないのが惜しいなと、Web のどこにでも入れられるような感じに想像していたのでちょっとがっかり。
+Salesforce のコンポーネントをモダンな javascript で書けるのは良い。出来ることは Aura には追いついていないらしいけど、API 等の対応も進んでいるので今後はこっちが主流になっていくのかな。
+トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他は SFDX だったり環境構築のことが大半をしめていた。</p>
 <h2 id="さいごに">さいごに</h2>
-<p>日本語でPG組織を作成するとTrailheadのステップで、ホームのAPI名が違って完了しないので注意</p>
+<p>日本語で PG 組織を作成すると Trailhead のステップで、ホームの API 名が違って完了しないので注意</p>
 ]]></content:encoded>
     </item>
     
@@ -757,8 +757,8 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
       <pubDate>Tue, 12 Nov 2019 15:27:44 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH]]></description>
-      <content:encoded><![CDATA[<h2 id="dl版-rustではじめるopengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a></h2>
+      <description><![CDATA[[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH]]></description>
+      <content:encoded><![CDATA[<h2 id="dl-版-rust-ではじめる-opengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a></h2>
 ]]></content:encoded>
     </item>
     
@@ -768,9 +768,9 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがない]]></description>
+      <description><![CDATA[これはなに [DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3D オブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からや]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
 <h2 id="目次を読む">目次を読む</h2>
 <p>ライブラリごとに章が区切られている</p>
 <ol>
@@ -778,44 +778,44 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
 <li>SDL</li>
 <li>OpenGL</li>
 <li>Dear ImGui</li>
-<li>3Dオブジェクト</li>
+<li>3D オブジェクト</li>
 <li>テクスチャ</li>
 </ol>
 <p>ほとんど触れたことがないな、とりあえず上からやっていこう
-ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
+ソースコード →<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
 <h2 id="環境">環境</h2>
 <ul>
-<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従ってRustをインストール
+<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従って Rust をインストール
 <ul>
-<li>versionは1.39だった</li>
-<li>crateは<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
-<li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
+<li>version は 1.39 だった</li>
+<li>crate は<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>VSCode の rls、rustup のパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="sdl">SDL</h2>
-<p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
+<p>SDL は、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
 <a href="https://ja.wikipedia.org/wiki/SDL" target="_blank" rel="nofollow noopener">SDL - Wikipedia</a><br>
 これだけでも十分な機能を持つゲームを作成可能らしい</p>
-<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
-<code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
-<p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
+<p>Rust からの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
+<code>sd12</code>は C 言語で書かれたライブラリを間接的に利用するラッパーのため SDL のインストールも必要。</p>
+<p>SDL を使ってソフトに必要な構造を作って OpenGL で描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
 <h3 id="準備">準備</h3>
 <ul>
-<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通り SDL をインストール</li>
 <li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
 </ul>
 <h3 id="作成">作成</h3>
-<p><code>sdl2</code>のcrates.ioページを見る。</p>
+<p><code>sdl2</code>の crates.io ページを見る。</p>
 <h2 id="opengl">OpenGL</h2>
-<p>SDLのウィンドウに描画していく</p>
+<p>SDL のウィンドウに描画していく</p>
 <h3 id="準備-1">準備</h3>
-<p><code>cargo.toml</code>に<code>gl</code>(OpenGLのAPIを利用可能に),<code>cgmath</code>(CG用の数学関連機能),<code>c_str_macro</code>(C言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
+<p><code>cargo.toml</code>に<code>gl</code>(OpenGL の API を利用可能に),<code>cgmath</code>(CG 用の数学関連機能),<code>c_str_macro</code>(C 言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
 <h3 id="作成-1">作成</h3>
-<p>HelloWorldは難しいらしいので三角形を描画する</p>
+<p>HelloWorld は難しいらしいので三角形を描画する</p>
 <p>シェーダーという言葉が出てきた</p>
 <p>写経辛いのでコピペに切り替えていく</p>
-<p>OpenGL3.1を使う、このバージョンは丁度APIが一新されたバージョンで、<code>Core</code>(新しいAPIのみ)と<code>Compability</code>(古いAPIもサポート)パッケージがある。今回は<code>Core</code></p>
+<p>OpenGL3.1 を使う、このバージョンは丁度 API が一新されたバージョンで、<code>Core</code>(新しい API のみ)と<code>Compability</code>(古い API もサポート)パッケージがある。今回は<code>Core</code></p>
 <p>描画はシェーダと呼ばれる描画プログラムを通してデータを送る<br>
 シェーダなしのサンプルコードは古い可能性があるので注意<br>
 呼び名は<br>
@@ -823,23 +823,23 @@ Salesforceのコンポーネントをモダンなjavascriptで書けるのは良
 なし: Fixed Function Pipeline<br>
 などというらしい</p>
 <p>シェーダは実行時にソースコードをコンパイルして使えるプログラムなのでこういった名称になってる</p>
-<p>今回具体的にはVertexシェーダとFragmentシェーダを使った</p>
-<h4 id="vertexシェーダ">Vertexシェーダ</h4>
-<p>Vertexはそもそも頂点のこと、辺と辺を結ぶ点。3D空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
-<p>描画したい頂点が、3D空間の中でどの位置にあるのかを表すモデル行列<br>
+<p>今回具体的には Vertex シェーダと Fragment シェーダを使った</p>
+<h4 id="vertex-シェーダ">Vertex シェーダ</h4>
+<p>Vertex はそもそも頂点のこと、辺と辺を結ぶ点。3D 空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
+<p>描画したい頂点が、3D 空間の中でどの位置にあるのかを表すモデル行列<br>
 カメラの一を考慮したビュー行列<br>
-カメラから見た3D空間をどのように画面に描画するかを表す射影行列<br>
-3つの行列をかけ合わせて最終的な画面上の座標になる</p>
-<h4 id="fragmentシェーダ">Fragmentシェーダ</h4>
-<p>色を計算するシェーダ、Vertexシェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
-<p>どちらもGLSLを使って実装する。<br>
-GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPUや前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
-GPUでの動作なので並列計算できる、画面上に多くの3Dオブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
-<p>GLSLのバージョンは3.3</p>
-<p>VBO(Vertex Buffer Object)はCPUからGPUに情報を渡すための入れ物、頂点データだったり色情報だったり<br>
-VAO(Vertex Array Object)はVBOをどのようなまとまりで使うのかを設定するもの</p>
-<p>WebGLの話ものってそう</p>
-<p>サンプルコードが動かない→動いた、sampleリポジトリのrscフォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
+カメラから見た 3D 空間をどのように画面に描画するかを表す射影行列<br>
+3 つの行列をかけ合わせて最終的な画面上の座標になる</p>
+<h4 id="fragment-シェーダ">Fragment シェーダ</h4>
+<p>色を計算するシェーダ、Vertex シェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
+<p>どちらも GLSL を使って実装する。<br>
+GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPU や前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
+GPU での動作なので並列計算できる、画面上に多くの 3D オブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
+<p>GLSL のバージョンは 3.3</p>
+<p>VBO(Vertex Buffer Object)は CPU から GPU に情報を渡すための入れ物、頂点データだったり色情報だったり<br>
+VAO(Vertex Array Object)は VBO をどのようなまとまりで使うのかを設定するもの</p>
+<p>WebGL の話ものってそう</p>
+<p>サンプルコードが動かない → 動いた、sample リポジトリの rsc フォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
 <pre><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.03s
      Running `target/debug/rust-opengl`
@@ -915,8 +915,8 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </span><span class="w">    </span><span class="p">];</span><span class="w">
 </span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
 <p><a href="https://github.com/ocornut/imgui" target="_blank" rel="nofollow noopener">ocornut/imgui</a></p>
-<p>OpenGLに様々なGUIを追加できるライブラリ</p>
-<p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
+<p>OpenGL に様々な GUI を追加できるライブラリ</p>
+<p>これを使って SDL2 のウィンドウに新たにウィンドウを追加する。</p>
 <p>出た</p>
 <p>
 
@@ -934,7 +934,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </p>
 <h3 id="効果的な使い方">効果的な使い方</h3>
 <p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
-FPSを表示も</p>
+FPS を表示も</p>
 ]]></content:encoded>
     </item>
     
@@ -944,18 +944,18 @@ FPSを表示も</p>
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
-      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標]]></description>
-      <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
+      <description><![CDATA[Visualforce とは Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる 標準または Apex でビジネスロジックを記述する。 使用できる場所]]></description>
+      <content:encoded><![CDATA[<h2 id="visualforce-とは">Visualforce とは</h2>
 <ul>
-<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
-<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
-<li>標準またはApexでビジネスロジックを記述する。</li>
+<li>Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク</li>
+<li>Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準または Apex でビジネスロジックを記述する。</li>
 </ul>
 <h2 id="使用できる場所">使用できる場所</h2>
 <ul>
 <li>ナビゲーションバーに追加</li>
 <li>標準ページレイアウト内に表示</li>
-<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+<li>Lightning アプリケーションビルダーでコンポーネントとして追加する
 <ul>
 <li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
 </ul>
@@ -965,21 +965,21 @@ FPSを表示も</p>
 </ul>
 <h2 id="ページの作成">ページの作成</h2>
 <ul>
-<li>APIを使用して作成変更できる</li>
+<li>API を使用して作成変更できる</li>
 <li>開発者コンソール
 <ul>
 <li>エディタがついてる。補完あり</li>
-<li>LightningExperienceのページから実行でLightningExperienceでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+<li>LightningExperience のページから実行で LightningExperience でプレビュ $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
 </ul>
 </li>
-<li>xmlベース</li>
+<li>xml ベース</li>
 </ul>
 <h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
 <ul>
 <li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 <li>構文 {! expression } を評価して出力してくれる
 <ul>
-<li>expressionないは大文字小文字区別なし</li>
+<li>expression ないは大文字小文字区別なし</li>
 <li>文字列連結は&amp;</li>
 <li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
 <li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html" target="_blank" rel="nofollow noopener">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
@@ -992,13 +992,13 @@ FPSを表示も</p>
 <li>MVC</li>
 <li>標準なアクションとデータアクセスを処理できる</li>
 <li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
-<li>getQueryでコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
+<li>getQuery でコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
 </ul>
 <h2 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h2>
 <ul>
 <li><code>&lt;apex:detail /&gt;</code>等の一括出力コンポーネントがある</li>
-<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のようなUIコンポーネントもある</li>
-<li><code>&lt;!--&gt;</code>はテーブルUI</li>
+<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のような UI コンポーネントもある</li>
+<li><code>&lt;!--&gt;</code>はテーブル UI</li>
 <li><code>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;</code>はリスト</li>
 </ul>
 <h2 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h2>
@@ -1051,13 +1051,13 @@ FPSを表示も</p>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
-      <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build -]]></description>
+      <description><![CDATA[これはなに Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue c]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
+<p>Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
 <h2 id="事前知識">事前知識</h2>
 <p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
 <ul>
-<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトのnpm scriptsに<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
+<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトの npm scripts に<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
 <li><code>vue inspect</code> - <code>vue.config.js</code>を考慮した実際にビルドの際に使われる<code>webpack.config.js</code>を出力してくれる</li>
 </ul>
 <h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
@@ -1071,9 +1071,9 @@ FPSを表示も</p>
 </code></pre><p>ちなみにビルドは<code>vue-cli-service build</code>で行っていた。</p>
 <h2 id="やりたいこと">やりたいこと</h2>
 <ul>
-<li>出力をdist/app, dist/adminのように複数ディレクトリに分ける。</li>
+<li>出力を dist/app, dist/admin のように複数ディレクトリに分ける。</li>
 <li>ビルド、ビルド設定を分ける</li>
-<li>lint設定は共有する</li>
+<li>lint 設定は共有する</li>
 </ul>
 <h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
 <p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
@@ -1111,21 +1111,21 @@ FPSを表示も</p>
 <p>ということで、<code>projects</code>ディレクトリを作ってそこで<code>vue create admin</code>を叩いた感じになった。</p>
 <h2 id="この構成で思うこと">この構成で思うこと</h2>
 <ul>
-<li>package.jsonめっちゃある。</li>
-<li>node_modulesもめっちゃある、中身重複しまくりそう。</li>
-<li>vueのモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
+<li>package.json めっちゃある。</li>
+<li>node_modules もめっちゃある、中身重複しまくりそう。</li>
+<li>vue のモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
 </ul>
 <h2 id="これからどうするか">これからどうするか</h2>
 <ul>
-<li>Webpackを学ぶ
+<li>Webpack を学ぶ
 <ul>
 <li>強くなればもっとスリムにできそう</li>
 <li>コントリビュートへも繋がりそう</li>
 </ul>
 </li>
-<li>VSCodeの拡張機能、エディタの技術を学ぶ
+<li>VSCode の拡張機能、エディタの技術を学ぶ
 <ul>
-<li>LanguageServerやLinterの最適化に苦労したので・・・</li>
+<li>LanguageServer や Linter の最適化に苦労したので・・・</li>
 </ul>
 </li>
 </ul>
@@ -1138,23 +1138,23 @@ FPSを表示も</p>
       <pubDate>Thu, 31 Oct 2019 13:07:17 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
-      <description><![CDATA[TRAILHEADってなに Trailhead | 楽しく学ぶ方法 Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。 Salesforce関連以]]></description>
-      <content:encoded><![CDATA[<h2 id="trailheadってなに">TRAILHEADってなに</h2>
+      <description><![CDATA[TRAILHEAD ってなに Trailhead | 楽しく学ぶ方法 Salesforce が運営している学習サイト、コンテンツは主に Salesforce 関連で、経営者、営業、開発向けが用意されている。 Salesforce 関連以外も Blockchain や、IOS アプリケーション開発のコンテンツもある。 やり始める前の]]></description>
+      <content:encoded><![CDATA[<h2 id="trailhead-ってなに">TRAILHEAD ってなに</h2>
 <p><a href="https://trailhead.salesforce.com/ja/home" target="_blank" rel="nofollow noopener"><em>Trailhead | 楽しく学ぶ方法</em></a></p>
-<p>Salesforceが運営している学習サイト、コンテンツは主にSalesforce関連で、経営者、営業、開発向けが用意されている。
-Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコンテンツもある。</p>
+<p>Salesforce が運営している学習サイト、コンテンツは主に Salesforce 関連で、経営者、営業、開発向けが用意されている。
+Salesforce 関連以外も Blockchain や、IOS アプリケーション開発のコンテンツもある。</p>
 <h2 id="やり始める前の認識">やり始める前の認識</h2>
 <ul>
-<li>無数にあるPaaSの一つ
+<li>無数にある PaaS の一つ
 <ul>
-<li>SaaSも提供してる</li>
+<li>SaaS も提供してる</li>
 </ul>
 </li>
 <li>セールス・顧客系に強い</li>
 <li>アプリやコンポーネントをリリースできる</li>
 </ul>
 <p>以下、とりあえず<a href="https://trailhead.salesforce.com/ja/users/00550000007HqDdAAK/trailmixes/start-develop" target="_blank" rel="nofollow noopener">Trailmix by ルーキー会 Salesforce DeveloperGroup</a>を順にメモする</p>
-<h2 id="salesforceテクノロジモデル">Salesforceテクノロジモデル</h2>
+<h2 id="salesforce-テクノロジモデル">Salesforce テクノロジモデル</h2>
 <ul>
 <li>信頼の基準、最も信頼されるために行ってきた投資
 <ul>
@@ -1173,13 +1173,13 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li>インフラ系は大家が管理</li>
 </ul>
 </li>
-<li>Salesforceは大家の役割</li>
+<li>Salesforce は大家の役割</li>
 <li>小さい企業から大きい企業まで同じコードベースを利用することで利益を得ることができる</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>規則の厳しい業種がSalesforceに最も重要なデータを委ねる理由
+<li>規則の厳しい業種が Salesforce に最も重要なデータを委ねる理由
 <ul>
 <li>上記の通り</li>
 </ul>
@@ -1187,8 +1187,8 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li>メタデータ
 <ul>
 <li>データのためのデータ？</li>
-<li>カスタムタグ、カスタム項目、自動アラート、標準レポート、Chatte等、全てがメタデータ</li>
-<li>カスタム機能と標準機能のすべてを含むSalesforceインスタンスの構造</li>
+<li>カスタムタグ、カスタム項目、自動アラート、標準レポート、Chatte 等、全てがメタデータ</li>
+<li>カスタム機能と標準機能のすべてを含む Salesforce インスタンスの構造</li>
 <li>カスタマイズは特別なメタデータレイヤに分離している
 <ul>
 <li>バックグラウンドの更新やプラットフォームの更新・改善を行うことができる</li>
@@ -1208,15 +1208,15 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </ul>
 </li>
 </ul>
-<h2 id="salesforce-platformの使用開始">Salesforce Platformの使用開始</h2>
+<h2 id="salesforce-platform-の使用開始">Salesforce Platform の使用開始</h2>
 <ul>
 <li>標準機能
 <ul>
 <li>リードと商談</li>
 <li>顧客サポートのためのケースとコミュニティ</li>
 <li>モバイルアプリ</li>
-<li>会社とつながるためのChatterとコミュニティ</li>
-<li>カスタマージャーニーを管理するためのMarketingCloud</li>
+<li>会社とつながるための Chatter とコミュニティ</li>
+<li>カスタマージャーニーを管理するための MarketingCloud</li>
 <li>あまり良くわかってない</li>
 </ul>
 </li>
@@ -1229,7 +1229,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </li>
 <li>オブジェクト
 <ul>
-<li>特定の種類の情報が保存される、DBのテーブル</li>
+<li>特定の種類の情報が保存される、DB のテーブル</li>
 <li>標準とカスタムがある</li>
 </ul>
 </li>
@@ -1250,7 +1250,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </li>
 <li>組織
 <ul>
-<li>Salesforceの特定のインスタンス</li>
+<li>Salesforce の特定のインスタンス</li>
 </ul>
 </li>
 </ul>
@@ -1273,7 +1273,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li>組織情報、ユーザ、プロファイル、設定変更履歴の参照、ログイン履歴等見れる</li>
 </ul>
 </li>
-<li>AppExchangeの戦略と、アプリケーションのインストール
+<li>AppExchange の戦略と、アプリケーションのインストール
 <ul>
 <li>使用予定の部門を特定</li>
 <li>要望を最大限に満たすものを調査
@@ -1294,24 +1294,24 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </ul>
 <h2 id="データモデリング">データモデリング</h2>
 <ul>
-<li>Salesプラットフォームでオブジェクトを使用するメリット
+<li>Sales プラットフォームでオブジェクトを使用するメリット
 <ul>
 <li>オブジェクトはデータベーステーブルのこと、テーブルの列が項目、行がレコードとみなされる</li>
 <li>データモデルはオブジェクトと項目のコレクション</li>
 <li>標準オブジェクト
 <ul>
-<li>Salesforceに含まれるオブジェクト</li>
+<li>Salesforce に含まれるオブジェクト</li>
 <li>取引先、取引先責任者、リード、商談などの一般的なビジネスオブジェクト</li>
 </ul>
 </li>
 <li>カスタムオブジェクト
 <ul>
 <li>会社や業種に固有の情報を保存するために作成するオブジェクト</li>
-<li>プラットフォームによっては作成にフックして、UIのページレイアウトが作成される</li>
+<li>プラットフォームによっては作成にフックして、UI のページレイアウトが作成される</li>
 </ul>
 </li>
 <li>設定の新規からオブジェクト作成と、オブジェクトの項目とリレーションの新規ボタンからフィールド追加を行った</li>
-<li>スキーマビルダーというMySQLで言うER図のようなツールもある</li>
+<li>スキーマビルダーという MySQL で言う ER 図のようなツールもある</li>
 </ul>
 </li>
 </ul>
@@ -1320,44 +1320,44 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li>Dream House Realty っていうアプリを作っていってみる</li>
 <li>Apex</li>
 <li>SOQL Salesforce Object Query Language</li>
-<li>Apex上のSOQLは実行されてレコードに変換される</li>
-<li>Apexで書いたControllerをVisualforceページから利用できる</li>
-<li>Herokuがでてきた</li>
-<li>RESTやSOAP APIも使える</li>
-<li>Heroku ConnectでSalesforceのオブジェクトをHeroku Postgreに変換できる</li>
+<li>Apex 上の SOQL は実行されてレコードに変換される</li>
+<li>Apex で書いた Controller を Visualforce ページから利用できる</li>
+<li>Heroku がでてきた</li>
+<li>REST や SOAP API も使える</li>
+<li>Heroku Connect で Salesforce のオブジェクトを Heroku Postgre に変換できる</li>
 </ul>
-<h2 id="apexの基礎とデータベース">Apexの基礎とデータベース</h2>
+<h2 id="apex-の基礎とデータベース">Apex の基礎とデータベース</h2>
 <ul>
 <li>小文字と大文字が区別されない</li>
-<li>開発者コンソールのDebug &gt; 匿名実行みたいなやつが便利</li>
-<li>sObjectは汎用Type、標準オブジェクト、カスタムオブジェクトのレコードに使用できる</li>
-<li>insert, upsert, mergeといった便利なデータ更新用DMLステートメントがある</li>
-<li>Database配下にDMLステートメントと同じ物があって、それの第二引数にfalseを渡すと例外の代わりにResultオブジェクトを返すことができる</li>
+<li>開発者コンソールの Debug &gt; 匿名実行みたいなやつが便利</li>
+<li>sObject は汎用 Type、標準オブジェクト、カスタムオブジェクトのレコードに使用できる</li>
+<li>insert, upsert, merge といった便利なデータ更新用 DML ステートメントがある</li>
+<li>Database 配下に DML ステートメントと同じ物があって、それの第二引数に false を渡すと例外の代わりに Result オブジェクトを返すことができる</li>
 <li>SOSL 組織全体のレコードから特定の情報を検索、部分一致検索、どのオブジェクトのフィールドを対象とするか選べる</li>
 </ul>
-<h2 id="apexトリガ">Apexトリガ</h2>
+<h2 id="apex-トリガ">Apex トリガ</h2>
 <ul>
-<li>データベースのbeforeSaveとかのこと</li>
+<li>データベースの beforeSave とかのこと</li>
 <li><code>trigger SoqlTriggerBulk on Account(after update) {</code> で定義する。このトリガ内で<code>Trigger</code>を呼び出せて、そこに色々情報が詰まってる</li>
-<li>レコードごとに処理すると思いし、制限に引っかかるからSOQLとかDMLとか駆使してやろうね</li>
+<li>レコードごとに処理すると思いし、制限に引っかかるから SOQL とか DML とか駆使してやろうね</li>
 </ul>
-<h2 id="apexテスト">Apexテスト</h2>
+<h2 id="apex-テスト">Apex テスト</h2>
 <ul>
 <li><code>@isTest</code>を使うとパラメータを指定できる。知らなかった。</li>
 <li><code>Test &gt; RunAll</code>でやるとコードカバレッジが出せる</li>
 <li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm" target="_blank" rel="nofollow noopener">Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers</a></li>
 </ul>
-<h2 id="visualforceの基礎">Visualforceの基礎</h2>
+<h2 id="visualforce-の基礎">Visualforce の基礎</h2>
 <ul>
-<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
-<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
-<li>標準またはApexでビジネスロジックを記述する。</li>
+<li>Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク</li>
+<li>Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準または Apex でビジネスロジックを記述する。</li>
 </ul>
 <h3 id="使用できる場所">使用できる場所</h3>
 <ul>
 <li>ナビゲーションバーに追加</li>
 <li>標準ページレイアウト内に表示</li>
-<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+<li>Lightning アプリケーションビルダーでコンポーネントとして追加する
 <ul>
 <li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
 </ul>
@@ -1367,21 +1367,21 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </ul>
 <h3 id="ページの作成">ページの作成</h3>
 <ul>
-<li>APIを使用して作成変更できる</li>
+<li>API を使用して作成変更できる</li>
 <li>開発者コンソール
 <ul>
 <li>エディタがついてる。補完あり</li>
-<li>LightningExperienseのページから実行でLightningExperienseでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+<li>LightningExperiense のページから実行で LightningExperiense でプレビュ $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
 </ul>
 </li>
-<li>xmlベース</li>
+<li>xml ベース</li>
 </ul>
 <h3 id="単純な変数と数式の使用">単純な変数と数式の使用</h3>
 <ul>
 <li>グローバル変数 ex. $<a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">User グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 <li>構文 {! expression } を評価して出力してくれる
 <ul>
-<li>expressionないは大文字小文字区別なし</li>
+<li>expression ないは大文字小文字区別なし</li>
 <li>文字列連結は&amp;</li>
 <li>式の演算子 | <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.htm" target="_blank" rel="nofollow noopener">Visualforce 開発者ガイド | Salesforce Developers</a></li>
 </ul>
@@ -1393,13 +1393,13 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <li>MVC</li>
 <li>標準なアクションとデータアクセスを処理できる</li>
 <li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
-<li>getQueryでコントローラにパラメータを渡せる。ex. /apex/pageName?id={ObjectID}</li>
+<li>getQuery でコントローラにパラメータを渡せる。ex. /apex/pageName?id={ObjectID}</li>
 </ul>
 <h3 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h3>
 <ul>
 <li>&lt;apex:detail /&gt;等の一括出力コンポーネントがある</li>
-<li>&lt;apex:outputField value=&rdquo;{! Account.Name }&quot;/&gt;のようなUIコンポーネントもある</li>
-<li><a href="apex:pageBlockTable">apex:pageBlockTable</a>はテーブルUI</li>
+<li>&lt;apex:outputField value=&rdquo;{! Account.Name }&quot;/&gt;のような UI コンポーネントもある</li>
+<li><a href="apex:pageBlockTable">apex:pageBlockTable</a>はテーブル UI</li>
 <li>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;はリスト</li>
 </ul>
 <h3 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h3>
@@ -1420,13 +1420,13 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <h3 id="レコードのリスト">レコードのリスト</h3>
 <ul>
 <li>
-<p>htmlの要素もそのまま書ける</p>
+<p>html の要素もそのまま書ける</p>
 </li>
 <li>
 <p><code>&lt;apex: repeat value=&quot;{! accounts }&quot; var=&quot;a&quot;&gt;</code>とするとなかで<code>{!a.id}</code>とかできる。</p>
 </li>
 <li>
-<p><code>{! URLFOR($Resource.vfimagetest, 'cats/kitten1.jpg') }</code>とかのURLresolve便利系がある</p>
+<p><code>{! URLFOR($Resource.vfimagetest, 'cats/kitten1.jpg') }</code>とかの URLresolve 便利系がある</p>
 </li>
 <li>
 <p>静的リソースは設定の静的リソースから追加できる</p>
@@ -1435,7 +1435,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <h2 id="開発者コンソールの基礎">開発者コンソールの基礎</h2>
 <ul>
 <li>ワークスペース分けできるらしい</li>
-<li>Logパネル、Save Perspectiveで配置を保存できる</li>
+<li>Log パネル、Save Perspective で配置を保存できる</li>
 <li></li>
 </ul>
 ]]></content:encoded>
@@ -1447,15 +1447,15 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
       <pubDate>Tue, 29 Oct 2019 17:44:59 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
-      <description><![CDATA[これはなに 新しいMacを手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnetをインストール すべてをアップデート システム環境設定系 ネットワーク 適宜Wi-Fi、]]></description>
+      <description><![CDATA[これはなに 新しい Mac を手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnet をインストール すべてをアップデート システム環境設定系 ネットワーク 適宜 Wi-Fi、優先でつなぐ Dock]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p>新しいMacを手に入れたり、初期化した際にすることのメモ</p>
+<p>新しい Mac を手に入れたり、初期化した際にすることのメモ</p>
 <h2 id="最初にする事">最初にする事</h2>
 <ul>
 <li>ソフトウェア・アップデート</li>
 <li>App store
 <ul>
-<li>magnetをインストール</li>
+<li>magnet をインストール</li>
 <li>すべてをアップデート</li>
 </ul>
 </li>
@@ -1463,13 +1463,13 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <h2 id="システム環境設定系">システム環境設定系</h2>
 <h3 id="ネットワーク">ネットワーク</h3>
 <ul>
-<li>適宜Wi-Fi、優先でつなぐ</li>
+<li>適宜 Wi-Fi、優先でつなぐ</li>
 </ul>
 <h3 id="dock">Dock</h3>
 <ul>
 <li>位置を左に</li>
 <li>自動的に表示/非表示にチェック</li>
-<li>不要なアプリをDockから除いておく</li>
+<li>不要なアプリを Dock から除いておく</li>
 </ul>
 <h3 id="トラックパッド">トラックパッド</h3>
 <ul>
@@ -1490,15 +1490,15 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </li>
 </ul>
 <h3 id="キーボード">キーボード</h3>
-<p>※ GoogleIMEのインストールと、外部キーボードの接続を終えてから</p>
+<p>※ GoogleIME のインストールと、外部キーボードの接続を終えてから</p>
 <ul>
 <li>外部キーボード設定</li>
-<li>入力ソースをGoogleIMEのひらがなと英数のみにする</li>
+<li>入力ソースを GoogleIME のひらがなと英数のみにする</li>
 <li>ショートカット &gt; キーボード &gt; 次のウィンドウを捜査対象にするキーを<code>⌥ + tab</code>に変更する</li>
 </ul>
 <h3 id="mission-control">Mission Control</h3>
 <ul>
-<li>キーボードとマウスのショートカットのMission Controlにマウスボタン3を割り当てる</li>
+<li>キーボードとマウスのショートカットの Mission Control にマウスボタン 3 を割り当てる</li>
 </ul>
 <h3 id="サウンド">サウンド</h3>
 <ul>
@@ -1515,8 +1515,8 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 <h2 id="アプリケーション">アプリケーション</h2>
 <h3 id="最初にすること">最初にすること</h3>
 <ul>
-<li><code>xcode-select --install</code>でxcodeを更新する</li>
-<li>dotfilesをクローンする。<code>git clone https://github.com/MamoruMachida/dotfiles $HOME/dotfiles</code></li>
+<li><code>xcode-select --install</code>で xcode を更新する</li>
+<li>dotfiles をクローンする。<code>git clone https://github.com/MamoruMachida/dotfiles $HOME/dotfiles</code></li>
 <li>設定スクリプトを実行する。<code>sh ~/dotfiles/init_osx.sh</code>
 <ul>
 <li>スクリプトは完璧ではないので適宜確認しつつ</li>
@@ -1524,7 +1524,7 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </li>
 <li>再起動</li>
 </ul>
-<h3 id="言語系env">言語系〇〇env</h3>
+<h3 id="言語系-env">言語系〇〇 env</h3>
 <ul>
 <li>何かしらコマンド利用がある<code>nodenv</code>は必須
 <ul>
@@ -1548,8 +1548,8 @@ Salesforce関連以外もBlockchainや、IOSアプリケーション開発のコ
 </ul>
 <h3 id="入力ソース">入力ソース</h3>
 <ul>
-<li>IME等インストールが済んでいるので、システム環境設定のキーボード &gt; 入力ソースを変更する</li>
-<li>vim用のカスタムキー設定をする
+<li>IME 等インストールが済んでいるので、システム環境設定のキーボード &gt; 入力ソースを変更する</li>
+<li>vim 用のカスタムキー設定をする
 <ul>
 <li>
 

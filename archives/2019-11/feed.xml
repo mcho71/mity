@@ -24,8 +24,8 @@
       <pubDate>Tue, 12 Nov 2019 15:27:44 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH]]></description>
-      <content:encoded><![CDATA[<h2 id="dl版-rustではじめるopengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a></h2>
+      <description><![CDATA[[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH]]></description>
+      <content:encoded><![CDATA[<h2 id="dl-版-rust-ではじめる-opengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a></h2>
 ]]></content:encoded>
     </item>
     
@@ -35,9 +35,9 @@
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[これはなに [DL版] RustではじめるOpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3Dオブジェクト テクスチャ ほとんど触れたことがない]]></description>
+      <description><![CDATA[これはなに [DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3D オブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からや]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL版] RustではじめるOpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
+<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
 <h2 id="目次を読む">目次を読む</h2>
 <p>ライブラリごとに章が区切られている</p>
 <ol>
@@ -45,44 +45,44 @@
 <li>SDL</li>
 <li>OpenGL</li>
 <li>Dear ImGui</li>
-<li>3Dオブジェクト</li>
+<li>3D オブジェクト</li>
 <li>テクスチャ</li>
 </ol>
 <p>ほとんど触れたことがないな、とりあえず上からやっていこう
-ソースコード→<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
+ソースコード →<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
 <h2 id="環境">環境</h2>
 <ul>
-<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従ってRustをインストール
+<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従って Rust をインストール
 <ul>
-<li>versionは1.39だった</li>
-<li>crateは<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
-<li>VSCodeのrls、rustupのパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
+<li>version は 1.39 だった</li>
+<li>crate は<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
+<li>VSCode の rls、rustup のパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="sdl">SDL</h2>
-<p>SDLは、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
+<p>SDL は、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
 <a href="https://ja.wikipedia.org/wiki/SDL" target="_blank" rel="nofollow noopener">SDL - Wikipedia</a><br>
 これだけでも十分な機能を持つゲームを作成可能らしい</p>
-<p>Rustからの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
-<code>sd12</code>はC言語で書かれたライブラリを間接的に利用するラッパーのためSDLのインストールも必要。</p>
-<p>SDLを使ってソフトに必要な構造を作ってOpenGLで描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
+<p>Rust からの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
+<code>sd12</code>は C 言語で書かれたライブラリを間接的に利用するラッパーのため SDL のインストールも必要。</p>
+<p>SDL を使ってソフトに必要な構造を作って OpenGL で描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
 <h3 id="準備">準備</h3>
 <ul>
-<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通りSDLをインストール</li>
+<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通り SDL をインストール</li>
 <li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
 </ul>
 <h3 id="作成">作成</h3>
-<p><code>sdl2</code>のcrates.ioページを見る。</p>
+<p><code>sdl2</code>の crates.io ページを見る。</p>
 <h2 id="opengl">OpenGL</h2>
-<p>SDLのウィンドウに描画していく</p>
+<p>SDL のウィンドウに描画していく</p>
 <h3 id="準備-1">準備</h3>
-<p><code>cargo.toml</code>に<code>gl</code>(OpenGLのAPIを利用可能に),<code>cgmath</code>(CG用の数学関連機能),<code>c_str_macro</code>(C言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
+<p><code>cargo.toml</code>に<code>gl</code>(OpenGL の API を利用可能に),<code>cgmath</code>(CG 用の数学関連機能),<code>c_str_macro</code>(C 言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
 <h3 id="作成-1">作成</h3>
-<p>HelloWorldは難しいらしいので三角形を描画する</p>
+<p>HelloWorld は難しいらしいので三角形を描画する</p>
 <p>シェーダーという言葉が出てきた</p>
 <p>写経辛いのでコピペに切り替えていく</p>
-<p>OpenGL3.1を使う、このバージョンは丁度APIが一新されたバージョンで、<code>Core</code>(新しいAPIのみ)と<code>Compability</code>(古いAPIもサポート)パッケージがある。今回は<code>Core</code></p>
+<p>OpenGL3.1 を使う、このバージョンは丁度 API が一新されたバージョンで、<code>Core</code>(新しい API のみ)と<code>Compability</code>(古い API もサポート)パッケージがある。今回は<code>Core</code></p>
 <p>描画はシェーダと呼ばれる描画プログラムを通してデータを送る<br>
 シェーダなしのサンプルコードは古い可能性があるので注意<br>
 呼び名は<br>
@@ -90,23 +90,23 @@
 なし: Fixed Function Pipeline<br>
 などというらしい</p>
 <p>シェーダは実行時にソースコードをコンパイルして使えるプログラムなのでこういった名称になってる</p>
-<p>今回具体的にはVertexシェーダとFragmentシェーダを使った</p>
-<h4 id="vertexシェーダ">Vertexシェーダ</h4>
-<p>Vertexはそもそも頂点のこと、辺と辺を結ぶ点。3D空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
-<p>描画したい頂点が、3D空間の中でどの位置にあるのかを表すモデル行列<br>
+<p>今回具体的には Vertex シェーダと Fragment シェーダを使った</p>
+<h4 id="vertex-シェーダ">Vertex シェーダ</h4>
+<p>Vertex はそもそも頂点のこと、辺と辺を結ぶ点。3D 空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
+<p>描画したい頂点が、3D 空間の中でどの位置にあるのかを表すモデル行列<br>
 カメラの一を考慮したビュー行列<br>
-カメラから見た3D空間をどのように画面に描画するかを表す射影行列<br>
-3つの行列をかけ合わせて最終的な画面上の座標になる</p>
-<h4 id="fragmentシェーダ">Fragmentシェーダ</h4>
-<p>色を計算するシェーダ、Vertexシェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
-<p>どちらもGLSLを使って実装する。<br>
-GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPUや前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
-GPUでの動作なので並列計算できる、画面上に多くの3Dオブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
-<p>GLSLのバージョンは3.3</p>
-<p>VBO(Vertex Buffer Object)はCPUからGPUに情報を渡すための入れ物、頂点データだったり色情報だったり<br>
-VAO(Vertex Array Object)はVBOをどのようなまとまりで使うのかを設定するもの</p>
-<p>WebGLの話ものってそう</p>
-<p>サンプルコードが動かない→動いた、sampleリポジトリのrscフォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
+カメラから見た 3D 空間をどのように画面に描画するかを表す射影行列<br>
+3 つの行列をかけ合わせて最終的な画面上の座標になる</p>
+<h4 id="fragment-シェーダ">Fragment シェーダ</h4>
+<p>色を計算するシェーダ、Vertex シェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
+<p>どちらも GLSL を使って実装する。<br>
+GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPU や前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
+GPU での動作なので並列計算できる、画面上に多くの 3D オブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
+<p>GLSL のバージョンは 3.3</p>
+<p>VBO(Vertex Buffer Object)は CPU から GPU に情報を渡すための入れ物、頂点データだったり色情報だったり<br>
+VAO(Vertex Array Object)は VBO をどのようなまとまりで使うのかを設定するもの</p>
+<p>WebGL の話ものってそう</p>
+<p>サンプルコードが動かない → 動いた、sample リポジトリの rsc フォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
 <pre><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.03s
      Running `target/debug/rust-opengl`
@@ -182,8 +182,8 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </span><span class="w">    </span><span class="p">];</span><span class="w">
 </span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
 <p><a href="https://github.com/ocornut/imgui" target="_blank" rel="nofollow noopener">ocornut/imgui</a></p>
-<p>OpenGLに様々なGUIを追加できるライブラリ</p>
-<p>これを使ってSDL2のウィンドウに新たにウィンドウを追加する。</p>
+<p>OpenGL に様々な GUI を追加できるライブラリ</p>
+<p>これを使って SDL2 のウィンドウに新たにウィンドウを追加する。</p>
 <p>出た</p>
 <p>
 
@@ -201,7 +201,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </p>
 <h3 id="効果的な使い方">効果的な使い方</h3>
 <p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
-FPSを表示も</p>
+FPS を表示も</p>
 ]]></content:encoded>
     </item>
     
@@ -211,18 +211,18 @@ FPSを表示も</p>
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
-      <description><![CDATA[Visualforceとは Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる 標]]></description>
-      <content:encoded><![CDATA[<h2 id="visualforceとは">Visualforceとは</h2>
+      <description><![CDATA[Visualforce とは Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる 標準または Apex でビジネスロジックを記述する。 使用できる場所]]></description>
+      <content:encoded><![CDATA[<h2 id="visualforce-とは">Visualforce とは</h2>
 <ul>
-<li>Lightning Platformでホストできるモバイル及びデスクトップアプリケーション用のUIフレームワーク</li>
-<li>Salesforceの組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
-<li>標準またはApexでビジネスロジックを記述する。</li>
+<li>Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク</li>
+<li>Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
+<li>標準または Apex でビジネスロジックを記述する。</li>
 </ul>
 <h2 id="使用できる場所">使用できる場所</h2>
 <ul>
 <li>ナビゲーションバーに追加</li>
 <li>標準ページレイアウト内に表示</li>
-<li>Lightningアプリケーションビルダーでコンポーネントとして追加する
+<li>Lightning アプリケーションビルダーでコンポーネントとして追加する
 <ul>
 <li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
 </ul>
@@ -232,21 +232,21 @@ FPSを表示も</p>
 </ul>
 <h2 id="ページの作成">ページの作成</h2>
 <ul>
-<li>APIを使用して作成変更できる</li>
+<li>API を使用して作成変更できる</li>
 <li>開発者コンソール
 <ul>
 <li>エディタがついてる。補完あり</li>
-<li>LightningExperienceのページから実行でLightningExperienceでプレビュ  $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
+<li>LightningExperience のページから実行で LightningExperience でプレビュ $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
 </ul>
 </li>
-<li>xmlベース</li>
+<li>xml ベース</li>
 </ul>
 <h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
 <ul>
 <li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
 <li>構文 {! expression } を評価して出力してくれる
 <ul>
-<li>expressionないは大文字小文字区別なし</li>
+<li>expression ないは大文字小文字区別なし</li>
 <li>文字列連結は&amp;</li>
 <li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
 <li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html" target="_blank" rel="nofollow noopener">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
@@ -259,13 +259,13 @@ FPSを表示も</p>
 <li>MVC</li>
 <li>標準なアクションとデータアクセスを処理できる</li>
 <li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
-<li>getQueryでコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
+<li>getQuery でコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
 </ul>
 <h2 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h2>
 <ul>
 <li><code>&lt;apex:detail /&gt;</code>等の一括出力コンポーネントがある</li>
-<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のようなUIコンポーネントもある</li>
-<li><code>&lt;!--&gt;</code>はテーブルUI</li>
+<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のような UI コンポーネントもある</li>
+<li><code>&lt;!--&gt;</code>はテーブル UI</li>
 <li><code>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;</code>はリスト</li>
 </ul>
 <h2 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h2>
@@ -318,13 +318,13 @@ FPSを表示も</p>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
-      <description><![CDATA[これはなに Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build -]]></description>
+      <description><![CDATA[これはなに Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue c]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p>Vueのプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
+<p>Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
 <h2 id="事前知識">事前知識</h2>
 <p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
 <ul>
-<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトのnpm scriptsに<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
+<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトの npm scripts に<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
 <li><code>vue inspect</code> - <code>vue.config.js</code>を考慮した実際にビルドの際に使われる<code>webpack.config.js</code>を出力してくれる</li>
 </ul>
 <h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
@@ -338,9 +338,9 @@ FPSを表示も</p>
 </code></pre><p>ちなみにビルドは<code>vue-cli-service build</code>で行っていた。</p>
 <h2 id="やりたいこと">やりたいこと</h2>
 <ul>
-<li>出力をdist/app, dist/adminのように複数ディレクトリに分ける。</li>
+<li>出力を dist/app, dist/admin のように複数ディレクトリに分ける。</li>
 <li>ビルド、ビルド設定を分ける</li>
-<li>lint設定は共有する</li>
+<li>lint 設定は共有する</li>
 </ul>
 <h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
 <p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
@@ -378,21 +378,21 @@ FPSを表示も</p>
 <p>ということで、<code>projects</code>ディレクトリを作ってそこで<code>vue create admin</code>を叩いた感じになった。</p>
 <h2 id="この構成で思うこと">この構成で思うこと</h2>
 <ul>
-<li>package.jsonめっちゃある。</li>
-<li>node_modulesもめっちゃある、中身重複しまくりそう。</li>
-<li>vueのモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
+<li>package.json めっちゃある。</li>
+<li>node_modules もめっちゃある、中身重複しまくりそう。</li>
+<li>vue のモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
 </ul>
 <h2 id="これからどうするか">これからどうするか</h2>
 <ul>
-<li>Webpackを学ぶ
+<li>Webpack を学ぶ
 <ul>
 <li>強くなればもっとスリムにできそう</li>
 <li>コントリビュートへも繋がりそう</li>
 </ul>
 </li>
-<li>VSCodeの拡張機能、エディタの技術を学ぶ
+<li>VSCode の拡張機能、エディタの技術を学ぶ
 <ul>
-<li>LanguageServerやLinterの最適化に苦労したので・・・</li>
+<li>LanguageServer や Linter の最適化に苦労したので・・・</li>
 </ul>
 </li>
 </ul>

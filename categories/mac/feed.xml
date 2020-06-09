@@ -24,15 +24,15 @@
       <pubDate>Tue, 29 Oct 2019 17:44:59 +0900</pubDate>
       
       <guid>https://mithy.fun/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
-      <description><![CDATA[これはなに 新しいMacを手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnetをインストール すべてをアップデート システム環境設定系 ネットワーク 適宜Wi-Fi、]]></description>
+      <description><![CDATA[これはなに 新しい Mac を手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnet をインストール すべてをアップデート システム環境設定系 ネットワーク 適宜 Wi-Fi、優先でつなぐ Dock]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p>新しいMacを手に入れたり、初期化した際にすることのメモ</p>
+<p>新しい Mac を手に入れたり、初期化した際にすることのメモ</p>
 <h2 id="最初にする事">最初にする事</h2>
 <ul>
 <li>ソフトウェア・アップデート</li>
 <li>App store
 <ul>
-<li>magnetをインストール</li>
+<li>magnet をインストール</li>
 <li>すべてをアップデート</li>
 </ul>
 </li>
@@ -40,13 +40,13 @@
 <h2 id="システム環境設定系">システム環境設定系</h2>
 <h3 id="ネットワーク">ネットワーク</h3>
 <ul>
-<li>適宜Wi-Fi、優先でつなぐ</li>
+<li>適宜 Wi-Fi、優先でつなぐ</li>
 </ul>
 <h3 id="dock">Dock</h3>
 <ul>
 <li>位置を左に</li>
 <li>自動的に表示/非表示にチェック</li>
-<li>不要なアプリをDockから除いておく</li>
+<li>不要なアプリを Dock から除いておく</li>
 </ul>
 <h3 id="トラックパッド">トラックパッド</h3>
 <ul>
@@ -67,15 +67,15 @@
 </li>
 </ul>
 <h3 id="キーボード">キーボード</h3>
-<p>※ GoogleIMEのインストールと、外部キーボードの接続を終えてから</p>
+<p>※ GoogleIME のインストールと、外部キーボードの接続を終えてから</p>
 <ul>
 <li>外部キーボード設定</li>
-<li>入力ソースをGoogleIMEのひらがなと英数のみにする</li>
+<li>入力ソースを GoogleIME のひらがなと英数のみにする</li>
 <li>ショートカット &gt; キーボード &gt; 次のウィンドウを捜査対象にするキーを<code>⌥ + tab</code>に変更する</li>
 </ul>
 <h3 id="mission-control">Mission Control</h3>
 <ul>
-<li>キーボードとマウスのショートカットのMission Controlにマウスボタン3を割り当てる</li>
+<li>キーボードとマウスのショートカットの Mission Control にマウスボタン 3 を割り当てる</li>
 </ul>
 <h3 id="サウンド">サウンド</h3>
 <ul>
@@ -92,8 +92,8 @@
 <h2 id="アプリケーション">アプリケーション</h2>
 <h3 id="最初にすること">最初にすること</h3>
 <ul>
-<li><code>xcode-select --install</code>でxcodeを更新する</li>
-<li>dotfilesをクローンする。<code>git clone https://github.com/MamoruMachida/dotfiles $HOME/dotfiles</code></li>
+<li><code>xcode-select --install</code>で xcode を更新する</li>
+<li>dotfiles をクローンする。<code>git clone https://github.com/MamoruMachida/dotfiles $HOME/dotfiles</code></li>
 <li>設定スクリプトを実行する。<code>sh ~/dotfiles/init_osx.sh</code>
 <ul>
 <li>スクリプトは完璧ではないので適宜確認しつつ</li>
@@ -101,7 +101,7 @@
 </li>
 <li>再起動</li>
 </ul>
-<h3 id="言語系env">言語系〇〇env</h3>
+<h3 id="言語系-env">言語系〇〇 env</h3>
 <ul>
 <li>何かしらコマンド利用がある<code>nodenv</code>は必須
 <ul>
@@ -125,8 +125,8 @@
 </ul>
 <h3 id="入力ソース">入力ソース</h3>
 <ul>
-<li>IME等インストールが済んでいるので、システム環境設定のキーボード &gt; 入力ソースを変更する</li>
-<li>vim用のカスタムキー設定をする
+<li>IME 等インストールが済んでいるので、システム環境設定のキーボード &gt; 入力ソースを変更する</li>
+<li>vim 用のカスタムキー設定をする
 <ul>
 <li>
 
