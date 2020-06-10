@@ -4,52 +4,67 @@
   
   <url>
     <loc>https://mithy.fun/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/notes/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/memos/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archive/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archives/2020-06/</loc>
-    <lastmod>2020-06-04T23:02:19+09:00</lastmod>
+    <lastmod>2020-06-10T23:05:06+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archives/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/categories/bookmark/</loc>
-    <lastmod>2020-06-04T23:02:19+09:00</lastmod>
+    <lastmod>2020-06-10T23:05:06+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/categories/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/tags/</loc>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/tags/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</loc>
+    <lastmod>2020-06-10T23:05:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</loc>
+    <lastmod>2020-06-10T23:05:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithy.fun/tags/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</loc>
+    <lastmod>2020-06-10T23:05:06+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/tags/docker/</loc>
     <lastmod>2020-06-04T23:02:19+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithy.fun/tags/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
   </url>
   
   <url>
@@ -334,52 +349,52 @@
   
   <url>
     <loc>https://mithy.fun/archives/2019-04/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/categories/blockchain/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/tags/eosio/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/notes/eos-setup/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archives/2019-03/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/categories/database/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/tags/mysql/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/notes/mysql-json/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/archives/2019-01/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithy.fun/notes/hello/</loc>
-    <lastmod>2020-06-09T21:59:28+09:00</lastmod>
+    <lastmod>2020-06-10T23:15:40+09:00</lastmod>
   </url>
   
 </urlset>

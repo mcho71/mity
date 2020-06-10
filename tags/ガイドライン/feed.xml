@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>
-    Bookmark on 
+    ガイドライン on 
     Mcho&#39;s Space
     </title>
-    <link>https://mithy.fun/categories/bookmark/</link>
-    <description>Recent content in Bookmark
+    <link>https://mithy.fun/tags/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</link>
+    <description>Recent content in ガイドライン
     on Mcho&#39;s Space</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Wed, 10 Jun 2020 23:05:06 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/categories/bookmark/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mithy.fun/tags/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -31,32 +31,6 @@
 <a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank" rel="nofollow noopener">Human Interface Guidelines - Design - Apple Developer</a></p>
 <p>Canva が色々な企業のガイドラインをまとめてくれてた
 <a href="https://www.canva.com/ja_jp/learn/50-meticulous-style-guides-every-startup-see-launching/" target="_blank" rel="nofollow noopener">スタートアップ企業が参考にするべき 50 のスタイルガイド</a></p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>VSCodeのRemote Containerという拡張が良さそう</title>
-      <link>https://mithy.fun/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</link>
-      <pubDate>Thu, 04 Jun 2020 23:02:19 +0900</pubDate>
-      
-      <guid>https://mithy.fun/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</guid>
-      <description><![CDATA[このブログで紹介されてた Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape Remote - Containers - Visual Studio Marketplace 拡張機能をコンテナで管理できるようで、便利そう]]></description>
-      <content:encoded><![CDATA[<p>このブログで紹介されてた
-<a href="https://www.keisuke69.net/entry/2020/06/04/145719" target="_blank" rel="nofollow noopener">Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape</a></p>
-<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target="_blank" rel="nofollow noopener">Remote - Containers - Visual Studio Marketplace</a></p>
-<p>拡張機能をコンテナで管理できるようで、便利そう</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Kindleでハイライトした箇所をきれいに抜き出すブックマークレット</title>
-      <link>https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</link>
-      <pubDate>Thu, 04 Jun 2020 13:06:17 +0900</pubDate>
-      
-      <guid>https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</guid>
-      <description><![CDATA[下のページのfor pcをブックマークに登録するとできる kindle highlight js]]></description>
-      <content:encoded><![CDATA[<p>下のページの<code>for pc</code>をブックマークに登録するとできる
-<a href="https://hilotter.github.io/kindle_highlight_js/" target="_blank" rel="nofollow noopener">kindle highlight js</a></p>
 ]]></content:encoded>
     </item>
     
