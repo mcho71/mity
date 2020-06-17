@@ -27,8 +27,8 @@
       <description><![CDATA[てっきりz-indexでできると思っていたけど、できなかったのでメモ pointer-events - CSS: カスケーディングスタイルシート | MDN を使う。 以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなく]]></description>
       <content:encoded><![CDATA[<p>てっきり<code>z-index</code>でできると思っていたけど、できなかったのでメモ</p>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/pointer-events" target="_blank" rel="nofollow noopener">pointer-events - CSS: カスケーディングスタイルシート | MDN</a></p>
-<p>を使う。</p>
-<p>以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなくなるのを防ぎたかった。</p>
+<p>を使う。<br>
+以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなくなるのを防ぎたかった。</p>
 <p>
 
 
@@ -67,13 +67,14 @@
       <guid>https://mithy.fun/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</guid>
       <description><![CDATA[GitHub Issues - Visual Studio Marketplace VSCode 上から手軽に Issue を確認できる拡張。 パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。 Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。 カ]]></description>
       <content:encoded><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.github-issues-prs" target="_blank" rel="nofollow noopener">GitHub Issues - Visual Studio Marketplace</a></p>
-<p>VSCode 上から手軽に Issue を確認できる拡張。</p>
-<p>パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。</p>
-<p>Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。</p>
-<p>カーソルを重ねると Issue 内容が title 属性で出てくるのでページに飛ばずに確認できる。</p>
-<p>ブランチ名などの Template も設定できるのでプロジェクトごとのブランチ作成ルールとかもここで管理できるっちゃできる。</p>
-<p>紐付いた Branch を手動で変更できない。</p>
-<p>
+<p>VSCode 上から手軽に Issue を確認できる拡張。<br>
+パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。<br>
+Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。<br>
+カーソルを重ねると Issue 内容が title 属性で出てくるのでページに飛ばずに確認できる。<br>
+ブランチ名などの Template も設定できるのでプロジェクトごとのブランチ作成ルールとかもここで管理できるっちゃできる。<br>
+紐付いた Branch を手動で変更できない。</p>
+<p>こんな感じのパネルが追加される。<br>
+
 
 
 <picture>
