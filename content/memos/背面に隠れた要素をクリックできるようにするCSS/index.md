@@ -2,7 +2,7 @@
 title: '背面に隠れた要素をクリックできるようにするCSS'
 date: 2020-06-17T17:48:15+09:00
 categories:
-  - Tip
+  - Tips
 tags:
   - CSS
   - HTML
