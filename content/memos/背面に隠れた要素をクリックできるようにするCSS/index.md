@@ -19,8 +19,7 @@ archives: 2020-06
 
 [pointer-events - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/pointer-events)
 
-を使う。
-
+を使う。  
 以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなくなるのを防ぎたかった。
 
 ![需要ある時の例](image/2020-06-17-17-52-43.png)
