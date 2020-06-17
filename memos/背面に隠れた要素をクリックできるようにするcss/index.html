@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133713641-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  背面に隠れた要素をクリックできるようにするCSS &ndash; Mcho&#39;s Space
+
+    </title>
+    
+    <meta content="CSS, HTML, Toast, トースト, z-index" name="keywords">
+    
+    
+    <meta name="description" property="og:description" content="てっきりz-indexでできると思っていたけど、できなかったのでメモ pointer-events - CSS: カスケーディングスタイルシート | MDN を使う。 以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなく|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="Mcho&#39;s Space">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@mcho71">
+    <meta name="twitter:creator" content="@mcho71">
+    <meta name="twitter:title" content="背面に隠れた要素をクリックできるようにするCSS | Mcho&#39;s Space">
+    <meta name="twitter:description" content="てっきりz-indexでできると思っていたけど、できなかったのでメモ pointer-events - CSS: カスケーディングスタイルシート | MDN を使う。 以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなく|">
+    <meta name="twitter:image" content="https://mithy.fun/twitter-card.png">
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+
+    
+    
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://mithy.fun/">
+    Mcho&#39;s Space
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    
+    <a class="UnderlineNav-item " href="/">
+      
+      <span>About</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/notes/">
+      
+      <span>Note</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/memos/">
+      
+      <span>Memo</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/archive/">
+      
+      <span>Archive</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">背面に隠れた要素をクリックできるようにするCSS</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/bookmark' class="muted-link">
+  <span class="Label Label--gray-darker">Bookmark</span>
+</a>
+
+
+
+<a href='/tags/css' class="muted-link">
+  <span class="Label Label--gray">CSS</span>
+</a>
+
+<a href='/tags/html' class="muted-link">
+  <span class="Label Label--gray">HTML</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2020-06-17. Published at: 2020-06-17.">
+        
+          Published: 2020-06-17
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom text-gray">
+    <p>てっきり<code>z-index</code>でできると思っていたけど、できなかったのでメモ</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/pointer-events" target="_blank" rel="nofollow noopener">pointer-events - CSS: カスケーディングスタイルシート | MDN</a></p>
+<p>を使う。</p>
+<p>以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなくなるのを防ぎたかった。</p>
+<p>
+
+
+
+
+
+<picture>
+  <source media="(max-width: 480px)" srcset="/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_480x0_resize_q75_bgffffff_box_2.jpg 480w">
+  <source media="(max-width: 768px)" srcset="/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_768x0_resize_q75_bgffffff_box_2.jpg 768w">
+  <source media="(max-width: 1024px)" srcset="/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_1024x0_resize_q75_bgffffff_box_2.jpg 1024w">
+  <img src="/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43.png" alt="需要ある時の例" decoding="async" loading="lazy">
+</picture>
+</p>
+<p>こんな感じにすると透明なコンテナの下にある要素をクリックできる。</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fixed-container&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">.</span><span class="nc">fixed-container</span> <span class="p">{</span>
+    <span class="n">pointer-events</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="nc">fixed-container</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">toast</span> <span class="p">{</span>
+    <span class="n">pointer-events</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</code></pre></div>
+  </section>
+  <section>
+    
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mity" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+  </section>
+</article>
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="mb-3">
+      <b>背面に隠れた要素をクリックできるようにするCSS</b>
+      <nav id="TableOfContents"></nav>
+    </div>
+  
+
+  
+    
+    
+      <div>
+        
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+
+        
+          <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&mobile_iframe=true&width=61&height=20&appId" width="61" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        
+
+        
+          <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        
+
+        
+
+      </div>
+    
+  
+
+        </aside>
+      </div>
+
+      <div id="extra" class="px-4 bg-white">
+        
+  
+  
+    <div class="mt-5">
+      <h2>Related Notes</h2>
+      <ul class="mt-3">
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/">
+                  <div class="h3 mt-1 mb-1">VSCode拡張のGitHub Issue(beta)</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/bookmark' class="muted-link">
+  <span class="Label Label--gray-darker">Bookmark</span>
+</a>
+
+
+
+<a href='/tags/vscode' class="muted-link">
+  <span class="Label Label--gray">VSCode</span>
+</a>
+
+<a href='/tags/github' class="muted-link">
+  <span class="Label Label--gray">GitHub</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-06-17. Published at: 2020-06-17.">
+                    
+                      Published: 2020-06-17
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              GitHub Issues - Visual Studio Marketplace VSCode 上から手軽に Issue を確認できる拡張。 パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。 Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。 カ
+            </div>
+          </li>
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/">
+                  <div class="h3 mt-1 mb-1">ソシオメディアのヒューマンインターフェース ガイドラインと色々な企業のデザインガイドライン</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/bookmark' class="muted-link">
+  <span class="Label Label--gray-darker">Bookmark</span>
+</a>
+
+
+
+<a href='/tags/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3' class="muted-link">
+  <span class="Label Label--gray">デザイン</span>
+</a>
+
+<a href='/tags/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3' class="muted-link">
+  <span class="Label Label--gray">ガイドライン</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-06-10. Published at: 2020-06-10.">
+                    
+                      Published: 2020-06-10
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              見やすい、UI を作るときの参考に ソシオメディア | ヒューマンインターフェース ガイドライン (1/5) ヒューマンインターフェース ガイドラインという言葉は Apple も使ってる Human Interface Guidelines - Design - Apple Developer Canva が色々な企業のガイドラインをまと
+            </div>
+          </li>
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/">
+                  <div class="h3 mt-1 mb-1">VSCodeのRemote Containerという拡張が良さそう</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/bookmark' class="muted-link">
+  <span class="Label Label--gray-darker">Bookmark</span>
+</a>
+
+
+
+<a href='/tags/vscode' class="muted-link">
+  <span class="Label Label--gray">VSCode</span>
+</a>
+
+<a href='/tags/docker' class="muted-link">
+  <span class="Label Label--gray">Docker</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-06-04. Published at: 2020-06-04.">
+                    
+                      Published: 2020-06-04
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              このブログで紹介されてた Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape Remote - Containers - Visual Studio Marketplace 拡張機能をコンテナで管理できるようで、便利そう
+            </div>
+          </li>
+        
+          <li class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/">
+                  <div class="h3 mt-1 mb-1">Kindleでハイライトした箇所をきれいに抜き出すブックマークレット</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                
+
+
+<a href='/categories/bookmark' class="muted-link">
+  <span class="Label Label--gray-darker">Bookmark</span>
+</a>
+
+
+
+<a href='/tags/kindle' class="muted-link">
+  <span class="Label Label--gray">kindle</span>
+</a>
+
+
+                <div class="float-md-right">
+                  <span title="Lastmod: 2020-06-04. Published at: 2020-06-04.">
+                    
+                      Published: 2020-06-04
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              
+              下のページのfor pcをブックマークに登録するとできる kindle highlight js
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  
+
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    ©Mamoru Machida 2019 &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+  </body>
+</html>

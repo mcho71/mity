@@ -1,0 +1,63 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>
+    HTML on 
+    Mcho&#39;s Space
+    </title>
+    <link>https://mithy.fun/tags/html/</link>
+    <description>Recent content in HTML
+    on Mcho&#39;s Space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    
+    
+    <copyright>&amp;copy;Mamoru Machida 2019</copyright>
+    <lastBuildDate>Wed, 17 Jun 2020 17:48:15 +0900</lastBuildDate>
+    
+    
+        <atom:link href="https://mithy.fun/tags/html/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>背面に隠れた要素をクリックできるようにするCSS</title>
+      <link>https://mithy.fun/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</link>
+      <pubDate>Wed, 17 Jun 2020 17:48:15 +0900</pubDate>
+      
+      <guid>https://mithy.fun/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</guid>
+      <description><![CDATA[てっきりz-indexでできると思っていたけど、できなかったのでメモ pointer-events - CSS: カスケーディングスタイルシート | MDN を使う。 以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなく]]></description>
+      <content:encoded><![CDATA[<p>てっきり<code>z-index</code>でできると思っていたけど、できなかったのでメモ</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/pointer-events" target="_blank" rel="nofollow noopener">pointer-events - CSS: カスケーディングスタイルシート | MDN</a></p>
+<p>を使う。</p>
+<p>以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなくなるのを防ぎたかった。</p>
+<p>
+
+
+
+
+
+<picture>
+  <source media="(max-width: 480px)" srcset="/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_480x0_resize_q75_bgffffff_box_2.jpg 480w">
+  <source media="(max-width: 768px)" srcset="/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_768x0_resize_q75_bgffffff_box_2.jpg 768w">
+  <source media="(max-width: 1024px)" srcset="/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_1024x0_resize_q75_bgffffff_box_2.jpg 1024w">
+  <img src="/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43.png" alt="需要ある時の例" decoding="async" loading="lazy">
+</picture>
+</p>
+<p>こんな感じにすると透明なコンテナの下にある要素をクリックできる。</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fixed-container&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">.</span><span class="nc">fixed-container</span> <span class="p">{</span>
+    <span class="n">pointer-events</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="nc">fixed-container</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">toast</span> <span class="p">{</span>
+    <span class="n">pointer-events</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
