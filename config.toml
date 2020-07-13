@@ -1,7 +1,7 @@
 BaseURL = "https://mithy.fun/"
 LanguageCode = "ja-JP"
 HasCJKLanguage = true
-title = "Mcho's Space"
+title = "Mcho"
 theme = "primer"
 summaryLength = 100
 # Code pen
