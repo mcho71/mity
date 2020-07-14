@@ -10,12 +10,12 @@ pygmentsUseClasses = true
 googleAnalytics = "UA-133713641-1"
 publishDir = "docs"
 enableGitInfo = true
-copyright = "&copy;Mamoru Machida 2019"
+copyright = "&copy; mcho 2019"
 rssLimit = 15
 disqusShortname = "mity"
 
 [Author]
-  Name = "Mamoru Machida"
+  Name = "mcho"
 
 [outputFormats]
   [outputFormats.RSS]
@@ -30,10 +30,10 @@ disqusShortname = "mity"
 [params]
   Subtitle = ""
   Twitter = "mcho71"
-  GitHub = "Mamoru Machida"
+  GitHub = "mcho71"
   DateFormat = "2006-01-02"
   MonthFormat = "2006-01"
-  shareTo = ["Twitter", "Hatena", "Facebook"]
+  shareTo = ["Twitter", "Hatena"]
   creditHugoPrimer = true
   useIcon = true
   UseTwitterCard = true
