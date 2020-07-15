@@ -1,5 +1,5 @@
 ---
-title: 'Memo'
+title: 'メモ'
 menu: 'main'
 weight: 3
 ---
