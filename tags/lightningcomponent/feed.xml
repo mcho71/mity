@@ -4,7 +4,7 @@
     LightningComponent on 
     Mcho
     </title>
-    <link>https://mithy.fun/tags/lightningcomponent/</link>
+    <link>https://mcho.dev/tags/lightningcomponent/</link>
     <description>Recent content in LightningComponent
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Fri, 21 Feb 2020 16:10:26 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/tags/lightningcomponent/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/tags/lightningcomponent/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Auraコンポーネントの使い方</title>
-      <link>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
+      <link>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
+      <guid>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
       <description><![CDATA[Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。]]></description>
       <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる

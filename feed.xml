@@ -3,7 +3,7 @@
     <title>
     Mcho
     </title>
-    <link>https://mithy.fun/</link>
+    <link>https://mcho.dev/</link>
     <description>Recent content in このサイトについて
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -14,15 +14,15 @@
     <lastBuildDate>Fri, 01 Feb 2019 10:02:31 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>背面に隠れた要素をクリックできるようにするCSS</title>
-      <link>https://mithy.fun/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</link>
+      <link>https://mcho.dev/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</link>
       <pubDate>Wed, 17 Jun 2020 17:48:15 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</guid>
+      <guid>https://mcho.dev/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</guid>
       <description><![CDATA[てっきりz-indexでできると思っていたけど、できなかったのでメモ pointer-events - CSS: カスケーディングスタイルシート | MDN を使う。 以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなく]]></description>
       <content:encoded><![CDATA[<p>てっきり<code>z-index</code>でできると思っていたけど、できなかったのでメモ</p>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/pointer-events" target="_blank" rel="nofollow noopener">pointer-events - CSS: カスケーディングスタイルシート | MDN</a></p>
@@ -60,10 +60,10 @@
     
     <item>
       <title>VSCode拡張のGitHub Issue(beta)</title>
-      <link>https://mithy.fun/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</link>
+      <link>https://mcho.dev/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</link>
       <pubDate>Wed, 17 Jun 2020 17:33:52 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</guid>
+      <guid>https://mcho.dev/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</guid>
       <description><![CDATA[GitHub Issues - Visual Studio Marketplace VSCode 上から手軽に Issue を確認できる拡張。 パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。 Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。 カ]]></description>
       <content:encoded><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.github-issues-prs" target="_blank" rel="nofollow noopener">GitHub Issues - Visual Studio Marketplace</a></p>
 <p>VSCode 上から手軽に Issue を確認できる拡張。<br>
@@ -85,10 +85,10 @@ Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここ
     
     <item>
       <title>ソシオメディアのヒューマンインターフェース ガイドラインと色々な企業のデザインガイドライン</title>
-      <link>https://mithy.fun/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</link>
+      <link>https://mcho.dev/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</link>
       <pubDate>Wed, 10 Jun 2020 23:05:06 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</guid>
+      <guid>https://mcho.dev/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</guid>
       <description><![CDATA[見やすい、UI を作るときの参考に ソシオメディア | ヒューマンインターフェース ガイドライン (1/5) ヒューマンインターフェース ガイドラインという言葉は Apple も使ってる Human Interface Guidelines - Design - Apple Developer Canva が色々な企業のガイドラインをまと]]></description>
       <content:encoded><![CDATA[<p>見やすい、UI を作るときの参考に
 <a href="https://www.sociomedia.co.jp/category/shig" target="_blank" rel="nofollow noopener">ソシオメディア | ヒューマンインターフェース ガイドライン (1/5)</a></p>
@@ -101,10 +101,10 @@ Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここ
     
     <item>
       <title>VSCodeのRemote Containerという拡張が良さそう</title>
-      <link>https://mithy.fun/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</link>
+      <link>https://mcho.dev/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</link>
       <pubDate>Thu, 04 Jun 2020 23:02:19 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</guid>
+      <guid>https://mcho.dev/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</guid>
       <description><![CDATA[このブログで紹介されてた Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape Remote - Containers - Visual Studio Marketplace 拡張機能をコンテナで管理できるようで、便利そう]]></description>
       <content:encoded><![CDATA[<p>このブログで紹介されてた
 <a href="https://www.keisuke69.net/entry/2020/06/04/145719" target="_blank" rel="nofollow noopener">Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape</a></p>
@@ -115,10 +115,10 @@ Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここ
     
     <item>
       <title>Kindleでハイライトした箇所をきれいに抜き出すブックマークレット</title>
-      <link>https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</link>
+      <link>https://mcho.dev/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</link>
       <pubDate>Thu, 04 Jun 2020 13:06:17 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</guid>
+      <guid>https://mcho.dev/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</guid>
       <description><![CDATA[下のページのfor pcをブックマークに登録するとできる kindle highlight js]]></description>
       <content:encoded><![CDATA[<p>下のページの<code>for pc</code>をブックマークに登録するとできる
 <a href="https://hilotter.github.io/kindle_highlight_js/" target="_blank" rel="nofollow noopener">kindle highlight js</a></p>
@@ -127,10 +127,10 @@ Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここ
     
     <item>
       <title>Salesforceで開発中のスクラッチ組織を非技術者に簡単に見てもらうためにやったこと</title>
-      <link>https://mithy.fun/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</link>
+      <link>https://mcho.dev/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</link>
       <pubDate>Thu, 26 Mar 2020 17:13:09 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</guid>
+      <guid>https://mcho.dev/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</guid>
       <description><![CDATA[この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。 どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるの]]></description>
       <content:encoded><![CDATA[<p>この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。</p>
 <h2 id="どうしてやろうとしたのか">どうしてやろうとしたのか</h2>
@@ -143,7 +143,7 @@ Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここ
 <li>変更されたソースを元にスクラッチ組織を作成/セットアップする</li>
 <li>Slack にスクラッチ組織のログイン URL を通知する</li>
 </ol>
-<p>詳しい手順はそれぞれ、<a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions でスクラッチ組織を作成する</a>と<a href="https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/">GitHubActions から Slack へメッセージを送信する</a>に書いてあります。この記事は二つの記事をまとめたものになります。</p>
+<p>詳しい手順はそれぞれ、<a href="https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions でスクラッチ組織を作成する</a>と<a href="https://mcho.dev/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/">GitHubActions から Slack へメッセージを送信する</a>に書いてあります。この記事は二つの記事をまとめたものになります。</p>
 <h2 id="プロジェクトの状態">プロジェクトの状態</h2>
 <ul>
 <li>GitHub の private リポジトリで管理されている</li>
@@ -376,10 +376,10 @@ sfdx force:org:display --verbose -u ForGitHubAction
     
     <item>
       <title>HugoでYoutube等を埋め込みをするShortcodes</title>
-      <link>https://mithy.fun/memos/hugo%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E3%81%99%E3%82%8Bshortcodes/</link>
+      <link>https://mcho.dev/memos/hugo%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E3%81%99%E3%82%8Bshortcodes/</link>
       <pubDate>Wed, 25 Mar 2020 06:35:05 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/hugo%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E3%81%99%E3%82%8Bshortcodes/</guid>
+      <guid>https://mcho.dev/memos/hugo%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E3%81%99%E3%82%8Bshortcodes/</guid>
       <description><![CDATA[ここにある。 Shortcodes | Hugo]]></description>
       <content:encoded><![CDATA[<p>ここにある。
 <a href="https://gohugo.io/content-management/shortcodes/" target="_blank" rel="nofollow noopener">Shortcodes | Hugo</a></p>
@@ -393,10 +393,10 @@ sfdx force:org:display --verbose -u ForGitHubAction
     
     <item>
       <title>GitHub Actionsのubuntu-latestでURLEncode</title>
-      <link>https://mithy.fun/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</link>
+      <link>https://mcho.dev/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</link>
       <pubDate>Wed, 18 Mar 2020 15:27:50 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</guid>
+      <guid>https://mcho.dev/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</guid>
       <description><![CDATA[json から値を抜きだして URL を作りたかったので結局こんな感じになった USER_NAME=$(python3 -c &amp;#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&amp;#34; $(echo $HOGE_JSON | jq .huga))&amp;#39; ENCODED_URL=$(echo https://example.com?un=${USER_NAME}) $(echo $HOGE)は引数に渡るときに&amp;quot;hoge&amp;quot;となるのでsys.argv[1][1:-1]]></description>
       <content:encoded><![CDATA[<p>json から値を抜きだして URL を作りたかったので結局こんな感じになった</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">USER_NAME</span><span class="o">=</span><span class="k">$(</span>python3 -c <span class="s2">&#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&#34;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$HOGE_JSON</span> <span class="p">|</span> jq .huga<span class="k">))</span><span class="err">&#39;</span>
@@ -408,10 +408,10 @@ sfdx force:org:display --verbose -u ForGitHubAction
     
     <item>
       <title>@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた</title>
-      <link>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+      <link>https://mcho.dev/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</link>
       <pubDate>Mon, 16 Mar 2020 12:06:21 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
+      <guid>https://mcho.dev/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
       <description><![CDATA[モチベーション 各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLI のバージョンは9.0.6でした。 パッケージの]]></description>
       <content:encoded><![CDATA[<h2 id="モチベーション">モチベーション</h2>
 <p>各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。</p>
@@ -456,10 +456,10 @@ sfdx force:org:display --verbose -u ForGitHubAction
     
     <item>
       <title>Auraコンポーネントから特定フィールドのPickListValuesを取得する</title>
-      <link>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</link>
+      <link>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</link>
       <pubDate>Mon, 09 Mar 2020 15:54:48 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
+      <guid>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
       <description><![CDATA[やりたいこと Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-api か Apex コントローラーで取得できそう。ui-api は試し]]></description>
       <content:encoded><![CDATA[<h2 id="やりたいこと">やりたいこと</h2>
 <p>Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
@@ -480,14 +480,14 @@ field.getDescribe().getPicklistValues();
     
     <item>
       <title>GitHubActionsからSlackへメッセージを送信する</title>
-      <link>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</link>
+      <link>https://mcho.dev/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</link>
       <pubDate>Fri, 06 Mar 2020 17:34:24 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</guid>
+      <guid>https://mcho.dev/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</guid>
       <description><![CDATA[どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットア]]></description>
       <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
-<li><a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions で Salesforce のスクラッチ組織を作成する</a>のワークフローから Slack にログイン URL を送りたかった。</li>
+<li><a href="https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions で Salesforce のスクラッチ組織を作成する</a>のワークフローから Slack にログイン URL を送りたかった。</li>
 </ul>
 <h2 id="なにを使うか">なにを使うか</h2>
 <p><a href="https://github.com/pullreminders/slack-action" target="_blank" rel="nofollow noopener">pullreminders/slack-action: GitHub Action for posting Slack messages</a>を使うことにした。<br>
@@ -565,10 +565,10 @@ field.getDescribe().getPicklistValues();
     
     <item>
       <title>Aura コンポーネントのため Lightning データサービスの基本</title>
-      <link>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
+      <link>https://mcho.dev/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
       <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
+      <guid>https://mcho.dev/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
       <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implements がないと LightningAppBuilder]]></description>
       <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
 <p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
@@ -592,10 +592,10 @@ field.getDescribe().getPicklistValues();
     
     <item>
       <title>GitHubActionsでSalesforceのスクラッチ組織を作成する</title>
-      <link>https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
+      <link>https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
       <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
+      <guid>https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
       <description><![CDATA[どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セ]]></description>
       <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
@@ -802,10 +802,10 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
     
     <item>
       <title>Auraコンポーネントの使い方</title>
-      <link>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
+      <link>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
+      <guid>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
       <description><![CDATA[Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。]]></description>
       <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
@@ -841,10 +841,10 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
     
     <item>
       <title>Lightning Experience のリードと商談</title>
-      <link>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
+      <link>https://mcho.dev/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
       <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
+      <guid>https://mcho.dev/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
       <description><![CDATA[始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客と]]></description>
       <content:encoded><![CDATA[<h2 id="始める前">始める前</h2>
 <p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。

@@ -4,7 +4,7 @@
     Mac on 
     Mcho
     </title>
-    <link>https://mithy.fun/categories/mac/</link>
+    <link>https://mcho.dev/categories/mac/</link>
     <description>Recent content in Mac
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Tue, 29 Oct 2019 17:44:59 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/categories/mac/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/categories/mac/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Macのセットアップでやること</title>
-      <link>https://mithy.fun/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
+      <link>https://mcho.dev/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
       <pubDate>Tue, 29 Oct 2019 17:44:59 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
+      <guid>https://mcho.dev/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
       <description><![CDATA[これはなに 新しい Mac を手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnet をインストール すべてをアップデート システム環境設定系 ネットワーク 適宜 Wi-Fi、優先でつなぐ Dock]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>新しい Mac を手に入れたり、初期化した際にすることのメモ</p>

@@ -4,7 +4,7 @@
     Database on 
     Mcho
     </title>
-    <link>https://mithy.fun/categories/database/</link>
+    <link>https://mcho.dev/categories/database/</link>
     <description>Recent content in Database
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Tue, 12 Mar 2019 14:09:17 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/categories/database/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/categories/database/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MySQL JSON型の集計</title>
-      <link>https://mithy.fun/notes/mysql-json/</link>
+      <link>https://mcho.dev/notes/mysql-json/</link>
       <pubDate>Tue, 12 Mar 2019 14:09:17 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/mysql-json/</guid>
+      <guid>https://mcho.dev/notes/mysql-json/</guid>
       <description><![CDATA[MySQL の JSON 型に対するクエリを書く際に苦労したので、それのメモを。 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。 tl;dr JSON_TABLE関数を使用するために、]]></description>
       <content:encoded><![CDATA[<p>MySQL の JSON 型に対するクエリを書く際に苦労したので、それのメモを。<br>
 このページ内で、オブジェクト型、配列型という言葉が出てきますが、造語です。一般的には通じません。</p>

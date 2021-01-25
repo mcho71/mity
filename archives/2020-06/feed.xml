@@ -4,7 +4,7 @@
     2020-06 on 
     Mcho
     </title>
-    <link>https://mithy.fun/archives/2020-06/</link>
+    <link>https://mcho.dev/archives/2020-06/</link>
     <description>Recent content in 2020-06
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Wed, 17 Jun 2020 17:48:15 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/archives/2020-06/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/archives/2020-06/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>背面に隠れた要素をクリックできるようにするCSS</title>
-      <link>https://mithy.fun/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</link>
+      <link>https://mcho.dev/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</link>
       <pubDate>Wed, 17 Jun 2020 17:48:15 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</guid>
+      <guid>https://mcho.dev/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</guid>
       <description><![CDATA[てっきりz-indexでできると思っていたけど、できなかったのでメモ pointer-events - CSS: カスケーディングスタイルシート | MDN を使う。 以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなく]]></description>
       <content:encoded><![CDATA[<p>てっきり<code>z-index</code>でできると思っていたけど、できなかったのでメモ</p>
 <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/pointer-events" target="_blank" rel="nofollow noopener">pointer-events - CSS: カスケーディングスタイルシート | MDN</a></p>
@@ -61,10 +61,10 @@
     
     <item>
       <title>VSCode拡張のGitHub Issue(beta)</title>
-      <link>https://mithy.fun/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</link>
+      <link>https://mcho.dev/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</link>
       <pubDate>Wed, 17 Jun 2020 17:33:52 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</guid>
+      <guid>https://mcho.dev/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</guid>
       <description><![CDATA[GitHub Issues - Visual Studio Marketplace VSCode 上から手軽に Issue を確認できる拡張。 パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。 Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。 カ]]></description>
       <content:encoded><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.github-issues-prs" target="_blank" rel="nofollow noopener">GitHub Issues - Visual Studio Marketplace</a></p>
 <p>VSCode 上から手軽に Issue を確認できる拡張。<br>
@@ -86,10 +86,10 @@ Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここ
     
     <item>
       <title>ソシオメディアのヒューマンインターフェース ガイドラインと色々な企業のデザインガイドライン</title>
-      <link>https://mithy.fun/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</link>
+      <link>https://mcho.dev/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</link>
       <pubDate>Wed, 10 Jun 2020 23:05:06 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</guid>
+      <guid>https://mcho.dev/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</guid>
       <description><![CDATA[見やすい、UI を作るときの参考に ソシオメディア | ヒューマンインターフェース ガイドライン (1/5) ヒューマンインターフェース ガイドラインという言葉は Apple も使ってる Human Interface Guidelines - Design - Apple Developer Canva が色々な企業のガイドラインをまと]]></description>
       <content:encoded><![CDATA[<p>見やすい、UI を作るときの参考に
 <a href="https://www.sociomedia.co.jp/category/shig" target="_blank" rel="nofollow noopener">ソシオメディア | ヒューマンインターフェース ガイドライン (1/5)</a></p>
@@ -102,10 +102,10 @@ Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここ
     
     <item>
       <title>VSCodeのRemote Containerという拡張が良さそう</title>
-      <link>https://mithy.fun/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</link>
+      <link>https://mcho.dev/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</link>
       <pubDate>Thu, 04 Jun 2020 23:02:19 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</guid>
+      <guid>https://mcho.dev/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</guid>
       <description><![CDATA[このブログで紹介されてた Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape Remote - Containers - Visual Studio Marketplace 拡張機能をコンテナで管理できるようで、便利そう]]></description>
       <content:encoded><![CDATA[<p>このブログで紹介されてた
 <a href="https://www.keisuke69.net/entry/2020/06/04/145719" target="_blank" rel="nofollow noopener">Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape</a></p>
@@ -116,10 +116,10 @@ Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここ
     
     <item>
       <title>Kindleでハイライトした箇所をきれいに抜き出すブックマークレット</title>
-      <link>https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</link>
+      <link>https://mcho.dev/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</link>
       <pubDate>Thu, 04 Jun 2020 13:06:17 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</guid>
+      <guid>https://mcho.dev/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</guid>
       <description><![CDATA[下のページのfor pcをブックマークに登録するとできる kindle highlight js]]></description>
       <content:encoded><![CDATA[<p>下のページの<code>for pc</code>をブックマークに登録するとできる
 <a href="https://hilotter.github.io/kindle_highlight_js/" target="_blank" rel="nofollow noopener">kindle highlight js</a></p>

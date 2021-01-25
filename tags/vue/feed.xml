@@ -4,7 +4,7 @@
     Vue on 
     Mcho
     </title>
-    <link>https://mithy.fun/tags/vue/</link>
+    <link>https://mcho.dev/tags/vue/</link>
     <description>Recent content in Vue
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Tue, 05 Nov 2019 15:31:32 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/tags/vue/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/tags/vue/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vueでモノレポがしたかった</title>
-      <link>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
+      <link>https://mcho.dev/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
+      <guid>https://mcho.dev/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
       <description><![CDATA[これはなに Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue c]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>

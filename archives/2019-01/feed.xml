@@ -4,7 +4,7 @@
     2019-01 on 
     Mcho
     </title>
-    <link>https://mithy.fun/archives/2019-01/</link>
+    <link>https://mcho.dev/archives/2019-01/</link>
     <description>Recent content in 2019-01
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Thu, 31 Jan 2019 17:43:40 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/archives/2019-01/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/archives/2019-01/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello</title>
-      <link>https://mithy.fun/notes/hello/</link>
+      <link>https://mcho.dev/notes/hello/</link>
       <pubDate>Thu, 31 Jan 2019 17:43:40 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/hello/</guid>
+      <guid>https://mcho.dev/notes/hello/</guid>
       <description><![CDATA[hello&amp;mdash;:]]></description>
       <content:encoded><![CDATA[<p>hello&mdash;:</p>
 ]]></content:encoded>

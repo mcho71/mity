@@ -4,7 +4,7 @@
     ノート on 
     Mcho
     </title>
-    <link>https://mithy.fun/notes/</link>
+    <link>https://mcho.dev/notes/</link>
     <description>Recent content in ノート
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -13,15 +13,15 @@
     
     <copyright>&amp;copy; mcho 2019</copyright>
     
-        <atom:link href="https://mithy.fun/notes/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/notes/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Salesforceで開発中のスクラッチ組織を非技術者に簡単に見てもらうためにやったこと</title>
-      <link>https://mithy.fun/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</link>
+      <link>https://mcho.dev/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</link>
       <pubDate>Thu, 26 Mar 2020 17:13:09 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</guid>
+      <guid>https://mcho.dev/notes/salesforce%E3%81%A7%E9%96%8B%E7%99%BA%E4%B8%AD%E3%81%AE%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E9%9D%9E%E6%8A%80%E8%A1%93%E8%80%85%E3%81%AB%E7%B0%A1%E5%8D%98%E3%81%AB%E8%A6%8B%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB%E3%82%84%E3%81%A3%E3%81%9F%E3%81%93%E3%81%A8/</guid>
       <description><![CDATA[この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。 どうしてやろうとしたのか SFDX プロジェクトの開発中に、変更された箇所を確認するための手間を省きたいので、やろうと思いました。 どうやってやるの]]></description>
       <content:encoded><![CDATA[<p>この記事は Salesforce 開発者向けブログキャンペーンへのエントリー記事です。</p>
 <h2 id="どうしてやろうとしたのか">どうしてやろうとしたのか</h2>
@@ -34,7 +34,7 @@
 <li>変更されたソースを元にスクラッチ組織を作成/セットアップする</li>
 <li>Slack にスクラッチ組織のログイン URL を通知する</li>
 </ol>
-<p>詳しい手順はそれぞれ、<a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions でスクラッチ組織を作成する</a>と<a href="https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/">GitHubActions から Slack へメッセージを送信する</a>に書いてあります。この記事は二つの記事をまとめたものになります。</p>
+<p>詳しい手順はそれぞれ、<a href="https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions でスクラッチ組織を作成する</a>と<a href="https://mcho.dev/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/">GitHubActions から Slack へメッセージを送信する</a>に書いてあります。この記事は二つの記事をまとめたものになります。</p>
 <h2 id="プロジェクトの状態">プロジェクトの状態</h2>
 <ul>
 <li>GitHub の private リポジトリで管理されている</li>
@@ -267,10 +267,10 @@ sfdx force:org:display --verbose -u ForGitHubAction
     
     <item>
       <title>@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた</title>
-      <link>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+      <link>https://mcho.dev/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</link>
       <pubDate>Mon, 16 Mar 2020 12:06:21 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
+      <guid>https://mcho.dev/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
       <description><![CDATA[モチベーション 各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLI のバージョンは9.0.6でした。 パッケージの]]></description>
       <content:encoded><![CDATA[<h2 id="モチベーション">モチベーション</h2>
 <p>各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。</p>
@@ -315,10 +315,10 @@ sfdx force:org:display --verbose -u ForGitHubAction
     
     <item>
       <title>Auraコンポーネントから特定フィールドのPickListValuesを取得する</title>
-      <link>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</link>
+      <link>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</link>
       <pubDate>Mon, 09 Mar 2020 15:54:48 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
+      <guid>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E7%89%B9%E5%AE%9A%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AEpicklistvalues%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
       <description><![CDATA[やりたいこと Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。 取得する ui-api か Apex コントローラーで取得できそう。ui-api は試し]]></description>
       <content:encoded><![CDATA[<h2 id="やりたいこと">やりたいこと</h2>
 <p>Aura コンポーネントからオブジェクトの PickList フィールドの PickListValues を取得したい。具体的には取引先(個人)の敬称フィールドの選択肢を取得したい。</p>
@@ -339,14 +339,14 @@ field.getDescribe().getPicklistValues();
     
     <item>
       <title>GitHubActionsからSlackへメッセージを送信する</title>
-      <link>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</link>
+      <link>https://mcho.dev/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</link>
       <pubDate>Fri, 06 Mar 2020 17:34:24 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</guid>
+      <guid>https://mcho.dev/notes/githubactions%E3%81%8B%E3%82%89slack%E3%81%B8%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B/</guid>
       <description><![CDATA[どうしてやるの GitHubActions で Salesforce のスクラッチ組織を作成するのワークフローから Slack にログイン URL を送りたかった。 なにを使うか pullreminders/slack-action: GitHub Action for posting Slack messagesを使うことにした。 今気づいたんですが、これ PullPanda のリポジトリだ セットア]]></description>
       <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
-<li><a href="https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions で Salesforce のスクラッチ組織を作成する</a>のワークフローから Slack にログイン URL を送りたかった。</li>
+<li><a href="https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/">GitHubActions で Salesforce のスクラッチ組織を作成する</a>のワークフローから Slack にログイン URL を送りたかった。</li>
 </ul>
 <h2 id="なにを使うか">なにを使うか</h2>
 <p><a href="https://github.com/pullreminders/slack-action" target="_blank" rel="nofollow noopener">pullreminders/slack-action: GitHub Action for posting Slack messages</a>を使うことにした。<br>
@@ -424,10 +424,10 @@ field.getDescribe().getPicklistValues();
     
     <item>
       <title>Aura コンポーネントのため Lightning データサービスの基本</title>
-      <link>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
+      <link>https://mcho.dev/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
       <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
+      <guid>https://mcho.dev/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
       <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implements がないと LightningAppBuilder]]></description>
       <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
 <p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
@@ -451,10 +451,10 @@ field.getDescribe().getPicklistValues();
     
     <item>
       <title>GitHubActionsでSalesforceのスクラッチ組織を作成する</title>
-      <link>https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
+      <link>https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
       <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
+      <guid>https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
       <description><![CDATA[どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セ]]></description>
       <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
 <ul>
@@ -661,10 +661,10 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
     
     <item>
       <title>Auraコンポーネントの使い方</title>
-      <link>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
+      <link>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
       <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
+      <guid>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
       <description><![CDATA[Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。]]></description>
       <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
 <code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
@@ -700,10 +700,10 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
     
     <item>
       <title>Lightning Experience のリードと商談</title>
-      <link>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
+      <link>https://mcho.dev/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
       <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
+      <guid>https://mcho.dev/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
       <description><![CDATA[始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客と]]></description>
       <content:encoded><![CDATA[<h2 id="始める前">始める前</h2>
 <p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。
@@ -726,10 +726,10 @@ Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets
     
     <item>
       <title>LWCの基本</title>
-      <link>https://mithy.fun/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
+      <link>https://mcho.dev/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
       <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
+      <guid>https://mcho.dev/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
       <description><![CDATA[はじめに LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningEleme]]></description>
       <content:encoded><![CDATA[<h2 id="はじめに">はじめに</h2>
 <p>LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。</p>
@@ -753,10 +753,10 @@ Salesforce のコンポーネントをモダンな javascript で書けるのは
     
     <item>
       <title>[読んでいる]DL版 RustではじめるOpenGL</title>
-      <link>https://mithy.fun/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</link>
+      <link>https://mcho.dev/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</link>
       <pubDate>Tue, 12 Nov 2019 15:27:44 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
+      <guid>https://mcho.dev/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
       <description><![CDATA[[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH]]></description>
       <content:encoded><![CDATA[<h2 id="dl-版-rust-ではじめる-opengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a></h2>
 ]]></content:encoded>
@@ -764,10 +764,10 @@ Salesforce のコンポーネントをモダンな javascript で書けるのは
     
     <item>
       <title>Rustで始めるOpenGLをやっている</title>
-      <link>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</link>
+      <link>https://mcho.dev/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</link>
       <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
+      <guid>https://mcho.dev/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
       <description><![CDATA[これはなに [DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3D オブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からや]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
@@ -940,10 +940,10 @@ FPS を表示も</p>
     
     <item>
       <title>Visualforceの基礎</title>
-      <link>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</link>
+      <link>https://mcho.dev/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</link>
       <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
+      <guid>https://mcho.dev/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
       <description><![CDATA[Visualforce とは Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる 標準または Apex でビジネスロジックを記述する。 使用できる場所]]></description>
       <content:encoded><![CDATA[<h2 id="visualforce-とは">Visualforce とは</h2>
 <ul>
@@ -1047,10 +1047,10 @@ FPS を表示も</p>
     
     <item>
       <title>Vueでモノレポがしたかった</title>
-      <link>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
+      <link>https://mcho.dev/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
       <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
+      <guid>https://mcho.dev/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
       <description><![CDATA[これはなに Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue c]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
@@ -1134,10 +1134,10 @@ FPS を表示も</p>
     
     <item>
       <title>TRAILHEADに入門した</title>
-      <link>https://mithy.fun/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</link>
+      <link>https://mcho.dev/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</link>
       <pubDate>Thu, 31 Oct 2019 13:07:17 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
+      <guid>https://mcho.dev/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
       <description><![CDATA[TRAILHEAD ってなに Trailhead | 楽しく学ぶ方法 Salesforce が運営している学習サイト、コンテンツは主に Salesforce 関連で、経営者、営業、開発向けが用意されている。 Salesforce 関連以外も Blockchain や、IOS アプリケーション開発のコンテンツもある。 やり始める前の]]></description>
       <content:encoded><![CDATA[<h2 id="trailhead-ってなに">TRAILHEAD ってなに</h2>
 <p><a href="https://trailhead.salesforce.com/ja/home" target="_blank" rel="nofollow noopener"><em>Trailhead | 楽しく学ぶ方法</em></a></p>
@@ -1443,10 +1443,10 @@ Salesforce 関連以外も Blockchain や、IOS アプリケーション開発�
     
     <item>
       <title>Macのセットアップでやること</title>
-      <link>https://mithy.fun/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
+      <link>https://mcho.dev/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</link>
       <pubDate>Tue, 29 Oct 2019 17:44:59 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
+      <guid>https://mcho.dev/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</guid>
       <description><![CDATA[これはなに 新しい Mac を手に入れたり、初期化した際にすることのメモ 最初にする事 ソフトウェア・アップデート App store magnet をインストール すべてをアップデート システム環境設定系 ネットワーク 適宜 Wi-Fi、優先でつなぐ Dock]]></description>
       <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
 <p>新しい Mac を手に入れたり、初期化した際にすることのメモ</p>

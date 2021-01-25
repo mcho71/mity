@@ -4,7 +4,7 @@
     Tags on 
     Mcho
     </title>
-    <link>https://mithy.fun/tags/</link>
+    <link>https://mcho.dev/tags/</link>
     <description>Recent content in Tags
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,7 +15,7 @@
     <lastBuildDate>Wed, 17 Jun 2020 17:48:15 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/tags/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/tags/feed.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

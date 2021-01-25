@@ -4,7 +4,7 @@
     2019-04 on 
     Mcho
     </title>
-    <link>https://mithy.fun/archives/2019-04/</link>
+    <link>https://mcho.dev/archives/2019-04/</link>
     <description>Recent content in 2019-04
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Fri, 12 Apr 2019 22:07:40 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/archives/2019-04/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/archives/2019-04/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>EOSIOのGettingStartedをやった</title>
-      <link>https://mithy.fun/notes/eos-setup/</link>
+      <link>https://mcho.dev/notes/eos-setup/</link>
       <pubDate>Fri, 12 Apr 2019 22:07:40 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/eos-setup/</guid>
+      <guid>https://mcho.dev/notes/eos-setup/</guid>
       <description><![CDATA[EOSIO Developer Portal - EOSIO Development DocumentationのGETTING STARTEDをやったので、振り返りなどを DEVELOPMENT ENVIRONMENT CLI ツールのインストールと、各 CLI を使って EOS チェーンを使うための手順を確認する工程 1.2 Before You Beginに沿っ]]></description>
       <content:encoded><![CDATA[<p><a href="https://developers.eos.io/" target="_blank" rel="nofollow noopener">EOSIO Developer Portal - EOSIO Development Documentation</a>の<a href="https://developers.eos.io/eosio-home/docs" target="_blank" rel="nofollow noopener">GETTING STARTED</a>をやったので、振り返りなどを</p>
 <h2 id="development-environment">DEVELOPMENT ENVIRONMENT</h2>

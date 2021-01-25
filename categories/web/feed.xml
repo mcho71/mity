@@ -4,7 +4,7 @@
     Web on 
     Mcho
     </title>
-    <link>https://mithy.fun/categories/web/</link>
+    <link>https://mcho.dev/categories/web/</link>
     <description>Recent content in Web
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Mon, 16 Mar 2020 12:06:21 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/categories/web/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/categories/web/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた</title>
-      <link>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+      <link>https://mcho.dev/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</link>
       <pubDate>Mon, 16 Mar 2020 12:06:21 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
+      <guid>https://mcho.dev/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
       <description><![CDATA[モチベーション 各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。 移行手順 ng newしたところから始めます。AngularCLI のバージョンは9.0.6でした。 パッケージの]]></description>
       <content:encoded><![CDATA[<h2 id="モチベーション">モチベーション</h2>
 <p>各所で TSLint から ESLint の移行が進んでるのと、VSCode の ESLint フォーマッターを使いたかった。</p>

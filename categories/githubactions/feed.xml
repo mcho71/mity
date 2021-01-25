@@ -4,7 +4,7 @@
     GitHubActions on 
     Mcho
     </title>
-    <link>https://mithy.fun/categories/githubactions/</link>
+    <link>https://mcho.dev/categories/githubactions/</link>
     <description>Recent content in GitHubActions
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Wed, 18 Mar 2020 15:27:50 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/categories/githubactions/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/categories/githubactions/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GitHub Actionsのubuntu-latestでURLEncode</title>
-      <link>https://mithy.fun/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</link>
+      <link>https://mcho.dev/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</link>
       <pubDate>Wed, 18 Mar 2020 15:27:50 +0900</pubDate>
       
-      <guid>https://mithy.fun/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</guid>
+      <guid>https://mcho.dev/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</guid>
       <description><![CDATA[json から値を抜きだして URL を作りたかったので結局こんな感じになった USER_NAME=$(python3 -c &amp;#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&amp;#34; $(echo $HOGE_JSON | jq .huga))&amp;#39; ENCODED_URL=$(echo https://example.com?un=${USER_NAME}) $(echo $HOGE)は引数に渡るときに&amp;quot;hoge&amp;quot;となるのでsys.argv[1][1:-1]]></description>
       <content:encoded><![CDATA[<p>json から値を抜きだして URL を作りたかったので結局こんな感じになった</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">USER_NAME</span><span class="o">=</span><span class="k">$(</span>python3 -c <span class="s2">&#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&#34;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$HOGE_JSON</span> <span class="p">|</span> jq .huga<span class="k">))</span><span class="err">&#39;</span>

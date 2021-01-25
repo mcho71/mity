@@ -4,7 +4,7 @@
     LWC on 
     Mcho
     </title>
-    <link>https://mithy.fun/tags/lwc/</link>
+    <link>https://mcho.dev/tags/lwc/</link>
     <description>Recent content in LWC
     on Mcho</description>
     <generator>Hugo -- gohugo.io</generator>
@@ -15,15 +15,15 @@
     <lastBuildDate>Wed, 15 Jan 2020 16:58:28 +0900</lastBuildDate>
     
     
-        <atom:link href="https://mithy.fun/tags/lwc/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://mcho.dev/tags/lwc/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>LWCの基本</title>
-      <link>https://mithy.fun/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
+      <link>https://mcho.dev/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
       <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
       
-      <guid>https://mithy.fun/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
+      <guid>https://mcho.dev/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
       <description><![CDATA[はじめに LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningEleme]]></description>
       <content:encoded><![CDATA[<h2 id="はじめに">はじめに</h2>
 <p>LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。</p>
