@@ -14,6 +14,9 @@
         "nodeos",
         "pullreminders"
     ],
+    "search.exclude": {
+        "**/content": true
+    },
     "pasteImage.basePath": "${currentFileDir}",
     "pasteImage.path": "${currentFileDir}/image"
 }
