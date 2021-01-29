@@ -12,11 +12,95 @@
     
     
     <copyright>&amp;copy; mcho 2019</copyright>
-    <lastBuildDate>Tue, 27 Aug 2019 21:51:23 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 29 Jan 2021 10:32:42 +0900</lastBuildDate>
     
     
         <atom:link href="https://mcho.dev/categories/machinelearning/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWS DeepRacer: Driven by Reinforcement Learningをやってみた</title>
+      <link>https://mcho.dev/memos/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+      <pubDate>Fri, 29 Jan 2021 10:32:42 +0900</pubDate>
+      
+      <guid>https://mcho.dev/memos/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
+      <description><![CDATA[きっかけは、この動画を見て興味を持ったこと。 まずはチュートリアルコンテンツを探してみようと思い、リーグ - AWS DeepRacer | AWSから、タイトルのAWS DeepRacer: Driven by Reinforcement Learning | AWS トレーニングと認定を見つけた。 日本語版もある。 DeepRacer]]></description>
+      <content:encoded><![CDATA[<p>きっかけは、この動画を見て興味を持ったこと。</p>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Aut32pR5PQA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+<br>
+まずはチュートリアルコンテンツを探してみようと思い、<a href="https://aws.amazon.com/jp/deepracer/league/" target="_blank" rel="nofollow noopener">リーグ - AWS DeepRacer | AWS</a>から、タイトルの<a href="https://www.aws.training/Details/eLearning?id=32143" target="_blank" rel="nofollow noopener">AWS DeepRacer: Driven by Reinforcement Learning | AWS トレーニングと認定</a>を見つけた。</p>
+<p>日本語版もある。</p>
+<p>DeepRacer 実機は、米 Amazon からの購入になる。
+<a href="https://www.amazon.com/AWS-DeepRacer-Evo-Car-Sensor/dp/B081GZSJVL/ref=sr_1_1?dchild=1&amp;keywords=deepracer&#43;evo&amp;qid=1606341498&amp;sr=8-1" target="_blank" rel="nofollow noopener">Amazon.com: AWS DeepRacer Evo - Fully Autonomous 1/18th Scale Race Car for Developers: Amazon Devices</a></p>
+<p>AWS DeepRacer でモデルのトレーニングをすると 1 回、$7 はかかる。
+<a href="https://aws.amazon.com/jp/deepracer/pricing/?p=drl&amp;exp=hl" target="_blank" rel="nofollow noopener">料金 - AWS DeepRacer | AWS</a></p>
+<h3 id="それでは始めようと思う">それでは始めようと思う</h3>
+<p>強化学習が使われる。試行、評価、学習の繰り返し。コースを学習して周回できる事、その速さを競う事が DeepRacer の主目的。</p>
+<h4 id="deepracer-で使われる用語">DeepRacer で使われる用語</h4>
+<ul>
+<li>Agent: Car 本体のこと</li>
+<li>Environment: 環境、Agent と Action、学習ループごとに新しく定義し直される</li>
+<li>Action : 進む方向やスピード
+<ul>
+<li>DescreteContinuous : 離散連続</li>
+</ul>
+</li>
+<li>Reward: 報酬
+<ul>
+<li>Reward Function</li>
+</ul>
+</li>
+<li>State: Car の状態
+<ul>
+<li>Partial State</li>
+<li>Absolute State
+<ul>
+<li>Scalar</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Task</li>
+<li>Episode:　コースから外れてやり直しを行うと次のエピソードとして外れた場所からスタート</li>
+<li>Policy: 状態によってどのアクションを取るか決める。今回は NN,CNN である
+<ul>
+<li>Stochastically: 確率的</li>
+<li>deterministically: 確定的、State と Action の関係をより直接的に決められる</li>
+<li>価値関数 V: 使うのは PRO アルゴリズム、近接ポリシー最適化アルゴリズム
+<ul>
+<li>StateAction</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>DeepRacer の裏では、Amazon SageMaker モデルの強化学習 と AWS RoboMaker 仮想空間と仮想環境を作成 が動いている。
+SageMaker -&gt; S3 -&gt; RoboMaker -&gt; Redis -&gt; SageMarker</p>
+<p>強化学習アルゴリズムを最適化するためのパラメータを指定していく</p>
+<p>報酬関数は具体的に自分で書く、Basic/Advanced 選択できる。
+報酬関数の評価</p>
+<p>ハイパーパラメータ</p>
+<ul>
+<li>バッチサイズ　トレーニングデータの量</li>
+<li>エポック　バッチトレーニングセットを通る回数</li>
+<li>レート　最適探す時の細かさ</li>
+<li>Exploration 　探索と適用　ローカル最大に閉じ込められるのを防ぐ</li>
+<li>エントロピー　新しいアクションのランダム性が比例</li>
+<li>Discount Factor 　即時報酬を求めるか</li>
+<li>Loss Type
+<ul>
+<li>Huber Loss</li>
+<li>平均二乗誤差</li>
+</ul>
+</li>
+<li>Number Of Episode 　エピソードの数</li>
+</ul>
+<p>あとは AWS コンソールから DeepRacer を使って色々やるようだ</p>
+]]></content:encoded>
+    </item>
     
     <item>
       <title>ML Study Jams Vol.3</title>

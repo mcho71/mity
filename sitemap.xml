@@ -4,37 +4,72 @@
   
   <url>
     <loc>https://mcho.dev/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/notes/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/memos/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/archive/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/archives/2021-01/</loc>
+    <lastmod>2021-01-29T10:32:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/archives/</loc>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/tags/aws/</loc>
+    <lastmod>2021-01-29T10:32:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/memos/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
+    <lastmod>2021-01-29T10:32:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/categories/</loc>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/tags/deep-racer/</loc>
+    <lastmod>2021-01-29T10:32:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/categories/mac/</loc>
+    <lastmod>2021-01-29T10:32:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/categories/machinelearning/</loc>
+    <lastmod>2021-01-29T10:32:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mcho.dev/tags/</loc>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/archives/2020-06/</loc>
     <lastmod>2020-06-17T17:48:15+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mcho.dev/archives/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mcho.dev/categories/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
   </url>
   
   <url>
@@ -45,11 +80,6 @@
   <url>
     <loc>https://mcho.dev/tags/html/</loc>
     <lastmod>2020-06-17T17:48:15+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mcho.dev/tags/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
   </url>
   
   <url>
@@ -338,11 +368,6 @@
   </url>
   
   <url>
-    <loc>https://mcho.dev/categories/mac/</loc>
-    <lastmod>2019-10-29T17:44:59+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mcho.dev/notes/mac%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8/</loc>
     <lastmod>2019-10-29T17:44:59+09:00</lastmod>
   </url>
@@ -363,11 +388,6 @@
   </url>
   
   <url>
-    <loc>https://mcho.dev/categories/machinelearning/</loc>
-    <lastmod>2019-08-27T21:51:23+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mcho.dev/tags/ml-study-jam-vol.3/</loc>
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url>
@@ -379,52 +399,52 @@
   
   <url>
     <loc>https://mcho.dev/archives/2019-04/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/categories/blockchain/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/tags/eosio/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/notes/eos-setup/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/archives/2019-03/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/categories/database/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/tags/mysql/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/notes/mysql-json/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/archives/2019-01/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://mcho.dev/notes/hello/</loc>
-    <lastmod>2021-01-25T15:08:01+09:00</lastmod>
+    <lastmod>2021-01-29T14:42:29+09:00</lastmod>
   </url>
   
 </urlset>

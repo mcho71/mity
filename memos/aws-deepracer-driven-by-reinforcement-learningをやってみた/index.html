@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-133713641-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    
+AWS DeepRacer: Driven by Reinforcement Learningをやってみた &ndash; Mcho
+
+  </title>
+  
+  
+  <meta name="description" property="og:description" content="きっかけは、この動画を見て興味を持ったこと。 まずはチュートリアルコンテンツを探してみようと思い、リーグ - AWS DeepRacer | AWSから、タイトルのAWS DeepRacer: Driven by Reinforcement Learning | AWS トレーニングと認定を見つけた。 日本語版もある。 DeepRacer|">
+  
+
+  <meta name="apple-mobile-web-app-title" content="Mcho">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@mcho71">
+  <meta name="twitter:creator" content="@mcho71">
+  <meta name="twitter:title" content="AWS DeepRacer: Driven by Reinforcement Learningをやってみた | Mcho">
+  <meta name="twitter:description" content="きっかけは、この動画を見て興味を持ったこと。 まずはチュートリアルコンテンツを探してみようと思い、リーグ - AWS DeepRacer | AWSから、タイトルのAWS DeepRacer: Driven by Reinforcement Learning | AWS トレーニングと認定を見つけた。 日本語版もある。 DeepRacer|">
+  <meta name="twitter:image" content="https://mcho.dev/twitter-card.png">
+  
+
+
+  <link rel="stylesheet" href="/assets/syntax.css">
+  <link rel="stylesheet" href="/assets/primer-build.css">
+  <link rel="stylesheet" href="/assets/style.css">
+
+  
+  
+</head>
+
+
+<body>
+  <div id="holy" class="container-lg bg-white h-100">
+
+    <div id="header" class="bg-white">
+      <nav class="UnderlineNav UnderlineNav--right">
+  <a class="UnderlineNav-actions muted-link h2" href="https://mcho.dev/">
+    Mcho
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    
+    <a class="UnderlineNav-item " href="/">
+      
+      <span>このサイトについて</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/notes/">
+      
+      <span>ノート</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/memos/">
+      
+      <span>メモ</span>
+    </a>
+    
+    
+    
+    
+    <a class="UnderlineNav-item " href="/archive/">
+      
+      <span>アーカイブ</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+    </div>
+
+    <div role="main" id="main" class="holy-main markdown-body bg-white">
+      
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-5 mb-3">AWS DeepRacer: Driven by Reinforcement Learningをやってみた</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/machinelearning' class="muted-link">
+  <span class="Label Label--gray-darker">MachineLearning</span>
+</a>
+
+
+
+<a href='/tags/aws' class="muted-link">
+  <span class="Label Label--gray">AWS</span>
+</a>
+
+<a href='/tags/deep-racer' class="muted-link">
+  <span class="Label Label--gray">Deep Racer</span>
+</a>
+
+
+
+    
+    <div class="float-md-right">
+      <span
+        title="Lastmod: 2021-01-29. Published at: 2021-01-29.">
+        
+        Published: 2021-01-29
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+<article>
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <p>きっかけは、この動画を見て興味を持ったこと。</p>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Aut32pR5PQA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+<br>
+まずはチュートリアルコンテンツを探してみようと思い、<a href="https://aws.amazon.com/jp/deepracer/league/" target="_blank" rel="nofollow noopener">リーグ - AWS DeepRacer | AWS</a>から、タイトルの<a href="https://www.aws.training/Details/eLearning?id=32143" target="_blank" rel="nofollow noopener">AWS DeepRacer: Driven by Reinforcement Learning | AWS トレーニングと認定</a>を見つけた。</p>
+<p>日本語版もある。</p>
+<p>DeepRacer 実機は、米 Amazon からの購入になる。
+<a href="https://www.amazon.com/AWS-DeepRacer-Evo-Car-Sensor/dp/B081GZSJVL/ref=sr_1_1?dchild=1&amp;keywords=deepracer&#43;evo&amp;qid=1606341498&amp;sr=8-1" target="_blank" rel="nofollow noopener">Amazon.com: AWS DeepRacer Evo - Fully Autonomous 1/18th Scale Race Car for Developers: Amazon Devices</a></p>
+<p>AWS DeepRacer でモデルのトレーニングをすると 1 回、$7 はかかる。
+<a href="https://aws.amazon.com/jp/deepracer/pricing/?p=drl&amp;exp=hl" target="_blank" rel="nofollow noopener">料金 - AWS DeepRacer | AWS</a></p>
+<h3 id="それでは始めようと思う">それでは始めようと思う</h3>
+<p>強化学習が使われる。試行、評価、学習の繰り返し。コースを学習して周回できる事、その速さを競う事が DeepRacer の主目的。</p>
+<h4 id="deepracer-で使われる用語">DeepRacer で使われる用語</h4>
+<ul>
+<li>Agent: Car 本体のこと</li>
+<li>Environment: 環境、Agent と Action、学習ループごとに新しく定義し直される</li>
+<li>Action : 進む方向やスピード
+<ul>
+<li>DescreteContinuous : 離散連続</li>
+</ul>
+</li>
+<li>Reward: 報酬
+<ul>
+<li>Reward Function</li>
+</ul>
+</li>
+<li>State: Car の状態
+<ul>
+<li>Partial State</li>
+<li>Absolute State
+<ul>
+<li>Scalar</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Task</li>
+<li>Episode:　コースから外れてやり直しを行うと次のエピソードとして外れた場所からスタート</li>
+<li>Policy: 状態によってどのアクションを取るか決める。今回は NN,CNN である
+<ul>
+<li>Stochastically: 確率的</li>
+<li>deterministically: 確定的、State と Action の関係をより直接的に決められる</li>
+<li>価値関数 V: 使うのは PRO アルゴリズム、近接ポリシー最適化アルゴリズム
+<ul>
+<li>StateAction</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>DeepRacer の裏では、Amazon SageMaker モデルの強化学習 と AWS RoboMaker 仮想空間と仮想環境を作成 が動いている。
+SageMaker -&gt; S3 -&gt; RoboMaker -&gt; Redis -&gt; SageMarker</p>
+<p>強化学習アルゴリズムを最適化するためのパラメータを指定していく</p>
+<p>報酬関数は具体的に自分で書く、Basic/Advanced 選択できる。
+報酬関数の評価</p>
+<p>ハイパーパラメータ</p>
+<ul>
+<li>バッチサイズ　トレーニングデータの量</li>
+<li>エポック　バッチトレーニングセットを通る回数</li>
+<li>レート　最適探す時の細かさ</li>
+<li>Exploration 　探索と適用　ローカル最大に閉じ込められるのを防ぐ</li>
+<li>エントロピー　新しいアクションのランダム性が比例</li>
+<li>Discount Factor 　即時報酬を求めるか</li>
+<li>Loss Type
+<ul>
+<li>Huber Loss</li>
+<li>平均二乗誤差</li>
+</ul>
+</li>
+<li>Number Of Episode 　エピソードの数</li>
+</ul>
+<p>あとは AWS コンソールから DeepRacer を使って色々やるようだ</p>
+
+  </section>
+  <section>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mity" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+  </section>
+</article>
+
+    </div>
+
+    <div id="side" class="bg-white">
+      <aside>
+        
+
+<div id="toc" class="mb-3">
+  <b>AWS DeepRacer: Driven by Reinforcement Learningをやってみた</b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#それでは始めようと思う">それでは始めようと思う</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+
+
+
+
+<div>
+  
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
+
+  
+
+  
+  <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
+    data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img
+      src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20"
+      height="20" style="border: none;" /></a>
+  <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8"
+    async="async"></script>
+  
+
+  
+
+</div>
+
+
+
+      </aside>
+    </div>
+
+    <div id="extra" class="bg-white">
+      
+
+
+<div class="mt-5">
+  <h2>関連する記事</h2>
+  <ul class="mt-3">
+    
+    <li class="pb-2 pt-2 mb-3">
+      <div class="Subhead mb-2">
+        <div class="Subhead-heading">
+          <a href="https://mcho.dev/notes/launching_into_machine_learning_%E5%8F%97%E8%AC%9B%E3%83%AD%E3%82%B0/">
+            <div class="h3 mt-1 mb-1">ML Study Jams Vol.3</div>
+          </a>
+        </div>
+        <div class="Subhead-description">
+          
+
+
+<a href='/categories/machinelearning' class="muted-link">
+  <span class="Label Label--gray-darker">MachineLearning</span>
+</a>
+
+
+
+<a href='/tags/machinelearning' class="muted-link">
+  <span class="Label Label--gray">MachineLearning</span>
+</a>
+
+<a href='/tags/coursera' class="muted-link">
+  <span class="Label Label--gray">Coursera</span>
+</a>
+
+<a href='/tags/ml-study-jam-vol.3' class="muted-link">
+  <span class="Label Label--gray">ML Study Jam Vol.3</span>
+</a>
+
+
+          <div class="float-md-right">
+            <span
+              title="Lastmod: 2019-08-27. Published at: 2019-08-27.">
+              
+              Published: 2019-08-27
+              
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="ellipsis">
+        
+        Launching into Machine Learning ML の開始について このコースは、機械学習の用語や、普及の歴史、モデル作成のためのコードや知識を身につけます コースには最適化モジュールがあり、学習問題が用意位されている。最急降下法を使います。 実践
+      </div>
+    </li>
+    
+  </ul>
+</div>
+
+
+    </div>
+
+    <div id="footer" class="pt-2 pb-3 bg-white text-center">
+      
+
+<span class="text-small">
+  © mcho 2019 &middot; 
+
+  Powered by the
+  <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+  <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+</span>
+
+    </div>
+  </div>
+
+
+  
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  <script
+    type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+</body>
+
+</html>

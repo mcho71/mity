@@ -12,11 +12,21 @@
     
     
     <copyright>&amp;copy; mcho 2019</copyright>
-    <lastBuildDate>Wed, 17 Jun 2020 17:48:15 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 29 Jan 2021 10:32:42 +0900</lastBuildDate>
     
     
         <atom:link href="https://mcho.dev/archives/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2021-01</title>
+      <link>https://mcho.dev/archives/2021-01/</link>
+      <pubDate>Fri, 29 Jan 2021 10:32:42 +0900</pubDate>
+      
+      <guid>https://mcho.dev/archives/2021-01/</guid>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
     
     <item>
       <title>2020-06</title>
