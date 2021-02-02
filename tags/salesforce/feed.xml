@@ -12,11 +12,60 @@
     
     
     <copyright>&amp;copy; mcho 2019</copyright>
-    <lastBuildDate>Thu, 27 Feb 2020 16:05:09 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 02 Feb 2021 13:39:03 +0900</lastBuildDate>
     
     
         <atom:link href="https://mcho.dev/tags/salesforce/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PrettierでSalesforceのApexファイルをフォーマット、VSCode連携も</title>
+      <link>https://mcho.dev/notes/prettier%E3%81%A7salesforce%E3%81%AEapex%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88vscode%E9%80%A3%E6%90%BA%E3%82%82/</link>
+      <pubDate>Tue, 02 Feb 2021 13:39:03 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/prettier%E3%81%A7salesforce%E3%81%AEapex%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88vscode%E9%80%A3%E6%90%BA%E3%82%82/</guid>
+      <description><![CDATA[必要なライブラリインストールする。 Prettier · Opinionated Code Formatter dangmai/prettier-plugin-apex: Code formatter for the Apex Programming Language npm i -D prettier prettier-plugin-apex apex 向け prettier 設定を.prettierrcなどとしてプロジェクトに追加する // .prettierrc { &amp;#34;overrides&amp;#34;: [ { &amp;#34;files&amp;#34;: [&amp;#34;*.cls&amp;#34;, &amp;#34;*.trigger&amp;#34;], &amp;#34;options&amp;#34;: { &amp;#34;useTabs&amp;#34;: true } } ] } prettier のフォーマットコマンドをテ]]></description>
+      <content:encoded><![CDATA[<p>必要なライブラリインストールする。</p>
+<p><a href="https://prettier.io/" target="_blank" rel="nofollow noopener">Prettier · Opinionated Code Formatter</a></p>
+<p><a href="https://github.com/dangmai/prettier-plugin-apex" target="_blank" rel="nofollow noopener">dangmai/prettier-plugin-apex: Code formatter for the Apex Programming Language</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D prettier prettier-plugin-apex
+</code></pre></div><p>apex 向け prettier 設定を<code>.prettierrc</code>などとしてプロジェクトに追加する</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">.prettierrc</span>
+<span class="p">{</span>
+  <span class="nt">&#34;overrides&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;files&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;*.cls&#34;</span><span class="p">,</span> <span class="s2">&#34;*.trigger&#34;</span><span class="p">],</span>
+      <span class="nt">&#34;options&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;useTabs&#34;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div><p>prettier のフォーマットコマンドをテストする。</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npx prettier -w path/to/apex.cls
+</code></pre></div><p>以下のメッセージが出ていれば OK</p>
+<p>style 違反があるとき</p>
+<pre><code class="language-log" data-lang="log">Checking formatting...
+[warn] path/to/apex.cls
+[warn] Code style issues found in the above file(s). Forgot to run Prettier?
+</code></pre><p>style 違反がないとき</p>
+<pre><code class="language-log" data-lang="log">Checking formatting...
+All matched files use Prettier code style!
+</code></pre><p>ここまででプロジェクトの Apex ファイルが prettier でフォーマットできるようになりました。</p>
+<h4 id="vscode-でフォーマットする">VSCode でフォーマットする。</h4>
+<p>以下の拡張機能をインストール
+<a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="nofollow noopener">Prettier - Code formatter - Visual Studio Marketplace</a></p>
+<p><code>.vscode/settings.json</code>をに以下を追記</p>
+<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;[apex]&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;editor.defaultFormatter&#34;</span><span class="p">:</span> <span class="s2">&#34;esbenp.prettier-vscode&#34;</span><span class="p">,</span>
+    <span class="err">//</span> <span class="err">保存時にフォーマットする設定です。お好みにあわせて変更してください。</span>
+    <span class="nt">&#34;editor.formatOnSave&#34;</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>以上です。</p>
+]]></content:encoded>
+    </item>
     
     <item>
       <title>GitHubActionsでSalesforceのスクラッチ組織を作成する</title>

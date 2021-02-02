@@ -12,11 +12,45 @@
     
     
     <copyright>&amp;copy; mcho 2019</copyright>
-    <lastBuildDate>Fri, 29 Jan 2021 10:32:42 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 29 Jan 2021 16:38:09 +0900</lastBuildDate>
     
     
         <atom:link href="https://mcho.dev/archives/2021-01/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DeepRacer的なものを作りたい</title>
+      <link>https://mcho.dev/memos/deepracer%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84/</link>
+      <pubDate>Fri, 29 Jan 2021 16:38:09 +0900</pubDate>
+      
+      <guid>https://mcho.dev/memos/deepracer%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84/</guid>
+      <description><![CDATA[この記事の続き 大体の流れは レースゲームを作る。 各パラメータ、関数の調整。 強化学習モデルにゲームを遊ばせる。 クリア。できなければ 2 に戻る となりそう。 見ていて気になった、参考になりそうなもの Gym OpenAI が出してい]]></description>
+      <content:encoded><![CDATA[<p><a href="https://mcho.dev/memos/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/">この記事</a>の続き</p>
+<p>大体の流れは</p>
+<ol>
+<li>レースゲームを作る。</li>
+<li>各パラメータ、関数の調整。</li>
+<li>強化学習モデルにゲームを遊ばせる。</li>
+<li>クリア。できなければ 2 に戻る</li>
+</ol>
+<p>となりそう。</p>
+<p>見ていて気になった、参考になりそうなもの</p>
+<ul>
+<li><a href="https://gym.openai.com/" target="_blank" rel="nofollow noopener">Gym</a> OpenAI が出している強化学習を試すためのツールキット
+<ul>
+<li><a href="https://github.com/openai/retro" target="_blank" rel="nofollow noopener">openai/retro: Retro Games in Gym</a> これだと、題材がレトロゲームになってたりしておもしろい</li>
+</ul>
+</li>
+<li><a href="https://blog.brainpad.co.jp/entry/2017/02/24/121500" target="_blank" rel="nofollow noopener">強化学習入門 ～これから強化学習を学びたい人のための基礎知識～ - Platinum Data Blog by BrainPad</a> OpenAI Gym で Q 学習という単語が出てきてよくわからなかったので調べたら出てきた。Q 値は、状態価値の事で、Q 学習は<strong>Q 値を学習するためのアルゴリズムの一つ</strong>であるらしい。Q 値を学習するためのアルゴリズムは、他に Sarsa、モンテカルロ法、deep Q-network（DQN）等がある。
+<ul>
+<li>DQN の開発元は DeepMind 社らしい。ただ DeepMind 社が開発した AlphaGo とかは使っていない。<a href="http://7rpn.hatenablog.com/entry/2016/06/10/192357" target="_blank" rel="nofollow noopener">Google が出した囲碁ソフト「AlphaGo」の論文を翻訳して解説してみる。 - 7rpn’s blog: うわああああな日常</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="ここまできて">ここまできて</h3>
+<p>Web で動く事を目標にしてたけど、道が長いのでとりあえず OpenAIGym で強化学習を学ぶことに方針転換する。</p>
+]]></content:encoded>
+    </item>
     
     <item>
       <title>AWS DeepRacer: Driven by Reinforcement Learningをやってみた</title>

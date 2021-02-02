@@ -12,16 +12,26 @@
     
     
     <copyright>&amp;copy; mcho 2019</copyright>
-    <lastBuildDate>Fri, 29 Jan 2021 10:32:42 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 02 Feb 2021 13:39:03 +0900</lastBuildDate>
     
     
         <atom:link href="https://mcho.dev/archives/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>2021-02</title>
+      <link>https://mcho.dev/archives/2021-02/</link>
+      <pubDate>Tue, 02 Feb 2021 13:39:03 +0900</pubDate>
+      
+      <guid>https://mcho.dev/archives/2021-02/</guid>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
       <title>2021-01</title>
       <link>https://mcho.dev/archives/2021-01/</link>
-      <pubDate>Fri, 29 Jan 2021 10:32:42 +0900</pubDate>
+      <pubDate>Fri, 29 Jan 2021 16:38:09 +0900</pubDate>
       
       <guid>https://mcho.dev/archives/2021-01/</guid>
       <description><![CDATA[]]></description>
