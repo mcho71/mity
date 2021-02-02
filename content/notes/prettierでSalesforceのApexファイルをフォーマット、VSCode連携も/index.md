@@ -45,7 +45,7 @@ apex 向け prettier 設定を`.prettierrc`などとしてプロジェクトに�
 prettier のフォーマットコマンドをテストする。
 
 ```sh
-npx prettier -w path/to/apex.cls
+npx prettier -c path/to/apex.cls
 ```
 
 以下のメッセージが出ていれば OK
