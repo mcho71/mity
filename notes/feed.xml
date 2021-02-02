@@ -40,7 +40,7 @@
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div><p>prettier のフォーマットコマンドをテストする。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npx prettier -w path/to/apex.cls
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npx prettier -c path/to/apex.cls
 </code></pre></div><p>以下のメッセージが出ていれば OK</p>
 <p>style 違反があるとき</p>
 <pre><code class="language-log" data-lang="log">Checking formatting...
