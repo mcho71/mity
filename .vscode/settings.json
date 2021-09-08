@@ -5,8 +5,10 @@
     },
     "editor.formatOnSave": true,
     "cSpell.words": [
+        "Descrete",
         "EOSIO",
         "InnoDB",
+        "Sarsa",
         "bigint",
         "cleos",
         "githubactions",
