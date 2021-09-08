@@ -32,13 +32,13 @@
 <h3 id="パッケージのインストール">パッケージのインストール</h3>
 <p>まず、<code>eslint</code>と<code>@angular-eslint</code>関連のパッケージをインストールします。
 <a href="https://github.com/angular-eslint/angular-eslint" target="_blank" rel="nofollow noopener">angular-eslint/angular-eslint: Monorepo for all the tooling related to using ESLint with Angular</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D eslint <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">npm i -D eslint <span class="se">\
 </span><span class="se"></span>  @angular-eslint/builder <span class="se">\
 </span><span class="se"></span>  @angular-eslint/eslint-plugin <span class="se">\
 </span><span class="se"></span>  @angular-eslint/template-parser <span class="se">\
 </span><span class="se"></span>  @angular-eslint/eslint-plugin-template
 </code></pre></div><h3 id="コマンドと-eslint-の設定を修正">コマンドと ESLint の設定を修正</h3>
-<p>前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に<code>angular.json</code>を修正、<strong><code>.eslintrc.js</code></strong>を追加しました。angular.json の差分はこんな感じ<br>
+<p>前述したリポジトリに手順もありますが、各設定ファイルのサンプルがあったので、それを参考に<code>angular.json</code>を修正、**<code>.eslintrc.js</code>**を追加しました。angular.json の差分はこんな感じ<br>
 
 
 
@@ -49,7 +49,7 @@
 <p><code>.eslint.js</code>のサンプルは
 <a href="https://github.com/angular-eslint/angular-eslint/blob/master/packages/integration-tests/fixtures/angular-cli-workspace/.eslintrc.js" target="_blank" rel="nofollow noopener">ここ</a>からいただきました。</p>
 <p>また、この<code>.eslint.js</code>を使うために、<code>@typescript-eslint</code>関連のパッケージが必要なので以下のコマンドでインストールします。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser
 </code></pre></div><p>ここまでで<code>ng lint</code>は動くようになるはずです。手元の環境では、<code>app.component.spec.ts</code>でクオートのエラーがでました。</p>
 <h2 id="vscode-でも動かしてみる">VSCode でも動かしてみる</h2>
 <p>設定されてるルールが適用されてるか見てみます。サンプルにあった<code>'@typescript-eslint/no-non-null-assertion': 'error'</code>で試してみます。</p>
@@ -57,7 +57,7 @@
 
 
 <picture>
-  <img src="/img/2020-03-16-18-37-21.png" alt="&#39;@typescript-eslint/no-non-null-assertion&rsquo;: &lsquo;error&rsquo;" decoding="async" loading="lazy">
+  <img src="/img/2020-03-16-18-37-21.png" alt="&#39;@typescript-eslint/no-non-null-assertion&#39;: &lsquo;error&rsquo;" decoding="async" loading="lazy">
 </picture>
 </p>
 <p>無事 Lint されていました。また、画像や動画をとっていないですが、<code>ESLint: Fix all auto-fixable Problems</code>も効きました。</p>

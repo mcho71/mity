@@ -28,9 +28,9 @@
       <content:encoded><![CDATA[<p>必要なライブラリインストールする。</p>
 <p><a href="https://prettier.io/" target="_blank" rel="nofollow noopener">Prettier · Opinionated Code Formatter</a></p>
 <p><a href="https://github.com/dangmai/prettier-plugin-apex" target="_blank" rel="nofollow noopener">dangmai/prettier-plugin-apex: Code formatter for the Apex Programming Language</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D prettier prettier-plugin-apex
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">npm i -D prettier prettier-plugin-apex
 </code></pre></div><p>apex 向け prettier 設定を<code>.prettierrc</code>などとしてプロジェクトに追加する</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">.prettierrc</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">.prettierrc</span>
 <span class="p">{</span>
   <span class="nt">&#34;overrides&#34;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -42,21 +42,21 @@
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div><p>prettier のフォーマットコマンドをテストする。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npx prettier -c path/to/apex.cls
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">npx prettier -c path/to/apex.cls
 </code></pre></div><p>以下のメッセージが出ていれば OK</p>
 <p>style 違反があるとき</p>
-<pre><code class="language-log" data-lang="log">Checking formatting...
+<pre tabindex="0"><code class="language-log" data-lang="log">Checking formatting...
 [warn] path/to/apex.cls
 [warn] Code style issues found in the above file(s). Forgot to run Prettier?
 </code></pre><p>style 違反がないとき</p>
-<pre><code class="language-log" data-lang="log">Checking formatting...
+<pre tabindex="0"><code class="language-log" data-lang="log">Checking formatting...
 All matched files use Prettier code style!
 </code></pre><p>ここまででプロジェクトの Apex ファイルが prettier でフォーマットできるようになりました。</p>
 <h4 id="vscode-でフォーマットする">VSCode でフォーマットする。</h4>
 <p>以下の拡張機能をインストール
 <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="nofollow noopener">Prettier - Code formatter - Visual Studio Marketplace</a></p>
 <p><code>.vscode/settings.json</code>をに以下を追記</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;[apex]&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;editor.defaultFormatter&#34;</span><span class="p">:</span> <span class="s2">&#34;esbenp.prettier-vscode&#34;</span><span class="p">,</span>
     <span class="err">//</span> <span class="err">保存時にフォーマットする設定です。お好みにあわせて変更してください。</span>
@@ -129,23 +129,23 @@ All matched files use Prettier code style!
 </p>
 <h3 id="3-github-actions-のワークフローを作成">3. GitHub Actions のワークフローを作成</h3>
 <p>簡単なメッセージを送信するワークフローで試してみます。<code>.github/workflows</code>に <code>hello-slack.yml</code>を作成して、以下をコピペします。コピペしたら一番下の行の<code>\&quot;channel\&quot;:\&quot;GM84QDF1P\&quot;</code>を投稿したいチャンネル ID に書き換えます。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>GABotでHelloSlack<span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">GABotでHelloSlack</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">branches</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- master<span class="w">
+</span><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">master</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">hello-slack</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
-</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Hello Slack&#39;</span><span class="w">
-</span><span class="w">        </span><span class="k">env</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span><span class="k">SLACK_BOT_TOKEN</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.GA_BOT_TOKEN<span class="w"> </span>}}<span class="w">
-</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>pullreminders/slack-action@master<span class="w">
-</span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{\&#34;channel\&#34;:\&#34;GM84QDF1P\&#34;,\&#34;text\&#34;:\&#34;Hello Slack\&#34;}&#39;</span><span class="w">
+</span><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">hello-slack</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Hello Slack&#39;</span><span class="w">
+</span><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">SLACK_BOT_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.GA_BOT_TOKEN }}</span><span class="w">
+</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">pullreminders/slack-action@master</span><span class="w">
+</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{\&#34;channel\&#34;:\&#34;GM84QDF1P\&#34;,\&#34;text\&#34;:\&#34;Hello Slack\&#34;}&#39;</span><span class="w">
 </span></code></pre></div><p>以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。</p>
 <h2 id="終わり">終わり</h2>
 <p>あとは色々組み合わせよう</p>
@@ -230,7 +230,7 @@ GPU での動作なので並列計算できる、画面上に多くの 3D オブ
 VAO(Vertex Array Object)は VBO をどのようなまとまりで使うのかを設定するもの</p>
 <p>WebGL の話ものってそう</p>
 <p>サンプルコードが動かない → 動いた、sample リポジトリの rsc フォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
-<pre><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
+<pre tabindex="0"><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.03s
      Running `target/debug/rust-opengl`
 OK: init OpenGL: version=3.1
@@ -296,7 +296,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </picture>
 </p>
 <p>頂点情報はこういう感じで書いていた</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
 </span><span class="c1"></span><span class="w">    </span><span class="cp">#[rustfmt::skip]</span><span class="w">
 </span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">buffer_array</span>: <span class="p">[</span><span class="kt">f32</span><span class="p">;</span><span class="w"> </span><span class="n">BUF_LEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">
 </span><span class="w">        </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
@@ -346,7 +346,7 @@ FPS を表示も</p>
 <h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
 <p><code>vue cli</code>で生成したままのプロジェクト構成でした。
 必要そうなものを抜き出すとこんな感じ</p>
-<pre><code class="language-tree" data-lang="tree">├── public
+<pre tabindex="0"><code class="language-tree" data-lang="tree">├── public
 ├── src
 ├── tests
 ├── package.json
@@ -360,7 +360,7 @@ FPS を表示も</p>
 </ul>
 <h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
 <p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
-<pre><code class="language-tree" data-lang="tree">.
+<pre tabindex="0"><code class="language-tree" data-lang="tree">.
 ├── projects
 │    ├── admin
 │    │   ├── public

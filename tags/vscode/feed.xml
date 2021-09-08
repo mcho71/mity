@@ -28,9 +28,9 @@
       <content:encoded><![CDATA[<p>必要なライブラリインストールする。</p>
 <p><a href="https://prettier.io/" target="_blank" rel="nofollow noopener">Prettier · Opinionated Code Formatter</a></p>
 <p><a href="https://github.com/dangmai/prettier-plugin-apex" target="_blank" rel="nofollow noopener">dangmai/prettier-plugin-apex: Code formatter for the Apex Programming Language</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npm i -D prettier prettier-plugin-apex
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">npm i -D prettier prettier-plugin-apex
 </code></pre></div><p>apex 向け prettier 設定を<code>.prettierrc</code>などとしてプロジェクトに追加する</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">.prettierrc</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">//</span> <span class="err">.prettierrc</span>
 <span class="p">{</span>
   <span class="nt">&#34;overrides&#34;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -42,21 +42,21 @@
   <span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div><p>prettier のフォーマットコマンドをテストする。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">npx prettier -c path/to/apex.cls
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">npx prettier -c path/to/apex.cls
 </code></pre></div><p>以下のメッセージが出ていれば OK</p>
 <p>style 違反があるとき</p>
-<pre><code class="language-log" data-lang="log">Checking formatting...
+<pre tabindex="0"><code class="language-log" data-lang="log">Checking formatting...
 [warn] path/to/apex.cls
 [warn] Code style issues found in the above file(s). Forgot to run Prettier?
 </code></pre><p>style 違反がないとき</p>
-<pre><code class="language-log" data-lang="log">Checking formatting...
+<pre tabindex="0"><code class="language-log" data-lang="log">Checking formatting...
 All matched files use Prettier code style!
 </code></pre><p>ここまででプロジェクトの Apex ファイルが prettier でフォーマットできるようになりました。</p>
 <h4 id="vscode-でフォーマットする">VSCode でフォーマットする。</h4>
 <p>以下の拡張機能をインストール
 <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="nofollow noopener">Prettier - Code formatter - Visual Studio Marketplace</a></p>
 <p><code>.vscode/settings.json</code>をに以下を追記</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;[apex]&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;editor.defaultFormatter&#34;</span><span class="p">:</span> <span class="s2">&#34;esbenp.prettier-vscode&#34;</span><span class="p">,</span>
     <span class="err">//</span> <span class="err">保存時にフォーマットする設定です。お好みにあわせて変更してください。</span>

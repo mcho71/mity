@@ -208,23 +208,23 @@ GitHubActionsからSlackへメッセージを送信する &ndash; Mcho
 </p>
 <h3 id="3-github-actions-のワークフローを作成">3. GitHub Actions のワークフローを作成</h3>
 <p>簡単なメッセージを送信するワークフローで試してみます。<code>.github/workflows</code>に <code>hello-slack.yml</code>を作成して、以下をコピペします。コピペしたら一番下の行の<code>\&quot;channel\&quot;:\&quot;GM84QDF1P\&quot;</code>を投稿したいチャンネル ID に書き換えます。</p>
-<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>GABotでHelloSlack<span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">GABotでHelloSlack</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">branches</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- master<span class="w">
+</span><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">master</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">hello-slack</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
-</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Hello Slack&#39;</span><span class="w">
-</span><span class="w">        </span><span class="k">env</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span><span class="k">SLACK_BOT_TOKEN</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.GA_BOT_TOKEN<span class="w"> </span>}}<span class="w">
-</span><span class="w">        </span><span class="k">uses</span><span class="p">:</span><span class="w"> </span>pullreminders/slack-action@master<span class="w">
-</span><span class="w">        </span><span class="k">with</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span><span class="k">args</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{\&#34;channel\&#34;:\&#34;GM84QDF1P\&#34;,\&#34;text\&#34;:\&#34;Hello Slack\&#34;}&#39;</span><span class="w">
+</span><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">hello-slack</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Hello Slack&#39;</span><span class="w">
+</span><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">SLACK_BOT_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.GA_BOT_TOKEN }}</span><span class="w">
+</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">pullreminders/slack-action@master</span><span class="w">
+</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">args</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{\&#34;channel\&#34;:\&#34;GM84QDF1P\&#34;,\&#34;text\&#34;:\&#34;Hello Slack\&#34;}&#39;</span><span class="w">
 </span></code></pre></div><p>以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。</p>
 <h2 id="終わり">終わり</h2>
 <p>あとは色々組み合わせよう</p>

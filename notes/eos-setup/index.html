@@ -135,9 +135,9 @@ EOSIOのGettingStartedをやった &ndash; Mcho
     
     <div class="float-md-right">
       <span
-        title="Lastmod: 2021-02-02. Published at: 2019-04-12.">
+        title="Lastmod: 2021-09-08. Published at: 2019-04-12.">
         
-        Lastmod: 2021-02-02
+        Lastmod: 2021-09-08
         
       </span>
     </div>
@@ -153,7 +153,7 @@ EOSIOのGettingStartedをやった &ndash; Mcho
 <p><a href="https://developers.eos.io/eosio-home/docs/setting-up-your-environment" target="_blank" rel="nofollow noopener">1.2 Before You Begin</a>に沿って、<code>eosio/eosio</code>をインストールすると、<a href="https://developers.eos.io/eosio-nodeos/docs" target="_blank" rel="nofollow noopener">nodeos</a>/<a href="https://developers.eos.io/eosio-cleos/docs" target="_blank" rel="nofollow noopener">cleos</a>/<a href="https//developers.eos.io/keosd/docs" target="_blank" rel="nofollow noopener">keosd</a>の 3 つのコマンドが追加される。それぞれノードの構築、ノードに対する問い合わせ、ウォレットの生成、を行うことができる。わかりやすい相関図が、<a href="https://developers.eos.io/eosio-home/docs/how-it-all-fits-together" target="_blank" rel="nofollow noopener">1.3 About the Stack</a>に記載されていたので、参考になった。</p>
 <h3 id="ノードを立てたりする">ノードを立てたりする</h3>
 <p>このチュートリアルでは、nodeos でノードを立てる際には以下のコマンドを叩いていた。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">nodeos -e -p eosio <span class="se">\
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">nodeos -e -p eosio <span class="se">\
 </span><span class="se"></span>  --plugin eosio::producer_plugin <span class="se">\
 </span><span class="se"></span>  --plugin eosio::chain_api_plugin <span class="se">\
 </span><span class="se"></span>  --plugin eosio::http_plugin <span class="se">\
@@ -171,18 +171,18 @@ EOSIOのGettingStartedをやった &ndash; Mcho
 また、チェーンを再構築する際には<code>--delete-all-blocks</code>を付与して立ち上げれば良い。</p>
 <h3 id="ウォレットを作る">ウォレットを作る</h3>
 <p><a href="https://developers.eos.io/eosio-home/docs/wallets" target="_blank" rel="nofollow noopener">1.6 Create Development Wallet</a>のウォレット作成コマンドは以下のように記されていた。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console
 </code></pre></div><p>実行してみると<code>default</code>は既に作成済みで、key も忘れていたので新しい名前でウォレットを作成した。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console -n hoge
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">cleos wallet create --to-console -n hoge
 </code></pre></div><p>このコマンドは、<code>hoge</code>という名前のウォレットを作成している。
 このようにウォレット作成した場合は以降の<code>cleos wallet</code>コマンドには大体<code>-n hoge</code>を付与していくことになる。
 まずは、前項で発行したウォレットを、ユーザー<code>eosio</code>にインポートする。private key の入力が求められ、ユーザー<code>eosio</code>の private key を入力する必要がある。</p>
 <p>若干前後するが、次項のアカウント<code>eosio</code>をウォレット<code>hoge</code>にインポートする。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">cleos wallet import -n hoge
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">cleos wallet import -n hoge
 </code></pre></div><h3 id="アカウントを発行する">アカウントを発行する</h3>
 <p>EOS チェーンを立ち上げると、<code>system user</code>の<code>eosio</code>というアカウントが自動で発行される。このアカウントを使って、新規アカウントを発行するような形になっている。
 新規アカウントの発行は以下のコマンドで行っていた。</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># cleos create account &lt;creator&gt; &lt;new-account-name&gt; &lt;owner-key&gt; &lt;active-key (optional)&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># cleos create account &lt;creator&gt; &lt;new-account-name&gt; &lt;owner-key&gt; &lt;active-key (optional)&gt;</span>
 cleos create account eosio bob &lt;eosio private-key&gt;
 </code></pre></div><p>owner-key、active-key に対しては、permission が付与されており、owner-key に対応する秘密鍵を知っていれば、active-key の変更が可能。
 active-key が指定されていない場合は owner-key と同一のものとなるが、実運用時には分けることを推奨していた。</p>

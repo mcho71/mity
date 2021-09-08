@@ -159,7 +159,7 @@ Auraコンポーネントから特定フィールドのPickListValuesを取得�
 <p>ui-api か Apex コントローラーで取得できそう。ui-api は試したら CSP が必要だったので、Apex コントローラーで取得する。</p>
 <p>単純にやると、<code>Account.Salutation.getDescribe().getPicklistValues()</code>でできる。</p>
 <p>汎用的にするには</p>
-<pre><code class="language-apex" data-lang="apex">SObject sObj = (SObject)Type.forName(sObjectName).newInstance();
+<pre tabindex="0"><code class="language-apex" data-lang="apex">SObject sObj = (SObject)Type.forName(sObjectName).newInstance();
 Schema.DescribeSObjectResult describeSObj = sObj.getSObjectType().getDescribe();
 Schema.SObjectField field = describeSObj.fields.getMap().get(fieldName);
 field.getDescribe().getPicklistValues();

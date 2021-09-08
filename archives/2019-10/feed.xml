@@ -284,9 +284,9 @@ Salesforce 関連以外も Blockchain や、IOS アプリケーション開発�
 <h3 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h3>
 <ul>
 <li>&lt;apex:detail /&gt;等の一括出力コンポーネントがある</li>
-<li>&lt;apex:outputField value=&rdquo;{! Account.Name }&quot;/&gt;のような UI コンポーネントもある</li>
+<li>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;のような UI コンポーネントもある</li>
 <li><a href="apex:pageBlockTable">apex:pageBlockTable</a>はテーブル UI</li>
-<li>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;はリスト</li>
+<li>&lt;apex:relatedList list=&ldquo;Contacts&rdquo;&gt;はリスト</li>
 </ul>
 <h3 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h3>
 <ul>
@@ -301,7 +301,7 @@ Salesforce 関連以外も Blockchain や、IOS アプリケーション開発�
 </li>
 </ul>
 </li>
-<li>&lt;apex:commandButton /&gt;でボタンが作成できる。要素を足すことで色々指定する。action=&rdquo;{! save }&quot;,value=&quot;Save&quot;等々</li>
+<li>&lt;apex:commandButton /&gt;でボタンが作成できる。要素を足すことで色々指定する。action=&quot;{! save }&quot;,value=&ldquo;Save&quot;等々</li>
 </ul>
 <h3 id="レコードのリスト">レコードのリスト</h3>
 <ul>

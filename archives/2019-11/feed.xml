@@ -107,7 +107,7 @@ GPU での動作なので並列計算できる、画面上に多くの 3D オブ
 VAO(Vertex Array Object)は VBO をどのようなまとまりで使うのかを設定するもの</p>
 <p>WebGL の話ものってそう</p>
 <p>サンプルコードが動かない → 動いた、sample リポジトリの rsc フォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
-<pre><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
+<pre tabindex="0"><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.03s
      Running `target/debug/rust-opengl`
 OK: init OpenGL: version=3.1
@@ -173,7 +173,7 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 </picture>
 </p>
 <p>頂点情報はこういう感じで書いていた</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
 </span><span class="c1"></span><span class="w">    </span><span class="cp">#[rustfmt::skip]</span><span class="w">
 </span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">buffer_array</span>: <span class="p">[</span><span class="kt">f32</span><span class="p">;</span><span class="w"> </span><span class="n">BUF_LEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">
 </span><span class="w">        </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
@@ -289,7 +289,7 @@ FPS を表示も</p>
 <li>コレクション変数でレコードの使用、絞り込み、ページネーションなども用意されている</li>
 <li>一度に多数のレコードを操作することを目的としている</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- recordSetVarで作業するオブジェクトを設定 --&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- recordSetVarで作業するオブジェクトを設定 --&gt;</span>
 <span class="nt">&lt;apex:page</span> <span class="na">standardController=</span><span class="s">&#34;Contact&#34;</span> <span class="na">recordSetVar=</span><span class="s">&#34;contacts&#34;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;apex:pageBlock</span> <span class="na">title=</span><span class="s">&#34;Contacts List&#34;</span><span class="nt">&gt;</span>
         <span class="c">&lt;!-- Contacts List --&gt;</span>
@@ -330,7 +330,7 @@ FPS を表示も</p>
 <h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
 <p><code>vue cli</code>で生成したままのプロジェクト構成でした。
 必要そうなものを抜き出すとこんな感じ</p>
-<pre><code class="language-tree" data-lang="tree">├── public
+<pre tabindex="0"><code class="language-tree" data-lang="tree">├── public
 ├── src
 ├── tests
 ├── package.json
@@ -344,7 +344,7 @@ FPS を表示も</p>
 </ul>
 <h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
 <p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
-<pre><code class="language-tree" data-lang="tree">.
+<pre tabindex="0"><code class="language-tree" data-lang="tree">.
 ├── projects
 │    ├── admin
 │    │   ├── public
