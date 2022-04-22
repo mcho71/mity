@@ -3,28 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mcho.dev/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/notes/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/memos/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archive/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2021-02/</loc>
-    <lastmod>2021-02-02T13:39:03+09:00</lastmod>
+    <lastmod>2021-02-19T10:47:40+09:00</lastmod>
+  </url><url>
+    <loc>https://mcho.dev/archives/</loc>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
+  </url><url>
+    <loc>https://mcho.dev/categories/</loc>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
+  </url><url>
+    <loc>https://mcho.dev/tags/gym/</loc>
+    <lastmod>2021-02-19T10:47:40+09:00</lastmod>
+  </url><url>
+    <loc>https://mcho.dev/tags/machinelearning/</loc>
+    <lastmod>2021-02-19T10:47:40+09:00</lastmod>
+  </url><url>
+    <loc>https://mcho.dev/categories/machinelearning/</loc>
+    <lastmod>2021-02-19T10:47:40+09:00</lastmod>
+  </url><url>
+    <loc>https://mcho.dev/tags/openai/</loc>
+    <lastmod>2021-02-19T10:47:40+09:00</lastmod>
+  </url><url>
+    <loc>https://mcho.dev/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</loc>
+    <lastmod>2021-02-19T10:47:40+09:00</lastmod>
+  </url><url>
+    <loc>https://mcho.dev/tags/</loc>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/apex/</loc>
     <lastmod>2021-02-02T13:39:03+09:00</lastmod>
-  </url><url>
-    <loc>https://mcho.dev/archives/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
-  </url><url>
-    <loc>https://mcho.dev/categories/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/categories/development/</loc>
     <lastmod>2021-02-02T13:39:03+09:00</lastmod>
@@ -37,9 +55,6 @@
   </url><url>
     <loc>https://mcho.dev/tags/salesforce/</loc>
     <lastmod>2021-02-02T13:39:03+09:00</lastmod>
-  </url><url>
-    <loc>https://mcho.dev/tags/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/vscode/</loc>
     <lastmod>2021-02-02T13:39:03+09:00</lastmod>
@@ -57,9 +72,6 @@
     <lastmod>2021-01-29T10:32:42+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/deep-racer/</loc>
-    <lastmod>2021-01-29T10:32:42+09:00</lastmod>
-  </url><url>
-    <loc>https://mcho.dev/categories/machinelearning/</loc>
     <lastmod>2021-01-29T10:32:42+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2020-06/</loc>
@@ -242,9 +254,6 @@
     <loc>https://mcho.dev/tags/coursera/</loc>
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/tags/machinelearning/</loc>
-    <lastmod>2019-08-27T21:51:23+09:00</lastmod>
-  </url><url>
     <loc>https://mcho.dev/tags/ml-study-jam-vol.3/</loc>
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url><url>
@@ -252,33 +261,33 @@
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2019-04/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/categories/blockchain/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/eosio/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/notes/eos-setup/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2019-03/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/categories/database/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/mysql/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/notes/mysql-json/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2019-01/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/notes/hello/</loc>
-    <lastmod>2021-09-08T14:46:36+09:00</lastmod>
+    <lastmod>2022-04-22T17:32:49+09:00</lastmod>
   </url>
 </urlset>

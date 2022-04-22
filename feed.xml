@@ -18,6 +18,110 @@
     
     
     <item>
+      <title>OpenAIの強化学習シミュレータGymを触ってみる</title>
+      <link>https://mcho.dev/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <pubDate>Fri, 19 Feb 2021 10:47:40 +0900</pubDate>
+      
+      <guid>https://mcho.dev/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <description><![CDATA[強化学習のシミュレーターを作ってみたいなということで、強化学習のフレームワークである Gym を動かしてみようと思いました。 なにはともあれ Python の環境を用意する Python 自体普段は触っていないので手探りでした。結局はpy]]></description>
+      <content:encoded><![CDATA[<p>強化学習のシミュレーターを作ってみたいなということで、強化学習のフレームワークである Gym を動かしてみようと思いました。</p>
+<h2 id="なにはともあれ-python-の環境を用意する">なにはともあれ Python の環境を用意する</h2>
+<p>Python 自体普段は触っていないので手探りでした。結局は<code>pyenv</code>+<code>venv</code>で落ち着いています。</p>
+<p>手元環境は</p>
+<ul>
+<li>MacOS Monterey 12.3.1</li>
+<li>Homebrew</li>
+</ul>
+<p>です。</p>
+<p>Python 本体、複数バージョンを管理するための候補は</p>
+<ul>
+<li>brew</li>
+<li>pyenv</li>
+<li>miniconda</li>
+<li>anaconda</li>
+</ul>
+<p>でした。</p>
+<p>仮想環境の候補としては</p>
+<ul>
+<li>venv</li>
+<li>pyenv-virtualenv</li>
+<li>pipenv</li>
+<li>miniconda</li>
+<li>anaconda</li>
+</ul>
+<p>がありました。</p>
+<p>Python 本体、複数バージョンの管理は、他の言語でも使い慣れている<code>pyenv</code>を選びました。</p>
+<p>仮想環境は、<code>venv</code>を使うことにしたのは、公式の<a href="https://docs.python.org/ja/3/library/venv.html?highlight=env#an-example-of-extending-envbuilder" target="_blank" rel="nofollow noopener">venv &mdash; 仮想環境の作成 — Python 3.10.4 ドキュメント</a>で紹介されていたことが決め手でした。
+以前 Python を触っていたときに使っていた<code>pipenv</code>は開発が止まっていたこと、<code>conda</code>系は動かすだけだとコマンド追加などで過剰に感じたことも、後押ししました。
+<code>pyenv-virutualenv</code>は<code>venv</code>と同じ動作で使えますが、標準ライブラリとして取り込まれている<code>venv</code>の方がなんとなく軽くてエラーが発生しないかなと思ってます。
+<code>venv</code>と<code>virtualenv</code>の違いは、<a href="https://virtualenv.pypa.io/en/latest/" target="_blank" rel="nofollow noopener">Virtualenv — virtualenv 20.14.2.dev2+g8d78ee0 documentation</a>より、機能の多さ、動作の軽さのようです。</p>
+<p>以下開発環境構築時のコマンドラインです。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">brew install pyenv pyenv-virtualenv
+<span class="c1"># 以下二行を.bash_profile等に書き込む</span>
+<span class="c1"># eval &#34;$(pyenv init -)&#34;</span>
+<span class="c1"># eval &#34;$(pyenv virtualenv-init -)&#34;</span>
+
+pyenv install 3.8.8
+
+<span class="nb">cd</span> path/to/project
+
+pyenv <span class="nb">local</span> 3.8.8
+python -m venv &lt;venvname&gt;
+<span class="nb">source</span> &lt;venvname&gt;/bin/activate
+pip install --upgrade pip
+</code></pre></div><h2 id="gym-を動かす">Gym を動かす</h2>
+<p>以下リンクを参考に、Gym を動かします。</p>
+<ul>
+<li><a href="https://gym.openai.com/" target="_blank" rel="nofollow noopener">Gym</a></li>
+<li><a href="http://gym.openai.com/docs/" target="_blank" rel="nofollow noopener">Gym Docs</a></li>
+<li><a href="https://github.com/openai/retro" target="_blank" rel="nofollow noopener">openai/retro: Retro Games in Gym</a></li>
+</ul>
+<h2 id="readme-に沿って動かしてみる">README に沿って動かしてみる</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/openai/gym
+pip install -e gym
+// examples/agentsにあるプログラムを実行してみる
+python examples/agents/cem.py
+</code></pre></div><p>実行されると棒が倒れないように台座を動かしている。
+
+
+
+
+
+
+<picture>
+  <source media="(max-width: 480px)" srcset="/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_480x0_resize_q75_bgffffff_box_3.jpg 480w">
+  <source media="(max-width: 768px)" srcset="/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_768x0_resize_q75_bgffffff_box_3.jpg 768w">
+  <source media="(max-width: 1024px)" srcset="/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_1024x0_resize_q75_bgffffff_box_3.jpg 1024w">
+  <img src="/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21.png" alt="cem.py" decoding="async" loading="lazy">
+</picture>
+</p>
+<p><code>examples/agents</code>配下は以下の通り。<code>cem.py</code>のみ学習アルゴリズムが実行されている</p>
+<h3 id="random_agentpy"><code>random_agent.py</code></h3>
+<p>毎回リセットして、RandomAgent.act を実行。</p>
+<p><a href="https://github.com/openai/gym/blob/4c460ba6c8959dd8e0a03b13a1ca817da6d4074f/examples/agents/random_agent.py#L39-L45" target="_blank" rel="nofollow noopener">https://github.com/openai/gym/blob/4c460ba6c8959dd8e0a03b13a1ca817da6d4074f/examples/agents/random_agent.py#L39-L45</a>
+<a href="https://github.com/openai/gym/blob/4c460ba6c8959dd8e0a03b13a1ca817da6d4074f/examples/agents/random_agent.py#L6-L13" target="_blank" rel="nofollow noopener">https://github.com/openai/gym/blob/4c460ba6c8959dd8e0a03b13a1ca817da6d4074f/examples/agents/random_agent.py#L6-L13</a></p>
+<h3 id="cempy"><code>cem.py</code></h3>
+<p>交差エントロピー<a href="https://mathwords.net/kousaentropy#:~:text=%E4%BA%A4%E5%B7%AE%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AD%E3%83%94%E3%83%BC%E3%81%AF%E3%80%81%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92,%E8%80%83%E3%81%88%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82" target="_blank" rel="nofollow noopener">交差エントロピーの例と微分の計算 - 具体例で学ぶ数学</a>を学習アルゴリズムとして使っています。</p>
+<p>ここでモデルのトレーニングをしていて、cem メソッドが交差エントロピーの計算処理本体となってます。
+<a href="https://github.com/openai/gym/blob/3bd5ef71c2ca3766a26c3dacf87a33a9390ce1e6/examples/agents/cem.py#L87-L93" target="_blank" rel="nofollow noopener">https://github.com/openai/gym/blob/3bd5ef71c2ca3766a26c3dacf87a33a9390ce1e6/examples/agents/cem.py#L87-L93</a></p>
+<h3 id="keyboard_agentpy"><code>keyboard_agent.py</code></h3>
+<p>キーボード入力を受付けているようですが、依存パッケージ足らなくて動きませんでした。</p>
+<h2 id="openairetro-retro-games-in-gymhttpsgithubcomopenairetroを動かしてみる"><a href="https://github.com/openai/retro" target="_blank" rel="nofollow noopener">openai/retro: Retro Games in Gym</a>を動かしてみる</h2>
+<p><a href="https://retro.readthedocs.io/en/latest/getting_started.html" target="_blank" rel="nofollow noopener">Getting Started — Gym Retro documentation</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">pip install gym-retro
+
+python -m retro.examples.brute --game Airstriker-Genesis
+</code></pre></div><p><a href="https://github.com/openai/retro/tree/master/retro/examples" target="_blank" rel="nofollow noopener">retro/retro/examples at master · openai/retro</a>
+に評価アルゴリズムの例があります。評価アルゴリズムはライブラリとして呼び出しを行います。<code>python -m retro.examples.brute --game Airstriker-Genesis</code>では<code>retro.example.brute</code>が指定されています。</p>
+<p>以下のコードで使えるゲーム一覧を表示できます。ROM が同梱されているわけではなく、別個用意する必要があるようです。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">retro</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retro</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">list_games</span><span class="p">()))</span>
+</code></pre></div><h2 id="終わりに">終わりに</h2>
+<p>Python の環境構築から実際に動かすまでやってみました。Python の実行環境を用意するのは毎回少し調べたり、手間がかかっていましたが、今回は公式のドキュメントに<code>venv</code>があったのですんなり行きました。</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>PrettierでSalesforceのApexファイルをフォーマット、VSCode連携も</title>
       <link>https://mcho.dev/notes/prettier%E3%81%A7salesforce%E3%81%AEapex%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88vscode%E9%80%A3%E6%90%BA%E3%82%82/</link>
       <pubDate>Tue, 02 Feb 2021 13:39:03 +0900</pubDate>
@@ -728,33 +832,6 @@ field.getDescribe().getPicklistValues();
 <h2 id="終わり">終わり</h2>
 <p>あとは色々組み合わせよう</p>
 ]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Aura コンポーネントのため Lightning データサービスの基本</title>
-      <link>https://mcho.dev/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
-      <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implements がないと LightningAppBuilder]]></description>
-      <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
-<p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
-<h2 id="メモ">メモ</h2>
-<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implements がないと LightningAppBuilder でレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
-レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
-    <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">recordLoader</span> <span class="o">=</span> <span class="nx">cmp</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&#34;recordLoader&#34;</span><span class="p">);</span>
-        <span class="nx">recordLoader</span><span class="p">.</span><span class="nx">saveRecord</span><span class="p">(</span><span class="nx">$A</span><span class="p">.</span><span class="nx">getCallback</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">saveResult</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">saveResult</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="s2">&#34;ERROR&#34;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="p">...</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="p">...</span>
-            <span class="p">}</span>
-        <span class="p">}));</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-</code></pre></div>]]></content:encoded>
     </item>
     
   </channel>
