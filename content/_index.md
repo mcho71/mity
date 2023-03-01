@@ -1,36 +1,19 @@
 ---
-title: 'このサイトについて'
+title: "このサイトについて"
 date: 2019-02-01T10:02:31+09:00
-type: 'top'
-menu: 'main'
+type: "top"
+menu: "main"
 weight: 1
 ---
 
-このサイトは mcho71 による個人サイトです。
+mcho71 による個人サイトです。
 
-何かを学んだ際の記録、感想、メモを一括で管理するために作成しました。
+日々思ったことや、技術メモなどを書いていく予定です。
 
 ## 私について
 
-2017 年から Web 系の開発を始めました。現在は石川県在住、在宅で仕事をしつつ子育てしてます。
-
-### プロフィール
-
-#### 名前
-
-mcho71
-
-#### 誕生日
-
-1992/09/26
-
-#### 好きな技術・分野
-
-Web / TypeScript
-
-#### 休みにしていること
-
-子供と散歩 / 動画鑑賞(サッカー、料理、ゲームプレイ、映画・ドラマ)
+2017 年に Web 開発会社に入社、今は Salesforce などを使う会社で働いています。神奈川県相模原市出身、今も住んでいます。
+平日は在宅で仕事をしつつ、子育てをし、休みの日は娘とお出かけしてます。ドライブしたり散歩したり、日々の成長を楽しんでいます。
 
 **Links**  
-[GitHub](https://github.com/mcho71) / [Twitter](https://twitter.com/mcho71) / [はてブ](https://b.hatena.ne.jp/machida-city7110/) / [ブクログ](https://booklog.jp/users/machi0701)
+[GitHub](https://github.com/mcho71) / [Twitter](https://twitter.com/mcho71)
