@@ -16,11 +16,6 @@
             "problemMatcher": []
         },
         {
-            "label": "new memo",
-            "type": "shell",
-            "command": "make memo TITLE=\"${input:Title}\""
-        },
-        {
             "label": "new note",
             "type": "shell",
             "command": "make note TITLE=\"${input:Title}\""

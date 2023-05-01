@@ -18,10 +18,6 @@ build:
 	@make check > /dev/null
 	hugo --cleanDestinationDir --gc --forceSyncStatic
 
-memo:
-	@make check > /dev/null
-	hugo new -k post-bundle 'memos/${TITLE}'
-
 note:
 	@make check > /dev/null
 	hugo new -k post-bundle 'notes/${TITLE}'
