@@ -3,25 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mcho.dev/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/notes/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
-  </url><url>
-    <loc>https://mcho.dev/memos/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archive/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2021-02/</loc>
     <lastmod>2021-02-19T10:47:40+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/categories/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/gym/</loc>
     <lastmod>2021-02-19T10:47:40+09:00</lastmod>
@@ -35,11 +32,11 @@
     <loc>https://mcho.dev/tags/openai/</loc>
     <lastmod>2021-02-19T10:47:40+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</loc>
+    <loc>https://mcho.dev/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</loc>
     <lastmod>2021-02-19T10:47:40+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/apex/</loc>
     <lastmod>2021-02-02T13:39:03+09:00</lastmod>
@@ -62,13 +59,13 @@
     <loc>https://mcho.dev/archives/2021-01/</loc>
     <lastmod>2021-01-29T16:38:09+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/deepracer%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84/</loc>
+    <loc>https://mcho.dev/notes/deepracer%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84/</loc>
     <lastmod>2021-01-29T16:38:09+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/aws/</loc>
     <lastmod>2021-01-29T10:32:42+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
+    <loc>https://mcho.dev/notes/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
     <lastmod>2021-01-29T10:32:42+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/deep-racer/</loc>
@@ -86,7 +83,7 @@
     <loc>https://mcho.dev/categories/tips/</loc>
     <lastmod>2020-06-17T17:48:15+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</loc>
+    <loc>https://mcho.dev/notes/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</loc>
     <lastmod>2020-06-17T17:48:15+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/categories/bookmark/</loc>
@@ -95,13 +92,13 @@
     <loc>https://mcho.dev/tags/github/</loc>
     <lastmod>2020-06-17T17:33:52+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</loc>
+    <loc>https://mcho.dev/notes/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</loc>
     <lastmod>2020-06-17T17:33:52+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</loc>
     <lastmod>2020-06-10T23:05:06+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</loc>
+    <loc>https://mcho.dev/notes/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</loc>
     <lastmod>2020-06-10T23:05:06+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3/</loc>
@@ -110,13 +107,13 @@
     <loc>https://mcho.dev/tags/docker/</loc>
     <lastmod>2020-06-04T23:02:19+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</loc>
+    <loc>https://mcho.dev/notes/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</loc>
     <lastmod>2020-06-04T23:02:19+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/kindle/</loc>
     <lastmod>2020-06-04T13:06:17+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</loc>
+    <loc>https://mcho.dev/notes/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</loc>
     <lastmod>2020-06-04T13:06:17+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2020-03/</loc>
@@ -143,10 +140,10 @@
     <loc>https://mcho.dev/categories/hugo/</loc>
     <lastmod>2020-03-25T06:35:05+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/hugo%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E3%81%99%E3%82%8Bshortcodes/</loc>
+    <loc>https://mcho.dev/notes/hugo%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E3%81%99%E3%82%8Bshortcodes/</loc>
     <lastmod>2020-03-25T06:35:05+09:00</lastmod>
   </url><url>
-    <loc>https://mcho.dev/memos/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</loc>
+    <loc>https://mcho.dev/notes/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</loc>
     <lastmod>2020-03-18T15:27:50+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/categories/githubactions/</loc>
@@ -261,33 +258,33 @@
     <lastmod>2019-08-27T21:51:23+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2019-04/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/categories/blockchain/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/eosio/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/notes/eos-setup/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2019-03/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/categories/database/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/tags/mysql/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/notes/mysql-json/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/archives/2019-01/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url><url>
     <loc>https://mcho.dev/notes/hello/</loc>
-    <lastmod>2023-03-02T10:54:12+09:00</lastmod>
+    <lastmod>2023-05-01T12:01:01+09:00</lastmod>
   </url>
 </urlset>

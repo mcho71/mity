@@ -20,10 +20,10 @@
     
     <item>
       <title>OpenAIの強化学習シミュレータGymを触ってみる</title>
-      <link>https://mcho.dev/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <link>https://mcho.dev/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
       <pubDate>Fri, 19 Feb 2021 10:47:40 +0900</pubDate>
       
-      <guid>https://mcho.dev/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <guid>https://mcho.dev/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
       <description><![CDATA[強化学習のシミュレーターを作ってみたいなということで、強化学習のフレームワークである Gym を動かしてみようと思いました。 なにはともあれ Python の環境を用意する Python 自体普段は触っていないので手探りでした。結局はpy]]></description>
       <content:encoded><![CDATA[<p>強化学習のシミュレーターを作ってみたいなということで、強化学習のフレームワークである Gym を動かしてみようと思いました。</p>
 <h2 id="なにはともあれ-python-の環境を用意する">なにはともあれ Python の環境を用意する</h2>
@@ -90,10 +90,10 @@ python examples/agents/cem.py
 
 
 <picture>
-  <source media="(max-width: 480px)" srcset="/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_480x0_resize_q75_bgffffff_box_3.jpg 480w">
-  <source media="(max-width: 768px)" srcset="/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_768x0_resize_q75_bgffffff_box_3.jpg 768w">
-  <source media="(max-width: 1024px)" srcset="/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_1024x0_resize_q75_bgffffff_box_3.jpg 1024w">
-  <img src="/memos/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21.png" alt="cem.py" decoding="async" loading="lazy">
+  <source media="(max-width: 480px)" srcset="/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_480x0_resize_q75_bgffffff_box_3.jpg 480w">
+  <source media="(max-width: 768px)" srcset="/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_768x0_resize_q75_bgffffff_box_3.jpg 768w">
+  <source media="(max-width: 1024px)" srcset="/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_1024x0_resize_q75_bgffffff_box_3.jpg 1024w">
+  <img src="/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21.png" alt="cem.py" decoding="async" loading="lazy">
 </picture>
 </p>
 <p><code>examples/agents</code>配下は以下の通り。<code>cem.py</code>のみ学習アルゴリズムが実行されている</p>
@@ -124,10 +124,10 @@ python -m retro.examples.brute --game Airstriker-Genesis
     
     <item>
       <title>AWS DeepRacer: Driven by Reinforcement Learningをやってみた</title>
-      <link>https://mcho.dev/memos/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+      <link>https://mcho.dev/notes/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link>
       <pubDate>Fri, 29 Jan 2021 10:32:42 +0900</pubDate>
       
-      <guid>https://mcho.dev/memos/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
+      <guid>https://mcho.dev/notes/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
       <description><![CDATA[きっかけは、この動画を見て興味を持ったこと。 まずはチュートリアルコンテンツを探してみようと思い、リーグ - AWS DeepRacer | AWSから、タイトルのAWS DeepRacer: Driven by Reinforcement Learning | AWS トレーニングと認定を見つけた。 日本語版もある。 DeepRacer]]></description>
       <content:encoded><![CDATA[<p>きっかけは、この動画を見て興味を持ったこと。</p>
 <p>

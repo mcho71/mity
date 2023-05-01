@@ -20,10 +20,10 @@
     
     <item>
       <title>VSCode拡張のGitHub Issue(beta)</title>
-      <link>https://mcho.dev/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</link>
+      <link>https://mcho.dev/notes/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</link>
       <pubDate>Wed, 17 Jun 2020 17:33:52 +0900</pubDate>
       
-      <guid>https://mcho.dev/memos/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</guid>
+      <guid>https://mcho.dev/notes/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</guid>
       <description><![CDATA[GitHub Issues - Visual Studio Marketplace VSCode 上から手軽に Issue を確認できる拡張。 パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。 Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。 カ]]></description>
       <content:encoded><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.github-issues-prs" target="_blank" rel="nofollow noopener">GitHub Issues - Visual Studio Marketplace</a></p>
 <p>VSCode 上から手軽に Issue を確認できる拡張。<br>

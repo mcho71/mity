@@ -17,6 +17,110 @@
     
     
     <item>
+      <title>OpenAIの強化学習シミュレータGymを触ってみる</title>
+      <link>https://mcho.dev/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <pubDate>Fri, 19 Feb 2021 10:47:40 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <description><![CDATA[強化学習のシミュレーターを作ってみたいなということで、強化学習のフレームワークである Gym を動かしてみようと思いました。 なにはともあれ Python の環境を用意する Python 自体普段は触っていないので手探りでした。結局はpy]]></description>
+      <content:encoded><![CDATA[<p>強化学習のシミュレーターを作ってみたいなということで、強化学習のフレームワークである Gym を動かしてみようと思いました。</p>
+<h2 id="なにはともあれ-python-の環境を用意する">なにはともあれ Python の環境を用意する</h2>
+<p>Python 自体普段は触っていないので手探りでした。結局は<code>pyenv</code>+<code>venv</code>で落ち着いています。</p>
+<p>手元環境は</p>
+<ul>
+<li>MacOS Monterey 12.3.1</li>
+<li>Homebrew</li>
+</ul>
+<p>です。</p>
+<p>Python 本体、複数バージョンを管理するための候補は</p>
+<ul>
+<li>brew</li>
+<li>pyenv</li>
+<li>miniconda</li>
+<li>anaconda</li>
+</ul>
+<p>でした。</p>
+<p>仮想環境の候補としては</p>
+<ul>
+<li>venv</li>
+<li>pyenv-virtualenv</li>
+<li>pipenv</li>
+<li>miniconda</li>
+<li>anaconda</li>
+</ul>
+<p>がありました。</p>
+<p>Python 本体、複数バージョンの管理は、他の言語でも使い慣れている<code>pyenv</code>を選びました。</p>
+<p>仮想環境は、<code>venv</code>を使うことにしたのは、公式の<a href="https://docs.python.org/ja/3/library/venv.html?highlight=env#an-example-of-extending-envbuilder" target="_blank" rel="nofollow noopener">venv &mdash; 仮想環境の作成 — Python 3.10.4 ドキュメント</a>で紹介されていたことが決め手でした。
+以前 Python を触っていたときに使っていた<code>pipenv</code>は開発が止まっていたこと、<code>conda</code>系は動かすだけだとコマンド追加などで過剰に感じたことも、後押ししました。
+<code>pyenv-virutualenv</code>は<code>venv</code>と同じ動作で使えますが、標準ライブラリとして取り込まれている<code>venv</code>の方がなんとなく軽くてエラーが発生しないかなと思ってます。
+<code>venv</code>と<code>virtualenv</code>の違いは、<a href="https://virtualenv.pypa.io/en/latest/" target="_blank" rel="nofollow noopener">Virtualenv — virtualenv 20.14.2.dev2+g8d78ee0 documentation</a>より、機能の多さ、動作の軽さのようです。</p>
+<p>以下開発環境構築時のコマンドラインです。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">brew install pyenv pyenv-virtualenv
+<span class="c1"># 以下二行を.bash_profile等に書き込む</span>
+<span class="c1"># eval &#34;$(pyenv init -)&#34;</span>
+<span class="c1"># eval &#34;$(pyenv virtualenv-init -)&#34;</span>
+
+pyenv install 3.8.8
+
+<span class="nb">cd</span> path/to/project
+
+pyenv <span class="nb">local</span> 3.8.8
+python -m venv &lt;venvname&gt;
+<span class="nb">source</span> &lt;venvname&gt;/bin/activate
+pip install --upgrade pip
+</code></pre></div><h2 id="gym-を動かす">Gym を動かす</h2>
+<p>以下リンクを参考に、Gym を動かします。</p>
+<ul>
+<li><a href="https://gym.openai.com/" target="_blank" rel="nofollow noopener">Gym</a></li>
+<li><a href="http://gym.openai.com/docs/" target="_blank" rel="nofollow noopener">Gym Docs</a></li>
+<li><a href="https://github.com/openai/retro" target="_blank" rel="nofollow noopener">openai/retro: Retro Games in Gym</a></li>
+</ul>
+<h2 id="readme-に沿って動かしてみる">README に沿って動かしてみる</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/openai/gym
+pip install -e gym
+// examples/agentsにあるプログラムを実行してみる
+python examples/agents/cem.py
+</code></pre></div><p>実行されると棒が倒れないように台座を動かしている。
+
+
+
+
+
+
+<picture>
+  <source media="(max-width: 480px)" srcset="/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_480x0_resize_q75_bgffffff_box_3.jpg 480w">
+  <source media="(max-width: 768px)" srcset="/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_768x0_resize_q75_bgffffff_box_3.jpg 768w">
+  <source media="(max-width: 1024px)" srcset="/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21_hubedf350c6a7c5566baacd6e43c6e5b00_57229_1024x0_resize_q75_bgffffff_box_3.jpg 1024w">
+  <img src="/notes/openai%E3%81%AE%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92%E3%82%B7%E3%83%9F%E3%83%A5%E3%83%AC%E3%83%BC%E3%82%BFgym%E3%82%92%E8%A7%A6%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/image/2021-02-19-11-25-21.png" alt="cem.py" decoding="async" loading="lazy">
+</picture>
+</p>
+<p><code>examples/agents</code>配下は以下の通り。<code>cem.py</code>のみ学習アルゴリズムが実行されている</p>
+<h3 id="random_agentpy"><code>random_agent.py</code></h3>
+<p>毎回リセットして、RandomAgent.act を実行。</p>
+<p><a href="https://github.com/openai/gym/blob/4c460ba6c8959dd8e0a03b13a1ca817da6d4074f/examples/agents/random_agent.py#L39-L45" target="_blank" rel="nofollow noopener">https://github.com/openai/gym/blob/4c460ba6c8959dd8e0a03b13a1ca817da6d4074f/examples/agents/random_agent.py#L39-L45</a>
+<a href="https://github.com/openai/gym/blob/4c460ba6c8959dd8e0a03b13a1ca817da6d4074f/examples/agents/random_agent.py#L6-L13" target="_blank" rel="nofollow noopener">https://github.com/openai/gym/blob/4c460ba6c8959dd8e0a03b13a1ca817da6d4074f/examples/agents/random_agent.py#L6-L13</a></p>
+<h3 id="cempy"><code>cem.py</code></h3>
+<p>交差エントロピー<a href="https://mathwords.net/kousaentropy#:~:text=%E4%BA%A4%E5%B7%AE%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AD%E3%83%94%E3%83%BC%E3%81%AF%E3%80%81%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92,%E8%80%83%E3%81%88%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82" target="_blank" rel="nofollow noopener">交差エントロピーの例と微分の計算 - 具体例で学ぶ数学</a>を学習アルゴリズムとして使っています。</p>
+<p>ここでモデルのトレーニングをしていて、cem メソッドが交差エントロピーの計算処理本体となってます。
+<a href="https://github.com/openai/gym/blob/3bd5ef71c2ca3766a26c3dacf87a33a9390ce1e6/examples/agents/cem.py#L87-L93" target="_blank" rel="nofollow noopener">https://github.com/openai/gym/blob/3bd5ef71c2ca3766a26c3dacf87a33a9390ce1e6/examples/agents/cem.py#L87-L93</a></p>
+<h3 id="keyboard_agentpy"><code>keyboard_agent.py</code></h3>
+<p>キーボード入力を受付けているようですが、依存パッケージ足らなくて動きませんでした。</p>
+<h2 id="openairetro-retro-games-in-gymhttpsgithubcomopenairetroを動かしてみる"><a href="https://github.com/openai/retro" target="_blank" rel="nofollow noopener">openai/retro: Retro Games in Gym</a>を動かしてみる</h2>
+<p><a href="https://retro.readthedocs.io/en/latest/getting_started.html" target="_blank" rel="nofollow noopener">Getting Started — Gym Retro documentation</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">pip install gym-retro
+
+python -m retro.examples.brute --game Airstriker-Genesis
+</code></pre></div><p><a href="https://github.com/openai/retro/tree/master/retro/examples" target="_blank" rel="nofollow noopener">retro/retro/examples at master · openai/retro</a>
+に評価アルゴリズムの例があります。評価アルゴリズムはライブラリとして呼び出しを行います。<code>python -m retro.examples.brute --game Airstriker-Genesis</code>では<code>retro.example.brute</code>が指定されています。</p>
+<p>以下のコードで使えるゲーム一覧を表示できます。ROM が同梱されているわけではなく、別個用意する必要があるようです。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">retro</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retro</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">list_games</span><span class="p">()))</span>
+</code></pre></div><h2 id="終わりに">終わりに</h2>
+<p>Python の環境構築から実際に動かすまでやってみました。Python の実行環境を用意するのは毎回少し調べたり、手間がかかっていましたが、今回は公式のドキュメントに<code>venv</code>があったのですんなり行きました。</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>PrettierでSalesforceのApexファイルをフォーマット、VSCode連携も</title>
       <link>https://mcho.dev/notes/prettier%E3%81%A7salesforce%E3%81%AEapex%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88vscode%E9%80%A3%E6%90%BA%E3%82%82/</link>
       <pubDate>Tue, 02 Feb 2021 13:39:03 +0900</pubDate>
@@ -62,6 +166,232 @@ All matched files use Prettier code style!
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><p>以上です。</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>DeepRacer的なものを作りたい</title>
+      <link>https://mcho.dev/notes/deepracer%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84/</link>
+      <pubDate>Fri, 29 Jan 2021 16:38:09 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/deepracer%E7%9A%84%E3%81%AA%E3%82%82%E3%81%AE%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84/</guid>
+      <description><![CDATA[この記事の続き 大体の流れは レースゲームを作る。 各パラメータ、関数の調整。 強化学習モデルにゲームを遊ばせる。 クリア。できなければ 2 に戻る となりそう。 見ていて気になった、参考になりそうなもの Gym OpenAI が出してい]]></description>
+      <content:encoded><![CDATA[<p><a href="https://mcho.dev/notes/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/">この記事</a>の続き</p>
+<p>大体の流れは</p>
+<ol>
+<li>レースゲームを作る。</li>
+<li>各パラメータ、関数の調整。</li>
+<li>強化学習モデルにゲームを遊ばせる。</li>
+<li>クリア。できなければ 2 に戻る</li>
+</ol>
+<p>となりそう。</p>
+<p>見ていて気になった、参考になりそうなもの</p>
+<ul>
+<li><a href="https://gym.openai.com/" target="_blank" rel="nofollow noopener">Gym</a> OpenAI が出している強化学習を試すためのツールキット
+<ul>
+<li><a href="https://github.com/openai/retro" target="_blank" rel="nofollow noopener">openai/retro: Retro Games in Gym</a> これだと、題材がレトロゲームになってたりしておもしろい</li>
+</ul>
+</li>
+<li><a href="https://blog.brainpad.co.jp/entry/2017/02/24/121500" target="_blank" rel="nofollow noopener">強化学習入門 ～これから強化学習を学びたい人のための基礎知識～ - Platinum Data Blog by BrainPad</a> OpenAI Gym で Q 学習という単語が出てきてよくわからなかったので調べたら出てきた。Q 値は、状態価値の事で、Q 学習は<strong>Q 値を学習するためのアルゴリズムの一つ</strong>であるらしい。Q 値を学習するためのアルゴリズムは、他に Sarsa、モンテカルロ法、deep Q-network（DQN）等がある。
+<ul>
+<li>DQN の開発元は DeepMind 社らしい。ただ DeepMind 社が開発した AlphaGo とかは使っていない。<a href="http://7rpn.hatenablog.com/entry/2016/06/10/192357" target="_blank" rel="nofollow noopener">Google が出した囲碁ソフト「AlphaGo」の論文を翻訳して解説してみる。 - 7rpn’s blog: うわああああな日常</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="ここまできて">ここまできて</h3>
+<p>Web で動く事を目標にしてたけど、道が長いのでとりあえず OpenAIGym で強化学習を学ぶことに方針転換する。</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>AWS DeepRacer: Driven by Reinforcement Learningをやってみた</title>
+      <link>https://mcho.dev/notes/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</link>
+      <pubDate>Fri, 29 Jan 2021 10:32:42 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
+      <description><![CDATA[きっかけは、この動画を見て興味を持ったこと。 まずはチュートリアルコンテンツを探してみようと思い、リーグ - AWS DeepRacer | AWSから、タイトルのAWS DeepRacer: Driven by Reinforcement Learning | AWS トレーニングと認定を見つけた。 日本語版もある。 DeepRacer]]></description>
+      <content:encoded><![CDATA[<p>きっかけは、この動画を見て興味を持ったこと。</p>
+<p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Aut32pR5PQA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+<br>
+まずはチュートリアルコンテンツを探してみようと思い、<a href="https://aws.amazon.com/jp/deepracer/league/" target="_blank" rel="nofollow noopener">リーグ - AWS DeepRacer | AWS</a>から、タイトルの<a href="https://www.aws.training/Details/eLearning?id=32143" target="_blank" rel="nofollow noopener">AWS DeepRacer: Driven by Reinforcement Learning | AWS トレーニングと認定</a>を見つけた。</p>
+<p>日本語版もある。</p>
+<p>DeepRacer 実機は、米 Amazon からの購入になる。
+<a href="https://www.amazon.com/AWS-DeepRacer-Evo-Car-Sensor/dp/B081GZSJVL/ref=sr_1_1?dchild=1&amp;keywords=deepracer&#43;evo&amp;qid=1606341498&amp;sr=8-1" target="_blank" rel="nofollow noopener">Amazon.com: AWS DeepRacer Evo - Fully Autonomous 1/18th Scale Race Car for Developers: Amazon Devices</a></p>
+<p>AWS DeepRacer でモデルのトレーニングをすると 1 回、$7 はかかる。
+<a href="https://aws.amazon.com/jp/deepracer/pricing/?p=drl&amp;exp=hl" target="_blank" rel="nofollow noopener">料金 - AWS DeepRacer | AWS</a></p>
+<h3 id="それでは始めようと思う">それでは始めようと思う</h3>
+<p>強化学習が使われる。試行、評価、学習の繰り返し。コースを学習して周回できる事、その速さを競う事が DeepRacer の主目的。</p>
+<h4 id="deepracer-で使われる用語">DeepRacer で使われる用語</h4>
+<ul>
+<li>Agent: Car 本体のこと</li>
+<li>Environment: 環境、Agent と Action、学習ループごとに新しく定義し直される</li>
+<li>Action : 進む方向やスピード
+<ul>
+<li>DescreteContinuous : 離散連続</li>
+</ul>
+</li>
+<li>Reward: 報酬
+<ul>
+<li>Reward Function</li>
+</ul>
+</li>
+<li>State: Car の状態
+<ul>
+<li>Partial State</li>
+<li>Absolute State
+<ul>
+<li>Scalar</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Task</li>
+<li>Episode:　コースから外れてやり直しを行うと次のエピソードとして外れた場所からスタート</li>
+<li>Policy: 状態によってどのアクションを取るか決める。今回は NN,CNN である
+<ul>
+<li>Stochastically: 確率的</li>
+<li>deterministically: 確定的、State と Action の関係をより直接的に決められる</li>
+<li>価値関数 V: 使うのは PRO アルゴリズム、近接ポリシー最適化アルゴリズム
+<ul>
+<li>StateAction</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>DeepRacer の裏では、Amazon SageMaker モデルの強化学習 と AWS RoboMaker 仮想空間と仮想環境を作成 が動いている。
+SageMaker -&gt; S3 -&gt; RoboMaker -&gt; Redis -&gt; SageMarker</p>
+<p>強化学習アルゴリズムを最適化するためのパラメータを指定していく</p>
+<p>報酬関数は具体的に自分で書く、Basic/Advanced 選択できる。
+報酬関数の評価</p>
+<p>ハイパーパラメータ</p>
+<ul>
+<li>バッチサイズ　トレーニングデータの量</li>
+<li>エポック　バッチトレーニングセットを通る回数</li>
+<li>レート　最適探す時の細かさ</li>
+<li>Exploration 　探索と適用　ローカル最大に閉じ込められるのを防ぐ</li>
+<li>エントロピー　新しいアクションのランダム性が比例</li>
+<li>Discount Factor 　即時報酬を求めるか</li>
+<li>Loss Type
+<ul>
+<li>Huber Loss</li>
+<li>平均二乗誤差</li>
+</ul>
+</li>
+<li>Number Of Episode 　エピソードの数</li>
+</ul>
+<p>あとは AWS コンソールから DeepRacer を使って色々やるようだ</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>背面に隠れた要素をクリックできるようにするCSS</title>
+      <link>https://mcho.dev/notes/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</link>
+      <pubDate>Wed, 17 Jun 2020 17:48:15 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/</guid>
+      <description><![CDATA[てっきりz-indexでできると思っていたけど、できなかったのでメモ pointer-events - CSS: カスケーディングスタイルシート | MDN を使う。 以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなく]]></description>
+      <content:encoded><![CDATA[<p>てっきり<code>z-index</code>でできると思っていたけど、できなかったのでメモ</p>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/pointer-events" target="_blank" rel="nofollow noopener">pointer-events - CSS: カスケーディングスタイルシート | MDN</a></p>
+<p>を使う。<br>
+以下の画像のようなときに、透明なコンテナが横幅いっぱいに広がって下のボタンが押せなくなるのを防ぎたかった。</p>
+<p>
+
+
+
+
+
+<picture>
+  <source media="(max-width: 480px)" srcset="/notes/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_480x0_resize_q75_bgffffff_box_3.jpg 480w">
+  <source media="(max-width: 768px)" srcset="/notes/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_768x0_resize_q75_bgffffff_box_3.jpg 768w">
+  <source media="(max-width: 1024px)" srcset="/notes/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43_hu5bea7808337020c1f0a5703aa812dadf_11883_1024x0_resize_q75_bgffffff_box_3.jpg 1024w">
+  <img src="/notes/%E8%83%8C%E9%9D%A2%E3%81%AB%E9%9A%A0%E3%82%8C%E3%81%9F%E8%A6%81%E7%B4%A0%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8Bcss/image/2020-06-17-17-52-43.png" alt="需要ある時の例" decoding="async" loading="lazy">
+</picture>
+</p>
+<p>こんな感じにすると透明なコンテナの下にある要素をクリックできる。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;fixed-container&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toast&#34;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+  <span class="p">.</span><span class="nc">fixed-container</span> <span class="p">{</span>
+    <span class="n">pointer-events</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="nc">fixed-container</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">toast</span> <span class="p">{</span>
+    <span class="n">pointer-events</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>VSCode拡張のGitHub Issue(beta)</title>
+      <link>https://mcho.dev/notes/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</link>
+      <pubDate>Wed, 17 Jun 2020 17:33:52 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/vscode%E6%8B%A1%E5%BC%B5%E3%81%AEgithub-issuebeta/</guid>
+      <description><![CDATA[GitHub Issues - Visual Studio Marketplace VSCode 上から手軽に Issue を確認できる拡張。 パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。 Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。 カ]]></description>
+      <content:encoded><![CDATA[<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.github-issues-prs" target="_blank" rel="nofollow noopener">GitHub Issues - Visual Studio Marketplace</a></p>
+<p>VSCode 上から手軽に Issue を確認できる拡張。<br>
+パネルの Issue からページに飛べたり、ブランチを切り替えたりできる。<br>
+Issue と Branch は 1 対 1 で管理されて、紐づくブランチはここのパネルから作成されたブランチになってた。<br>
+カーソルを重ねると Issue 内容が title 属性で出てくるのでページに飛ばずに確認できる。<br>
+ブランチ名などの Template も設定できるのでプロジェクトごとのブランチ作成ルールとかもここで管理できるっちゃできる。<br>
+紐付いた Branch を手動で変更できない。</p>
+<p>こんな感じのパネルが追加される。<br>
+
+
+
+<picture>
+  <img src="image/2020-06-17-17-35-20.png?width=200px" alt="GitHub Issue のパネル" decoding="async" loading="lazy">
+</picture>
+</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>ソシオメディアのヒューマンインターフェース ガイドラインと色々な企業のデザインガイドライン</title>
+      <link>https://mcho.dev/notes/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</link>
+      <pubDate>Wed, 10 Jun 2020 23:05:06 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/%E3%82%BD%E3%82%B7%E3%82%AA%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%81%AE%E3%83%92%E3%83%A5%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9-%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A8%E8%89%B2%E3%80%85%E3%81%AA%E4%BC%81%E6%A5%AD%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%82%AC%E3%82%A4%E3%83%89%E3%83%A9%E3%82%A4%E3%83%B3/</guid>
+      <description><![CDATA[見やすい、UI を作るときの参考に ソシオメディア | ヒューマンインターフェース ガイドライン (1/5) ヒューマンインターフェース ガイドラインという言葉は Apple も使ってる Human Interface Guidelines - Design - Apple Developer Canva が色々な企業のガイドラインをまと]]></description>
+      <content:encoded><![CDATA[<p>見やすい、UI を作るときの参考に
+<a href="https://www.sociomedia.co.jp/category/shig" target="_blank" rel="nofollow noopener">ソシオメディア | ヒューマンインターフェース ガイドライン (1/5)</a></p>
+<p>ヒューマンインターフェース ガイドラインという言葉は Apple も使ってる
+<a href="https://developer.apple.com/design/human-interface-guidelines/" target="_blank" rel="nofollow noopener">Human Interface Guidelines - Design - Apple Developer</a></p>
+<p>Canva が色々な企業のガイドラインをまとめてくれてた
+<a href="https://www.canva.com/ja_jp/learn/50-meticulous-style-guides-every-startup-see-launching/" target="_blank" rel="nofollow noopener">スタートアップ企業が参考にするべき 50 のスタイルガイド</a></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>VSCodeのRemote Containerという拡張が良さそう</title>
+      <link>https://mcho.dev/notes/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</link>
+      <pubDate>Thu, 04 Jun 2020 23:02:19 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/vscode%E3%81%AEremote-container%E3%81%A8%E3%81%84%E3%81%86%E6%8B%A1%E5%BC%B5%E3%81%8C%E8%89%AF%E3%81%95%E3%81%9D%E3%81%86/</guid>
+      <description><![CDATA[このブログで紹介されてた Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape Remote - Containers - Visual Studio Marketplace 拡張機能をコンテナで管理できるようで、便利そう]]></description>
+      <content:encoded><![CDATA[<p>このブログで紹介されてた
+<a href="https://www.keisuke69.net/entry/2020/06/04/145719" target="_blank" rel="nofollow noopener">Docker と Remote Containers での開発環境が最高過ぎる - Sweet Escape</a></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target="_blank" rel="nofollow noopener">Remote - Containers - Visual Studio Marketplace</a></p>
+<p>拡張機能をコンテナで管理できるようで、便利そう</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Kindleでハイライトした箇所をきれいに抜き出すブックマークレット</title>
+      <link>https://mcho.dev/notes/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</link>
+      <pubDate>Thu, 04 Jun 2020 13:06:17 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/kindle%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88%E3%81%97%E3%81%9F%E7%AE%87%E6%89%80%E3%82%92%E3%81%8D%E3%82%8C%E3%81%84%E3%81%AB%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88/</guid>
+      <description><![CDATA[下のページのfor pcをブックマークに登録するとできる kindle highlight js]]></description>
+      <content:encoded><![CDATA[<p>下のページの<code>for pc</code>をブックマークに登録するとできる
+<a href="https://hilotter.github.io/kindle_highlight_js/" target="_blank" rel="nofollow noopener">kindle highlight js</a></p>
 ]]></content:encoded>
     </item>
     
@@ -315,6 +645,38 @@ sfdx force:org:display --verbose -u ForGitHubAction
     </item>
     
     <item>
+      <title>HugoでYoutube等を埋め込みをするShortcodes</title>
+      <link>https://mcho.dev/notes/hugo%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E3%81%99%E3%82%8Bshortcodes/</link>
+      <pubDate>Wed, 25 Mar 2020 06:35:05 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/hugo%E3%81%A7%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E3%81%99%E3%82%8Bshortcodes/</guid>
+      <description><![CDATA[ここにある。 Shortcodes | Hugo]]></description>
+      <content:encoded><![CDATA[<p>ここにある。
+<a href="https://gohugo.io/content-management/shortcodes/" target="_blank" rel="nofollow noopener">Shortcodes | Hugo</a></p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/w7Ft2ymGmfc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>GitHub Actionsのubuntu-latestでURLEncode</title>
+      <link>https://mcho.dev/notes/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</link>
+      <pubDate>Wed, 18 Mar 2020 15:27:50 +0900</pubDate>
+      
+      <guid>https://mcho.dev/notes/github-actions%E3%81%AEubuntu-latest%E3%81%A7urlencode/</guid>
+      <description><![CDATA[json から値を抜きだして URL を作りたかったので結局こんな感じになった USER_NAME=$(python3 -c &amp;#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&amp;#34; $(echo $HOGE_JSON | jq .huga))&amp;#39; ENCODED_URL=$(echo https://example.com?un=${USER_NAME}) $(echo $HOGE)は引数に渡るときに&amp;quot;hoge&amp;quot;となるのでsys.argv[1][1:-1]]></description>
+      <content:encoded><![CDATA[<p>json から値を抜きだして URL を作りたかったので結局こんな感じになった</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">USER_NAME</span><span class="o">=</span><span class="k">$(</span>python3 -c <span class="s2">&#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&#34;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$HOGE_JSON</span> <span class="p">|</span> jq .huga<span class="k">))</span><span class="err">&#39;</span>
+<span class="nv">ENCODED_URL</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> https://example.com?un<span class="o">=</span><span class="si">${</span><span class="nv">USER_NAME</span><span class="si">}</span><span class="k">)</span>
+</code></pre></div><p><code>$(echo $HOGE)</code>は引数に渡るときに<code>&quot;hoge&quot;</code>となるので<code>sys.argv[1][1:-1]</code>で両端のダブルクオートを切り取ってる
+もっといいやり方がありそうだけどとりあえずこれで</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>@angular-eslint/angular-eslintでAngularのLinterをTSLintからESLintに置き換えてみた</title>
       <link>https://mcho.dev/notes/angular-eslint%E3%81%A7angular%E3%81%AElinter%E3%82%92tslint%E3%81%8B%E3%82%89eslint%E3%81%AB%E7%BD%AE%E3%81%8D%E6%8F%9B%E3%81%88%E3%81%A6%E3%81%BF%E3%81%9F/</link>
       <pubDate>Mon, 16 Mar 2020 12:06:21 +0900</pubDate>
@@ -468,1025 +830,6 @@ field.getDescribe().getPicklistValues();
 </span></code></pre></div><p>以上で GithubActions から Slack へのメッセージ送信の準備はできました。あとは、master ブランチにコミットして push して、Slack チャンネルにメッセージが投稿されることを確認したら完了です。</p>
 <h2 id="終わり">終わり</h2>
 <p>あとは色々組み合わせよう</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Aura コンポーネントのため Lightning データサービスの基本</title>
-      <link>https://mcho.dev/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
-      <pubDate>Wed, 04 Mar 2020 17:47:57 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/aura-%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E3%81%9F%E3%82%81-lightning-%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[やる前 force:recordDataを使うと楽にデータを取得、操作できるということでやってみる。 メモ &amp;lt;aura:component implements=&amp;quot;flexipage:availableForRecordHome, force:hasRecordId&amp;quot;&amp;gt;のように、implements がないと LightningAppBuilder]]></description>
-      <content:encoded><![CDATA[<h2 id="やる前">やる前</h2>
-<p><code>force:recordData</code>を使うと楽にデータを取得、操作できるということでやってみる。</p>
-<h2 id="メモ">メモ</h2>
-<p><code>&lt;aura:component implements=&quot;flexipage:availableForRecordHome, force:hasRecordId&quot;&gt;</code>のように、implements がないと LightningAppBuilder でレコードページへ追加する際に表示されない、ハマった。また、<code>force:hasRecordId</code>は<code>v.recordId</code>にアクセスできることを明示できる。<a href="https://developer.salesforce.com/docs/component-library/bundle/force:hasRecordId/documentation" target="_blank" rel="nofollow noopener">force:hasRecordId - documentation - Salesforce Lightning Component Library</a><br>
-レコードの保存はこんな感じの関数をボタンのクリック等に紐付けておこなう。<code>recordLoader</code>は<code>force:recordData</code>の<code>aura:id</code>。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">({</span>
-    <span class="nx">save</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cmp</span><span class="p">,</span> <span class="nx">event</span><span class="p">,</span> <span class="nx">helper</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">recordLoader</span> <span class="o">=</span> <span class="nx">cmp</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s2">&#34;recordLoader&#34;</span><span class="p">);</span>
-        <span class="nx">recordLoader</span><span class="p">.</span><span class="nx">saveRecord</span><span class="p">(</span><span class="nx">$A</span><span class="p">.</span><span class="nx">getCallback</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">saveResult</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">saveResult</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="s2">&#34;ERROR&#34;</span><span class="p">)</span> <span class="p">{</span>
-                <span class="p">...</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="p">...</span>
-            <span class="p">}</span>
-        <span class="p">}));</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-</code></pre></div>]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>GitHubActionsでSalesforceのスクラッチ組織を作成する</title>
-      <link>https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</link>
-      <pubDate>Thu, 27 Feb 2020 16:05:09 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/githubactions%E3%81%A7%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%83%E3%83%81%E7%B5%84%E7%B9%94%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B/</guid>
-      <description><![CDATA[どうしてやるの ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。 GitHubActions が正式リリースされた。 ワークフローの流れ ソースをチェックアウト SFDX のセットアップ DevHub 認証 スクラッチ組織を作成、セ]]></description>
-      <content:encoded><![CDATA[<h2 id="どうしてやるの">どうしてやるの</h2>
-<ul>
-<li>ワンアクションで確認用のスクラッチ組織を作成できるワークフローがほしかった。</li>
-<li>GitHubActions が正式リリースされた。</li>
-</ul>
-<h2 id="ワークフローの流れ">ワークフローの流れ</h2>
-<ol>
-<li>ソースをチェックアウト</li>
-<li>SFDX のセットアップ</li>
-<li>DevHub 認証</li>
-<li>スクラッチ組織を作成、セットアップ</li>
-<li>ログイン用の URL を表示する</li>
-</ol>
-<h2 id="完成品">完成品</h2>
-<p>完成品のコードです、このままコピペするだけじゃ使えません。<code>2. SFDXのセットアップ</code>と<code>3. DevHubへログインする</code>をする必要があります。<br>
-フック条件は master ブランチの push になっています。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">スクラッチ組織を作成する</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">master</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">create-scratch-org</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
-</span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあったら使う&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">app-cache-npm</span><span class="w">
-</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/cache@v1</span><span class="w">
-</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">node_modules</span><span class="w">
-</span><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">npm-${{ hashFiles(&#39;**/package-lock.json&#39;) }}</span><span class="w">
-</span><span class="w">          </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span><span class="sd">            npm-${{ env.app-cache-name }}-
-</span><span class="sd">            npm-</span><span class="w">            
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;npm ciを実行&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l">steps.app-cache-npm.outputs.cache-hit != &#39;true&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npm ci</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;sfdxが使えるかテスト&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx --help</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Secretsに登録したSfdx Auth Urlをファイルへ出力&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">echo ${{ secrets.SFDX_AUTH_URL }} &gt; ./SFDX_AUTH_URL.txt</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Salesforce組織の認証を得る&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx force:auth:sfdxurl:store -f ./SFDX_AUTH_URL.txt -d</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;スクラッチ組織の作成&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx force:org:create -f config/project-scratch-def.json -a TestScratchOrg -d 1</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx force:source:push -u TestScratchOrg</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;パスワードを発行&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx force:user:password:generate -u TestScratchOrg</span><span class="w">
-</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ID/PWからログインURLを作成する&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l">bash</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span><span class="sd">          ORG_INFO=$(npx sfdx force:org:display -u TestScratchOrg --json | jq .result)
-</span><span class="sd">          INSTANCE_URL=$(echo $ORG_INFO | jq .instanceUrl)
-</span><span class="sd">          USER_NAME=$(python3 -c &#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1].strip(&#39;\&#34;&#39;))) $(echo $ORG_INFO | jq .username))
-</span><span class="sd">          PASSWORD=$(python3 -c &#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1].strip(&#39;\&#34;&#39;))) $(echo $ORG_INFO | jq .password))
-</span><span class="sd">          echo &#34;##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})&#34;</span><span class="w">          
-</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;期限のないログインURLを表示&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">echo ${{ steps.make-login-url.outputs.login-url }}</span><span class="w">
-</span></code></pre></div><h2 id="各ステップについてなど">各ステップについてなど</h2>
-<h3 id="ファイル作成と-1-ソースコードのチェックアウト">ファイル作成と 1. ソースコードのチェックアウト</h3>
-<p><a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/configuring-a-workflow#creating-a-workflow-file" target="_blank" rel="nofollow noopener">ワークフローを設定する - GitHub ヘルプ</a>に沿って<code>.github/workflows</code>フォルダ内へ適当にワークフローファイルを設置します。今回は<code>create-scratch-org.yml</code>とします。<br>
-ついでにソースコードのチェックアウトまで書いてしまいます。<a href="https://github.com/actions/checkout" target="_blank" rel="nofollow noopener">actions/checkout@v2</a>はデフォルトで master ブランチを、push 等のブランチ系アクション場合は対象ブランチをチェックアウトします。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">スクラッチ組織を作成します。</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="l">master</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">create-scratch-org</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
-</span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
-</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
-</span></code></pre></div><h3 id="2-sfdx-のセットアップ">2. SFDX のセットアップ</h3>
-<p>SFDX とは<a href="https://developer.salesforce.com/ja/tools/sfdxcli" target="_blank" rel="nofollow noopener">Salesforce CLI</a>のことです、<code>Salesforce</code>がコマンドライン上から操作できるものです。<br>
-通常のセットアップでは、上記リンクからダウンロードしてインストール、npm や brew によるインストールがあります。GitHubActions のワークフロー上でも同様の手順でセットアップできます。<br>
-今回は npm を使います。そのため<code>package.json</code>を作成する必要がありますが、これが嫌な場合や、npm が使えない場合は<a href="https://github.com/sfdx-actions/setup-sfdx" target="_blank" rel="nofollow noopener">sfdx-actions/setup-sfdx</a>や<a href="https://github.com/forcedotcom/salesforcedx-actions" target="_blank" rel="nofollow noopener">forcedotcom/salesforcedx-actions</a>を使うのも良さそうです。<br>
-npm で sfdx をインストールするためには以下のコマンドをたたきます。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## package.jsonが存在しない場合は作成する</span>
-npm init --yes
-
-npm i -D sfdx
-</code></pre></div><p>すると<code>package.json</code>と<code>package-lock.json</code>が追加されているはずなのでコミットなりステージングなりしておきます。</p>
-<p>ワークフローの steps を追記します。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="nt">jobs</span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="nt">create-scratch-org</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
-</span><span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Checkout source code&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;node_modulesのキャッシュがあれば使う&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">app-cache-npm</span><span class="w">
-</span><span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/cache@v1</span><span class="w">
-</span><span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">node_modules</span><span class="w">
-</span><span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">npm-${{ hashFiles(&#39;**/package-lock.json&#39;) }}</span><span class="w">
-</span><span class="w">        </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span><span class="sd">          npm-${{ env.app-cache-name }}-
-</span><span class="sd">          npm-</span><span class="w">          
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;npm ciを実行&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l">steps.app-cache-npm.outputs.cache-hit != &#39;true&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npm ci</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;sfdxが使えるかテスト&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx --help</span><span class="w">
-</span></code></pre></div><p>これで sfdx コマンドがワークフロー上で使えるようになりました。</p>
-<h3 id="3-devhub-認証">3. DevHub 認証</h3>
-<p>DevHub の用意が必要です。<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.html" target="_blank" rel="nofollow noopener">組織での Dev Hub の有効化 | Salesforce DX 設定ガイド | Salesforce Developers</a><br>
-sfdx でコマンドラインで完結する認証コマンドは<code>force:auth:sfdxurl:store</code>のみ？のようなのでこれを使います。このコマンドは<code>Sfdx Auth Url</code>を使うため、手元の環境で組織の認証をしておく必要があります。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1">## DevHubを使う組織を認証する。</span>
-sfdx force:auth:web:login -a ForGitHubAction
-
-<span class="c1">## --verboseを付けるとSfdx Auth Urlが表示されます</span>
-sfdx force:org:display --verbose -u ForGitHubAction
-</code></pre></div><p><code>Sfdx Auth Url</code>をコピペして、GitHub リポジトリの Secrets に登録しておきます。ワークフローファイルや、リポジトリ内ファイルへのベタ書きはやめたほうが良さそうです。Secrets については<a href="https://help.github.com/ja/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#using-encrypted-secrets-in-a-workflow" target="_blank" rel="nofollow noopener">暗号化されたシークレットの作成と保存 - GitHub ヘルプ</a>を。<br>
-Secrets の登録は GitHub のリポジトリページの Settings &gt; Secrets からできます。</p>
-<p>
-
-
-<picture>
-  <img src="/img/2020-03-03-17-01-54.png" alt="Secrets画面" decoding="async" loading="lazy">
-</picture>
-</p>
-<p>Name はワークフローからの呼び出しの際に使うのでわかりやすいものを、今回は<code>SFDX_AUTH_URL</code>としました。<br>
-ワークフローファイルを追記します。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="nt">jobs</span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="nt">create-scratch-org</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
-</span><span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="c"># 省略</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Secretsに登録したSfdx Auth Urlをファイルへ出力&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;echo ${{ secrets.SFDX_AUTH_URL }} &gt; ./SFDX_AUTH_URL.txt&#39;</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Salesforce組織の認証を得る&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;npx sfdx force:auth:sfdxurl:store -f ./SFDX_AUTH_URL.txt -d&#39;</span><span class="w">
-</span></code></pre></div><h3 id="4-スクラッチ組織を作成セットアップ">4. スクラッチ組織を作成、セットアップ</h3>
-<p>スクラッチ組織のセットアップを行います。例としてはこんな感じになるかと思います。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="nt">jobs</span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="nt">create-scratch-org</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
-</span><span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="c"># 省略</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;スクラッチ組織の作成&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx force:org:create -f config/project-scratch-def.json -a TestScratchOrg -d 1</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ソースをプッシュ&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx force:source:push -u TestScratchOrg</span><span class="w">
-</span></code></pre></div><p>スクラッチ組織は作成上限があるので、期限は一日としています。<br>
-<code>config/project-scratch-def.json</code>がない場合は、<a href="https://developer.salesforce.com/docs/atlas.ja-jp.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_def_file_config_values.htm" target="_blank" rel="nofollow noopener">スクラッチ組織定義の設定値</a>を参考にしてください。一応下に最低限の物を置いておきます。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json:config/project-scratch-def.json" data-lang="json:config/project-scratch-def.json"><span class="p">{</span>
-  <span class="nt">&#34;orgName&#34;</span><span class="p">:</span> <span class="s2">&#34;testOrg&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;edition&#34;</span><span class="p">:</span> <span class="s2">&#34;Developer&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;features&#34;</span><span class="p">:</span> <span class="p">[]</span>
-<span class="p">}</span>
-</code></pre></div><h3 id="5-ログイン用の-url-を表示する">5. ログイン用の URL を表示する</h3>
-<p>確認しやすくするために、ログイン用の URL も表示しておきます。<br>
-<code>sfdx force:org:open -r</code>でインスタントなログイン URL を取得できますが、恒久的にログインしたかったので、そちらも載せています。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml:create-scratch-org.yml" data-lang="yml:create-scratch-org.yml"><span class="nt">jobs</span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="nt">create-scratch-org</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
-</span><span class="w">  </span><span class="nt">steps</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="c"># 省略</span><span class="w">
-</span><span class="w">    </span><span class="c">## 期限が短いログインURLを表示</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ログインURLの表示、期限が短い&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx force:org:open -r -u TestScratchOrg</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span><span class="c">## 期限のないログインURLを作成する</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;パスワードを発行&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">npx sfdx force:user:password:generate -u TestScratchOrg</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;ID/PWからログインURLを作成する&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l">bash</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span><span class="sd">        ORG_INFO=$(npx sfdx force:org:display -u TestScratchOrg --json | jq .result)
-</span><span class="sd">        INSTANCE_URL=$(echo $ORG_INFO | jq .instanceUrl)
-</span><span class="sd">        USER_NAME=$(echo $ORG_INFO | jq .username)
-</span><span class="sd">        PASSWORD=$(echo $ORG_INFO | jq .password)
-</span><span class="sd">        echo &#34;##[set-output name=login-url;]$(echo ${INSTANCE_URL}?un=${USER_NAME}\&amp;pw=${PASSWORD})</span><span class="w">        
-</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;期限のないログインURLを表示&#39;</span><span class="w">
-</span><span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">echo ${{ steps.make-login-url.outputs.login-url }}</span><span class="w">
-</span></code></pre></div><h2 id="おわりに">おわりに</h2>
-<p>日毎にスクラッチ組織の作成数上限があるので、プルリク push でトリガしたりする際は注意が必要ですが、Apex テストまでやってくれると結構便利になると思います。<br>
-あとはこのワークフローを Slack 連携させて拡張したりします。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Auraコンポーネントの使い方</title>
-      <link>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</link>
-      <pubDate>Fri, 21 Feb 2020 16:10:26 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/</guid>
-      <description><![CDATA[Hoge.cmp: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる HogeController.js: cmpファイルでcから呼び出せる HogeHelper.js: HogeController.jsのdoInit: function(component, event, helper) { ... }のhelperに渡される。]]></description>
-      <content:encoded><![CDATA[<p><code>Hoge.cmp</code>: View テンプレートファイル、変数の定義やライフサイクルへの関数のハンドルもやる
-<code>HogeController.js</code>: <code>cmpファイル</code>で<code>c</code>から呼び出せる
-<code>HogeHelper.js</code>: <code>HogeController.js</code>の<code>doInit: function(component, event, helper) { ... }</code>の<code>helper</code>に渡される。</p>
-<h2 id="hogecmp">Hoge.cmp</h2>
-<ul>
-<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
-<ul>
-<li>action で開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
-</ul>
-</li>
-<li>コントローラーのメソッドには<code>c</code>からアクセスできる。
-<ul>
-<li><code>&lt;aura:component controller=“DirectoryConversionController”&gt;</code>とすると<code>@AuraEnabled</code>のメソッドが<code>c</code>から呼べる。c は<code>Controller.js</code>の関数も含む。ハマった</li>
-</ul>
-</li>
-</ul>
-<h2 id="hogecontrollerjs--hogehelperjs">HogeController.js | HogeHelper.js</h2>
-<p>コントローラーの関数は 3 つの引数がデフォルトで用意されている。<code>doInit: function(component, event, helper) { ... }</code>。<br>
-<code>Hoge.cmp</code>の<code>{! v.simpleRecord }</code>といった変数には、<code>component.get('v.simpleRecord')</code>,<code>component.set('v.AnyAttr', 'any')</code>といった感じでアクセス可能。</p>
-<h2 id="参考">参考</h2>
-<ul>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.lightning.meta/lightning/js_helper.htm" target="_blank" rel="nofollow noopener">コンポーネントのバンドル内の JavaScript コードの共有 | Lightning Aura Components Developer Guide (Lightning Aura コンポーネント開発者ガイド) | Salesforce Developers</a></li>
-<li><code>$A</code>はデフォルトのネームスペース <a href="https://developer.salesforce.com/forums/?id=9060G0000005UinQAE" target="_blank" rel="nofollow noopener">What is $A and $A.util in lightning ? - Salesforce Developer Community</a></li>
-<li>レコードのデータは<code>{! v.simpleRecord.Name }</code>のような感じでアクセスできる
-<ul>
-<li>action で開いたモーダル内のコンポーネントだと<code>v.simpleRecord</code>と<code>v.record</code>は<code>undefined</code>だった</li>
-</ul>
-</li>
-</ul>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Lightning Experience のリードと商談</title>
-      <link>https://mcho.dev/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</link>
-      <pubDate>Wed, 19 Feb 2020 17:28:59 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/lightning-experience-%E3%81%AE%E3%83%AA%E3%83%BC%E3%83%89%E3%81%A8%E5%95%86%E8%AB%87/</guid>
-      <description><![CDATA[始める前 リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。 とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。 メモ リードとは、潜在的な顧客と]]></description>
-      <content:encoded><![CDATA[<h2 id="始める前">始める前</h2>
-<p>リードは、取引先、取引先責任者、商談に一方向に変換できる、それくらいの認識。
-とくにどのレコードが具体的にどこで使われるのか、意味を持っているのかは理解していない。</p>
-<h2 id="メモ">メモ</h2>
-<p>リードとは、潜在的な顧客として認識された人や会社。まだ顧客にはなっていないけど、なる可能性がある。<br>
-リードを使用すると、見込み客を区別することが簡単にできる。</p>
-<p>リードレコードを作って、レコードページから取引の開始をクリックすると取引先、取引責任者、商談へ変換できるモーダルが開く
-
-
-
-<picture>
-  <img src="/img/2020-02-19-18-09-22.png" alt="変換できるモーダル" decoding="async" loading="lazy">
-</picture>
-</p>
-<p>取引先責任者は商談に紐付けることができ、これでどの責任者とやり取りしているか明確になる。<br>
-取引先は、取引先責任者が所属している組織のこと</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>LWCの基本</title>
-      <link>https://mcho.dev/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</link>
-      <pubDate>Wed, 15 Jan 2020 16:58:28 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/lwc%E3%81%AE%E5%9F%BA%E6%9C%AC/</guid>
-      <description><![CDATA[はじめに LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。 トレイルがあったので、これをやる。 Lightning Web コンポーネントの作成 | Salesforce Trailhead Lightning Web コンポーネントの作成 LightningEleme]]></description>
-      <content:encoded><![CDATA[<h2 id="はじめに">はじめに</h2>
-<p>LWC を使いそうなので基本をやる。所謂 WebComponents が中身になってるってことはどこかでみた。</p>
-<p>トレイルがあったので、これをやる。
-<a href="https://trailhead.salesforce.com/ja/content/learn/trails/build-lightning-web-components" target="_blank" rel="nofollow noopener">Lightning Web コンポーネントの作成 | Salesforce Trailhead</a></p>
-<h2 id="lightning-web-コンポーネントの作成">Lightning Web コンポーネントの作成</h2>
-<ul>
-<li><code>LightningElement</code>が LWC の実装っぽい。<code>HTMLElement</code>をラップしてそう</li>
-</ul>
-<p>前から 3 つ終わったけど、大体開発環境とかの話だったな</p>
-<h2 id="所感">所感</h2>
-<p>やり終わってしまったので所感を書く。雑メモは社スラックに投稿していたので気が向いたらこっちにまとめる。
-Web 標準に準拠して作られているので、最近の javascript フロントエンドライブラリを触っていれば、固有の API やアノテーションはあるけど、抵抗はすくないと感じた。モジュールをなぞってコードを読んだだけなので、やりたいことに向けてコードをいじったときに色々気づくかもしれない。
-Salesforce のコンポーネントとしてしか利用出来ないのが惜しいなと、Web のどこにでも入れられるような感じに想像していたのでちょっとがっかり。
-Salesforce のコンポーネントをモダンな javascript で書けるのは良い。出来ることは Aura には追いついていないらしいけど、API 等の対応も進んでいるので今後はこっちが主流になっていくのかな。
-トレイルに関しては、熊追跡アプリの作成のモジュールが参考になった。その他は SFDX だったり環境構築のことが大半をしめていた。</p>
-<h2 id="さいごに">さいごに</h2>
-<p>日本語で PG 組織を作成すると Trailhead のステップで、ホームの API 名が違って完了しないので注意</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>[読んでいる]DL版 RustではじめるOpenGL</title>
-      <link>https://mcho.dev/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</link>
-      <pubDate>Tue, 12 Nov 2019 15:27:44 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/dl%E7%89%88rust%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH]]></description>
-      <content:encoded><![CDATA[<h2 id="dl-版-rust-ではじめる-opengl---toyamaguchi---boothhttpstoyamaguchiboothpmitems1557536"><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a></h2>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Rustで始めるOpenGLをやっている</title>
-      <link>https://mcho.dev/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</link>
-      <pubDate>Tue, 12 Nov 2019 15:23:06 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/rust%E3%81%A7%E5%A7%8B%E3%82%81%E3%82%8Bopengl/</guid>
-      <description><![CDATA[これはなに [DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTHをなぞった際のメモです。 目次を読む ライブラリごとに章が区切られている 環境準備 SDL OpenGL Dear ImGui 3D オブジェクト テクスチャ ほとんど触れたことがないな、とりあえず上からや]]></description>
-      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p><a href="https://toyamaguchi.booth.pm/items/1557536" target="_blank" rel="nofollow noopener">[DL 版] Rust ではじめる OpenGL - toyamaguchi - BOOTH</a>をなぞった際のメモです。</p>
-<h2 id="目次を読む">目次を読む</h2>
-<p>ライブラリごとに章が区切られている</p>
-<ol>
-<li>環境準備</li>
-<li>SDL</li>
-<li>OpenGL</li>
-<li>Dear ImGui</li>
-<li>3D オブジェクト</li>
-<li>テクスチャ</li>
-</ol>
-<p>ほとんど触れたことがないな、とりあえず上からやっていこう
-ソースコード →<a href="https://github.com/toyamaguchi/start_opengl_in_rust" target="_blank" rel="nofollow noopener">toyamaguchi/start_opengl_in_rust</a></p>
-<h2 id="環境">環境</h2>
-<ul>
-<li><a href="https://www.rust-lang.org/" target="_blank" rel="nofollow noopener">Rust Programming Language</a>に従って Rust をインストール
-<ul>
-<li>version は 1.39 だった</li>
-<li>crate は<a href="https://crates.io/" target="_blank" rel="nofollow noopener">crates.io: Rust Package Registry</a>で検索できる</li>
-<li>VSCode の rls、rustup のパスを通してやる必要があった。<code>&quot;rust-client.rustupPath&quot;: &quot;~/.cargo/bin/rustup&quot;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="sdl">SDL</h2>
-<p>SDL は、グラフィックやサウンドの機能を持ったマルチメディアライブラリ。
-<a href="https://ja.wikipedia.org/wiki/SDL" target="_blank" rel="nofollow noopener">SDL - Wikipedia</a><br>
-これだけでも十分な機能を持つゲームを作成可能らしい</p>
-<p>Rust からの利用は<code>crate「sdl2」</code>を利用する。<a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a><br>
-<code>sd12</code>は C 言語で書かれたライブラリを間接的に利用するラッパーのため SDL のインストールも必要。</p>
-<p>SDL を使ってソフトに必要な構造を作って OpenGL で描画をしていく。基本的な構造とは、ウィンドウやメインループ、イベント処理のような部分。</p>
-<h3 id="準備">準備</h3>
-<ul>
-<li><a href="https://github.com/Rust-SDL2/rust-sdl2" target="_blank" rel="nofollow noopener">Rust-SDL2/rust-sdl2: SDL2 bindings for Rust</a> の手順通り SDL をインストール</li>
-<li><code>cargo.toml</code>に<code>sd12</code>を追加</li>
-</ul>
-<h3 id="作成">作成</h3>
-<p><code>sdl2</code>の crates.io ページを見る。</p>
-<h2 id="opengl">OpenGL</h2>
-<p>SDL のウィンドウに描画していく</p>
-<h3 id="準備-1">準備</h3>
-<p><code>cargo.toml</code>に<code>gl</code>(OpenGL の API を利用可能に),<code>cgmath</code>(CG 用の数学関連機能),<code>c_str_macro</code>(C 言語とコンパチビリティんのある文字列型を生成できる<code>c_str!</code>マクロが使えるようになる)を追加</p>
-<h3 id="作成-1">作成</h3>
-<p>HelloWorld は難しいらしいので三角形を描画する</p>
-<p>シェーダーという言葉が出てきた</p>
-<p>写経辛いのでコピペに切り替えていく</p>
-<p>OpenGL3.1 を使う、このバージョンは丁度 API が一新されたバージョンで、<code>Core</code>(新しい API のみ)と<code>Compability</code>(古い API もサポート)パッケージがある。今回は<code>Core</code></p>
-<p>描画はシェーダと呼ばれる描画プログラムを通してデータを送る<br>
-シェーダなしのサンプルコードは古い可能性があるので注意<br>
-呼び名は<br>
-あり: Programmable Pipeline<br>
-なし: Fixed Function Pipeline<br>
-などというらしい</p>
-<p>シェーダは実行時にソースコードをコンパイルして使えるプログラムなのでこういった名称になってる</p>
-<p>今回具体的には Vertex シェーダと Fragment シェーダを使った</p>
-<h4 id="vertex-シェーダ">Vertex シェーダ</h4>
-<p>Vertex はそもそも頂点のこと、辺と辺を結ぶ点。3D 空間内の頂点座標を画面上の座標にするまでに必要な計算をこのシェーダでやってる</p>
-<p>描画したい頂点が、3D 空間の中でどの位置にあるのかを表すモデル行列<br>
-カメラの一を考慮したビュー行列<br>
-カメラから見た 3D 空間をどのように画面に描画するかを表す射影行列<br>
-3 つの行列をかけ合わせて最終的な画面上の座標になる</p>
-<h4 id="fragment-シェーダ">Fragment シェーダ</h4>
-<p>色を計算するシェーダ、Vertex シェーダから座標を得てテクスチャの中から適切な位置の色情報を計算して描画につかう</p>
-<p>どちらも GLSL を使って実装する。<br>
-GLSL(OpenGL Shading Language)はシェーダ専用の言語、GPU や前段のシェーダからの情報、扱える変数に独特のルールがある。<br>
-GPU での動作なので並列計算できる、画面上に多くの 3D オブジェクトを描画したいならシェーダを使って効果的に描画する必要がある。</p>
-<p>GLSL のバージョンは 3.3</p>
-<p>VBO(Vertex Buffer Object)は CPU から GPU に情報を渡すための入れ物、頂点データだったり色情報だったり<br>
-VAO(Vertex Array Object)は VBO をどのようなまとまりで使うのかを設定するもの</p>
-<p>WebGL の話ものってそう</p>
-<p>サンプルコードが動かない → 動いた、sample リポジトリの rsc フォルダを追加すればよかっただけだった。章の最後に書いてあった。</p>
-<pre tabindex="0"><code class="language-log" data-lang="log">RUST_BACKTRACE=1 cargo run
-    Finished dev [unoptimized + debuginfo] target(s) in 0.03s
-     Running `target/debug/rust-opengl`
-OK: init OpenGL: version=3.1
-thread 'main' panicked at 'failed to open file: rsc/shader/shader.vs', src/shader.rs:28:33
-stack backtrace:
-   0: backtrace::backtrace::libunwind::trace
-             at /Users/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/libunwind.rs:88
-   1: backtrace::backtrace::trace_unsynchronized
-             at /Users/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/backtrace-0.3.37/src/backtrace/mod.rs:66
-   2: std::sys_common::backtrace::_print_fmt
-             at src/libstd/sys_common/backtrace.rs:76
-   3: &lt;std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display&gt;::fmt
-             at src/libstd/sys_common/backtrace.rs:60
-   4: core::fmt::write
-             at src/libcore/fmt/mod.rs:1030
-   5: std::io::Write::write_fmt
-             at src/libstd/io/mod.rs:1412
-   6: std::sys_common::backtrace::_print
-             at src/libstd/sys_common/backtrace.rs:64
-   7: std::sys_common::backtrace::print
-             at src/libstd/sys_common/backtrace.rs:49
-   8: std::panicking::default_hook::{{closure}}
-             at src/libstd/panicking.rs:196
-   9: std::panicking::default_hook
-             at src/libstd/panicking.rs:210
-  10: std::panicking::rust_panic_with_hook
-             at src/libstd/panicking.rs:473
-  11: std::panicking::continue_panic_fmt
-             at src/libstd/panicking.rs:380
-  12: std::thread::local::fast::Key&lt;T&gt;::try_initialize
-  13: rust_opengl::shader::Shader::new::{{closure}}
-             at src/shader.rs:28
-  14: core::result::Result&lt;T,E&gt;::unwrap_or_else
-             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libcore/result.rs:818
-  15: rust_opengl::shader::Shader::new
-             at src/shader.rs:27
-  16: rust_opengl::main
-             at src/main.rs:52
-  17: std::rt::lang_start::{{closure}}
-             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libstd/rt.rs:64
-  18: std::rt::lang_start_internal::{{closure}}
-             at src/libstd/rt.rs:49
-  19: std::panicking::try::do_call
-             at src/libstd/panicking.rs:292
-  20: __rust_maybe_catch_panic
-             at src/libpanic_unwind/lib.rs:80
-  21: std::panicking::try
-             at src/libstd/panicking.rs:271
-  22: std::panic::catch_unwind
-             at src/libstd/panic.rs:394
-  23: std::rt::lang_start_internal
-             at src/libstd/rt.rs:48
-  24: std::rt::lang_start
-             at /rustc/4560ea788cb760f0a34127156c78e2552949f734/src/libstd/rt.rs:64
-  25: rust_opengl::main
-note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
-</code></pre><p>できた。
-
-
-
-<picture>
-  <img src="/img/2019-11-12-18-08-05.png" alt="" decoding="async" loading="lazy">
-</picture>
-</p>
-<p>頂点情報はこういう感じで書いていた</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="w">    </span><span class="c1">// set buffer
-</span><span class="c1"></span><span class="w">    </span><span class="cp">#[rustfmt::skip]</span><span class="w">
-</span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">buffer_array</span>: <span class="p">[</span><span class="kt">f32</span><span class="p">;</span><span class="w"> </span><span class="n">BUF_LEN</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w">
-</span><span class="w">        </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-</span><span class="w">        </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="p">];</span><span class="w">
-</span></code></pre></div><h2 id="dear-imgui">Dear ImGui</h2>
-<p><a href="https://github.com/ocornut/imgui" target="_blank" rel="nofollow noopener">ocornut/imgui</a></p>
-<p>OpenGL に様々な GUI を追加できるライブラリ</p>
-<p>これを使って SDL2 のウィンドウに新たにウィンドウを追加する。</p>
-<p>出た</p>
-<p>
-
-
-<picture>
-  <img src="/img/2019-12-17-15-49-08.png" alt="" decoding="async" loading="lazy">
-</picture>
-</p>
-<p>
-
-
-<picture>
-  <img src="/img/2019-12-17-15-59-28.png" alt="" decoding="async" loading="lazy">
-</picture>
-</p>
-<h3 id="効果的な使い方">効果的な使い方</h3>
-<p>パラメータの微調節を行えるように、ここの値をスライダーで調節できるようにすると良いらしい
-FPS を表示も</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Visualforceの基礎</title>
-      <link>https://mcho.dev/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</link>
-      <pubDate>Mon, 11 Nov 2019 15:50:31 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/visualforce%E3%81%AE%E5%9F%BA%E7%A4%8E/</guid>
-      <description><![CDATA[Visualforce とは Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる 標準または Apex でビジネスロジックを記述する。 使用できる場所]]></description>
-      <content:encoded><![CDATA[<h2 id="visualforce-とは">Visualforce とは</h2>
-<ul>
-<li>Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク</li>
-<li>Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
-<li>標準または Apex でビジネスロジックを記述する。</li>
-</ul>
-<h2 id="使用できる場所">使用できる場所</h2>
-<ul>
-<li>ナビゲーションバーに追加</li>
-<li>標準ページレイアウト内に表示</li>
-<li>Lightning アプリケーションビルダーでコンポーネントとして追加する
-<ul>
-<li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
-</ul>
-</li>
-<li>オブジェクトページの標準ボタンやリンクを上書きして表示する</li>
-<li>オブジェクトページにカスタムボタンやリンクを配置して表示する</li>
-</ul>
-<h2 id="ページの作成">ページの作成</h2>
-<ul>
-<li>API を使用して作成変更できる</li>
-<li>開発者コンソール
-<ul>
-<li>エディタがついてる。補完あり</li>
-<li>LightningExperience のページから実行で LightningExperience でプレビュ $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
-</ul>
-</li>
-<li>xml ベース</li>
-</ul>
-<h2 id="単純な変数と数式の使用">単純な変数と数式の使用</h2>
-<ul>
-<li>グローバル変数 ex. <code>$User</code> <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
-<li>構文 {! expression } を評価して出力してくれる
-<ul>
-<li>expression ないは大文字小文字区別なし</li>
-<li>文字列連結は&amp;</li>
-<li>メンバーアクセスは<code>.</code>(ドット)つなぎ</li>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.html" target="_blank" rel="nofollow noopener">式の演算子 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
-</ul>
-</li>
-<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm" target="_blank" rel="nofollow noopener">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
-</ul>
-<h2 id="標準コントローラの使用">標準コントローラの使用</h2>
-<ul>
-<li>MVC</li>
-<li>標準なアクションとデータアクセスを処理できる</li>
-<li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
-<li>getQuery でコントローラにパラメータを渡せる。ex. <code>/apex/pageName?id={ObjectID}</code></li>
-</ul>
-<h2 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h2>
-<ul>
-<li><code>&lt;apex:detail /&gt;</code>等の一括出力コンポーネントがある</li>
-<li><code>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;</code>のような UI コンポーネントもある</li>
-<li><code>&lt;!--&gt;</code>はテーブル UI</li>
-<li><code>&lt;apex:relatedList list=&quot;Contacts&quot;&gt;</code>はリスト</li>
-</ul>
-<h2 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h2>
-<ul>
-<li><code>&lt;apex:form&gt;</code>のデータは<code>&lt;apex:page&gt;</code>で指定されたコントローラーを元にする</li>
-<li>プラットフォームのスタイルを使用する要素としない要素がある
-<ul>
-<li>する
-<ul>
-<li><code>&lt;apex:form&gt;</code>を使用している場合</li>
-<li><code>&lt;apex:pageBlock&gt;</code>及び<code>&lt;apex;pageBlockSection&gt;</code>内で入力要素を使用する場合</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>&lt;apex:commandButton /&gt;</code>でボタンが作成できる。要素を足すことで色々指定する。<code>action=&quot;{! save }&quot;</code>,<code>value=&quot;Save&quot;</code>等々</li>
-</ul>
-<h2 id="標準リストコントローラの使用">標準リストコントローラの使用</h2>
-<ul>
-<li>クエリ可能</li>
-<li>コレクション変数でレコードの使用、絞り込み、ページネーションなども用意されている</li>
-<li>一度に多数のレコードを操作することを目的としている</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- recordSetVarで作業するオブジェクトを設定 --&gt;</span>
-<span class="nt">&lt;apex:page</span> <span class="na">standardController=</span><span class="s">&#34;Contact&#34;</span> <span class="na">recordSetVar=</span><span class="s">&#34;contacts&#34;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;apex:pageBlock</span> <span class="na">title=</span><span class="s">&#34;Contacts List&#34;</span><span class="nt">&gt;</span>
-        <span class="c">&lt;!-- Contacts List --&gt;</span>
-        <span class="c">&lt;!-- テーブルのvalueにrecordSetVarで設定されたオブジェクトを渡す --&gt;</span>
-        <span class="nt">&lt;apex:pageBlockTable</span> <span class="na">value=</span><span class="s">&#34;{! contacts }&#34;</span> <span class="na">var=</span><span class="s">&#34;ct&#34;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.FirstName }&#34;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.LastName }&#34;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Email }&#34;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;apex:column</span> <span class="na">value=</span><span class="s">&#34;{! ct.Account.Name }&#34;</span><span class="nt">/&gt;</span>
-        <span class="err">&lt;</span>/!--&gt;
-    <span class="nt">&lt;/apex:pageBlock&gt;</span>
-<span class="nt">&lt;/apex:page&gt;</span>
-</code></pre></div><ul>
-<li><code>&lt;apex:datalist&gt;</code>, <code>&lt;apex:repeat&gt;</code>等でリストを作れる</li>
-</ul>
-<h2 id="リンク">リンク</h2>
-<ul>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.pages.meta/pages/pages_compref.htm" target="_blank" rel="nofollow noopener">標準のコンポーネントの参照 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
-</ul>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>Vueでモノレポがしたかった</title>
-      <link>https://mcho.dev/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</link>
-      <pubDate>Tue, 05 Nov 2019 15:31:32 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/vue%E3%81%A7%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%9D%E3%81%8C%E3%81%97%E3%81%9F%E3%81%8B%E3%81%A3%E3%81%9F/</guid>
-      <description><![CDATA[これはなに Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ 事前知識 @vue/cli, @vue/cli-serviceについてあまり知らなかったので、今回よく使っていたコマンドをメモ vue-cli-service build - vue c]]></description>
-      <content:encoded><![CDATA[<h2 id="これはなに">これはなに</h2>
-<p>Vue のプロジェクトに管理画面用アプリケーションを追加した際にやったことのメモ</p>
-<h2 id="事前知識">事前知識</h2>
-<p><code>@vue/cli</code>, <code>@vue/cli-service</code>についてあまり知らなかったので、今回よく使っていたコマンドをメモ</p>
-<ul>
-<li><code>vue-cli-service build</code> - <code>vue create</code>で作成されたプロジェクトの npm scripts に<code>npm run build</code>として登録されていた。<code>vue.config.js</code>にビルド設定がある。</li>
-<li><code>vue inspect</code> - <code>vue.config.js</code>を考慮した実際にビルドの際に使われる<code>webpack.config.js</code>を出力してくれる</li>
-</ul>
-<h2 id="始める前のプロジェクト構成等">始める前のプロジェクト構成等</h2>
-<p><code>vue cli</code>で生成したままのプロジェクト構成でした。
-必要そうなものを抜き出すとこんな感じ</p>
-<pre tabindex="0"><code class="language-tree" data-lang="tree">├── public
-├── src
-├── tests
-├── package.json
-└── vue.config.js
-</code></pre><p>ちなみにビルドは<code>vue-cli-service build</code>で行っていた。</p>
-<h2 id="やりたいこと">やりたいこと</h2>
-<ul>
-<li>出力を dist/app, dist/admin のように複数ディレクトリに分ける。</li>
-<li>ビルド、ビルド設定を分ける</li>
-<li>lint 設定は共有する</li>
-</ul>
-<h2 id="変更後のディレクトリ構成とビルドコンフィグ">変更後のディレクトリ構成とビルドコンフィグ</h2>
-<p>アプリと管理画面のソースを分けるために以下のようにディレクトリ構成を変更した。</p>
-<pre tabindex="0"><code class="language-tree" data-lang="tree">.
-├── projects
-│    ├── admin
-│    │   ├── public
-│    │   ├── src
-│    │   ├── package.json
-│    │   └── vue.config.js
-│    └── app
-│        ├── public
-│        ├── src
-│        ├── package.json
-│        └── vue.config.js
-└── package.json
-</code></pre><p><code>projects/app</code>には以前から存在していたアプリケーションのコードとそれら周辺のファイルを、<code>projects/admin</code>には<code>vue create admin</code>したものが入っている。<br>
-上記には書いていないが<code>tsconfig.json</code>や<code>.eslintrc</code>はルートと各プロジェクトに配置してあり、ルートのものを各プロジェクトが extends している。<br>
-あとは<code>vue.config.js</code>に<code>outputDir</code>を追加して、出力フォルダを揃えたくらいで、ほぼ初期設定。</p>
-<h2 id="こうなった理由">こうなった理由</h2>
-<p>やり始めた際は<code>vue.config.js</code>の<code>pages</code>でマルチエントリにして終わりと思っていたけど、そうは行かなかったのは以下。</p>
-<ul>
-<li>出力先が同ディレクトリ、プロジェクト毎に一つ深くしたかったが、<code>vue.config.js</code>から制御しきれなかった。</li>
-<li>コンフィグ系が共有
-<ul>
-<li><code>tsconfig.json</code>、<code>vue.config.js</code>等々。必要のない設定を読み込むことが双方のプロジェクトに発生する。</li>
-</ul>
-</li>
-<li>ビルドが同時のみ
-<ul>
-<li>現時点の<code>vue-cli-service(ver 3.12.1)</code>では<code>vue.config.js</code>の<code>pages</code>はエントリポイントを増やすことだけを行って、個別に<code>webpack.config.js</code>相当のものを作るわけじゃなかった。</li>
-</ul>
-</li>
-</ul>
-<p>ということで、<code>projects</code>ディレクトリを作ってそこで<code>vue create admin</code>を叩いた感じになった。</p>
-<h2 id="この構成で思うこと">この構成で思うこと</h2>
-<ul>
-<li>package.json めっちゃある。</li>
-<li>node_modules もめっちゃある、中身重複しまくりそう。</li>
-<li>vue のモノレポ環境はまだ成長段階な感じがする。<code>VueLanguageServer</code>も複数プロジェクトには対応していなかった。</li>
-</ul>
-<h2 id="これからどうするか">これからどうするか</h2>
-<ul>
-<li>Webpack を学ぶ
-<ul>
-<li>強くなればもっとスリムにできそう</li>
-<li>コントリビュートへも繋がりそう</li>
-</ul>
-</li>
-<li>VSCode の拡張機能、エディタの技術を学ぶ
-<ul>
-<li>LanguageServer や Linter の最適化に苦労したので・・・</li>
-</ul>
-</li>
-</ul>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>TRAILHEADに入門した</title>
-      <link>https://mcho.dev/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</link>
-      <pubDate>Thu, 31 Oct 2019 13:07:17 +0900</pubDate>
-      
-      <guid>https://mcho.dev/notes/trailhead%E3%81%AB%E5%85%A5%E9%96%80%E3%81%97%E3%81%9F/</guid>
-      <description><![CDATA[TRAILHEAD ってなに Trailhead | 楽しく学ぶ方法 Salesforce が運営している学習サイト、コンテンツは主に Salesforce 関連で、経営者、営業、開発向けが用意されている。 Salesforce 関連以外も Blockchain や、IOS アプリケーション開発のコンテンツもある。 やり始める前の]]></description>
-      <content:encoded><![CDATA[<h2 id="trailhead-ってなに">TRAILHEAD ってなに</h2>
-<p><a href="https://trailhead.salesforce.com/ja/home" target="_blank" rel="nofollow noopener"><em>Trailhead | 楽しく学ぶ方法</em></a></p>
-<p>Salesforce が運営している学習サイト、コンテンツは主に Salesforce 関連で、経営者、営業、開発向けが用意されている。
-Salesforce 関連以外も Blockchain や、IOS アプリケーション開発のコンテンツもある。</p>
-<h2 id="やり始める前の認識">やり始める前の認識</h2>
-<ul>
-<li>無数にある PaaS の一つ
-<ul>
-<li>SaaS も提供してる</li>
-</ul>
-</li>
-<li>セールス・顧客系に強い</li>
-<li>アプリやコンポーネントをリリースできる</li>
-</ul>
-<p>以下、とりあえず<a href="https://trailhead.salesforce.com/ja/users/00550000007HqDdAAK/trailmixes/start-develop" target="_blank" rel="nofollow noopener">Trailmix by ルーキー会 Salesforce DeveloperGroup</a>を順にメモする</p>
-<h2 id="salesforce-テクノロジモデル">Salesforce テクノロジモデル</h2>
-<ul>
-<li>信頼の基準、最も信頼されるために行ってきた投資
-<ul>
-<li><a href="https://trust.salesforce.com/ja/" target="_blank" rel="nofollow noopener">Salesforce Trust</a> でシステムの状況や、セキュリティ対策が見れる</li>
-</ul>
-</li>
-<li>個別の企業以上のセキュリティを提供する方法
-<ul>
-<li>マルチテナンシー型で提供する
-<ul>
-<li>利益となるイノベーションに注力できる</li>
-<li>高級マンションの建物を想像して
-<ul>
-<li>ドアマン、備え付き洗濯機&hellip;</li>
-<li>自分専用のスペース</li>
-<li>インフラ系は大家が管理</li>
-</ul>
-</li>
-<li>Salesforce は大家の役割</li>
-<li>小さい企業から大きい企業まで同じコードベースを利用することで利益を得ることができる</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>規則の厳しい業種が Salesforce に最も重要なデータを委ねる理由
-<ul>
-<li>上記の通り</li>
-</ul>
-</li>
-<li>メタデータ
-<ul>
-<li>データのためのデータ？</li>
-<li>カスタムタグ、カスタム項目、自動アラート、標準レポート、Chatte 等、全てがメタデータ</li>
-<li>カスタム機能と標準機能のすべてを含む Salesforce インスタンスの構造</li>
-<li>カスタマイズは特別なメタデータレイヤに分離している
-<ul>
-<li>バックグラウンドの更新やプラットフォームの更新・改善を行うことができる</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>アプリケーション開発
-<ul>
-<li>カスタマイズや変更が可能なインフラを提供することが使命</li>
-<li>メタデータ駆動型で速度が出る
-<ul>
-<li>ケーキにクリームを塗るように</li>
-</ul>
-</li>
-<li>ポイント&amp;クリックかカスタムコードで開発</li>
-</ul>
-</li>
-</ul>
-<h2 id="salesforce-platform-の使用開始">Salesforce Platform の使用開始</h2>
-<ul>
-<li>標準機能
-<ul>
-<li>リードと商談</li>
-<li>顧客サポートのためのケースとコミュニティ</li>
-<li>モバイルアプリ</li>
-<li>会社とつながるための Chatter とコミュニティ</li>
-<li>カスタマージャーニーを管理するための MarketingCloud</li>
-<li>あまり良くわかってない</li>
-</ul>
-</li>
-<li>用語
-<ul>
-<li>アプリケーション
-<ul>
-<li>ビジネスプロセスをサポートするオブジェクト、項目、その他の機能のセット</li>
-</ul>
-</li>
-<li>オブジェクト
-<ul>
-<li>特定の種類の情報が保存される、DB のテーブル</li>
-<li>標準とカスタムがある</li>
-</ul>
-</li>
-<li>データベース
-<ul>
-<li>巨大なスプレッドシートを想像</li>
-</ul>
-</li>
-<li>レコード
-<ul>
-<li>オブジェクトデータベーステーブルの行</li>
-</ul>
-</li>
-<li>項目
-<ul>
-<li>オブジェクトデータベーステーブルの列</li>
-</ul>
-</li>
-<li>組織
-<ul>
-<li>Salesforce の特定のインスタンス</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>実際にポイント&amp;クリックで作ってみた
-<ul>
-<li>データベースへカスタムフィールドを追加できた</li>
-<li>データベーステーブルのレコード詳細画面で追加されたフィールドの入力欄が表示された</li>
-</ul>
-</li>
-<li>Salesforce アーキテクチャ
-<ul>
-<li>何層にも重なってる</li>
-<li>マルチテナンシー</li>
-</ul>
-</li>
-<li>設定
-<ul>
-<li>上部ギアメニューから開く</li>
-<li>組織情報、ユーザ、プロファイル、設定変更履歴の参照、ログイン履歴等見れる</li>
-</ul>
-</li>
-<li>AppExchange の戦略と、アプリケーションのインストール
-<ul>
-<li>使用予定の部門を特定</li>
-<li>要望を最大限に満たすものを調査
-<ul>
-<li>ビジネスの問題</li>
-<li>最も苦労している点</li>
-<li>何人のユーザが必要としているか</li>
-<li>予算</li>
-<li>期限</li>
-</ul>
-</li>
-<li>そうすることで最適なアプリケーションを見つけやすくなる</li>
-<li>テスト環境にダウンロード、インストールして、競合がないか確認する</li>
-<li>候補が複数ある場合はテストした内容を、使用できない機能や不要な機能がないか検討。関係者にフィードバックを依頼</li>
-<li>本番にインストール、トレーニング、ドキュメントの提供</li>
-</ul>
-</li>
-</ul>
-<h2 id="データモデリング">データモデリング</h2>
-<ul>
-<li>Sales プラットフォームでオブジェクトを使用するメリット
-<ul>
-<li>オブジェクトはデータベーステーブルのこと、テーブルの列が項目、行がレコードとみなされる</li>
-<li>データモデルはオブジェクトと項目のコレクション</li>
-<li>標準オブジェクト
-<ul>
-<li>Salesforce に含まれるオブジェクト</li>
-<li>取引先、取引先責任者、リード、商談などの一般的なビジネスオブジェクト</li>
-</ul>
-</li>
-<li>カスタムオブジェクト
-<ul>
-<li>会社や業種に固有の情報を保存するために作成するオブジェクト</li>
-<li>プラットフォームによっては作成にフックして、UI のページレイアウトが作成される</li>
-</ul>
-</li>
-<li>設定の新規からオブジェクト作成と、オブジェクトの項目とリレーションの新規ボタンからフィールド追加を行った</li>
-<li>スキーマビルダーという MySQL で言う ER 図のようなツールもある</li>
-</ul>
-</li>
-</ul>
-<h2 id="プラットフォーム開発の基礎">プラットフォーム開発の基礎</h2>
-<ul>
-<li>Dream House Realty っていうアプリを作っていってみる</li>
-<li>Apex</li>
-<li>SOQL Salesforce Object Query Language</li>
-<li>Apex 上の SOQL は実行されてレコードに変換される</li>
-<li>Apex で書いた Controller を Visualforce ページから利用できる</li>
-<li>Heroku がでてきた</li>
-<li>REST や SOAP API も使える</li>
-<li>Heroku Connect で Salesforce のオブジェクトを Heroku Postgre に変換できる</li>
-</ul>
-<h2 id="apex-の基礎とデータベース">Apex の基礎とデータベース</h2>
-<ul>
-<li>小文字と大文字が区別されない</li>
-<li>開発者コンソールの Debug &gt; 匿名実行みたいなやつが便利</li>
-<li>sObject は汎用 Type、標準オブジェクト、カスタムオブジェクトのレコードに使用できる</li>
-<li>insert, upsert, merge といった便利なデータ更新用 DML ステートメントがある</li>
-<li>Database 配下に DML ステートメントと同じ物があって、それの第二引数に false を渡すと例外の代わりに Result オブジェクトを返すことができる</li>
-<li>SOSL 組織全体のレコードから特定の情報を検索、部分一致検索、どのオブジェクトのフィールドを対象とするか選べる</li>
-</ul>
-<h2 id="apex-トリガ">Apex トリガ</h2>
-<ul>
-<li>データベースの beforeSave とかのこと</li>
-<li><code>trigger SoqlTriggerBulk on Account(after update) {</code> で定義する。このトリガ内で<code>Trigger</code>を呼び出せて、そこに色々情報が詰まってる</li>
-<li>レコードごとに処理すると思いし、制限に引っかかるから SOQL とか DML とか駆使してやろうね</li>
-</ul>
-<h2 id="apex-テスト">Apex テスト</h2>
-<ul>
-<li><code>@isTest</code>を使うとパラメータを指定できる。知らなかった。</li>
-<li><code>Test &gt; RunAll</code>でやるとコードカバレッジが出せる</li>
-<li><a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.apexcode.meta/apexcode/apex_testing_tools_start_stop_test.htm" target="_blank" rel="nofollow noopener">Limits、startTest、および stopTest の使用 | Apex 開発者ガイド | Salesforce Developers</a></li>
-</ul>
-<h2 id="visualforce-の基礎">Visualforce の基礎</h2>
-<ul>
-<li>Lightning Platform でホストできるモバイル及びデスクトップアプリケーション用の UI フレームワーク</li>
-<li>Salesforce の組み込み機能の拡張、新しいアプリケーションの作成ができる</li>
-<li>標準または Apex でビジネスロジックを記述する。</li>
-</ul>
-<h3 id="使用できる場所">使用できる場所</h3>
-<ul>
-<li>ナビゲーションバーに追加</li>
-<li>標準ページレイアウト内に表示</li>
-<li>Lightning アプリケーションビルダーでコンポーネントとして追加する
-<ul>
-<li>[Lightning Experience、Lightning コミュニティ、およびモバイルアプリケーションで利用可能] を有効にする必要がある。</li>
-</ul>
-</li>
-<li>オブジェクトページの標準ボタンやリンクを上書きして表示する</li>
-<li>オブジェクトページにカスタムボタンやリンクを配置して表示する</li>
-</ul>
-<h3 id="ページの作成">ページの作成</h3>
-<ul>
-<li>API を使用して作成変更できる</li>
-<li>開発者コンソール
-<ul>
-<li>エディタがついてる。補完あり</li>
-<li>LightningExperiense のページから実行で LightningExperiense でプレビュ $A.get(&ldquo;e.force:navigateToURL&rdquo;).setParams({&ldquo;url&rdquo;: &ldquo;/apex/pageName&rdquo;}).fire();</li>
-</ul>
-</li>
-<li>xml ベース</li>
-</ul>
-<h3 id="単純な変数と数式の使用">単純な変数と数式の使用</h3>
-<ul>
-<li>グローバル変数 ex. $<a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_global.htm" target="_blank" rel="nofollow noopener">User グローバル変数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
-<li>構文 {! expression } を評価して出力してくれる
-<ul>
-<li>expression ないは大文字小文字区別なし</li>
-<li>文字列連結は&amp;</li>
-<li>式の演算子 | <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_operators.htm" target="_blank" rel="nofollow noopener">Visualforce 開発者ガイド | Salesforce Developers</a></li>
-</ul>
-</li>
-<li>標準関数 ex. TODAY(), DAY()&hellip; <a href="https://developer.salesforce.com/docs/atlas.ja-jp.222.0.pages.meta/pages/pages_variables_functions.htm" target="_blank" rel="nofollow noopener">関数 | Visualforce 開発者ガイド | Salesforce Developers</a></li>
-</ul>
-<h3 id="標準コントローラの使用">標準コントローラの使用</h3>
-<ul>
-<li>MVC</li>
-<li>標準なアクションとデータアクセスを処理できる</li>
-<li><code>&lt;apex standardController=&quot;Account&quot;&gt;</code>で有効化</li>
-<li>getQuery でコントローラにパラメータを渡せる。ex. /apex/pageName?id={ObjectID}</li>
-</ul>
-<h3 id="レコード項目テーブルの表示">レコード、項目、テーブルの表示</h3>
-<ul>
-<li>&lt;apex:detail /&gt;等の一括出力コンポーネントがある</li>
-<li>&lt;apex:outputField value=&quot;{! Account.Name }&quot;/&gt;のような UI コンポーネントもある</li>
-<li><a href="apex:pageBlockTable">apex:pageBlockTable</a>はテーブル UI</li>
-<li>&lt;apex:relatedList list=&ldquo;Contacts&rdquo;&gt;はリスト</li>
-</ul>
-<h3 id="フォームを使用したデータの入力">フォームを使用したデータの入力</h3>
-<ul>
-<li><a href="apex:form">apex:form</a>のデータは<a href="apex:page">apex:page</a>で指定されたコントローラーを元にする</li>
-<li>プラットフォームのスタイルを使用する要素としない要素がある
-<ul>
-<li>する
-<ul>
-<li><a href="apex:form">apex:form</a>を使用している場合</li>
-<li><a href="apex:pageBlock">apex:pageBlock</a>及び&lt;apex;pageBlockSection&gt;内で入力要素を使用する場合</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>&lt;apex:commandButton /&gt;でボタンが作成できる。要素を足すことで色々指定する。action=&quot;{! save }&quot;,value=&ldquo;Save&quot;等々</li>
-</ul>
-<h3 id="レコードのリスト">レコードのリスト</h3>
-<ul>
-<li>
-<p>html の要素もそのまま書ける</p>
-</li>
-<li>
-<p><code>&lt;apex: repeat value=&quot;{! accounts }&quot; var=&quot;a&quot;&gt;</code>とするとなかで<code>{!a.id}</code>とかできる。</p>
-</li>
-<li>
-<p><code>{! URLFOR($Resource.vfimagetest, 'cats/kitten1.jpg') }</code>とかの URLresolve 便利系がある</p>
-</li>
-<li>
-<p>静的リソースは設定の静的リソースから追加できる</p>
-</li>
-</ul>
-<h2 id="開発者コンソールの基礎">開発者コンソールの基礎</h2>
-<ul>
-<li>ワークスペース分けできるらしい</li>
-<li>Log パネル、Save Perspective で配置を保存できる</li>
-<li></li>
-</ul>
 ]]></content:encoded>
     </item>
     

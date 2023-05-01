@@ -20,14 +20,12 @@ if (!doNotTrack) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
     
-GitHub Actionsのubuntu-latestでURLEncode &ndash; Mcho
+DeepRacer的なものを作りたい &ndash; Mcho
 
   </title>
   
-  <meta content="urlencode, githubactions, github, actions" name="keywords">
   
-  
-  <meta name="description" property="og:description" content="json から値を抜きだして URL を作りたかったので結局こんな感じになった USER_NAME=$(python3 -c &amp;#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&amp;#34; $(echo $HOGE_JSON | jq .huga))&amp;#39; ENCODED_URL=$(echo https://example.com?un=${USER_NAME}) $(echo $HOGE)は引数に渡るときに&amp;quot;hoge&amp;quot;となるのでsys.argv[1][1:-1|">
+  <meta name="description" property="og:description" content="この記事の続き 大体の流れは レースゲームを作る。 各パラメータ、関数の調整。 強化学習モデルにゲームを遊ばせる。 クリア。できなければ 2 に戻る となりそう。 見ていて気になった、参考になりそうなもの Gym OpenAI が出してい|">
   
 
   <meta name="apple-mobile-web-app-title" content="Mcho">
@@ -46,8 +44,8 @@ GitHub Actionsのubuntu-latestでURLEncode &ndash; Mcho
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@mcho71">
   <meta name="twitter:creator" content="@mcho71">
-  <meta name="twitter:title" content="GitHub Actionsのubuntu-latestでURLEncode | Mcho">
-  <meta name="twitter:description" content="json から値を抜きだして URL を作りたかったので結局こんな感じになった USER_NAME=$(python3 -c &#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&#34; $(echo $HOGE_JSON | jq .huga))&#39; ENCODED_URL=$(echo https://example.com?un=${USER_NAME}) $(echo $HOGE)は引数に渡るときに&quot;hoge&quot;となるのでsys.argv[1][1:-1|">
+  <meta name="twitter:title" content="DeepRacer的なものを作りたい | Mcho">
+  <meta name="twitter:description" content="この記事の続き 大体の流れは レースゲームを作る。 各パラメータ、関数の調整。 強化学習モデルにゲームを遊ばせる。 クリア。できなければ 2 に戻る となりそう。 見ていて気になった、参考になりそうなもの Gym OpenAI が出してい|">
   <meta name="twitter:image" content="https://mcho.dev/twitter-card.png">
   
 
@@ -92,14 +90,6 @@ GitHub Actionsのubuntu-latestでURLEncode &ndash; Mcho
     
     
     
-    <a class="UnderlineNav-item " href="/memos/">
-      
-      <span>メモ</span>
-    </a>
-    
-    
-    
-    
     <a class="UnderlineNav-item " href="/archive/">
       
       <span>アーカイブ</span>
@@ -116,15 +106,11 @@ GitHub Actionsのubuntu-latestでURLEncode &ndash; Mcho
 
 <div class="Subhead">
   <div class="Subhead-heading">
-    <div class="h1 mt-5 mb-3">GitHub Actionsのubuntu-latestでURLEncode</div>
+    <div class="h1 mt-5 mb-3">DeepRacer的なものを作りたい</div>
   </div>
   <div class="Subhead-description">
     
 
-
-<a href='/categories/githubactions' class="muted-link">
-  <span class="Label Label--gray-darker">GitHubActions</span>
-</a>
 
 
 
@@ -133,9 +119,9 @@ GitHub Actionsのubuntu-latestでURLEncode &ndash; Mcho
     
     <div class="float-md-right">
       <span
-        title="Lastmod: 2020-03-18. Published at: 2020-03-18.">
+        title="Lastmod: 2021-01-29. Published at: 2021-01-29.">
         
-        Published: 2020-03-18
+        Published: 2021-01-29
         
       </span>
     </div>
@@ -145,11 +131,30 @@ GitHub Actionsのubuntu-latestでURLEncode &ndash; Mcho
 <article>
   
   <section class="pb-6 mb-3 border-bottom">
-    <p>json から値を抜きだして URL を作りたかったので結局こんな感じになった</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nv">USER_NAME</span><span class="o">=</span><span class="k">$(</span>python3 -c <span class="s2">&#34;import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1][1:-1]))&#34;</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$HOGE_JSON</span> <span class="p">|</span> jq .huga<span class="k">))</span><span class="err">&#39;</span>
-<span class="nv">ENCODED_URL</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> https://example.com?un<span class="o">=</span><span class="si">${</span><span class="nv">USER_NAME</span><span class="si">}</span><span class="k">)</span>
-</code></pre></div><p><code>$(echo $HOGE)</code>は引数に渡るときに<code>&quot;hoge&quot;</code>となるので<code>sys.argv[1][1:-1]</code>で両端のダブルクオートを切り取ってる
-もっといいやり方がありそうだけどとりあえずこれで</p>
+    <p><a href="https://mcho.dev/notes/aws-deepracer-driven-by-reinforcement-learning%E3%82%92%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%9F/">この記事</a>の続き</p>
+<p>大体の流れは</p>
+<ol>
+<li>レースゲームを作る。</li>
+<li>各パラメータ、関数の調整。</li>
+<li>強化学習モデルにゲームを遊ばせる。</li>
+<li>クリア。できなければ 2 に戻る</li>
+</ol>
+<p>となりそう。</p>
+<p>見ていて気になった、参考になりそうなもの</p>
+<ul>
+<li><a href="https://gym.openai.com/" target="_blank" rel="nofollow noopener">Gym</a> OpenAI が出している強化学習を試すためのツールキット
+<ul>
+<li><a href="https://github.com/openai/retro" target="_blank" rel="nofollow noopener">openai/retro: Retro Games in Gym</a> これだと、題材がレトロゲームになってたりしておもしろい</li>
+</ul>
+</li>
+<li><a href="https://blog.brainpad.co.jp/entry/2017/02/24/121500" target="_blank" rel="nofollow noopener">強化学習入門 ～これから強化学習を学びたい人のための基礎知識～ - Platinum Data Blog by BrainPad</a> OpenAI Gym で Q 学習という単語が出てきてよくわからなかったので調べたら出てきた。Q 値は、状態価値の事で、Q 学習は<strong>Q 値を学習するためのアルゴリズムの一つ</strong>であるらしい。Q 値を学習するためのアルゴリズムは、他に Sarsa、モンテカルロ法、deep Q-network（DQN）等がある。
+<ul>
+<li>DQN の開発元は DeepMind 社らしい。ただ DeepMind 社が開発した AlphaGo とかは使っていない。<a href="http://7rpn.hatenablog.com/entry/2016/06/10/192357" target="_blank" rel="nofollow noopener">Google が出した囲碁ソフト「AlphaGo」の論文を翻訳して解説してみる。 - 7rpn’s blog: うわああああな日常</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="ここまできて">ここまできて</h3>
+<p>Web で動く事を目標にしてたけど、道が長いのでとりあえず OpenAIGym で強化学習を学ぶことに方針転換する。</p>
 
   </section>
   <section>
@@ -185,8 +190,16 @@ GitHub Actionsのubuntu-latestでURLEncode &ndash; Mcho
         
 
 <div id="toc" class="mb-3">
-  <b>GitHub Actionsのubuntu-latestでURLEncode</b>
-  <nav id="TableOfContents"></nav>
+  <b>DeepRacer的なものを作りたい</b>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ここまできて">ここまできて</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 
 
